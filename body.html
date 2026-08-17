@@ -1,0 +1,193 @@
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <painted-bg ground="aperol" layout="edges" count="11" seed="5507"></painted-bg>
+  <div class="hero-in">
+    <p class="hero-pill">Butterfly Cave &#xb7; 11&#x2013;20 September 2026</p>
+    <h1>Ten days out of Rocca San Giovanni</h1>
+    <p class="hero-lead">{{TOTAL}} places within an hour of the house, and somewhere to put them.
+    Nothing here is an itinerary &#x2014; it&#x2019;s a menu.</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-in" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" id="t-welcome" aria-selected="true" aria-controls="v-welcome">Welcome</button>
+    <button class="tab" role="tab" id="t-calendar" aria-selected="false" aria-controls="v-calendar">Calendar<span class="c" id="c-plan">0</span></button>
+    <button class="tab" role="tab" id="t-activities" aria-selected="false" aria-controls="v-activities">Activities<span class="c" id="c-short">0</span></button>
+    <button class="tab" role="tab" id="t-know" aria-selected="false" aria-controls="v-know">Things to know</button>
+  </div>
+</nav>
+
+<main id="main" class="shell">
+
+  <!-- ============ WELCOME ============ -->
+  <div class="view" id="v-welcome" role="tabpanel" aria-labelledby="t-welcome">
+    <div class="col">
+      <h2>Where you are</h2>
+      <p>Villa Grotta delle Farfalle sits above Rocca San Giovanni on the Costa dei Trabocchi, with olive
+      groves and vineyards on every side, the Adriatic one way and the Majella the other. Foce beach and the
+      Via Verde are a two-minute drive or a twenty-minute walk; Cavalluccio beach is five. Pescara airport is
+      forty-five minutes.</p>
+      <p class="muted">Everything in Activities is within about an hour. <b>Straight-line distance, not road</b>
+      &#x2014; allow more inland, where the roads turn.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><span class="label">Places</span><span class="v">{{TOTAL}}</span></div>
+      <div class="fact"><span class="label">Towns</span><span class="v">{{TOWNS}}</span></div>
+      <div class="fact"><span class="label">Within 15 min</span><span class="v">{{N15}}</span></div>
+      <div class="fact"><span class="label">Within 30 min</span><span class="v">{{N30}}</span></div>
+      <div class="fact"><span class="label">Nights</span><span class="v">9</span></div>
+      <div class="fact"><span class="label">Sleeps</span><span class="v">14</span></div>
+    </div>
+
+    <div class="cards">
+      <div class="panel">
+        <h3>How this works</h3>
+        <p class="muted"><b>Activities</b> is the whole list &#x2014; filter it, and tap a heart to shortlist
+        what appeals. <b>Calendar</b> is the ten days: put things into Morning, Lunch or Dinner, or give
+        something a Full day. <b>Things to know</b> is what will otherwise catch you out.</p>
+      </div>
+      <div class="panel">
+        <h3>The heart is just yours</h3>
+        <p class="muted">Shortlisting is kept in your own browser. There are no names, no codes to paste and
+        no group tally &#x2014; everyone opens the same link and keeps their own list.</p>
+      </div>
+      <div class="panel">
+        <h3>The house</h3>
+        <p class="muted">Five bedrooms, eight beds, three and a half bathrooms. Private infinity pool with a
+        diving board, a wood-fired pizza oven and a BBQ under the covered patio. The upstairs room has no air
+        conditioning, and there is no gate on the pool.</p>
+      </div>
+      <div class="panel">
+        <h3>Chiara</h3>
+        <p class="muted">Your host lives nearby in Vasto, replies within the hour, and sends recommendations
+        for beaches and restaurants before you arrive. Check-in is 4pm&#x2013;10pm, checkout before 10am.</p>
+      </div>
+      <div class="panel">
+        <h3>September is doing you a favour</h3>
+        <p class="muted">The sea is still warm, the crowds have gone, and the vendemmia is on so the cantine
+        are working. The catch is that summer-season things stop the moment the month turns.</p>
+      </div>
+      <div class="panel">
+        <h3>Every place opens in Maps</h3>
+        <p class="muted">Tap any name, or &#x201c;open in maps&#x201d;, and Google shows you where it is,
+        what it looks like inside, and whether anyone thinks it is any good.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CALENDAR ============ -->
+  <div class="view" id="v-calendar" role="tabpanel" aria-labelledby="t-calendar" hidden>
+    <div class="col">
+      <h2>Ten days, four slots each</h2>
+      <p class="lead">Fix what you want to fix and leave the rest open. A <b>Full day</b> takes the whole day
+      &#x2014; choose one and the other three close until you empty it.</p>
+    </div>
+    <div class="days" id="days"></div>
+    <div class="sunk">
+      <p class="muted" style="font-size:var(--t-meta)"><b>Sunday and Monday are the awkward ones.</b>
+      14 September is your only Monday and most museums shut; the two Sundays, 13 and 20, close a lot of shops
+      and every weekly market. Your plan is saved in this browser only.</p>
+    </div>
+  </div>
+
+  <!-- ============ ACTIVITIES ============ -->
+  <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
+    <div class="col">
+      <h2>Everything within reach</h2>
+      <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
+      drive; the heart shortlists, and the name opens Maps.</p>
+    </div>
+
+    <div class="sunk shelf">
+      <div class="row">
+        <input class="search" id="q" type="search" aria-label="Search places"
+               placeholder="Search a place, a town, a dish &#x2014; trabocco, Lanciano, brodetto">
+      </div>
+      <div class="row" id="groups">
+        <button class="chip" type="button" aria-pressed="true" data-group="all">Everything</button>
+        <button class="chip" type="button" aria-pressed="false" data-group="eat" style="--c:var(--eat-deep)">Eat &amp; drink</button>
+        <button class="chip" type="button" aria-pressed="false" data-group="do" style="--c:var(--do-deep)">Out and about</button>
+        <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Shortlisted <em id="short-n">0</em></button>
+      </div>
+      <div class="row" id="bands">
+        <button class="chip" type="button" aria-pressed="true" data-band="999">Any distance</button>
+        <button class="chip" type="button" aria-pressed="false" data-band="15">&#x2264;15 min</button>
+        <button class="chip" type="button" aria-pressed="false" data-band="30">&#x2264;30 min</button>
+        <button class="chip" type="button" aria-pressed="false" data-band="60">&#x2264;1 hr</button>
+      </div>
+      <div class="row" id="cats">{{CHIPS}}</div>
+      <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
+    </div>
+
+    <section class="group" id="sec-eat">
+      <p class="grouphead eat">Eat &amp; drink <span class="n" id="n-eat">{{N_EAT}}</span></p>
+      <div class="cards" id="grid-eat"></div>
+    </section>
+    <section class="group" id="sec-do">
+      <p class="grouphead do">Out and about <span class="n" id="n-do">{{N_DO}}</span></p>
+      <div class="cards" id="grid-do"></div>
+    </section>
+    <p class="empty" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
+  </div>
+
+  <!-- ============ THINGS TO KNOW ============ -->
+  <div class="view" id="v-know" role="tabpanel" aria-labelledby="t-know" hidden>
+    <div class="col">
+      <h2>What will otherwise catch you out</h2>
+      <p class="lead">The things that are true of the whole region rather than any one place.</p>
+    </div>
+    <div class="know">
+      <div class="kitem" style="--c:var(--terracotta)">
+        <h4>Opening hours are a rumour</h4>
+        <p>Published hours, including on a place&#x2019;s own website, are aspirations. Phone the same morning
+        for anything you would be sad to miss. This is not pessimism &#x2014; it is how the region works.</p>
+      </div>
+      <div class="kitem" style="--c:var(--terracotta)">
+        <h4>Riposo closes the middle of the day</h4>
+        <p>Roughly 13:00 to 16:00, shops and many smaller sights shut. Plan the drive, the beach or a long
+        lunch into that window rather than fighting it.</p>
+      </div>
+      <div class="kitem" style="--c:var(--ochre)">
+        <h4>Monday 14 September</h4>
+        <p>Your only Monday, and most museums close. It is the right day for a market town, a beach, a cantina
+        or the Via Verde &#x2014; and the wrong one for anything with a ticket desk.</p>
+      </div>
+      <div class="kitem" style="--c:var(--ochre)">
+        <h4>Trabocchi need booking</h4>
+        <p>The restaurants on stilts have one sitting and few tables, and September weekends fill with Romans.
+        Some are group-only and will say so on the phone rather than online. There are ten of you.</p>
+      </div>
+      <div class="kitem" style="--c:var(--cat-teal, #2E9E96)">
+        <h4>The beach season ends mid-month</h4>
+        <p>Lidos and lifeguards wind down as September goes on, and some close entirely. The sea stays warm
+        well past the point the deckchairs disappear.</p>
+      </div>
+      <div class="kitem" style="--c:var(--cobalt)">
+        <h4>Vendemmia is on</h4>
+        <p>Harvest runs through your stay, which is why the cantine are worth visiting &#x2014; and why they
+        may be too busy to receive you without a call first.</p>
+      </div>
+      <div class="kitem" style="--c:var(--olive)">
+        <h4>Take cash</h4>
+        <p>Markets, small forni, macellerie and the more remote agriturismi are cash-first. Card acceptance
+        improves the closer you get to Pescara.</p>
+      </div>
+      <div class="kitem" style="--c:var(--sky)">
+        <h4>Distances are straight-line</h4>
+        <p>Every drive time here is as the crow flies. On the coast that is close enough; inland toward the
+        Majella, add half again.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="in">
+    <p>Butterfly Cave &#x2014; Villa Grotta delle Farfalle, Rocca San Giovanni (CH). 11&#x2013;20 September 2026.</p>
+    <p>{{TOTAL}} places across {{TOWNS}} towns. Built from <code>places.json</code>; drive times are
+    straight-line. Opening hours change &#x2014; phone ahead.</p>
+  </div>
+</footer>
