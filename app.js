@@ -186,7 +186,7 @@
     $('clear').hidden = !(cats.length || band !== 999 || term || group !== 'all');
     $('empty').hidden = total > 0;
     updateChipCounts(ts);
-    updateCounts();
+    updateCounts(total);
   }
   function updateChipCounts(ts) {
     [].slice.call($('cats').children).forEach(function (b) {
@@ -204,13 +204,16 @@
       b.classList.toggle('zero', c === 0);
     });
   }
-  function updateCounts() {
-    var s = Object.keys(S.short).length;
-    $('c-short').textContent = s;
-    $('short-n').textContent = s;
+  function updateCounts(shown) {
+    // the Activities badge counts what is on screen, not the shortlist -
+    // a "0" next to Activities reads as "there are none".
+    if (typeof shown === 'number') $('c-act').textContent = shown;
+    $('short-n').textContent = Object.keys(S.short).length;
     var n = 0;
     Object.keys(S.plan).forEach(function (d) { n += Object.keys(S.plan[d]).length; });
-    $('c-plan').textContent = n;
+    var badge = $('c-plan');
+    badge.textContent = n;
+    badge.hidden = n === 0;
   }
 
   function wireShelf() {
@@ -322,8 +325,6 @@
     list.className = 'plist';
     var msg = document.createElement('p');
     msg.className = 'pickmsg';
-    msg.textContent = MEAL[slot] ? 'Eating and drinking first.' :
-                      (slot === 'fullday' ? 'Bigger days first.' : 'Nearest first.');
     box.appendChild(input); box.appendChild(msg); box.appendChild(list);
     btn.parentNode.appendChild(box);
     openPicker = box;
@@ -349,13 +350,14 @@
       });
       list.textContent = '';
       if (!pool.length) {
-        var e = document.createElement('p');
-        e.className = 'pickmsg';
-        e.textContent = 'Nothing matches that.';
-        list.appendChild(e);
+        msg.textContent = 'Nothing matches that.';
         return;
       }
-      pool.slice(0, 14).forEach(function (p) {
+      // show every match, not a silent top-N; the list scrolls
+      msg.textContent = pool.length + (pool.length === 1 ? ' place' : ' places') + ' · ' +
+        (MEAL[slot] ? 'eating and drinking first'
+                    : (slot === 'fullday' ? 'bigger days first' : 'things to do first'));
+      pool.forEach(function (p) {
         var b = document.createElement('button');
         b.className = 'pick';
         b.type = 'button';

@@ -208,7 +208,8 @@ button{font:inherit; cursor:pointer}
               font-size:var(--t-body); color:var(--ink); background:var(--paper-2);
               border:1px solid var(--line); border-radius:var(--r-control)}
 .picker input:focus{border-color:var(--pool); outline:none}
-.plist{display:flex; flex-direction:column; gap:var(--s1); max-height:240px; overflow-y:auto}
+.plist{display:flex; flex-direction:column; gap:var(--s1); max-height:340px; overflow-y:auto;
+       overscroll-behavior:contain}
 .pick{text-align:left; padding:9px var(--s3); border:1px solid var(--line-soft);
       border-radius:var(--r-control); background:var(--paper-2); color:var(--ink);
       font-size:var(--t-meta); display:flex; justify-content:space-between; gap:var(--s3);
@@ -246,8 +247,8 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
 <nav class="tabs">
   <div class="tabs-in" role="tablist" aria-label="Sections">
     <button class="tab" role="tab" id="t-welcome" aria-selected="true" aria-controls="v-welcome">Welcome</button>
-    <button class="tab" role="tab" id="t-calendar" aria-selected="false" aria-controls="v-calendar">Calendar<span class="c" id="c-plan">0</span></button>
-    <button class="tab" role="tab" id="t-activities" aria-selected="false" aria-controls="v-activities">Activities<span class="c" id="c-short">0</span></button>
+    <button class="tab" role="tab" id="t-calendar" aria-selected="false" aria-controls="v-calendar">Calendar<span class="c" id="c-plan" hidden></span></button>
+    <button class="tab" role="tab" id="t-activities" aria-selected="false" aria-controls="v-activities">Activities<span class="c" id="c-act">230</span></button>
     <button class="tab" role="tab" id="t-know" aria-selected="false" aria-controls="v-know">Things to know</button>
   </div>
 </nav>
@@ -766,7 +767,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     $('clear').hidden = !(cats.length || band !== 999 || term || group !== 'all');
     $('empty').hidden = total > 0;
     updateChipCounts(ts);
-    updateCounts();
+    updateCounts(total);
   }
   function updateChipCounts(ts) {
     [].slice.call($('cats').children).forEach(function (b) {
@@ -784,13 +785,16 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       b.classList.toggle('zero', c === 0);
     });
   }
-  function updateCounts() {
-    var s = Object.keys(S.short).length;
-    $('c-short').textContent = s;
-    $('short-n').textContent = s;
+  function updateCounts(shown) {
+    // the Activities badge counts what is on screen, not the shortlist -
+    // a "0" next to Activities reads as "there are none".
+    if (typeof shown === 'number') $('c-act').textContent = shown;
+    $('short-n').textContent = Object.keys(S.short).length;
     var n = 0;
     Object.keys(S.plan).forEach(function (d) { n += Object.keys(S.plan[d]).length; });
-    $('c-plan').textContent = n;
+    var badge = $('c-plan');
+    badge.textContent = n;
+    badge.hidden = n === 0;
   }
 
   function wireShelf() {
@@ -902,8 +906,6 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     list.className = 'plist';
     var msg = document.createElement('p');
     msg.className = 'pickmsg';
-    msg.textContent = MEAL[slot] ? 'Eating and drinking first.' :
-                      (slot === 'fullday' ? 'Bigger days first.' : 'Nearest first.');
     box.appendChild(input); box.appendChild(msg); box.appendChild(list);
     btn.parentNode.appendChild(box);
     openPicker = box;
@@ -929,13 +931,14 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       });
       list.textContent = '';
       if (!pool.length) {
-        var e = document.createElement('p');
-        e.className = 'pickmsg';
-        e.textContent = 'Nothing matches that.';
-        list.appendChild(e);
+        msg.textContent = 'Nothing matches that.';
         return;
       }
-      pool.slice(0, 14).forEach(function (p) {
+      // show every match, not a silent top-N; the list scrolls
+      msg.textContent = pool.length + (pool.length === 1 ? ' place' : ' places') + ' \u00b7 ' +
+        (MEAL[slot] ? 'eating and drinking first'
+                    : (slot === 'fullday' ? 'bigger days first' : 'things to do first'));
+      pool.forEach(function (p) {
         var b = document.createElement('button');
         b.className = 'pick';
         b.type = 'button';
