@@ -84,22 +84,24 @@
         var el = document.createElement('article');
         el.className = 'tile ' + g;
         el.innerHTML =
-          '<div class="band"><span>' + esc(p.catLabel) + '</span>' +
-            (p.flag ? '<span class="flag">' + esc(p.flag) + '</span>' : '') + '</div>' +
-          '<div class="tbody">' +
-            '<div class="trow">' +
+          '<div class="thead">' +
+            '<div class="thead-l">' +
+              '<span class="tcat">' + esc(p.catLabel) + '</span>' +
               '<a class="tname" href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">' +
                 esc(p.name) + '</a>' +
-              '<button class="heart" type="button" data-id="' + esc(p.id) + '" aria-pressed="false"' +
-                ' aria-label="Shortlist ' + esc(p.name) + '">' + HEART + '</button>' +
+              (p.flag ? '<span class="tflag">' + esc(p.flag) + '</span>' : '') +
             '</div>' +
-            '<p class="tmeta">' + esc(p.town) + ' · ' + p.mins + ' min</p>' +
+            '<button class="heart" type="button" data-id="' + esc(p.id) + '" aria-pressed="false"' +
+              ' aria-label="Shortlist ' + esc(p.name) + '">' + HEART + '</button>' +
+          '</div>' +
+          '<div class="tinner">' +
+            '<p class="ttown">' + esc(p.town) + ' &#183; ' + p.mins + ' min</p>' +
             '<p class="tdesc">' + esc(p.desc) + '</p>' +
             '<div class="tfoot">' +
               '<a class="cta" href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">' +
-                'Open in maps <span aria-hidden="true">↗</span></a>' +
+                'Open in maps <span aria-hidden="true">\u2197</span></a>' +
               (p.website ? '<a class="cta" href="' + esc(p.website) + '" target="_blank" rel="noopener">' +
-                'Website <span aria-hidden="true">↗</span></a>' : '') +
+                'Website <span aria-hidden="true">\u2197</span></a>' : '') +
               '<span class="inplan"></span>' +
             '</div>' +
           '</div>';

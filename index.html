@@ -19,6 +19,9 @@
   --cream:#FAF3E5;
   --eat:#C0552F; --eat-deep:#A6461F;
   --do:#2A7FB0; --do-deep:#1D5F87;
+  /* colour-field tiles, measured against --cream: 6.81 and 6.19 */
+  --eat-field:#8E3B1A; --do-field:#1B655F;
+  --eat-field-hover:#7A3216; --do-field-hover:#14514B;
 
   --font-serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   --font-sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -157,40 +160,58 @@ button{font:inherit; cursor:pointer}
 .grouphead .n{font-variant-numeric:tabular-nums; color:var(--ink-3)}
 .group{display:flex; flex-direction:column; gap:var(--s4)}
 .group[hidden]{display:none}
-.tile{display:flex; flex-direction:column; background:var(--paper-2); border:1px solid var(--line);
-      border-radius:var(--r-card); overflow:hidden;
-      transition:transform var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease)}
+/* colour-field tile: the whole tile is the colour, copy sits on a cream block */
+.tile{display:flex; flex-direction:column; gap:var(--s4); border-radius:16px; padding:var(--s4);
+      border:1px solid rgba(250,243,229,.28); color:var(--cream);
+      transition:transform var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease)}
 .tile[hidden]{display:none}
+.tile.eat{background:var(--eat-field)}
+.tile.do{background:var(--do-field)}
 .tile:hover{transform:translateY(-3px)}
-.tile.eat:hover{border-color:var(--eat)}
-.tile.do:hover{border-color:var(--do)}
-.band{display:flex; align-items:center; justify-content:space-between; gap:var(--s3);
-      padding:9px 16px; color:var(--peach); font-size:var(--t-meta); font-weight:var(--w-bold);
-      text-transform:uppercase; letter-spacing:var(--tr-label)}
-.tile.eat .band{background:var(--eat-deep)}
-.tile.do .band{background:var(--do-deep)}
-.band .flag{font-weight:var(--w-reg); letter-spacing:.1em; opacity:.94; text-align:right}
-.tbody{display:flex; flex-direction:column; gap:var(--s2); padding:var(--pad-card); flex:1}
-.trow{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s3)}
-.tname{font-family:var(--font-serif); font-size:var(--t-h2); line-height:var(--lead-snug);
-       letter-spacing:var(--tr-heading); text-decoration:none; color:var(--ink)}
+.tile.eat:hover{background:var(--eat-field-hover)}
+.tile.do:hover{background:var(--do-field-hover)}
+.thead{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s3)}
+.thead-l{display:flex; flex-direction:column; gap:var(--s2); min-width:0}
+.tcat{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
+      letter-spacing:var(--tr-label); color:var(--cream)}
+.tname{font-family:var(--font-serif); font-size:clamp(24px,2.6vw,30px); line-height:1.14;
+       letter-spacing:var(--tr-heading); color:var(--cream); text-decoration:none; text-wrap:balance}
 .tname:hover{text-decoration:underline}
-.tmeta{font-size:var(--t-meta); color:var(--ink-2); font-variant-numeric:tabular-nums}
+.tflag{font-size:var(--t-meta); letter-spacing:.1em; text-transform:uppercase; color:var(--cream);
+       opacity:.85}
+.tinner{background:var(--paper-2); border-radius:var(--r-card); padding:var(--s4); flex:1;
+        display:flex; flex-direction:column; gap:var(--s3)}
+.ttown{font-size:var(--t-meta); text-transform:uppercase; letter-spacing:var(--tr-label);
+       color:var(--ink-2); font-variant-numeric:tabular-nums}
 .tdesc{font-size:var(--t-body); color:var(--ink); flex:1; text-wrap:pretty}
-.tfoot{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s3); padding-top:var(--s1)}
+.tfoot{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s4)}
 .cta{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
      letter-spacing:var(--tr-label); text-decoration:none; display:inline-flex; gap:var(--s2)}
-.tile.eat .cta{color:var(--eat-deep)}
-.tile.do .cta{color:var(--do-deep)}
+.tile.eat .cta{color:var(--eat-field)}
+.tile.do .cta{color:var(--do-field)}
 .cta:hover{text-decoration:underline}
 .heart{width:var(--hit); height:var(--hit); flex:0 0 auto; display:grid; place-items:center;
        background:none; border:1px solid transparent; border-radius:var(--r-control);
-       color:var(--ink-3); transition:color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease)}
-.heart:hover{color:var(--fig); border-color:var(--line)}
-.heart.on{color:var(--fig)}
-.heart svg{width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2.2}
+       color:var(--cream); opacity:.8;
+       transition:opacity var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease)}
+.heart:hover{opacity:1; border-color:rgba(250,243,229,.5)}
+.heart.on{opacity:1}
+.heart svg{width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2.2}
 .heart.on svg{fill:currentColor}
-.inplan{font-size:var(--t-meta); color:var(--olive)}
+.inplan{font-size:var(--t-meta); color:var(--ink-2)}
+
+/* the painted field behind the whole Activities tab */
+.actbg{position:fixed; inset:0; z-index:0; pointer-events:none}
+.actwrap{position:relative; z-index:1; display:flex; flex-direction:column; gap:var(--s6)}
+.hero, footer{position:relative; z-index:2}
+.on-field{color:var(--cream)}
+.on-field .lead{color:var(--cream); opacity:.92}
+.grouppill{display:inline-flex; align-items:center; gap:var(--s2); align-self:flex-start;
+           background:var(--eat-deep); color:var(--cream); border-radius:var(--r-pill);
+           padding:9px 16px; font-size:var(--t-meta); font-weight:var(--w-bold);
+           text-transform:uppercase; letter-spacing:var(--tr-label)}
+.grouppill .n{font-variant-numeric:tabular-nums; opacity:.8}
+.shelf.onfield{background:var(--paper-2)}
 .empty{padding:var(--s6) 0; color:var(--ink-2)}
 .empty[hidden]{display:none}
 
@@ -350,17 +371,16 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
 
   <!-- ============ ACTIVITIES ============ -->
   <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
-    <div class="phead">
-      <painted-bg ground="aperol" layout="confetti" count="22" seed="5507" scale="1.8,3.4"></painted-bg>
-      <div class="phead-in"><span class="phead-title">Everything within reach</span>
-        <span class="phead-count">230 places</span></div>
-    </div>
-    <div class="col">
+    <painted-bg class="actbg" ground="cobalt" palette="aperol" layout="scatter" count="11"
+                seed="7711" aria-hidden="true"></painted-bg>
+    <div class="actwrap">
+    <div class="col on-field">
+      <h2 style="color:var(--cream)">Everything within reach</h2>
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
       drive; the heart shortlists, and the name opens Maps.</p>
     </div>
 
-    <div class="sunk shelf">
+    <div class="panel shelf onfield">
       <div class="row">
         <input class="search" id="q" type="search" aria-label="Search places"
                placeholder="Search a place, a town, a dish &#x2014; trabocco, Lanciano, brodetto">
@@ -382,22 +402,15 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
     </div>
 
     <section class="group" id="sec-eat">
-      <div class="phead">
-        <painted-bg ground="blood" layout="giant" count="3" seed="8821" scale="5.5,8"></painted-bg>
-        <div class="phead-in"><span class="phead-title">Eat &amp; drink</span>
-          <span class="phead-count"><span id="n-eat">86</span> places</span></div>
-      </div>
+      <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">86</span></p>
       <div class="cards" id="grid-eat"></div>
     </section>
     <section class="group" id="sec-do">
-      <div class="phead">
-        <painted-bg ground="cobalt" layout="confetti" count="26" seed="1229" scale="1.6,3.2"></painted-bg>
-        <div class="phead-in"><span class="phead-title">Out and about</span>
-          <span class="phead-count"><span id="n-do">144</span> places</span></div>
-      </div>
+      <p class="grouppill">Out and about <span class="n" id="n-do">144</span></p>
       <div class="cards" id="grid-do"></div>
     </section>
-    <p class="empty" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
+    <p class="empty on-field" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
+    </div>
   </div>
 
   <!-- ============ THINGS TO KNOW ============ -->
@@ -704,16 +717,18 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
         var el = document.createElement('article');
         el.className = 'tile ' + g;
         el.innerHTML =
-          '<div class="band"><span>' + esc(p.catLabel) + '</span>' +
-            (p.flag ? '<span class="flag">' + esc(p.flag) + '</span>' : '') + '</div>' +
-          '<div class="tbody">' +
-            '<div class="trow">' +
+          '<div class="thead">' +
+            '<div class="thead-l">' +
+              '<span class="tcat">' + esc(p.catLabel) + '</span>' +
               '<a class="tname" href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">' +
                 esc(p.name) + '</a>' +
-              '<button class="heart" type="button" data-id="' + esc(p.id) + '" aria-pressed="false"' +
-                ' aria-label="Shortlist ' + esc(p.name) + '">' + HEART + '</button>' +
+              (p.flag ? '<span class="tflag">' + esc(p.flag) + '</span>' : '') +
             '</div>' +
-            '<p class="tmeta">' + esc(p.town) + ' \u00b7 ' + p.mins + ' min</p>' +
+            '<button class="heart" type="button" data-id="' + esc(p.id) + '" aria-pressed="false"' +
+              ' aria-label="Shortlist ' + esc(p.name) + '">' + HEART + '</button>' +
+          '</div>' +
+          '<div class="tinner">' +
+            '<p class="ttown">' + esc(p.town) + ' &#183; ' + p.mins + ' min</p>' +
             '<p class="tdesc">' + esc(p.desc) + '</p>' +
             '<div class="tfoot">' +
               '<a class="cta" href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">' +

@@ -98,17 +98,16 @@
 
   <!-- ============ ACTIVITIES ============ -->
   <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
-    <div class="phead">
-      <painted-bg ground="aperol" layout="confetti" count="22" seed="5507" scale="1.8,3.4"></painted-bg>
-      <div class="phead-in"><span class="phead-title">Everything within reach</span>
-        <span class="phead-count">{{TOTAL}} places</span></div>
-    </div>
-    <div class="col">
+    <painted-bg class="actbg" ground="cobalt" palette="aperol" layout="scatter" count="11"
+                seed="7711" aria-hidden="true"></painted-bg>
+    <div class="actwrap">
+    <div class="col on-field">
+      <h2 style="color:var(--cream)">Everything within reach</h2>
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
       drive; the heart shortlists, and the name opens Maps.</p>
     </div>
 
-    <div class="sunk shelf">
+    <div class="panel shelf onfield">
       <div class="row">
         <input class="search" id="q" type="search" aria-label="Search places"
                placeholder="Search a place, a town, a dish &#x2014; trabocco, Lanciano, brodetto">
@@ -130,22 +129,15 @@
     </div>
 
     <section class="group" id="sec-eat">
-      <div class="phead">
-        <painted-bg ground="blood" layout="giant" count="3" seed="8821" scale="5.5,8"></painted-bg>
-        <div class="phead-in"><span class="phead-title">Eat &amp; drink</span>
-          <span class="phead-count"><span id="n-eat">{{N_EAT}}</span> places</span></div>
-      </div>
+      <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">{{N_EAT}}</span></p>
       <div class="cards" id="grid-eat"></div>
     </section>
     <section class="group" id="sec-do">
-      <div class="phead">
-        <painted-bg ground="cobalt" layout="confetti" count="26" seed="1229" scale="1.6,3.2"></painted-bg>
-        <div class="phead-in"><span class="phead-title">Out and about</span>
-          <span class="phead-count"><span id="n-do">{{N_DO}}</span> places</span></div>
-      </div>
+      <p class="grouppill">Out and about <span class="n" id="n-do">{{N_DO}}</span></p>
       <div class="cards" id="grid-do"></div>
     </section>
-    <p class="empty" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
+    <p class="empty on-field" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
+    </div>
   </div>
 
   <!-- ============ THINGS TO KNOW ============ -->
