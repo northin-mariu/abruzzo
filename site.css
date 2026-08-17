@@ -123,6 +123,24 @@ button{font:inherit; cursor:pointer}
        padding:0; text-decoration:underline}
 .clear[hidden]{display:none}
 
+/* ---------------- painted section banners ----------------
+   Marks behind, display-size type in cream on top. Measured: cobalt 6.01,
+   fig 6.51, blood 4.39, pool 3.99 against --cream. All clear the 3:1 bar for
+   type at 24px and up, so headings sit on the marks and body copy never does. */
+.phead{position:relative; overflow:hidden; border-radius:var(--r-card);
+       min-height:158px; display:flex; align-items:flex-end}
+.phead painted-bg{position:absolute; inset:0; z-index:0}
+.phead-in{position:relative; z-index:1; width:100%; padding:var(--s5) var(--s5) var(--s4);
+          display:flex; align-items:baseline; gap:var(--s3); flex-wrap:wrap}
+.phead-title{font-family:var(--font-serif); font-size:clamp(26px,4.2vw,38px);
+             line-height:var(--lead-snug); letter-spacing:var(--tr-heading); color:var(--cream)}
+.phead-count{background:var(--paper-2); color:var(--ink); border-radius:var(--r-pill);
+             padding:5px 11px; font-size:var(--t-meta); font-weight:var(--w-bold);
+             letter-spacing:var(--tr-label); text-transform:uppercase;
+             font-variant-numeric:tabular-nums}
+.divider{position:relative; overflow:hidden; border-radius:var(--r-card); height:76px}
+.divider painted-bg{position:absolute; inset:0}
+
 /* ---------------- 1a tile ---------------- */
 .grouphead{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
            letter-spacing:var(--tr-label); display:flex; align-items:center; gap:var(--s3)}

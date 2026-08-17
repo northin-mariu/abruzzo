@@ -131,6 +131,24 @@ button{font:inherit; cursor:pointer}
        padding:0; text-decoration:underline}
 .clear[hidden]{display:none}
 
+/* ---------------- painted section banners ----------------
+   Marks behind, display-size type in cream on top. Measured: cobalt 6.01,
+   fig 6.51, blood 4.39, pool 3.99 against --cream. All clear the 3:1 bar for
+   type at 24px and up, so headings sit on the marks and body copy never does. */
+.phead{position:relative; overflow:hidden; border-radius:var(--r-card);
+       min-height:158px; display:flex; align-items:flex-end}
+.phead painted-bg{position:absolute; inset:0; z-index:0}
+.phead-in{position:relative; z-index:1; width:100%; padding:var(--s5) var(--s5) var(--s4);
+          display:flex; align-items:baseline; gap:var(--s3); flex-wrap:wrap}
+.phead-title{font-family:var(--font-serif); font-size:clamp(26px,4.2vw,38px);
+             line-height:var(--lead-snug); letter-spacing:var(--tr-heading); color:var(--cream)}
+.phead-count{background:var(--paper-2); color:var(--ink); border-radius:var(--r-pill);
+             padding:5px 11px; font-size:var(--t-meta); font-weight:var(--w-bold);
+             letter-spacing:var(--tr-label); text-transform:uppercase;
+             font-variant-numeric:tabular-nums}
+.divider{position:relative; overflow:hidden; border-radius:var(--r-card); height:76px}
+.divider painted-bg{position:absolute; inset:0}
+
 /* ---------------- 1a tile ---------------- */
 .grouphead{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
            letter-spacing:var(--tr-label); display:flex; align-items:center; gap:var(--s3)}
@@ -314,8 +332,11 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
 
   <!-- ============ CALENDAR ============ -->
   <div class="view" id="v-calendar" role="tabpanel" aria-labelledby="t-calendar" hidden>
+    <div class="phead">
+      <painted-bg ground="pool" layout="diagonal" count="8" seed="3301"></painted-bg>
+      <div class="phead-in"><span class="phead-title">Ten days, four slots each</span></div>
+    </div>
     <div class="col">
-      <h2>Ten days, four slots each</h2>
       <p class="lead">Fix what you want to fix and leave the rest open. A <b>Full day</b> takes the whole day
       &#x2014; choose one and the other three close until you empty it.</p>
     </div>
@@ -329,8 +350,12 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
 
   <!-- ============ ACTIVITIES ============ -->
   <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
+    <div class="phead">
+      <painted-bg ground="aperol" layout="confetti" count="22" seed="5507" scale="1.8,3.4"></painted-bg>
+      <div class="phead-in"><span class="phead-title">Everything within reach</span>
+        <span class="phead-count">230 places</span></div>
+    </div>
     <div class="col">
-      <h2>Everything within reach</h2>
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
       drive; the heart shortlists, and the name opens Maps.</p>
     </div>
@@ -357,11 +382,19 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
     </div>
 
     <section class="group" id="sec-eat">
-      <p class="grouphead eat">Eat &amp; drink <span class="n" id="n-eat">86</span></p>
+      <div class="phead">
+        <painted-bg ground="blood" layout="giant" count="3" seed="8821" scale="5.5,8"></painted-bg>
+        <div class="phead-in"><span class="phead-title">Eat &amp; drink</span>
+          <span class="phead-count"><span id="n-eat">86</span> places</span></div>
+      </div>
       <div class="cards" id="grid-eat"></div>
     </section>
     <section class="group" id="sec-do">
-      <p class="grouphead do">Out and about <span class="n" id="n-do">144</span></p>
+      <div class="phead">
+        <painted-bg ground="cobalt" layout="confetti" count="26" seed="1229" scale="1.6,3.2"></painted-bg>
+        <div class="phead-in"><span class="phead-title">Out and about</span>
+          <span class="phead-count"><span id="n-do">144</span> places</span></div>
+      </div>
       <div class="cards" id="grid-do"></div>
     </section>
     <p class="empty" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
@@ -369,8 +402,11 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
 
   <!-- ============ THINGS TO KNOW ============ -->
   <div class="view" id="v-know" role="tabpanel" aria-labelledby="t-know" hidden>
+    <div class="phead">
+      <painted-bg ground="fig" layout="giant" count="3" seed="6673" scale="5.5,8"></painted-bg>
+      <div class="phead-in"><span class="phead-title">What will otherwise catch you out</span></div>
+    </div>
     <div class="col">
-      <h2>What will otherwise catch you out</h2>
       <p class="lead">The things that are true of the whole region rather than any one place.</p>
     </div>
     <div class="know">
@@ -415,6 +451,9 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
         Majella, add half again.</p>
       </div>
     </div>
+  </div>
+  <div class="divider" aria-hidden="true">
+    <painted-bg ground="cream" layout="confetti" count="22" seed="9931" scale="0.9,1.7"></painted-bg>
   </div>
 </main>
 
