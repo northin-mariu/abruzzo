@@ -83,6 +83,7 @@
       PLACES.filter(function (p) { return p.group === g; }).forEach(function (p) {
         var el = document.createElement('article');
         el.className = 'tile ' + g;
+        el.style.setProperty('--tile', p.fill);
         el.innerHTML =
           '<div class="thead">' +
             '<div class="thead-l">' +

@@ -13,11 +13,40 @@ places = json.loads((HERE / 'places.json').read_text(encoding='utf-8'))
 
 # Two groups; the 17 original categories stay as the band label.
 EAT = {'trabocchi', 'pizza', 'gelato', 'food', 'wine', 'larder', 'bars'}
+# Each category keeps its own hue, darkened until cream type clears 4.5:1 on it.
+# Source hues live in places.json's `colour`; change one there and the fill follows.
+def _hx(h):
+    h = h.lstrip('#'); return tuple(int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
+def _lum(rgb):
+    c = [(v / 12.92 if v <= .03928 else ((v + .055) / 1.055) ** 2.4) for v in rgb]
+    return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]
+def _cr(a, b):
+    la, lb = _lum(a), _lum(b); return (max(la, lb) + .05) / (min(la, lb) + .05)
+def deepen(hexcol, target=4.7):
+    """Darken a hue until cream type reads on it. Unchanged if it already does."""
+    import colorsys
+    cream = _hx('#FAF3E5')
+    r, g, b = _hx(hexcol)
+    if _cr((r, g, b), cream) >= target:
+        return hexcol.upper()
+    h, l, sat = colorsys.rgb_to_hls(r, g, b)
+    while l > 0.02:
+        l -= 0.005
+        rgb = colorsys.hls_to_rgb(h, l, min(1.0, sat * 1.06))
+        if _cr(rgb, cream) >= target:
+            return '#%02X%02X%02X' % tuple(round(v * 255) for v in rgb)
+    return '#241E1A'
+
 KEEP = ('id', 'name', 'town', 'cat', 'catLabel', 'mins', 'desc', 'flag', 'website', 'mapUrl')
 data = []
+FILL = {}
+for p in places:
+    if p['cat'] not in FILL and p.get('colour'):
+        FILL[p['cat']] = deepen(p['colour'])
 for p in places:
     r = {k: p.get(k) for k in KEEP}
     r['group'] = 'eat' if p['cat'] in EAT else 'do'
+    r['fill'] = FILL.get(p['cat'], '#8E3B1A')
     data.append(r)
 data.sort(key=lambda r: (r['group'] != 'eat', r['mins']))
 
@@ -39,7 +68,7 @@ BODY = (HERE / 'body.html').read_text(encoding='utf-8')
 chips = ''.join(
     '<button class="chip" type="button" aria-pressed="false" data-cat="{c}" style="--c:{col}">'
     '<span class="dot"></span>{l} <em>{n}</em></button>'.format(
-        c=c, col=('var(--eat-deep)' if m['group'] == 'eat' else 'var(--do-deep)'),
+        c=c, col=FILL.get(c, '#8E3B1A'),
         l=html.escape(m['label']), n=m['n'])
     for c, m in sorted(cats.items(), key=lambda kv: (kv[1]['group'] != 'eat', kv[0])))
 
@@ -88,5 +117,6 @@ print('built %s  %d KB' % (out.name, len(doc.encode()) // 1024))
 print('  %d places  (%d eat / %d out and about)  %d towns  %d categories'
       % (len(data), n_eat, n_do, towns, len(cats)))
 print('  within 15 min: %d   within 30 min: %d' % (n15, n30))
+print('  fills: ' + ' '.join('%s=%s' % (k, v) for k, v in sorted(FILL.items())))
 leftover = sorted({ch for ch in doc if ord(ch) > 127})
 print('  non-ascii in output:', leftover or 'none')

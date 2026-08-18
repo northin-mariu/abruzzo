@@ -157,11 +157,8 @@ button{font:inherit; cursor:pointer}
       border:1px solid rgba(250,243,229,.28); color:var(--cream);
       transition:transform var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease)}
 .tile[hidden]{display:none}
-.tile.eat{background:var(--eat-field)}
-.tile.do{background:var(--do-field)}
-.tile:hover{transform:translateY(-3px)}
-.tile.eat:hover{background:var(--eat-field-hover)}
-.tile.do:hover{background:var(--do-field-hover)}
+.tile{background:var(--tile,var(--do-field))}
+.tile:hover{transform:translateY(-3px); filter:brightness(.88)}
 .thead{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s3)}
 .thead-l{display:flex; flex-direction:column; gap:var(--s2); min-width:0}
 .tcat{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
@@ -179,8 +176,7 @@ button{font:inherit; cursor:pointer}
 .tfoot{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s4)}
 .cta{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
      letter-spacing:var(--tr-label); text-decoration:none; display:inline-flex; gap:var(--s2)}
-.tile.eat .cta{color:var(--eat-field)}
-.tile.do .cta{color:var(--do-field)}
+.cta{color:var(--tile,var(--do-field))}
 .cta:hover{text-decoration:underline}
 .heart{width:var(--hit); height:var(--hit); flex:0 0 auto; display:grid; place-items:center;
        background:none; border:1px solid transparent; border-radius:var(--r-control);
@@ -193,11 +189,19 @@ button{font:inherit; cursor:pointer}
 .inplan{font-size:var(--t-meta); color:var(--ink-2)}
 
 /* the painted field behind the whole Activities tab */
-.actbg{position:fixed; inset:0; z-index:0; pointer-events:none}
+.pagebg{position:fixed; inset:0; z-index:0; pointer-events:none}
 .actwrap{position:relative; z-index:1; display:flex; flex-direction:column; gap:var(--s6)}
 .hero, footer{position:relative; z-index:2}
-.on-field{color:var(--cream)}
-.on-field .lead{color:var(--cream); opacity:.92}
+main{position:relative; z-index:1}
+/* The painted field runs the whole page, so nothing readable sits straight on the
+   marks - the how-to's rule. Section intros and the stat row get a paper block. */
+.view .col, .view > .facts{background:var(--paper-2); border:1px solid var(--line);
+  border-radius:var(--r-card); padding:var(--pad-panel); max-width:none}
+.view .col{max-width:min(var(--read),100%)}
+.view > .facts{gap:var(--s3) var(--s6)}
+.empty{background:var(--paper-2); border:1px solid var(--line); border-radius:var(--r-card);
+  padding:var(--pad-panel); text-align:center}
+.count{color:var(--ink-2)}
 .grouppill{display:inline-flex; align-items:center; gap:var(--s2); align-self:flex-start;
            background:var(--eat-deep); color:var(--cream); border-radius:var(--r-pill);
            padding:9px 16px; font-size:var(--t-meta); font-weight:var(--w-bold);

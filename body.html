@@ -1,5 +1,8 @@
 <a class="skip" href="#main">Skip to content</a>
 
+<painted-bg class="pagebg" ground="cobalt" palette="aperol" layout="scatter" count="14"
+            seed="7711" aria-hidden="true"></painted-bg>
+
 <header class="hero">
   <painted-bg ground="aperol" layout="edges" count="11" seed="5507"></painted-bg>
   <div class="hero-in">
@@ -98,11 +101,9 @@
 
   <!-- ============ ACTIVITIES ============ -->
   <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
-    <painted-bg class="actbg" ground="cobalt" palette="aperol" layout="scatter" count="11"
-                seed="7711" aria-hidden="true"></painted-bg>
     <div class="actwrap">
-    <div class="col on-field">
-      <h2 style="color:var(--cream)">Everything within reach</h2>
+    <div class="col">
+      <h2>Everything within reach</h2>
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
       drive; the heart shortlists, and the name opens Maps.</p>
     </div>
@@ -136,7 +137,7 @@
       <p class="grouppill">Out and about <span class="n" id="n-do">{{N_DO}}</span></p>
       <div class="cards" id="grid-do"></div>
     </section>
-    <p class="empty on-field" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
+    <p class="empty" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
     </div>
   </div>
 
