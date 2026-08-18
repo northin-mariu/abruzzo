@@ -12,7 +12,7 @@ HERE = pathlib.Path(__file__).parent
 places = json.loads((HERE / 'places.json').read_text(encoding='utf-8'))
 
 # Two groups; the 17 original categories stay as the band label.
-EAT = {'trabocchi', 'pizza', 'food', 'wine', 'larder', 'bars'}
+EAT = {'trabocchi', 'pizza', 'gelato', 'food', 'wine', 'larder', 'bars'}
 KEEP = ('id', 'name', 'town', 'cat', 'catLabel', 'mins', 'desc', 'flag', 'website', 'mapUrl')
 data = []
 for p in places:
