@@ -11,7 +11,8 @@
   "address": "Contrada Vallevo 64, Rocca San Giovanni CH, Italy",
   "website": "https://www.sassodellacajana.it/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Vallevo+64%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Sasso+della+Cajana%2C+Contrada+Vallevo+64%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trabocco Sasso della Cajana, Contrada Vallevo 64, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "trabocco-punta-isolata",
@@ -25,7 +26,8 @@
   "address": "Contrada Vallevo, Rocca San Giovanni CH, Italy",
   "website": "https://www.traboccopuntaisolata.com/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Vallevo%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Isolata%2C+Contrada+Vallevo%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Isolata, Contrada Vallevo, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "trabocco-punta-tufano",
@@ -39,7 +41,8 @@
   "address": "Contrada Vallevo 78, Rocca San Giovanni CH, Italy",
   "website": "https://www.traboccopuntatufano.eu/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Vallevo+78%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Tufano%2C+Contrada+Vallevo+78%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Tufano, Contrada Vallevo 78, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "trabocco-punta-torre",
@@ -53,7 +56,8 @@
   "address": "Trabocco Punta Torre, Rocca San Giovanni CH, Italy",
   "website": null,
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Torre%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Torre%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Torre, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "trabocco-punta-cavalluccio",
@@ -67,7 +71,8 @@
   "address": "Contrada Piane Favaro 267, Rocca San Giovanni CH, Italy",
   "website": "https://www.traboccopuntacavalluccio.it/en/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Piane+Favaro+267%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Cavalluccio%2C+Contrada+Piane+Favaro+267%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Cavalluccio, Contrada Piane Favaro 267, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "trabocco-punta-punciosa",
@@ -81,7 +86,8 @@
   "address": "Contrada Cavalluccio, Rocca San Giovanni CH, Italy",
   "website": "https://www.traboccopuntapunciosa.it/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Cavalluccio%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Punciosa%2C+Contrada+Cavalluccio%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Punciosa, Contrada Cavalluccio, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "trabocco-punta-rocciosa",
@@ -93,9 +99,10 @@
   "desc": "The most gourmet of the near ones — long walkway out to the deck, fixed menu, no substitutions. 9.4/10 on TheFork across 203 reviews, about €60 a head, and the only one you can book online. It books out, so do it early.",
   "flag": null,
   "address": "Via Finocchieto 1, Fossacesia CH, Italy",
-  "website": "https://www.thefork.it/ristorante/trabocco-punta-rocciosa-r842949",
+  "website": "https://traboccopuntarocciosa.it/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Finocchieto+1%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Rocciosa%2C+Via+Finocchieto+1%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Rocciosa, Via Finocchieto 1, Fossacesia CH, Italy"
  },
  {
   "id": "trabocco-pesce-palombo",
@@ -109,7 +116,8 @@
   "address": "SS16, Fossacesia Marina, Fossacesia CH, Italy",
   "website": "https://www.facebook.com/pescepalombo.trabocco/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=SS16%2C+Fossacesia+Marina%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Pesce+Palombo%2C+SS16%2C+Fossacesia+Marina%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Trabocco Pesce Palombo, SS16, Fossacesia Marina, Fossacesia CH, Italy"
  },
  {
   "id": "trabocco-valle-grotte",
@@ -123,7 +131,8 @@
   "address": "SS16 km 482, San Vito Chietino CH, Italy",
   "website": "https://www.traboccovallegrotte.com/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=SS16+km+482%2C+San+Vito+Chietino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Valle+Grotte%2C+SS16+km+482%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "Trabocco Valle Grotte, SS16 km 482, San Vito Chietino CH, Italy"
  },
  {
   "id": "trabocco-turchino",
@@ -137,7 +146,8 @@
   "address": "Trabocco Turchino, San Vito Chietino CH, Italy",
   "website": "https://www.ilbosso.com/trabocco-turchino/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Turchino%2C+San+Vito+Chietino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Turchino%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "Trabocco Turchino, San Vito Chietino CH, Italy"
  },
  {
   "id": "trabocco-punta-le-morge",
@@ -151,7 +161,8 @@
   "address": "Torino di Sangro CH, Italy",
   "website": "https://traboccopuntalemorge.it/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Torino+di+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Punta+Le+Morge%2C+Torino+di+Sangro+CH%2C+Italy",
+  "mapQuery": "Trabocco Punta Le Morge, Torino di Sangro CH, Italy"
  },
  {
   "id": "trabocco-cungarelle",
@@ -165,7 +176,8 @@
   "address": "SS16 km 516, Vasto CH, Italy",
   "website": "https://www.traboccocungarelle.it/menu/",
   "colour": "#F2A65A",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=SS16+km+516%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco+Cungarelle%2C+SS16+km+516%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Trabocco Cungarelle, SS16 km 516, Vasto CH, Italy"
  },
  {
   "id": "pizzeria-il-coccodrillo-forno-zulli",
@@ -179,7 +191,8 @@
   "address": "Via Mazzini 12, Rocca San Giovanni CH, Italy",
   "website": "https://pizzeriailcoccodrillo.it",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Mazzini+12%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+il+Coccodrillo+%2F+Forno+Zulli%2C+Via+Mazzini+12%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Pizzeria il Coccodrillo / Forno Zulli, Via Mazzini 12, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "pizzeria-piana-del-sole",
@@ -193,7 +206,8 @@
   "address": "Contrada Villa Stanazzo 217, Lanciano CH, Italy",
   "website": "https://pianadelsole.mobly.page",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Villa+Stanazzo+217%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+Piana+del+Sole%2C+Contrada+Villa+Stanazzo+217%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Pizzeria Piana del Sole, Contrada Villa Stanazzo 217, Lanciano CH, Italy"
  },
  {
   "id": "pizzeria-il-caminetto",
@@ -207,7 +221,8 @@
   "address": "Via della Marina 75, Fossacesia CH, Italy",
   "website": null,
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+della+Marina+75%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+Il+Caminetto%2C+Via+della+Marina+75%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Pizzeria Il Caminetto, Via della Marina 75, Fossacesia CH, Italy"
  },
  {
   "id": "coc-pizzeria",
@@ -221,7 +236,8 @@
   "address": "Via Lungomare 145, Fossacesia CH, Italy",
   "website": "https://www.instagram.com/cocofossacesia",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Lungomare+145%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=COC%C3%92+Pizzeria%2C+Via+Lungomare+145%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "COCÒ Pizzeria, Via Lungomare 145, Fossacesia CH, Italy"
  },
  {
   "id": "pizzeria-napule",
@@ -235,7 +251,8 @@
   "address": "Contrada Villa Andreoli 341, Lanciano CH, Italy",
   "website": "https://www.pizzerianapulee.it",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Villa+Andreoli+341%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+Napule+%C3%A8%2C+Contrada+Villa+Andreoli+341%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Pizzeria Napule è, Contrada Villa Andreoli 341, Lanciano CH, Italy"
  },
  {
   "id": "pizzeria-trattoria-ruhental",
@@ -249,7 +266,8 @@
   "address": "Via Follani 138, Lanciano CH, Italy",
   "website": null,
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Follani+138%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+Trattoria+Ruhental%2C+Via+Follani+138%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Pizzeria Trattoria Ruhental, Via Follani 138, Lanciano CH, Italy"
  },
  {
   "id": "forno-susi",
@@ -263,7 +281,8 @@
   "address": "Via Luigi de Crecchio 82, Lanciano CH, Italy",
   "website": null,
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Luigi+de+Crecchio+82%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Forno+Susi%2C+Via+Luigi+de+Crecchio+82%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Forno Susi, Via Luigi de Crecchio 82, Lanciano CH, Italy"
  },
  {
   "id": "pizzeria-il-sogno",
@@ -277,7 +296,8 @@
   "address": "Via F. Masciangelo 26, Lanciano CH, Italy",
   "website": "https://pizzeriailsogno.com",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+F.+Masciangelo+26%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+Il+Sogno%2C+Via+F.+Masciangelo+26%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Pizzeria Il Sogno, Via F. Masciangelo 26, Lanciano CH, Italy"
  },
  {
   "id": "kitchenetta",
@@ -291,7 +311,8 @@
   "address": "Ortona CH, Italy",
   "website": null,
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kitchenetta%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Kitchenetta, Ortona CH, Italy"
  },
  {
   "id": "osteria-la-frasca",
@@ -305,7 +326,8 @@
   "address": "Contrada San Giacomo 165, Scerni CH, Italy",
   "website": "https://www.lafrascascerni.it",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+San+Giacomo+165%2C+Scerni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Osteria+La+Frasca%2C+Contrada+San+Giacomo+165%2C+Scerni+CH%2C+Italy",
+  "mapQuery": "Osteria La Frasca, Contrada San Giacomo 165, Scerni CH, Italy"
  },
  {
   "id": "giangi-pizza-e-ricerca",
@@ -319,7 +341,8 @@
   "address": "Via Valle Arielli 27, Arielli CH, Italy",
   "website": "https://giangipizza.it",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Valle+Arielli+27%2C+Arielli+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Giangi+Pizza+e+Ricerca%2C+Via+Valle+Arielli+27%2C+Arielli+CH%2C+Italy",
+  "mapQuery": "Giangi Pizza e Ricerca, Via Valle Arielli 27, Arielli CH, Italy"
  },
  {
   "id": "black-wood-pub-pizzeria",
@@ -333,7 +356,8 @@
   "address": "Via San Rocco 30, San Salvo CH, Italy",
   "website": null,
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+San+Rocco+30%2C+San+Salvo+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Black+Wood+Pub+%26+Pizzeria%2C+Via+San+Rocco+30%2C+San+Salvo+CH%2C+Italy",
+  "mapQuery": "Black Wood Pub & Pizzeria, Via San Rocco 30, San Salvo CH, Italy"
  },
  {
   "id": "pizzeria-la-sorgente",
@@ -347,7 +371,8 @@
   "address": "Via Antonio Gramsci 9, Guardiagrele CH, Italy",
   "website": null,
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Antonio+Gramsci+9%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pizzeria+La+Sorgente%2C+Via+Antonio+Gramsci+9%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Pizzeria La Sorgente, Via Antonio Gramsci 9, Guardiagrele CH, Italy"
  },
  {
   "id": "fermenta-pizzeria-gourmet",
@@ -361,7 +386,8 @@
   "address": "Viale Unita d'Italia 3, Chieti CH, Italy",
   "website": "https://www.fermentapizzeria.it",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Viale+Unita+d%27Italia+3%2C+Chieti+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fermenta+Pizzeria+Gourmet%2C+Viale+Unita+d%27Italia+3%2C+Chieti+CH%2C+Italy",
+  "mapQuery": "Fermenta Pizzeria Gourmet, Viale Unita d'Italia 3, Chieti CH, Italy"
  },
  {
   "id": "rabottini-pizza",
@@ -375,7 +401,8 @@
   "address": "Via Raffaello Sanzio 66, Pescara PE, Italy",
   "website": "https://pizzeria-rabottini.it",
   "colour": "#F04E4E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Raffaello+Sanzio+66%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rabottini+Pizza%2C+Via+Raffaello+Sanzio+66%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Rabottini Pizza, Via Raffaello Sanzio 66, Pescara PE, Italy"
  },
  {
   "id": "trattoria-delle-frapa",
@@ -389,7 +416,8 @@
   "address": "Contrada Torre Sansone 120, Lanciano CH, Italy",
   "website": null,
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Torre+Sansone+120%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+delle+Frapa%2C+Contrada+Torre+Sansone+120%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Trattoria delle Frapa, Contrada Torre Sansone 120, Lanciano CH, Italy"
  },
  {
   "id": "agriturismo-caniloro",
@@ -403,7 +431,8 @@
   "address": "Contrada Sant'Onofrio, Lanciano CH, Italy",
   "website": "https://www.facebook.com/agriturismo.caniloro/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Sant%27Onofrio%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Caniloro%2C+Contrada+Sant%27Onofrio%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Agriturismo Caniloro, Contrada Sant'Onofrio, Lanciano CH, Italy"
  },
  {
   "id": "agriturismo-il-grappolo",
@@ -417,7 +446,8 @@
   "address": "Contrada Torre Sansone 141, Lanciano CH, Italy",
   "website": "https://agriturismoilgrappolo.it/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Torre+Sansone+141%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Il+Grappolo%2C+Contrada+Torre+Sansone+141%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Agriturismo Il Grappolo, Contrada Torre Sansone 141, Lanciano CH, Italy"
  },
  {
   "id": "trattoria-san-domenico",
@@ -429,9 +459,10 @@
   "desc": "Twenty seats on a terrace under the Aragonese castle. The brodetto all'ortonese is the dish. Set menus €25 to €48. Tiny, so book.",
   "flag": null,
   "address": "Vicolo San Domenico 1, Ortona CH, Italy",
-  "website": "https://www.viviortona.it/dettaglio-attivita/67/trattoria-san-domenico/",
+  "website": null,
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vicolo+San+Domenico+1%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+San+Domenico%2C+Vicolo+San+Domenico+1%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Trattoria San Domenico, Vicolo San Domenico 1, Ortona CH, Italy"
  },
  {
   "id": "bio-agriturismo-le-mignole",
@@ -443,9 +474,10 @@
   "desc": "Certified organic farm restaurant, one of the best-rated places in the village. Mixed antipasti, homemade pasta, roast lamb. The Wednesday closure couldn't be verified — ring first.",
   "flag": null,
   "address": "Orsogna CH, Italy",
-  "website": "http://www.lemignole.com",
+  "website": "https://www.lemignole.com/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Orsogna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bio+Agriturismo+Le+Mignole%2C+Orsogna+CH%2C+Italy",
+  "mapQuery": "Bio Agriturismo Le Mignole, Orsogna CH, Italy"
  },
  {
   "id": "agriturismo-le-magnolie",
@@ -459,7 +491,8 @@
   "address": "Via dei Palombari 54, Vasto CH, Italy",
   "website": "https://www.agriturismolemagnolie.it/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+dei+Palombari+54%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Le+Magnolie%2C+Via+dei+Palombari+54%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Agriturismo Le Magnolie, Via dei Palombari 54, Vasto CH, Italy"
  },
  {
   "id": "il-podere-del-carlone",
@@ -473,7 +506,8 @@
   "address": "Via San Lorenzo 340, Vasto CH, Italy",
   "website": "https://www.ilpoderedelcarlone.it/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+San+Lorenzo+340%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Il+Podere+del+Carlone%2C+Via+San+Lorenzo+340%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Il Podere del Carlone, Via San Lorenzo 340, Vasto CH, Italy"
  },
  {
   "id": "trattoria-da-ferri",
@@ -487,7 +521,8 @@
   "address": "Via Osca 58, Vasto CH, Italy",
   "website": "https://www.facebook.com/p/Trattoria-da-Ferri-100063545408062/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Osca+58%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+da+Ferri%2C+Via+Osca+58%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Trattoria da Ferri, Via Osca 58, Vasto CH, Italy"
  },
  {
   "id": "agriturismo-travaglini",
@@ -501,7 +536,8 @@
   "address": "Contrada Piano delle Vigne, Casoli CH, Italy",
   "website": "https://www.agriturismotravaglini.it/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Piano+delle+Vigne%2C+Casoli+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Travaglini%2C+Contrada+Piano+delle+Vigne%2C+Casoli+CH%2C+Italy",
+  "mapQuery": "Agriturismo Travaglini, Contrada Piano delle Vigne, Casoli CH, Italy"
  },
  {
   "id": "agriturismo-colle-tripio",
@@ -515,7 +551,8 @@
   "address": "Villa San Vincenzo, Guardiagrele CH, Italy",
   "website": "https://www.facebook.com/AgriturismoColleTripio/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villa+San+Vincenzo%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Colle+Tripio%2C+Villa+San+Vincenzo%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Agriturismo Colle Tripio, Villa San Vincenzo, Guardiagrele CH, Italy"
  },
  {
   "id": "la-macelleria-di-romantino",
@@ -529,7 +566,8 @@
   "address": "Via Modesto della Porta 35, Guardiagrele CH, Italy",
   "website": null,
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Modesto+della+Porta+35%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Macelleria+di+Romantino%2C+Via+Modesto+della+Porta+35%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "La Macelleria di Romantino, Via Modesto della Porta 35, Guardiagrele CH, Italy"
  },
  {
   "id": "agriturismo-pesolillo",
@@ -543,7 +581,8 @@
   "address": "Strada Colle Rotondo 45, Chieti CH, Italy",
   "website": "https://www.pesolillo.it/il-ristorante/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Strada+Colle+Rotondo+45%2C+Chieti+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Pesolillo%2C+Strada+Colle+Rotondo+45%2C+Chieti+CH%2C+Italy",
+  "mapQuery": "Agriturismo Pesolillo, Strada Colle Rotondo 45, Chieti CH, Italy"
  },
  {
   "id": "villa-maiella",
@@ -557,7 +596,8 @@
   "address": "Via Sette Dolori 30, Guardiagrele CH, Italy",
   "website": "https://www.villamaiella.it/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Sette+Dolori+30%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villa+Maiella%2C+Via+Sette+Dolori+30%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Villa Maiella, Via Sette Dolori 30, Guardiagrele CH, Italy"
  },
  {
   "id": "agriturismo-il-feudo",
@@ -571,7 +611,8 @@
   "address": "Via Raiese 36, Pennapiedimonte CH, Italy",
   "website": "https://www.facebook.com/ilfeudo.pennapiedimonte/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Raiese+36%2C+Pennapiedimonte+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Il+Feudo%2C+Via+Raiese+36%2C+Pennapiedimonte+CH%2C+Italy",
+  "mapQuery": "Agriturismo Il Feudo, Via Raiese 36, Pennapiedimonte CH, Italy"
  },
  {
   "id": "agriturismo-tholos",
@@ -585,7 +626,8 @@
   "address": "Roccamorice PE, Italy",
   "website": "https://www.agriturismotholos.com",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccamorice+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Tholos%2C+Roccamorice+PE%2C+Italy",
+  "mapQuery": "Agriturismo Tholos, Roccamorice PE, Italy"
  },
  {
   "id": "cantina-frentana",
@@ -599,7 +641,8 @@
   "address": "Contrada Perazza 32, Rocca San Giovanni CH, Italy",
   "website": "https://www.cantinafrentana.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Perazza+32%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cantina+Frentana%2C+Contrada+Perazza+32%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Cantina Frentana, Contrada Perazza 32, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "la-vinarte",
@@ -613,7 +656,8 @@
   "address": "Santa Maria Imbaro CH, Italy",
   "website": "https://www.winedering.com/vineyard-tasting-on-the-trabocchi-coast-at-la-vinarte_d1787_travel",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santa+Maria+Imbaro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Vinarte%2C+Santa+Maria+Imbaro+CH%2C+Italy",
+  "mapQuery": "La Vinarte, Santa Maria Imbaro CH, Italy"
  },
  {
   "id": "bp-service",
@@ -627,7 +671,8 @@
   "address": "Contrada Severini 5, Treglio CH, Italy",
   "website": "https://www.bp-service.it/en/rental-with-driver-pescara-abruzzo/",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Severini+5%2C+Treglio+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=BP+Service%2C+Contrada+Severini+5%2C+Treglio+CH%2C+Italy",
+  "mapQuery": "BP Service, Contrada Severini 5, Treglio CH, Italy"
  },
  {
   "id": "green-road-bike",
@@ -641,7 +686,8 @@
   "address": "Lido Saraceni, Ortona CH, Italy",
   "website": "https://www.greenroadbike.it/tour-con-degustazione-sulla-costa-dei-trabocchi/",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lido+Saraceni%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Green+Road+Bike%2C+Lido+Saraceni%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Green Road Bike, Lido Saraceni, Ortona CH, Italy"
  },
  {
   "id": "agriverde",
@@ -655,7 +701,8 @@
   "address": "Caldari di Ortona, Ortona CH, Italy",
   "website": "https://www.cantineagriverde.com/",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Caldari+di+Ortona%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriverde%2C+Caldari+di+Ortona%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Agriverde, Caldari di Ortona, Ortona CH, Italy"
  },
  {
   "id": "feudo-antico",
@@ -669,7 +716,8 @@
   "address": "Tollo CH, Italy",
   "website": "https://feudoantico.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tollo+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Feudo+Antico%2C+Tollo+CH%2C+Italy",
+  "mapQuery": "Feudo Antico, Tollo CH, Italy"
  },
  {
   "id": "fontefico",
@@ -683,7 +731,8 @@
   "address": "Vasto CH, Italy",
   "website": "https://www.fontefico.it/experiences/",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fontefico%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Fontefico, Vasto CH, Italy"
  },
  {
   "id": "tenuta-ulisse",
@@ -697,7 +746,8 @@
   "address": "Crecchio CH, Italy",
   "website": "https://www.tenutaulisse.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Crecchio+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tenuta+Ulisse%2C+Crecchio+CH%2C+Italy",
+  "mapQuery": "Tenuta Ulisse, Crecchio CH, Italy"
  },
  {
   "id": "cantina-orsogna-1964",
@@ -711,7 +761,8 @@
   "address": "Orsogna CH, Italy",
   "website": null,
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Orsogna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cantina+Orsogna+1964%2C+Orsogna+CH%2C+Italy",
+  "mapQuery": "Cantina Orsogna 1964, Orsogna CH, Italy"
  },
  {
   "id": "italia-sweet-italia-fabrizio-lucci",
@@ -725,7 +776,8 @@
   "address": "Vasto CH, Italy",
   "website": "https://italiasweetitalia.com/",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Italia+Sweet+Italia+%E2%80%94+Fabrizio+Lucci%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Italia Sweet Italia — Fabrizio Lucci, Vasto CH, Italy"
  },
  {
   "id": "cascina-del-colle",
@@ -739,7 +791,8 @@
   "address": "Villamagna CH, Italy",
   "website": "https://www.lacascinadelcolle.it/it/degustazioni.php",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villamagna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cascina+del+Colle%2C+Villamagna+CH%2C+Italy",
+  "mapQuery": "Cascina del Colle, Villamagna CH, Italy"
  },
  {
   "id": "masciarelli",
@@ -753,7 +806,8 @@
   "address": "San Martino sulla Marrucina CH, Italy",
   "website": "https://www.masciarelli.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=San+Martino+sulla+Marrucina+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Masciarelli%2C+San+Martino+sulla+Marrucina+CH%2C+Italy",
+  "mapQuery": "Masciarelli, San Martino sulla Marrucina CH, Italy"
  },
  {
   "id": "agricola-tiberio",
@@ -767,7 +821,8 @@
   "address": "Cugnoli PE, Italy",
   "website": "https://tiberio.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cugnoli+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agricola+Tiberio%2C+Cugnoli+PE%2C+Italy",
+  "mapQuery": "Agricola Tiberio, Cugnoli PE, Italy"
  },
  {
   "id": "torre-dei-beati",
@@ -781,7 +836,8 @@
   "address": "Loreto Aprutino PE, Italy",
   "website": "https://www.torredeibeati.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Loreto+Aprutino+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Torre+dei+Beati%2C+Loreto+Aprutino+PE%2C+Italy",
+  "mapQuery": "Torre dei Beati, Loreto Aprutino PE, Italy"
  },
  {
   "id": "de-fermo",
@@ -795,7 +851,8 @@
   "address": "Loreto Aprutino PE, Italy",
   "website": "https://www.defermo.it",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Loreto+Aprutino+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=De+Fermo%2C+Loreto+Aprutino+PE%2C+Italy",
+  "mapQuery": "De Fermo, Loreto Aprutino PE, Italy"
  },
  {
   "id": "emidio-pepe",
@@ -809,7 +866,8 @@
   "address": "Torano Nuovo TE, Italy",
   "website": "https://www.emidiopepe.com",
   "colour": "#E85D9E",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Torano+Nuovo+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Emidio+Pepe%2C+Torano+Nuovo+TE%2C+Italy",
+  "mapQuery": "Emidio Pepe, Torano Nuovo TE, Italy"
  },
  {
   "id": "corso-di-cucina-nonna-filomena",
@@ -823,7 +881,8 @@
   "address": "Santa Maria Imbaro CH, Italy",
   "website": "https://www.liveinup.it/esperienza/corso-di-cucina-tipica-abruzzese-sulla-costa-dei-trabocchi",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santa+Maria+Imbaro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+di+cucina+%E2%80%94+nonna+Filomena%2C+Santa+Maria+Imbaro+CH%2C+Italy",
+  "mapQuery": "Corso di cucina — nonna Filomena, Santa Maria Imbaro CH, Italy"
  },
  {
   "id": "frantoio-giocondo",
@@ -837,7 +896,8 @@
   "address": "San Vito Chietino CH, Italy",
   "website": "https://frantoiogiocondo.it/",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=San+Vito+Chietino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Frantoio+Giocondo%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "Frantoio Giocondo, San Vito Chietino CH, Italy"
  },
  {
   "id": "agriturismo-caniloro-cooking",
@@ -851,7 +911,8 @@
   "address": "Contrada Sant'Onofrio, Lanciano CH, Italy",
   "website": "https://www.facebook.com/agriturismo.caniloro/",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Sant%27Onofrio%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Caniloro+%E2%80%94+cooking%2C+Contrada+Sant%27Onofrio%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Agriturismo Caniloro — cooking, Contrada Sant'Onofrio, Lanciano CH, Italy"
  },
  {
   "id": "feudo-antico-cantine-aperte-in-vendemmia",
@@ -863,9 +924,10 @@
   "desc": "Properly hands-on: 10:00 cellar tour, then picking and pressing Montepulciano, then a 13:00 picnic with pallotte cacio e ova and gnocchetti. Around €35 adult and €15 child at the 2024 edition — which fell on the fourth Sunday of September, after your window. No 2026 date is published; ring 340 8469682, and if it lands on the 20th it decides your last Sunday.",
   "flag": "Ask about the date",
   "address": "Tollo CH, Italy",
-  "website": "https://feudoantico.it/torna-cantine-aperte-in-vendemmia/",
+  "website": "https://feudoantico.it/degustazioni/",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tollo+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Feudo+Antico+%E2%80%94+Cantine+Aperte+in+Vendemmia%2C+Tollo+CH%2C+Italy",
+  "mapQuery": "Feudo Antico — Cantine Aperte in Vendemmia, Tollo CH, Italy"
  },
  {
   "id": "fontefico-cooking-class",
@@ -877,9 +939,10 @@
   "desc": "Two recipes cooked with the family, then a four-course wine-paired lunch on the estate. €95pp, four hours, and it runs Friday to Sunday — which covers the 11th, 12th, 13th, 18th, 19th and 20th. WhatsApp +39 335 7124154.",
   "flag": null,
   "address": "Vasto CH, Italy",
-  "website": "https://www.fontefico.it/en/experiences",
+  "website": "https://www.fontefico.it/experiences/",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fontefico+%E2%80%94+cooking+class%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Fontefico — cooking class, Vasto CH, Italy"
  },
  {
   "id": "accademia-della-ventricina",
@@ -891,9 +954,10 @@
   "desc": "Slow Food Presidium producer of ventricina del Vastese, and the site says plainly that anyone who asks can visit the premises. No packaged tour — it’s a phone call to 339 3086378. There’s also a bookable one-hour guided ventricina tasting course locally at about €22.",
   "flag": null,
   "address": "Contrada Ragna 61, Scerni CH, Italy",
-  "website": "https://accademiadellaventricina.com/",
+  "website": "https://ventricinadelvastese.it/",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Ragna+61%2C+Scerni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Accademia+della+Ventricina%2C+Contrada+Ragna+61%2C+Scerni+CH%2C+Italy",
+  "mapQuery": "Accademia della Ventricina, Contrada Ragna 61, Scerni CH, Italy"
  },
  {
   "id": "adi-apicoltura",
@@ -907,7 +971,8 @@
   "address": "Tornareccio CH, Italy",
   "website": "https://www.adiapicoltura.it/esperienze/",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tornareccio+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=ADI+Apicoltura%2C+Tornareccio+CH%2C+Italy",
+  "mapQuery": "ADI Apicoltura, Tornareccio CH, Italy"
  },
  {
   "id": "cesarine-home-cooks",
@@ -921,7 +986,8 @@
   "address": "Montesilvano PE, Italy",
   "website": "https://cesarine.com/en/search/chieti/cooking-class",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Montesilvano+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cesarine+home+cooks%2C+Montesilvano+PE%2C+Italy",
+  "mapQuery": "Cesarine home cooks, Montesilvano PE, Italy"
  },
  {
   "id": "becountry-make-your-own-cheese",
@@ -935,7 +1001,8 @@
   "address": "Pietranico PE, Italy",
   "website": "https://becountry.it/experiences/556/dal-latte-al-formaggio:-laboratorio-e-degustazione-in-fattoria-abruzzese",
   "colour": "#CFA0DC",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pietranico+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=BeCountry+%E2%80%94+make+your+own+cheese%2C+Pietranico+PE%2C+Italy",
+  "mapQuery": "BeCountry — make your own cheese, Pietranico PE, Italy"
  },
  {
   "id": "spiaggia-la-foce",
@@ -947,9 +1014,10 @@
   "desc": "Your closest sea — 1.3 km straight down the hill. The comune's biggest beach, around 600 m of pebble and shingle with transverse rock spurs. Most equipped and most used, campsite with bar and restaurant 100 m back.",
   "flag": null,
   "address": "Contrada Foce, Rocca San Giovanni CH, Italy",
-  "website": "https://www.parcocostadeitrabocchi.it/amp/spiaggia-la-foce/",
+  "website": "https://www.parcocostadeitrabocchi.it/spiaggia-la-foce/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Foce%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Spiaggia+La+Foce%2C+Contrada+Foce%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Spiaggia La Foce, Contrada Foce, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "vallev",
@@ -963,7 +1031,8 @@
   "address": "Vallevo, Rocca San Giovanni CH, Italy",
   "website": "https://www.trovaspiagge.it/vallevo/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vallevo%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vallevo%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Vallevo, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "punta-cavalluccio-beach",
@@ -975,9 +1044,10 @@
   "desc": "About 30 m of very fine sand between rocks under a high promontory, with the trabocco and a sea stack. Beautiful, holds about forty people, shaded in the afternoon. Access via the SS16 underpass.",
   "flag": null,
   "address": "Punta Cavalluccio, Rocca San Giovanni CH, Italy",
-  "website": "https://www.parcocostadeitrabocchi.it/amp/spiaggia-di-punta-cavalluccio/",
+  "website": "https://www.parcocostadeitrabocchi.it/spiaggia-di-punta-cavalluccio/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Punta+Cavalluccio%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Punta+Cavalluccio%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Punta Cavalluccio, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "fossacesia-marina",
@@ -991,7 +1061,8 @@
   "address": "Fossacesia Marina, Fossacesia CH, Italy",
   "website": "https://www.trovaspiagge.it/spiaggia-fossacesia-marina/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fossacesia+Marina%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fossacesia+Marina%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Fossacesia Marina, Fossacesia CH, Italy"
  },
  {
   "id": "majellando-dinghy-hire-no-licence",
@@ -1005,7 +1076,8 @@
   "address": "Marina del Sole, Fossacesia CH, Italy",
   "website": "https://www.majellando.it/it/experience/noleggio-gommone-sulla-costa-dei-trabocchi-_955",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Marina+del+Sole%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Majellando+%E2%80%94+dinghy+hire%2C+no+licence%2C+Marina+del+Sole%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Majellando — dinghy hire, no licence, Marina del Sole, Fossacesia CH, Italy"
  },
  {
   "id": "freedom-boat",
@@ -1019,7 +1091,8 @@
   "address": "Marina del Sole, Fossacesia CH, Italy",
   "website": "https://freedomboat.it/tours/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Marina+del+Sole%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Freedom+Boat%2C+Marina+del+Sole%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Freedom Boat, Marina del Sole, Fossacesia CH, Italy"
  },
  {
   "id": "lido-punta-le-morge-naturist",
@@ -1033,7 +1106,8 @@
   "address": "Lago Dragoni, Torino di Sangro CH, Italy",
   "website": "https://naturistitalia.it/punta-le-morge/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lago+Dragoni%2C+Torino+di+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lido+Punta+Le+Morge+%E2%80%94+naturist%2C+Lago+Dragoni%2C+Torino+di+Sangro+CH%2C+Italy",
+  "mapQuery": "Lido Punta Le Morge — naturist, Lago Dragoni, Torino di Sangro CH, Italy"
  },
  {
   "id": "ripari-di-giobbe",
@@ -1047,7 +1121,8 @@
   "address": "Ripari di Giobbe, Ortona CH, Italy",
   "website": "https://opentoabruzzo.it/ripari-di-giobbe-la-spiaggia-segreta-della-costa-dei-trabocchi-tra-mare-natura-selvaggia-e-leggende/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ripari+di+Giobbe%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ripari+di+Giobbe%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Ripari di Giobbe, Ortona CH, Italy"
  },
  {
   "id": "acquatica-scuba",
@@ -1061,7 +1136,8 @@
   "address": "Marina di Pescara, Pescara PE, Italy",
   "website": "https://www.acquaticascuba.it/immersioni-subacquee-guidate-in-abruzzo/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Marina+di+Pescara%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Acquatica+Scuba%2C+Marina+di+Pescara%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Acquatica Scuba, Marina di Pescara, Pescara PE, Italy"
  },
  {
   "id": "punta-aderci-nature-reserve",
@@ -1075,7 +1151,8 @@
   "address": "Riserva Naturale Punta Aderci, Vasto CH, Italy",
   "website": "https://www.puntaderci.it/turismo-in-riserva/carta-dei-sentieri/",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Riserva+Naturale+Punta+Aderci%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Punta+Aderci+nature+reserve%2C+Riserva+Naturale+Punta+Aderci%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Punta Aderci nature reserve, Riserva Naturale Punta Aderci, Vasto CH, Italy"
  },
  {
   "id": "majellando-soft-rafting-on-the-sangro",
@@ -1089,7 +1166,8 @@
   "address": "Sant'Eusanio del Sangro CH, Italy",
   "website": "https://www.majellando.it/it/experience/soft-rafting-sul-sangro_752",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sant%27Eusanio+del+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Majellando+%E2%80%94+soft+rafting+on+the+Sangro%2C+Sant%27Eusanio+del+Sangro+CH%2C+Italy",
+  "mapQuery": "Majellando — soft rafting on the Sangro, Sant'Eusanio del Sangro CH, Italy"
  },
  {
   "id": "stella-pescaturismo",
@@ -1103,7 +1181,8 @@
   "address": "Porto di Vasto, Vasto CH, Italy",
   "website": "https://stellapescaturismo.it",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Porto+di+Vasto%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Stella+Pescaturismo%2C+Porto+di+Vasto%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Stella Pescaturismo, Porto di Vasto, Vasto CH, Italy"
  },
  {
   "id": "la-riccia-licence-free-rib-san-domino",
@@ -1117,7 +1196,8 @@
   "address": "Porto San Domino, Isole Tremiti FG, Italy",
   "website": "https://www.checkyeti.com/it/d/3929/28690",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Porto+San+Domino%2C+Isole+Tremiti+FG%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Riccia+%E2%80%94+licence-free+RIB%2C+San+Domino%2C+Porto+San+Domino%2C+Isole+Tremiti+FG%2C+Italy",
+  "mapQuery": "La Riccia — licence-free RIB, San Domino, Porto San Domino, Isole Tremiti FG, Italy"
  },
  {
   "id": "marlin-tremiti-diving",
@@ -1131,7 +1211,8 @@
   "address": "Isole Tremiti FG, Italy",
   "website": "https://www.marlintremiti.com/en",
   "colour": "#5BC8C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Isole+Tremiti+FG%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Marlin+Tremiti+%E2%80%94+diving%2C+Isole+Tremiti+FG%2C+Italy",
+  "mapQuery": "Marlin Tremiti — diving, Isole Tremiti FG, Italy"
  },
  {
   "id": "via-verde-dei-trabocchi",
@@ -1145,7 +1226,8 @@
   "address": "Via Verde, Fossacesia Marina, Fossacesia CH, Italy",
   "website": "https://viaverdedeitrabocchi.info/",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Verde%2C+Fossacesia+Marina%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Verde+dei+Trabocchi%2C+Via+Verde%2C+Fossacesia+Marina%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Via Verde dei Trabocchi, Via Verde, Fossacesia Marina, Fossacesia CH, Italy"
  },
  {
   "id": "bicimania-sorgini",
@@ -1159,7 +1241,8 @@
   "address": "Via Lungomare 11, Fossacesia CH, Italy",
   "website": "https://www.noleggiobicitrabocchi.eu/",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Lungomare+11%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=BiciMania+%2F+Sorgini%2C+Via+Lungomare+11%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "BiciMania / Sorgini, Via Lungomare 11, Fossacesia CH, Italy"
  },
  {
   "id": "bike-train",
@@ -1173,7 +1256,8 @@
   "address": "Stazione Fossacesia-Torino di Sangro, Fossacesia CH, Italy",
   "website": "https://reteciclabiletrabocchi.it/consigli/treno-lungo-la-rete-ciclabile-della-costa-dei-trabocchi-21272",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Stazione+Fossacesia-Torino+di+Sangro%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bike+%2B+train%2C+Stazione+Fossacesia-Torino+di+Sangro%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Bike + train, Stazione Fossacesia-Torino di Sangro, Fossacesia CH, Italy"
  },
  {
   "id": "al-mur",
@@ -1187,7 +1271,8 @@
   "address": "Via Cristoforo Colombo 72, San Vito Chietino CH, Italy",
   "website": "https://www.almure.com/",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Cristoforo+Colombo+72%2C+San+Vito+Chietino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Al+Mur%C3%A8%2C+Via+Cristoforo+Colombo+72%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "Al Murè, Via Cristoforo Colombo 72, San Vito Chietino CH, Italy"
  },
  {
   "id": "green-road-bike-rental-delivery",
@@ -1201,7 +1286,8 @@
   "address": "Via Cervana, Lido Saraceni, Ortona CH, Italy",
   "website": "https://www.greenroadbike.it/tariffario/",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Cervana%2C+Lido+Saraceni%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Green+Road+Bike+%E2%80%94+rental+%26+delivery%2C+Via+Cervana%2C+Lido+Saraceni%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Green Road Bike — rental & delivery, Via Cervana, Lido Saraceni, Ortona CH, Italy"
  },
  {
   "id": "officine-forti",
@@ -1215,7 +1301,8 @@
   "address": "Via G. Federico 11, Ortona CH, Italy",
   "website": "https://www.officineforti.it/",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+G.+Federico+11%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Officine+Forti%2C+Via+G.+Federico+11%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Officine Forti, Via G. Federico 11, Ortona CH, Italy"
  },
  {
   "id": "bikexplora",
@@ -1229,7 +1316,8 @@
   "address": "Via Martiri Istriani 1, Vasto CH, Italy",
   "website": "https://bikexplora.it/tour-guidati/",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Martiri+Istriani+1%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=BikExplora%2C+Via+Martiri+Istriani+1%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "BikExplora, Via Martiri Istriani 1, Vasto CH, Italy"
  },
  {
   "id": "bike-park-majella",
@@ -1243,7 +1331,8 @@
   "address": "Piana delle Mele, Guardiagrele CH, Italy",
   "website": "https://www.parconaturalemajella.it/bike-park",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piana+delle+Mele%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bike+Park+Majella%2C+Piana+delle+Mele%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Bike Park Majella, Piana delle Mele, Guardiagrele CH, Italy"
  },
  {
   "id": "blockhaus",
@@ -1257,7 +1346,8 @@
   "address": "Blockhaus, Roccamorice PE, Italy",
   "website": "https://climbfinder.com/us/climbs/cima-blockhaus-roccamorice",
   "colour": "#7FD1A8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Blockhaus%2C+Roccamorice+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Blockhaus%2C+Roccamorice+PE%2C+Italy",
+  "mapQuery": "Blockhaus, Roccamorice PE, Italy"
  },
  {
   "id": "circolo-ippico-jack-o-neill",
@@ -1271,7 +1361,8 @@
   "address": "SS16 78, Vasto CH, Italy",
   "website": "https://circoloippicojackoneill.it/escursioni-allalba-tramonto-cavallo-riserva-punta-aderci-vasto/",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=SS16+78%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Circolo+Ippico+Jack+O%27Neill%2C+SS16+78%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Circolo Ippico Jack O'Neill, SS16 78, Vasto CH, Italy"
  },
  {
   "id": "parco-avventura-majella",
@@ -1285,7 +1376,8 @@
   "address": "Piana delle Mele, Guardiagrele CH, Italy",
   "website": "https://www.parconaturalemajella.it/parco-avventura",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piana+delle+Mele%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Parco+Avventura+Majella%2C+Piana+delle+Mele%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Parco Avventura Majella, Piana delle Mele, Guardiagrele CH, Italy"
  },
  {
   "id": "vertical-park",
@@ -1299,7 +1391,8 @@
   "address": "Pennapiedimonte CH, Italy",
   "website": "https://www.parconaturalemajella.it/il-vertical-park",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pennapiedimonte+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vertical+Park%2C+Pennapiedimonte+CH%2C+Italy",
+  "mapQuery": "Vertical Park, Pennapiedimonte CH, Italy"
  },
  {
   "id": "canyoning-abruzzo-adventures",
@@ -1313,7 +1406,8 @@
   "address": "Palena CH, Italy",
   "website": "https://abruzzoadventures.it/torrentismo/",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Palena+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Canyoning+%E2%80%94+Abruzzo+Adventures%2C+Palena+CH%2C+Italy",
+  "mapQuery": "Canyoning — Abruzzo Adventures, Palena CH, Italy"
  },
  {
   "id": "maja-quad",
@@ -1327,7 +1421,8 @@
   "address": "Abbateggio PE, Italy",
   "website": "https://majaquad.wixsite.com/quad",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abbateggio+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Maja+Quad%2C+Abbateggio+PE%2C+Italy",
+  "mapQuery": "Maja Quad, Abbateggio PE, Italy"
  },
  {
   "id": "climbing-taster-majellando",
@@ -1341,7 +1436,8 @@
   "address": "Roccamorice PE, Italy",
   "website": "https://www.majellando.it/it/experience/prova-di-arrampicata-in-falesia-a-roccamorice_741",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccamorice+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Climbing+taster+%E2%80%94+Majellando%2C+Roccamorice+PE%2C+Italy",
+  "mapQuery": "Climbing taster — Majellando, Roccamorice PE, Italy"
  },
  {
   "id": "jeep-safari-majellatrekking",
@@ -1353,9 +1449,10 @@
   "desc": "Sunset 4x4 wildlife watching with a specialist park guide and Swarovski optics — 13 km, 8 of them on unmade track. Almost no walking, but you sit still and silent for two hours. €40 adult, €45 for the night version. The red deer rut starts mid-September, which is exactly why this is worth doing on your dates. Book by 18:00 the day before.",
   "flag": "Deer rut",
   "address": "Campo di Giove AQ, Italy",
-  "website": "https://www.majellatrekking.eu/wildlife/jeep-safari/",
+  "website": "https://www.majellatrekking.eu/jeep-safari/",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Campo+di+Giove+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Jeep+safari+%E2%80%94+MajellaTrekking%2C+Campo+di+Giove+AQ%2C+Italy",
+  "mapQuery": "Jeep safari — MajellaTrekking, Campo di Giove AQ, Italy"
  },
  {
   "id": "tandem-paragliding",
@@ -1369,7 +1466,8 @@
   "address": "Rocca Calascio, Calascio AQ, Italy",
   "website": "https://www.majellando.it/it/experience/volo-in-parapendio_882",
   "colour": "#FF8A3D",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rocca+Calascio%2C+Calascio+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tandem+paragliding%2C+Rocca+Calascio%2C+Calascio+AQ%2C+Italy",
+  "mapQuery": "Tandem paragliding, Rocca Calascio, Calascio AQ, Italy"
  },
  {
   "id": "lecceta-di-torino-di-sangro",
@@ -1383,7 +1481,8 @@
   "address": "Lecceta di Torino di Sangro, Torino di Sangro CH, Italy",
   "website": "https://www.leccetaditorinodisangro.it/percorsi/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lecceta+di+Torino+di+Sangro%2C+Torino+di+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lecceta+di+Torino+di+Sangro%2C+Torino+di+Sangro+CH%2C+Italy",
+  "mapQuery": "Lecceta di Torino di Sangro, Torino di Sangro CH, Italy"
  },
  {
   "id": "cammino-di-san-tommaso-final-stage",
@@ -1397,7 +1496,8 @@
   "address": "Crecchio CH, Italy",
   "website": "https://www.camminodisantommaso.org/il-progetto/percorso-a-piedi/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Crecchio+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cammino+di+San+Tommaso+%E2%80%94+final+stage%2C+Crecchio+CH%2C+Italy",
+  "mapQuery": "Cammino di San Tommaso — final stage, Crecchio CH, Italy"
  },
  {
   "id": "gessopalena-vecchia",
@@ -1411,7 +1511,8 @@
   "address": "Gessopalena CH, Italy",
   "website": "https://www.iluoghidelsilenzio.it/borgo-antico-di-gessopalena-ch/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gessopalena+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gessopalena+Vecchia%2C+Gessopalena+CH%2C+Italy",
+  "mapQuery": "Gessopalena Vecchia, Gessopalena CH, Italy"
  },
  {
   "id": "gole-di-san-martino",
@@ -1425,7 +1526,8 @@
   "address": "Fara San Martino CH, Italy",
   "website": "https://www.parcomajella.it/Gole-di-San-Martino.htm",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fara+San+Martino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gole+di+San+Martino%2C+Fara+San+Martino+CH%2C+Italy",
+  "mapQuery": "Gole di San Martino, Fara San Martino CH, Italy"
  },
  {
   "id": "riserva-lago-di-serranella",
@@ -1439,7 +1541,8 @@
   "address": "Riserva Lago di Serranella, Sant'Eusanio del Sangro CH, Italy",
   "website": "https://www.iaap.it/lago-serrenella/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Riserva+Lago+di+Serranella%2C+Sant%27Eusanio+del+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Riserva+Lago+di+Serranella%2C+Sant%27Eusanio+del+Sangro+CH%2C+Italy",
+  "mapQuery": "Riserva Lago di Serranella, Sant'Eusanio del Sangro CH, Italy"
  },
  {
   "id": "majexperience-guides",
@@ -1453,7 +1556,8 @@
   "address": "Fara San Martino CH, Italy",
   "website": "https://majexperience.it/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fara+San+Martino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Majexperience+%E2%80%94+guides%2C+Fara+San+Martino+CH%2C+Italy",
+  "mapQuery": "Majexperience — guides, Fara San Martino CH, Italy"
  },
  {
   "id": "grotta-sant-angelo",
@@ -1467,7 +1571,8 @@
   "address": "Palombaro CH, Italy",
   "website": "https://www.parcomajella.it/eremo-grotta-sant-angelo-di-palombaro.htm",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Palombaro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grotta+Sant%27Angelo%2C+Palombaro+CH%2C+Italy",
+  "mapQuery": "Grotta Sant'Angelo, Palombaro CH, Italy"
  },
  {
   "id": "calanchi-di-bucchianico",
@@ -1481,7 +1586,8 @@
   "address": "Bucchianico CH, Italy",
   "website": "https://fondoambiente.it/luoghi/calanchi-ripe-dello-spagnolo",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bucchianico+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Calanchi+di+Bucchianico%2C+Bucchianico+CH%2C+Italy",
+  "mapQuery": "Calanchi di Bucchianico, Bucchianico CH, Italy"
  },
  {
   "id": "buonanotte-montebello-sul-sangro",
@@ -1495,7 +1601,8 @@
   "address": "Montebello sul Sangro CH, Italy",
   "website": "https://www.pantografomagazine.com/buonanotte-contemporanea-borgo-abbandonato-arte/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Montebello+sul+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Buonanotte+%28Montebello+sul+Sangro%29%2C+Montebello+sul+Sangro+CH%2C+Italy",
+  "mapQuery": "Buonanotte (Montebello sul Sangro), Montebello sul Sangro CH, Italy"
  },
  {
   "id": "castello-di-roccascalegna",
@@ -1509,7 +1616,8 @@
   "address": "Roccascalegna CH, Italy",
   "website": "https://www.castellodiroccascalegna.it/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccascalegna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Castello+di+Roccascalegna%2C+Roccascalegna+CH%2C+Italy",
+  "mapQuery": "Castello di Roccascalegna, Roccascalegna CH, Italy"
  },
  {
   "id": "grotta-del-cavallone",
@@ -1523,7 +1631,8 @@
   "address": "Taranta Peligna CH, Italy",
   "website": "https://www.grottedelcavallone.it/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taranta+Peligna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grotta+del+Cavallone%2C+Taranta+Peligna+CH%2C+Italy",
+  "mapQuery": "Grotta del Cavallone, Taranta Peligna CH, Italy"
  },
  {
   "id": "juvanum",
@@ -1537,7 +1646,8 @@
   "address": "Montenerodomo CH, Italy",
   "website": "https://iuvanum.it/info/info-e-orari",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Montenerodomo+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Juvanum%2C+Montenerodomo+CH%2C+Italy",
+  "mapQuery": "Juvanum, Montenerodomo CH, Italy"
  },
  {
   "id": "cascate-del-verde",
@@ -1551,7 +1661,8 @@
   "address": "Borrello CH, Italy",
   "website": "https://www.cascatedelverde.info/come-raggiungerci/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Borrello+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cascate+del+Verde%2C+Borrello+CH%2C+Italy",
+  "mapQuery": "Cascate del Verde, Borrello CH, Italy"
  },
  {
   "id": "tombe-rupestri-di-san-liberatore",
@@ -1565,7 +1676,8 @@
   "address": "Serramonacesca PE, Italy",
   "website": "https://www.iluoghidelsilenzio.it/tombe-rupestri-di-san-liberatore-a-majella-serramonacesca-pe/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Serramonacesca+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tombe+rupestri+di+San+Liberatore%2C+Serramonacesca+PE%2C+Italy",
+  "mapQuery": "Tombe rupestri di San Liberatore, Serramonacesca PE, Italy"
  },
  {
   "id": "grotta-dei-piccioni",
@@ -1579,7 +1691,8 @@
   "address": "Bolognano PE, Italy",
   "website": "https://www.parcomajella.it/7-Grotta-dei-Piccioni.htm",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bolognano+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grotta+dei+Piccioni%2C+Bolognano+PE%2C+Italy",
+  "mapQuery": "Grotta dei Piccioni, Bolognano PE, Italy"
  },
  {
   "id": "eremo-di-santo-spirito-a-majella",
@@ -1593,7 +1706,8 @@
   "address": "Roccamorice PE, Italy",
   "website": "https://visitroccamorice.com/en/visita-leremo/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccamorice+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eremo+di+Santo+Spirito+a+Majella%2C+Roccamorice+PE%2C+Italy",
+  "mapQuery": "Eremo di Santo Spirito a Majella, Roccamorice PE, Italy"
  },
  {
   "id": "eremo-di-san-bartolomeo-in-legio",
@@ -1607,7 +1721,8 @@
   "address": "Roccamorice PE, Italy",
   "website": "https://www.lorenzotaccioli.it/visita-alleremo-di-san-bartolomeo-in-legio/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccamorice+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eremo+di+San+Bartolomeo+in+Legio%2C+Roccamorice+PE%2C+Italy",
+  "mapQuery": "Eremo di San Bartolomeo in Legio, Roccamorice PE, Italy"
  },
  {
   "id": "sunset-to-stars-on-the-majella",
@@ -1621,7 +1736,8 @@
   "address": "Fonte Tettone, Pretoro CH, Italy",
   "website": "https://www.majellando.it/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fonte+Tettone%2C+Pretoro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sunset+to+stars+on+the+Majella%2C+Fonte+Tettone%2C+Pretoro+CH%2C+Italy",
+  "mapQuery": "Sunset to stars on the Majella, Fonte Tettone, Pretoro CH, Italy"
  },
  {
   "id": "valle-dell-orfento-sentiero-delle-scalel",
@@ -1635,7 +1751,8 @@
   "address": "Caramanico Terme PE, Italy",
   "website": "https://www.valledellorfento.info/vuoi-visitarla/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Caramanico+Terme+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Valle+dell%27Orfento+%E2%80%94+Sentiero+delle+Scalelle%2C+Caramanico+Terme+PE%2C+Italy",
+  "mapQuery": "Valle dell'Orfento — Sentiero delle Scalelle, Caramanico Terme PE, Italy"
  },
  {
   "id": "corvara",
@@ -1649,7 +1766,8 @@
   "address": "Corvara PE, Italy",
   "website": null,
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corvara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corvara+PE%2C+Italy",
+  "mapQuery": "Corvara PE, Italy"
  },
  {
   "id": "roccacaramanico",
@@ -1663,7 +1781,8 @@
   "address": "Roccacaramanico, Sant'Eufemia a Maiella PE, Italy",
   "website": null,
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccacaramanico%2C+Sant%27Eufemia+a+Maiella+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Roccacaramanico%2C+Sant%27Eufemia+a+Maiella+PE%2C+Italy",
+  "mapQuery": "Roccacaramanico, Sant'Eufemia a Maiella PE, Italy"
  },
  {
   "id": "calanchi-di-atri",
@@ -1677,7 +1796,8 @@
   "address": "Riserva Calanchi di Atri, Atri TE, Italy",
   "website": "https://riservacalanchidiatri.it/info-visite/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Riserva+Calanchi+di+Atri%2C+Atri+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Calanchi+di+Atri%2C+Riserva+Calanchi+di+Atri%2C+Atri+TE%2C+Italy",
+  "mapQuery": "Calanchi di Atri, Riserva Calanchi di Atri, Atri TE, Italy"
  },
  {
   "id": "bosco-di-sant-antonio",
@@ -1691,7 +1811,8 @@
   "address": "Bosco di Sant'Antonio, Pescocostanzo AQ, Italy",
   "website": "https://www.parcomajella.it/bosco-di-sant-antonio.htm",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bosco+di+Sant%27Antonio%2C+Pescocostanzo+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bosco+di+Sant%27Antonio%2C+Pescocostanzo+AQ%2C+Italy",
+  "mapQuery": "Bosco di Sant'Antonio, Pescocostanzo AQ, Italy"
  },
  {
   "id": "saepinum-altilia",
@@ -1705,7 +1826,8 @@
   "address": "Altilia, Sepino CB, Italy",
   "website": "https://www.musei.molise.beniculturali.it/musei/area-archeologica-di-altilia-saepinum",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Altilia%2C+Sepino+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Saepinum+%2F+Altilia%2C+Altilia%2C+Sepino+CB%2C+Italy",
+  "mapQuery": "Saepinum / Altilia, Altilia, Sepino CB, Italy"
  },
  {
   "id": "ecotur-bear-watching",
@@ -1719,7 +1841,8 @@
   "address": "Pescasseroli AQ, Italy",
   "website": "https://www.ecotur.org/it/calendario.xhtml",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pescasseroli+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ecotur+%E2%80%94+bear+watching%2C+Pescasseroli+AQ%2C+Italy",
+  "mapQuery": "Ecotur — bear watching, Pescasseroli AQ, Italy"
  },
  {
   "id": "deer-rut-guided-evening",
@@ -1733,7 +1856,8 @@
   "address": "Alfedena AQ, Italy",
   "website": "https://majexperience.it/esperienza/escursione-bramito-cervo-parco-abruzzo/",
   "colour": "#C4A484",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alfedena+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Deer+rut+%E2%80%94+guided+evening%2C+Alfedena+AQ%2C+Italy",
+  "mapQuery": "Deer rut — guided evening, Alfedena AQ, Italy"
  },
  {
   "id": "museo-universitario-di-chieti",
@@ -1747,7 +1871,8 @@
   "address": "Piazza Trento e Trieste 1, Chieti CH, Italy",
   "website": "https://www.museo.unich.it/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+Trento+e+Trieste+1%2C+Chieti+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+Universitario+di+Chieti%2C+Piazza+Trento+e+Trieste+1%2C+Chieti+CH%2C+Italy",
+  "mapQuery": "Museo Universitario di Chieti, Piazza Trento e Trieste 1, Chieti CH, Italy"
  },
  {
   "id": "bagno-borbonico",
@@ -1761,7 +1886,8 @@
   "address": "Via delle Caserme 24, Pescara PE, Italy",
   "website": "https://www.gentidabruzzo.com/bagno-borbonico/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+delle+Caserme+24%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bagno+Borbonico%2C+Via+delle+Caserme+24%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Bagno Borbonico, Via delle Caserme 24, Pescara PE, Italy"
  },
  {
   "id": "macte",
@@ -1775,7 +1901,8 @@
   "address": "Via Giappone, Termoli CB, Italy",
   "website": "https://www.fondazionemacte.com/page/visita/orari",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Giappone%2C+Termoli+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=MACTE%2C+Via+Giappone%2C+Termoli+CB%2C+Italy",
+  "mapQuery": "MACTE, Via Giappone, Termoli CB, Italy"
  },
  {
   "id": "museo-del-treno",
@@ -1789,7 +1916,8 @@
   "address": "Stazione di Montesilvano, Montesilvano PE, Italy",
   "website": "https://asimusei.it/museo/museo-ferroviario-montesilvano/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Stazione+di+Montesilvano%2C+Montesilvano+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+del+Treno%2C+Stazione+di+Montesilvano%2C+Montesilvano+PE%2C+Italy",
+  "mapQuery": "Museo del Treno, Stazione di Montesilvano, Montesilvano PE, Italy"
  },
  {
   "id": "mom-museo-dell-orso-marsicano",
@@ -1803,7 +1931,8 @@
   "address": "Palena CH, Italy",
   "website": "https://www.palenaintasca.it/museo-dell-orso-marsicano",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Palena+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=MOM+%E2%80%94+Museo+dell%27Orso+Marsicano%2C+Palena+CH%2C+Italy",
+  "mapQuery": "MOM — Museo dell'Orso Marsicano, Palena CH, Italy"
  },
  {
   "id": "museo-geopaleontologico",
@@ -1817,7 +1946,8 @@
   "address": "Castello Ducale, Palena CH, Italy",
   "website": "https://www.palenaintasca.it/museo-geopaleontologico-dell-alto-aventino",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Castello+Ducale%2C+Palena+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+Geopaleontologico%2C+Castello+Ducale%2C+Palena+CH%2C+Italy",
+  "mapQuery": "Museo Geopaleontologico, Castello Ducale, Palena CH, Italy"
  },
  {
   "id": "santuario-del-volto-santo",
@@ -1831,7 +1961,8 @@
   "address": "Via Cappuccini 26, Manoppello PE, Italy",
   "website": "https://www.italia.it/it/abruzzo/manoppello/musei/santuario-del-volto-santo-di-manoppello",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Cappuccini+26%2C+Manoppello+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santuario+del+Volto+Santo%2C+Via+Cappuccini+26%2C+Manoppello+PE%2C+Italy",
+  "mapQuery": "Santuario del Volto Santo, Via Cappuccini 26, Manoppello PE, Italy"
  },
  {
   "id": "centerba-toro-distillery",
@@ -1845,7 +1976,8 @@
   "address": "Via Tiburtina Valeria, Tocco da Casauria PE, Italy",
   "website": "https://liquoritoro.com/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Tiburtina+Valeria%2C+Tocco+da+Casauria+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Centerba+Toro+distillery%2C+Via+Tiburtina+Valeria%2C+Tocco+da+Casauria+PE%2C+Italy",
+  "mapQuery": "Centerba Toro distillery, Via Tiburtina Valeria, Tocco da Casauria PE, Italy"
  },
  {
   "id": "museo-confetti-pelino",
@@ -1857,9 +1989,10 @@
   "desc": "Three centuries of sugared-almond technology inside a working Liberty-style factory — 18th-c. mills and mortars, a wall of European patents, the 1893 electric motor, and Sulmona's first telephone. Free. Slots against the 19–20 Sept antiques market.",
   "flag": null,
   "address": "Via Stazione Introdacqua 55, Sulmona AQ, Italy",
-  "website": "http://confettimariopelino.com/museo/?lang=en",
+  "website": "https://cultura.gov.it/luogo/museo-dell-arte-e-della-tecnologia-confettiera",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Stazione+Introdacqua+55%2C+Sulmona+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+Confetti+Pelino%2C+Via+Stazione+Introdacqua+55%2C+Sulmona+AQ%2C+Italy",
+  "mapQuery": "Museo Confetti Pelino, Via Stazione Introdacqua 55, Sulmona AQ, Italy"
  },
  {
   "id": "museo-dei-misteri",
@@ -1873,7 +2006,8 @@
   "address": "Via Trento, Campobasso CB, Italy",
   "website": "https://www.misterietradizioni.com/museo/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Trento%2C+Campobasso+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+dei+Misteri%2C+Via+Trento%2C+Campobasso+CB%2C+Italy",
+  "mapQuery": "Museo dei Misteri, Via Trento, Campobasso CB, Italy"
  },
  {
   "id": "pontificia-fonderia-marinelli",
@@ -1887,7 +2021,8 @@
   "address": "Via Felice D'Onofrio 14, Agnone IS, Italy",
   "website": "https://museocampanemarinelli.it",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Felice+D%27Onofrio+14%2C+Agnone+IS%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pontificia+Fonderia+Marinelli%2C+Via+Felice+D%27Onofrio+14%2C+Agnone+IS%2C+Italy",
+  "mapQuery": "Pontificia Fonderia Marinelli, Via Felice D'Onofrio 14, Agnone IS, Italy"
  },
  {
   "id": "museo-del-profumo",
@@ -1901,7 +2036,8 @@
   "address": "Via del Profumo 1, Sant'Elena Sannita IS, Italy",
   "website": "https://turismoinmolise.com/museo-del-profumo/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+del+Profumo+1%2C+Sant%27Elena+Sannita+IS%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+del+Profumo%2C+Via+del+Profumo+1%2C+Sant%27Elena+Sannita+IS%2C+Italy",
+  "mapQuery": "Museo del Profumo, Via del Profumo 1, Sant'Elena Sannita IS, Italy"
  },
  {
   "id": "museo-dei-ferri-taglienti",
@@ -1915,7 +2051,8 @@
   "address": "Via Garibaldi, Frosolone IS, Italy",
   "website": "https://comune.frosolone.is.it/musei-di-frosolone/",
   "colour": "#B07FE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Garibaldi%2C+Frosolone+IS%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+dei+Ferri+Taglienti%2C+Via+Garibaldi%2C+Frosolone+IS%2C+Italy",
+  "mapQuery": "Museo dei Ferri Taglienti, Via Garibaldi, Frosolone IS, Italy"
  },
  {
   "id": "sartoria-flocco",
@@ -1929,7 +2066,8 @@
   "address": "Corso Bandiera 63, Lanciano CH, Italy",
   "website": null,
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Bandiera+63%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sartoria+Flocco%2C+Corso+Bandiera+63%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Sartoria Flocco, Corso Bandiera 63, Lanciano CH, Italy"
  },
  {
   "id": "ceramiche-d-arte-liberati",
@@ -1943,7 +2081,8 @@
   "address": "Villamagna CH, Italy",
   "website": "https://www.liberati.net",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villamagna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ceramiche+d%27Arte+Liberati%2C+Villamagna+CH%2C+Italy",
+  "mapQuery": "Ceramiche d'Arte Liberati, Villamagna CH, Italy"
  },
  {
   "id": "creta-rossa",
@@ -1957,7 +2096,8 @@
   "address": "Piazza del Tomolo 3, Vasto CH, Italy",
   "website": "https://www.cretarossa.it",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+del+Tomolo+3%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Creta+Rossa%2C+Piazza+del+Tomolo+3%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Creta Rossa, Piazza del Tomolo 3, Vasto CH, Italy"
  },
  {
   "id": "fabio-amoroso",
@@ -1971,7 +2111,8 @@
   "address": "Rapino CH, Italy",
   "website": "https://www.artigianatoabruzzese.it/espositori/",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rapino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fabio+Amoroso%2C+Rapino+CH%2C+Italy",
+  "mapQuery": "Fabio Amoroso, Rapino CH, Italy"
  },
  {
   "id": "la-nicchia-dell-artista",
@@ -1985,7 +2126,8 @@
   "address": "Rapino CH, Italy",
   "website": null,
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rapino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Nicchia+dell%27Artista%2C+Rapino+CH%2C+Italy",
+  "mapQuery": "La Nicchia dell'Artista, Rapino CH, Italy"
  },
  {
   "id": "ceramiche-artistiche-tasca",
@@ -1999,7 +2141,8 @@
   "address": "Via XXIV Maggio 22, Rapino CH, Italy",
   "website": null,
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+XXIV+Maggio+22%2C+Rapino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ceramiche+Artistiche+Tasca%2C+Via+XXIV+Maggio+22%2C+Rapino+CH%2C+Italy",
+  "mapQuery": "Ceramiche Artistiche Tasca, Via XXIV Maggio 22, Rapino CH, Italy"
  },
  {
   "id": "arterame-ferro",
@@ -2013,7 +2156,8 @@
   "address": "Via Grele 14, Guardiagrele CH, Italy",
   "website": "https://www.arterameferro.it",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Grele+14%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Arterame+%26+Ferro%2C+Via+Grele+14%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Arterame & Ferro, Via Grele 14, Guardiagrele CH, Italy"
  },
  {
   "id": "museo-dell-artigianato-artistico-abruzze",
@@ -2027,7 +2171,8 @@
   "address": "Guardiagrele CH, Italy",
   "website": "https://www.artigianatoabruzzese.it",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+dell%27Artigianato+Artistico+Abruzzese%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Museo dell'Artigianato Artistico Abruzzese, Guardiagrele CH, Italy"
  },
  {
   "id": "guilmiartproject",
@@ -2041,7 +2186,8 @@
   "address": "Guilmi CH, Italy",
   "website": "https://guilmiartproject.com",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Guilmi+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=GuilmiArtProject%2C+Guilmi+CH%2C+Italy",
+  "mapQuery": "GuilmiArtProject, Guilmi CH, Italy"
  },
  {
   "id": "di-quinzio-sartoria",
@@ -2055,7 +2201,8 @@
   "address": "Via Piero Gobetti 18, Pescara PE, Italy",
   "website": "https://mypescara.it/d-vetrina/elenco/di-quinzio-sartoria/",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Piero+Gobetti+18%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Di+Quinzio+Sartoria%2C+Via+Piero+Gobetti+18%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Di Quinzio Sartoria, Via Piero Gobetti 18, Pescara PE, Italy"
  },
  {
   "id": "la-casa-per-le-arti",
@@ -2069,7 +2216,8 @@
   "address": "Via Spilorzi 7, Chieti CH, Italy",
   "website": "https://www.lacasaperlearti.com",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Spilorzi+7%2C+Chieti+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Casa+per+le+Arti%2C+Via+Spilorzi+7%2C+Chieti+CH%2C+Italy",
+  "mapQuery": "La Casa per le Arti, Via Spilorzi 7, Chieti CH, Italy"
  },
  {
   "id": "lanificio-merlino",
@@ -2083,7 +2231,8 @@
   "address": "Taranta Peligna CH, Italy",
   "website": "https://majexperience.it/esperienza/lanificio-merlino-taranta-peligna/",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taranta+Peligna+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lanificio+Merlino%2C+Taranta+Peligna+CH%2C+Italy",
+  "mapQuery": "Lanificio Merlino, Taranta Peligna CH, Italy"
  },
  {
   "id": "belisario-camicie",
@@ -2097,7 +2246,8 @@
   "address": "Viale Matrino 161, Citta Sant'Angelo PE, Italy",
   "website": "https://www.belisariocamicie.it/en/",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Viale+Matrino+161%2C+Citta+Sant%27Angelo+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Belisario+Camicie%2C+Viale+Matrino+161%2C+Citta+Sant%27Angelo+PE%2C+Italy",
+  "mapQuery": "Belisario Camicie, Viale Matrino 161, Citta Sant'Angelo PE, Italy"
  },
  {
   "id": "museo-del-merletto-a-tombolo",
@@ -2111,7 +2261,8 @@
   "address": "Piazza Municipio, Pescocostanzo AQ, Italy",
   "website": "https://museodelmerlettoatombolo.it",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+Municipio%2C+Pescocostanzo+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+del+Merletto+a+Tombolo%2C+Piazza+Municipio%2C+Pescocostanzo+AQ%2C+Italy",
+  "mapQuery": "Museo del Merletto a Tombolo, Piazza Municipio, Pescocostanzo AQ, Italy"
  },
  {
   "id": "ceramiche-simonetti",
@@ -2125,7 +2276,8 @@
   "address": "Via Gentile Carmine 32, Castelli TE, Italy",
   "website": "https://www.ceramichesimonetti.it",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Gentile+Carmine+32%2C+Castelli+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ceramiche+Simonetti%2C+Via+Gentile+Carmine+32%2C+Castelli+TE%2C+Italy",
+  "mapQuery": "Ceramiche Simonetti, Via Gentile Carmine 32, Castelli TE, Italy"
  },
  {
   "id": "ceramiche-de-fabritiis",
@@ -2139,7 +2291,8 @@
   "address": "Via F.A. Grue 24, Castelli TE, Italy",
   "website": "https://www.defabritiis.com",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+F.A.+Grue+24%2C+Castelli+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ceramiche+De+Fabritiis%2C+Via+F.A.+Grue+24%2C+Castelli+TE%2C+Italy",
+  "mapQuery": "Ceramiche De Fabritiis, Via F.A. Grue 24, Castelli TE, Italy"
  },
  {
   "id": "museo-delle-ceramiche-di-castelli",
@@ -2153,7 +2306,8 @@
   "address": "Salita Paradiso, Castelli TE, Italy",
   "website": "https://www.comune.castelli.te.it/vivere_il_comune/luoghi/luogo_2.html",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Salita+Paradiso%2C+Castelli+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+delle+Ceramiche+di+Castelli%2C+Salita+Paradiso%2C+Castelli+TE%2C+Italy",
+  "mapQuery": "Museo delle Ceramiche di Castelli, Salita Paradiso, Castelli TE, Italy"
  },
  {
   "id": "orafi-rotolo-1884",
@@ -2167,7 +2321,8 @@
   "address": "Scanno AQ, Italy",
   "website": "https://orafirotolo.com",
   "colour": "#E8C34B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scanno+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Orafi+Rotolo+1884%2C+Scanno+AQ%2C+Italy",
+  "mapQuery": "Orafi Rotolo 1884, Scanno AQ, Italy"
  },
  {
   "id": "birreria-la-porta",
@@ -2181,7 +2336,8 @@
   "address": "Via Bastioni 62, Lanciano CH, Italy",
   "website": "https://www.facebook.com/birrerialaporta/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Bastioni+62%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Birreria+La+Porta%2C+Via+Bastioni+62%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Birreria La Porta, Via Bastioni 62, Lanciano CH, Italy"
  },
  {
   "id": "corner",
@@ -2195,7 +2351,8 @@
   "address": "Corso Trento e Trieste 121, Lanciano CH, Italy",
   "website": "https://cornerlanciano.it/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Trento+e+Trieste+121%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corner%2C+Corso+Trento+e+Trieste+121%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Corner, Corso Trento e Trieste 121, Lanciano CH, Italy"
  },
  {
   "id": "casa-del-popolo-la-conviviale",
@@ -2209,7 +2366,8 @@
   "address": "Vasto CH, Italy",
   "website": "https://www.instagram.com/cdp_laconviviale/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+del+Popolo+%27La+Conviviale%27%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Casa del Popolo 'La Conviviale', Vasto CH, Italy"
  },
  {
   "id": "scumm",
@@ -2223,7 +2381,8 @@
   "address": "Via delle Caserme 38, Pescara PE, Italy",
   "website": "https://www.songkick.com/venues/3231599-scumm",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+delle+Caserme+38%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scumm%2C+Via+delle+Caserme+38%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Scumm, Via delle Caserme 38, Pescara PE, Italy"
  },
  {
   "id": "radicale",
@@ -2237,7 +2396,8 @@
   "address": "Via dei Bastioni 10, Pescara PE, Italy",
   "website": "https://www.instagram.com/radicalerestaurant/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+dei+Bastioni+10%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Radicale%2C+Via+dei+Bastioni+10%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Radicale, Via dei Bastioni 10, Pescara PE, Italy"
  },
  {
   "id": "spazio-matta",
@@ -2251,7 +2411,8 @@
   "address": "Via Gran Sasso 57, Pescara PE, Italy",
   "website": "https://www.spaziomatta.it/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Gran+Sasso+57%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Spazio+Matta%2C+Via+Gran+Sasso+57%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Spazio Matta, Via Gran Sasso 57, Pescara PE, Italy"
  },
  {
   "id": "la-nuova-lavanderia",
@@ -2265,7 +2426,8 @@
   "address": "Via Cesare Battisti, Pescara PE, Italy",
   "website": null,
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Cesare+Battisti%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Nuova+Lavanderia%2C+Via+Cesare+Battisti%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "La Nuova Lavanderia, Via Cesare Battisti, Pescara PE, Italy"
  },
  {
   "id": "glicine",
@@ -2279,7 +2441,8 @@
   "address": "Via Roma 42, Pescara PE, Italy",
   "website": "https://www.instagram.com/glicine_vinoebar/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Roma+42%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Glicine%2C+Via+Roma+42%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Glicine, Via Roma 42, Pescara PE, Italy"
  },
  {
   "id": "shaka-brew",
@@ -2293,7 +2456,8 @@
   "address": "Via Cesare Battisti 140, Pescara PE, Italy",
   "website": "https://shakabrew.it/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Cesare+Battisti+140%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shaka+Brew%2C+Via+Cesare+Battisti+140%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Shaka Brew, Via Cesare Battisti 140, Pescara PE, Italy"
  },
  {
   "id": "picture-disc",
@@ -2307,7 +2471,8 @@
   "address": "Via Venezia 60, Pescara PE, Italy",
   "website": "http://www.picturedisc.it/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Venezia+60%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Picture+Disc%2C+Via+Venezia+60%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Picture Disc, Via Venezia 60, Pescara PE, Italy"
  },
  {
   "id": "birrificio-maiella",
@@ -2321,7 +2486,8 @@
   "address": "Localita Cerrani, Pretoro CH, Italy",
   "website": "https://www.birrificiomaiella.net/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Localita+Cerrani%2C+Pretoro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Birrificio+Maiella%2C+Localita+Cerrani%2C+Pretoro+CH%2C+Italy",
+  "mapQuery": "Birrificio Maiella, Localita Cerrani, Pretoro CH, Italy"
  },
  {
   "id": "almond-22-taproom",
@@ -2335,7 +2501,8 @@
   "address": "Contrada Remartello 47, Loreto Aprutino PE, Italy",
   "website": "https://birraalmond.com/en/taproom/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Remartello+47%2C+Loreto+Aprutino+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Almond+%2722+taproom%2C+Contrada+Remartello+47%2C+Loreto+Aprutino+PE%2C+Italy",
+  "mapQuery": "Almond '22 taproom, Contrada Remartello 47, Loreto Aprutino PE, Italy"
  },
  {
   "id": "fornace-del-bono-jazz-club",
@@ -2349,7 +2516,8 @@
   "address": "Palazzo del Bono, Penne PE, Italy",
   "website": "https://www.fornacedelbono.it/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Palazzo+del+Bono%2C+Penne+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fornace+del+Bono+Jazz+Club%2C+Palazzo+del+Bono%2C+Penne+PE%2C+Italy",
+  "mapQuery": "Fornace del Bono Jazz Club, Palazzo del Bono, Penne PE, Italy"
  },
  {
   "id": "agripub-opperbacco",
@@ -2363,7 +2531,8 @@
   "address": "Notaresco TE, Italy",
   "website": "https://opperbacco.it/agripub-opperbacco/",
   "colour": "#9BA7F2",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Notaresco+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Agripub+Opperbacco%2C+Notaresco+TE%2C+Italy",
+  "mapQuery": "Agripub Opperbacco, Notaresco TE, Italy"
  },
  {
   "id": "antiques-market-lanciano",
@@ -2377,7 +2546,8 @@
   "address": "Corso Trento e Trieste, Lanciano CH, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Trento+e+Trieste%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Antiques+market%2C+Lanciano%2C+Corso+Trento+e+Trieste%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Antiques market, Lanciano, Corso Trento e Trieste, Lanciano CH, Italy"
  },
  {
   "id": "kec",
@@ -2391,7 +2561,8 @@
   "address": "Contrada Serroni 80, Lanciano CH, Italy",
   "website": "https://lanciano.kece.it/",
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Serroni+80%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kec%C3%A8%2C+Contrada+Serroni+80%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Kecè, Contrada Serroni 80, Lanciano CH, Italy"
  },
  {
   "id": "lanciano-weekly-market",
@@ -2405,7 +2576,8 @@
   "address": "Piazza Garibaldi, Lanciano CH, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+Garibaldi%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lanciano+weekly+market%2C+Piazza+Garibaldi%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Lanciano weekly market, Piazza Garibaldi, Lanciano CH, Italy"
  },
  {
   "id": "antiques-market-ortona",
@@ -2419,7 +2591,8 @@
   "address": "Corso Vittorio Emanuele, Ortona CH, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Antiques+market%2C+Ortona%2C+Corso+Vittorio+Emanuele%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Antiques market, Ortona, Corso Vittorio Emanuele, Ortona CH, Italy"
  },
  {
   "id": "il-carrello-dell-usato",
@@ -2433,7 +2606,8 @@
   "address": "Via Civilta del Lavoro 71, Ortona CH, Italy",
   "website": "https://www.facebook.com/ilcarrellodellusato/",
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Civilta+del+Lavoro+71%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Il+Carrello+dell%27Usato%2C+Via+Civilta+del+Lavoro+71%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Il Carrello dell'Usato, Via Civilta del Lavoro 71, Ortona CH, Italy"
  },
  {
   "id": "vitanova",
@@ -2447,7 +2621,8 @@
   "address": "Via Palermo 18, Vasto CH, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Palermo+18%2C+Vasto+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vitanova%2C+Via+Palermo+18%2C+Vasto+CH%2C+Italy",
+  "mapQuery": "Vitanova, Via Palermo 18, Vasto CH, Italy"
  },
  {
   "id": "mercatino-dell-usato-sambuceto",
@@ -2461,7 +2636,8 @@
   "address": "Via Piave 5, San Giovanni Teatino CH, Italy",
   "website": "https://pescarasambuceto.mercatinousato.com/",
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Piave+5%2C+San+Giovanni+Teatino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercatino+dell%27Usato+Sambuceto%2C+Via+Piave+5%2C+San+Giovanni+Teatino+CH%2C+Italy",
+  "mapQuery": "Mercatino dell'Usato Sambuceto, Via Piave 5, San Giovanni Teatino CH, Italy"
  },
  {
   "id": "urban-frip",
@@ -2475,7 +2651,8 @@
   "address": "Via Giulio Mazzarino 11, Pescara PE, Italy",
   "website": "https://www.urbanfrip.it/",
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Giulio+Mazzarino+11%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Urban+Frip%2C+Via+Giulio+Mazzarino+11%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Urban Frip, Via Giulio Mazzarino 11, Pescara PE, Italy"
  },
  {
   "id": "you-thrift",
@@ -2489,7 +2666,8 @@
   "address": "Corso Vittorio Emanuele II 202, Pescara PE, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele+II+202%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=You+Thrift%2C+Corso+Vittorio+Emanuele+II+202%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "You Thrift, Corso Vittorio Emanuele II 202, Pescara PE, Italy"
  },
  {
   "id": "pescara-via-pepe-market",
@@ -2503,7 +2681,8 @@
   "address": "Via Pepe, Pescara PE, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Pepe%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pescara+%E2%80%94+Via+Pepe+market%2C+Via+Pepe%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Pescara — Via Pepe market, Via Pepe, Pescara PE, Italy"
  },
  {
   "id": "antiques-market-sulmona",
@@ -2517,7 +2696,8 @@
   "address": "Piazza Garibaldi, Sulmona AQ, Italy",
   "website": null,
   "colour": "#7FC77F",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+Garibaldi%2C+Sulmona+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Antiques+market%2C+Sulmona%2C+Piazza+Garibaldi%2C+Sulmona+AQ%2C+Italy",
+  "mapQuery": "Antiques market, Sulmona, Piazza Garibaldi, Sulmona AQ, Italy"
  },
  {
   "id": "macelleria-griglieria-mancini",
@@ -2531,7 +2711,8 @@
   "address": "Via Frentana 17, San Vito Chietino CH, Italy",
   "website": null,
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Frentana+17%2C+San+Vito+Chietino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Macelleria+Griglieria+Mancini%2C+Via+Frentana+17%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "Macelleria Griglieria Mancini, Via Frentana 17, San Vito Chietino CH, Italy"
  },
  {
   "id": "l-arte-del-pane-ruccolo",
@@ -2545,7 +2726,8 @@
   "address": "Via N. Sauro 31, San Vito Chietino CH, Italy",
   "website": "https://www.facebook.com/lartedelpanesnc",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+N.+Sauro+31%2C+San+Vito+Chietino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=L%27Arte+del+Pane+%28Ruccolo%29%2C+Via+N.+Sauro+31%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "L'Arte del Pane (Ruccolo), Via N. Sauro 31, San Vito Chietino CH, Italy"
  },
  {
   "id": "la-bocconotteria",
@@ -2559,7 +2741,8 @@
   "address": "Via E. Tinari 6, Lanciano CH, Italy",
   "website": "https://www.bocconotti.com/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+E.+Tinari+6%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Bocconotteria%2C+Via+E.+Tinari+6%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "La Bocconotteria, Via E. Tinari 6, Lanciano CH, Italy"
  },
  {
   "id": "macelleria-caporale",
@@ -2573,7 +2756,8 @@
   "address": "Villa Andreoli, Lanciano CH, Italy",
   "website": "https://www.salumicaporale.it/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villa+Andreoli%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Macelleria+Caporale%2C+Villa+Andreoli%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Macelleria Caporale, Villa Andreoli, Lanciano CH, Italy"
  },
  {
   "id": "salumi-e-formaggi-antonio",
@@ -2587,7 +2771,8 @@
   "address": "Via G. Rosato 38, Lanciano CH, Italy",
   "website": "https://www.sangroaventinoturismo.it/struttura/566-salumi-e-formaggi-antonio",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+G.+Rosato+38%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Salumi+e+Formaggi+Antonio%2C+Via+G.+Rosato+38%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Salumi e Formaggi Antonio, Via G. Rosato 38, Lanciano CH, Italy"
  },
  {
   "id": "enoteca-per-bacco",
@@ -2601,7 +2786,8 @@
   "address": "Via del Verde 19, Lanciano CH, Italy",
   "website": "https://www.instagram.com/per_bacco_lanciano/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+del+Verde+19%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Enoteca+Per+Bacco%2C+Via+del+Verde+19%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Enoteca Per Bacco, Via del Verde 19, Lanciano CH, Italy"
  },
  {
   "id": "distilleria-jannamico",
@@ -2615,7 +2801,8 @@
   "address": "Contrada Villa Martelli, Lanciano CH, Italy",
   "website": "https://www.jannamico.com/en/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Villa+Martelli%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Distilleria+Jannamico%2C+Contrada+Villa+Martelli%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Distilleria Jannamico, Contrada Villa Martelli, Lanciano CH, Italy"
  },
  {
   "id": "enoteca-regionale-d-abruzzo",
@@ -2629,7 +2816,8 @@
   "address": "Corso Matteotti 81, Ortona CH, Italy",
   "website": "https://destinazionecostadeitrabocchi.it/luoghi/enoteca-regionale-dabruzzo-19587",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Matteotti+81%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Enoteca+Regionale+d%27Abruzzo%2C+Corso+Matteotti+81%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Enoteca Regionale d'Abruzzo, Corso Matteotti 81, Ortona CH, Italy"
  },
  {
   "id": "macelleria-f-lli-primante",
@@ -2641,9 +2829,10 @@
   "desc": "Family butcher, “carni abruzzesi dal 1947”. Check hours on their site before a special trip.",
   "flag": null,
   "address": "Ortona CH, Italy",
-  "website": "https://www.macelleriaprimante.it/",
+  "website": null,
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Macelleria+F.lli+Primante%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Macelleria F.lli Primante, Ortona CH, Italy"
  },
  {
   "id": "pecora-matta",
@@ -2657,7 +2846,8 @@
   "address": "Contrada Guarenna Nuova 33, Casoli CH, Italy",
   "website": null,
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Guarenna+Nuova+33%2C+Casoli+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pecora+Matta%2C+Contrada+Guarenna+Nuova+33%2C+Casoli+CH%2C+Italy",
+  "mapQuery": "Pecora Matta, Contrada Guarenna Nuova 33, Casoli CH, Italy"
  },
  {
   "id": "fattorie-del-tratturo",
@@ -2671,7 +2861,8 @@
   "address": "Contrada Ragna 59, Scerni CH, Italy",
   "website": "https://accademiadellaventricina.com/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Ragna+59%2C+Scerni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fattorie+del+Tratturo%2C+Contrada+Ragna+59%2C+Scerni+CH%2C+Italy",
+  "mapQuery": "Fattorie del Tratturo, Contrada Ragna 59, Scerni CH, Italy"
  },
  {
   "id": "pasticceria-emo-lullo",
@@ -2685,7 +2876,8 @@
   "address": "Guardiagrele CH, Italy",
   "website": "https://www.pasticcerialullo.it/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Emo+Lullo%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Pasticceria Emo Lullo, Guardiagrele CH, Italy"
  },
  {
   "id": "iannamico-liquori",
@@ -2699,7 +2891,8 @@
   "address": "Via Duca degli Abruzzi 96, Villa Santa Maria CH, Italy",
   "website": "https://www.iannamicoliquori.com/it/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Duca+degli+Abruzzi+96%2C+Villa+Santa+Maria+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Iannamico+Liquori%2C+Via+Duca+degli+Abruzzi+96%2C+Villa+Santa+Maria+CH%2C+Italy",
+  "mapQuery": "Iannamico Liquori, Via Duca degli Abruzzi 96, Villa Santa Maria CH, Italy"
  },
  {
   "id": "scuppoz-liquori",
@@ -2713,7 +2906,8 @@
   "address": "Contrada Scalepicchio, Teramo TE, Italy",
   "website": "https://www.scuppoz.it/contatti-scuppoz-abruzzo-teramo.html",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Contrada+Scalepicchio%2C+Teramo+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scuppoz+Liquori%2C+Contrada+Scalepicchio%2C+Teramo+TE%2C+Italy",
+  "mapQuery": "Scuppoz Liquori, Contrada Scalepicchio, Teramo TE, Italy"
  },
  {
   "id": "rocca-san-giovanni-borgo",
@@ -2727,7 +2921,8 @@
   "address": "Piazza degli Eroi, Rocca San Giovanni CH, Italy",
   "website": "https://borghipiubelliditalia.it/en/borgo/rocca-san-giovanni/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+degli+Eroi%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rocca+San+Giovanni+borgo%2C+Piazza+degli+Eroi%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Rocca San Giovanni borgo, Piazza degli Eroi, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "abbazia-di-san-giovanni-in-venere",
@@ -2741,7 +2936,8 @@
   "address": "Abbazia di San Giovanni in Venere, Fossacesia CH, Italy",
   "website": "https://www.sangiovanninvenere.it/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abbazia+di+San+Giovanni+in+Venere%2C+Fossacesia+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abbazia+di+San+Giovanni+in+Venere%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Abbazia di San Giovanni in Venere, Fossacesia CH, Italy"
  },
  {
   "id": "santuario-del-miracolo-eucaristico",
@@ -2755,7 +2951,8 @@
   "address": "Corso Roma, Lanciano CH, Italy",
   "website": "https://www.miracoloeucaristico.eu/attivita/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Roma%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santuario+del+Miracolo+Eucaristico%2C+Corso+Roma%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Santuario del Miracolo Eucaristico, Corso Roma, Lanciano CH, Italy"
  },
  {
   "id": "ponte-di-diocleziano",
@@ -2769,7 +2966,8 @@
   "address": "Santa Maria del Ponte, Lanciano CH, Italy",
   "website": "https://cultura.gov.it/luogo/ponte-di-diocleziano",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santa+Maria+del+Ponte%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponte+di+Diocleziano%2C+Santa+Maria+del+Ponte%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Ponte di Diocleziano, Santa Maria del Ponte, Lanciano CH, Italy"
  },
  {
   "id": "sangro-river-war-cemetery",
@@ -2783,7 +2981,8 @@
   "address": "Sangro River War Cemetery, Torino di Sangro CH, Italy",
   "website": "https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/2021204/sangro-river-war-cemetery/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sangro+River+War+Cemetery%2C+Torino+di+Sangro+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sangro+River+War+Cemetery%2C+Torino+di+Sangro+CH%2C+Italy",
+  "mapQuery": "Sangro River War Cemetery, Torino di Sangro CH, Italy"
  },
  {
   "id": "museo-della-battaglia-di-ortona",
@@ -2797,7 +2996,8 @@
   "address": "Museo della Battaglia, Ortona CH, Italy",
   "website": "https://mab.comuneortona.ch.it/musei/museo-della-battaglia-di-ortona/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+della+Battaglia%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+della+Battaglia%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Museo della Battaglia, Ortona CH, Italy"
  },
  {
   "id": "moro-river-canadian-war-cemetery",
@@ -2811,7 +3011,8 @@
   "address": "Moro River Canadian War Cemetery, Ortona CH, Italy",
   "website": "https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/2018200/moro-river-canadian-war-cemetery/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Moro+River+Canadian+War+Cemetery%2C+Ortona+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Moro+River+Canadian+War+Cemetery%2C+Ortona+CH%2C+Italy",
+  "mapQuery": "Moro River Canadian War Cemetery, Ortona CH, Italy"
  },
  {
   "id": "museo-archeologico-villa-frigerj",
@@ -2825,7 +3026,8 @@
   "address": "Villa Frigerj, Chieti CH, Italy",
   "website": "https://museiabruzzo.cultura.gov.it/luoghi-della-cultura/627-museo-archeologico-nazionale-dabruzzo-villa-frigerj/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villa+Frigerj%2C+Chieti+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+Archeologico+%27Villa+Frigerj%27%2C+Villa+Frigerj%2C+Chieti+CH%2C+Italy",
+  "mapQuery": "Museo Archeologico 'Villa Frigerj', Villa Frigerj, Chieti CH, Italy"
  },
  {
   "id": "museo-delle-genti-d-abruzzo",
@@ -2839,7 +3041,8 @@
   "address": "Via delle Caserme 24, Pescara PE, Italy",
   "website": "https://www.gentidabruzzo.com/biglietti/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+delle+Caserme+24%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+delle+Genti+d%27Abruzzo%2C+Via+delle+Caserme+24%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Museo delle Genti d'Abruzzo, Via delle Caserme 24, Pescara PE, Italy"
  },
  {
   "id": "casa-natale-di-gabriele-d-annunzio",
@@ -2853,7 +3056,8 @@
   "address": "Corso Manthone 101, Pescara PE, Italy",
   "website": "https://cultura.gov.it/luogo/museo-casa-natale-di-gabriele-d-annunzio",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Manthone+101%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+Natale+di+Gabriele+D%27Annunzio%2C+Corso+Manthone+101%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Casa Natale di Gabriele D'Annunzio, Corso Manthone 101, Pescara PE, Italy"
  },
  {
   "id": "ponte-del-mare",
@@ -2867,7 +3071,8 @@
   "address": "Ponte del Mare, Pescara PE, Italy",
   "website": "https://www.comune.pescara.it/vivere-il-comune/luoghi/ponte-del-mare/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponte+del+Mare%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponte+del+Mare%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Ponte del Mare, Pescara PE, Italy"
  },
  {
   "id": "guardiagrele",
@@ -2881,7 +3086,8 @@
   "address": "Guardiagrele CH, Italy",
   "website": null,
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Guardiagrele+CH%2C+Italy",
+  "mapQuery": "Guardiagrele CH, Italy"
  },
  {
   "id": "abbazia-di-san-clemente-a-casauria",
@@ -2895,7 +3101,8 @@
   "address": "Castiglione a Casauria PE, Italy",
   "website": "https://cultura.gov.it/luogo/abbazia-di-san-clemente-a-casauria",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Castiglione+a+Casauria+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Abbazia+di+San+Clemente+a+Casauria%2C+Castiglione+a+Casauria+PE%2C+Italy",
+  "mapQuery": "Abbazia di San Clemente a Casauria, Castiglione a Casauria PE, Italy"
  },
  {
   "id": "oratorio-di-san-pellegrino-bominaco",
@@ -2909,7 +3116,8 @@
   "address": "Bominaco, Caporciano AQ, Italy",
   "website": "https://www.parrocchiabominacocaporciano.it/",
   "colour": "#D99C8C",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bominaco%2C+Caporciano+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Oratorio+di+San+Pellegrino%2C+Bominaco%2C+Bominaco%2C+Caporciano+AQ%2C+Italy",
+  "mapQuery": "Oratorio di San Pellegrino, Bominaco, Bominaco, Caporciano AQ, Italy"
  },
  {
   "id": "hotel-villa-medici-spa",
@@ -2923,7 +3131,8 @@
   "address": "Rocca San Giovanni CH, Italy",
   "website": "https://www.hotelvillamediciabruzzo.it/prodotto/ingresso-spa/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hotel+Villa+Medici+SPA%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Hotel Villa Medici SPA, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "villa-maria-day-spa",
@@ -2937,7 +3146,8 @@
   "address": "Francavilla al Mare CH, Italy",
   "website": "https://thespaescape.com/spa/villa-maria-day-spa-trattamento-nuvola/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Francavilla+al+Mare+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Villa+Maria+Day+Spa%2C+Francavilla+al+Mare+CH%2C+Italy",
+  "mapQuery": "Villa Maria Day Spa, Francavilla al Mare CH, Italy"
  },
  {
   "id": "blockhaus-climbing",
@@ -2951,7 +3161,8 @@
   "address": "Via Albegna 15, Pescara PE, Italy",
   "website": "https://www.blockhausclimbing.it/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Albegna+15%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Blockhaus+Climbing%2C+Via+Albegna+15%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Blockhaus Climbing, Via Albegna 15, Pescara PE, Italy"
  },
  {
   "id": "bowling-primavera",
@@ -2965,7 +3176,8 @@
   "address": "Via Aurelio Saffi 8, Pescara PE, Italy",
   "website": "https://www.bowlingprimavera.it/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Aurelio+Saffi+8%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bowling+Primavera%2C+Via+Aurelio+Saffi+8%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Bowling Primavera, Via Aurelio Saffi 8, Pescara PE, Italy"
  },
  {
   "id": "pescara-calcio-stadio-adriatico",
@@ -2979,7 +3191,8 @@
   "address": "Stadio Adriatico, Pescara PE, Italy",
   "website": "https://www.ilpescara.it/sport/calcio/calendario-pescara-calcio-partite-serie-c-lega-pro-2026-27-calcio.html",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Stadio+Adriatico%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pescara+Calcio+%E2%80%94+Stadio+Adriatico%2C+Stadio+Adriatico%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Pescara Calcio — Stadio Adriatico, Stadio Adriatico, Pescara PE, Italy"
  },
  {
   "id": "e-motion-karting",
@@ -2993,7 +3206,8 @@
   "address": "Centro Commerciale Borgo d'Abruzzo, Cepagatti PE, Italy",
   "website": "https://emotionkartingpescara.it/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Centro+Commerciale+Borgo+d%27Abruzzo%2C+Cepagatti+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=E-Motion+Karting%2C+Centro+Commerciale+Borgo+d%27Abruzzo%2C+Cepagatti+PE%2C+Italy",
+  "mapQuery": "E-Motion Karting, Centro Commerciale Borgo d'Abruzzo, Cepagatti PE, Italy"
  },
  {
   "id": "sorgenti-sulfuree-del-lavino",
@@ -3007,7 +3221,8 @@
   "address": "Scafa PE, Italy",
   "website": "https://www.abruzzoturismo.it/it/destinazioni/parco-territoriale-attrezzato-sorgenti-sulfuree-del-lavino",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scafa+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sorgenti+sulfuree+del+Lavino%2C+Scafa+PE%2C+Italy",
+  "mapQuery": "Sorgenti sulfuree del Lavino, Scafa PE, Italy"
  },
  {
   "id": "terme-inn-popoli",
@@ -3021,7 +3236,8 @@
   "address": "Popoli Terme PE, Italy",
   "website": "https://www.termeinnpopoli.it/areabenessere/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Popoli+Terme+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Terme+Inn+Popoli%2C+Popoli+Terme+PE%2C+Italy",
+  "mapQuery": "Terme Inn Popoli, Popoli Terme PE, Italy"
  },
  {
   "id": "osservatorio-astronomico-colle-leone",
@@ -3035,7 +3251,8 @@
   "address": "Mosciano Sant'Angelo TE, Italy",
   "website": "https://www.oacl.net/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mosciano+Sant%27Angelo+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Osservatorio+Astronomico+Colle+Leone%2C+Mosciano+Sant%27Angelo+TE%2C+Italy",
+  "mapQuery": "Osservatorio Astronomico Colle Leone, Mosciano Sant'Angelo TE, Italy"
  },
  {
   "id": "grotte-di-stiffe",
@@ -3049,7 +3266,8 @@
   "address": "San Demetrio ne' Vestini AQ, Italy",
   "website": "https://grottedistiffeofficial.it/",
   "colour": "#8FBCE8",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=San+Demetrio+ne%27+Vestini+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grotte+di+Stiffe%2C+San+Demetrio+ne%27+Vestini+AQ%2C+Italy",
+  "mapQuery": "Grotte di Stiffe, San Demetrio ne' Vestini AQ, Italy"
  },
  {
   "id": "teatro-marrucino",
@@ -3063,7 +3281,8 @@
   "address": "Largo Valignani, Chieti CH, Italy",
   "website": "https://www.teatromarrucino.eu/",
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Largo+Valignani%2C+Chieti+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Teatro+Marrucino%2C+Largo+Valignani%2C+Chieti+CH%2C+Italy",
+  "mapQuery": "Teatro Marrucino, Largo Valignani, Chieti CH, Italy"
  },
  {
   "id": "isole-tremiti-via-termoli",
@@ -3077,7 +3296,8 @@
   "address": "Porto di Termoli, Termoli CB, Italy",
   "website": "https://www.nlg.it/tratte/termoli-tremiti-jet/",
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Porto+di+Termoli%2C+Termoli+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Isole+Tremiti+%28via+Termoli%29%2C+Porto+di+Termoli%2C+Termoli+CB%2C+Italy",
+  "mapQuery": "Isole Tremiti (via Termoli), Porto di Termoli, Termoli CB, Italy"
  },
  {
   "id": "luna-navigazione-giro-delle-isole",
@@ -3091,7 +3311,8 @@
   "address": "Porto San Domino, Isole Tremiti FG, Italy",
   "website": "https://www.tremitionline.net/it/tour-guidati-in-barca",
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Porto+San+Domino%2C+Isole+Tremiti+FG%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Luna+Navigazione+%E2%80%94+giro+delle+isole%2C+Porto+San+Domino%2C+Isole+Tremiti+FG%2C+Italy",
+  "mapQuery": "Luna Navigazione — giro delle isole, Porto San Domino, Isole Tremiti FG, Italy"
  },
  {
   "id": "nlg-santa-lucia-the-rough-sea-boat",
@@ -3105,7 +3326,8 @@
   "address": "Porto di Termoli, Termoli CB, Italy",
   "website": "https://www.nlg.it/en/routes/termoli-tremiti-nave/",
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Porto+di+Termoli%2C+Termoli+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=NLG+Santa+Lucia+%E2%80%94+the+rough-sea+boat%2C+Porto+di+Termoli%2C+Termoli+CB%2C+Italy",
+  "mapQuery": "NLG Santa Lucia — the rough-sea boat, Porto di Termoli, Termoli CB, Italy"
  },
  {
   "id": "termoli-borgo-antico",
@@ -3119,7 +3341,8 @@
   "address": "Borgo Antico, Termoli CB, Italy",
   "website": null,
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Borgo+Antico%2C+Termoli+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Termoli+borgo+antico%2C+Borgo+Antico%2C+Termoli+CB%2C+Italy",
+  "mapQuery": "Termoli borgo antico, Borgo Antico, Termoli CB, Italy"
  },
  {
   "id": "private-boat-to-the-tremiti-abruzzo-skip",
@@ -3133,7 +3356,8 @@
   "address": "Marina di San Pietro, Termoli CB, Italy",
   "website": "https://abruzzoskipper.com/en/islands-tremiti-tour-daily/",
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Marina+di+San+Pietro%2C+Termoli+CB%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Private+boat+to+the+Tremiti+%E2%80%94+Abruzzo+Skipper%2C+Marina+di+San+Pietro%2C+Termoli+CB%2C+Italy",
+  "mapQuery": "Private boat to the Tremiti — Abruzzo Skipper, Marina di San Pietro, Termoli CB, Italy"
  },
  {
   "id": "sulmona",
@@ -3147,7 +3371,8 @@
   "address": "Sulmona AQ, Italy",
   "website": null,
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sulmona+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sulmona+AQ%2C+Italy",
+  "mapQuery": "Sulmona AQ, Italy"
  },
  {
   "id": "sulmona-the-confetti-day-done-right",
@@ -3161,7 +3386,8 @@
   "address": "Corso Ovidio, Sulmona AQ, Italy",
   "website": "https://turismo.comune.sulmona.aq.it/contenuti/1884214/museo-pelino-arte-tecnologia-confettiera",
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Ovidio%2C+Sulmona+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sulmona+%E2%80%94+the+confetti+day%2C+done+right%2C+Corso+Ovidio%2C+Sulmona+AQ%2C+Italy",
+  "mapQuery": "Sulmona — the confetti day, done right, Corso Ovidio, Sulmona AQ, Italy"
  },
  {
   "id": "atri",
@@ -3175,7 +3401,8 @@
   "address": "Atri TE, Italy",
   "website": null,
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Atri+TE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Atri+TE%2C+Italy",
+  "mapQuery": "Atri TE, Italy"
  },
  {
   "id": "rocca-calascio",
@@ -3189,7 +3416,8 @@
   "address": "Rocca Calascio, Calascio AQ, Italy",
   "website": null,
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rocca+Calascio%2C+Calascio+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rocca+Calascio%2C+Calascio+AQ%2C+Italy",
+  "mapQuery": "Rocca Calascio, Calascio AQ, Italy"
  },
  {
   "id": "santo-stefano-di-sessanio",
@@ -3203,7 +3431,8 @@
   "address": "Santo Stefano di Sessanio AQ, Italy",
   "website": null,
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santo+Stefano+di+Sessanio+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Santo+Stefano+di+Sessanio+AQ%2C+Italy",
+  "mapQuery": "Santo Stefano di Sessanio AQ, Italy"
  },
  {
   "id": "scanno-lago-di-scanno",
@@ -3217,7 +3446,8 @@
   "address": "Scanno AQ, Italy",
   "website": null,
   "colour": "#FF6F91",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scanno+AQ%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scanno+%26+Lago+di+Scanno%2C+Scanno+AQ%2C+Italy",
+  "mapQuery": "Scanno & Lago di Scanno, Scanno AQ, Italy"
  },
  {
   "id": "gelateria-le-veri",
@@ -3231,7 +3461,8 @@
   "address": "Gelateria Le Verì, Vallevò, Rocca San Giovanni CH, Italy",
   "website": null,
   "colour": "#EFA6C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gelateria+Le+Ver%C3%AC%2C+Vallev%C3%B2%2C+Rocca+San+Giovanni+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gelateria+Le+Ver%C3%AC%2C+Vallev%C3%B2%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Gelateria Le Verì, Vallevò, Rocca San Giovanni CH, Italy"
  },
  {
   "id": "dolceamaro",
@@ -3245,7 +3476,8 @@
   "address": "Corso Trento e Trieste 112, Lanciano CH, Italy",
   "website": "https://www.instagram.com/dolceamarosas/",
   "colour": "#EFA6C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Trento+e+Trieste+112%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=DolceAMARO%2C+Corso+Trento+e+Trieste+112%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "DolceAMARO, Corso Trento e Trieste 112, Lanciano CH, Italy"
  },
  {
   "id": "polo-nord",
@@ -3259,7 +3491,8 @@
   "address": "Polo Nord, Casalbordino CH, Italy",
   "website": null,
   "colour": "#EFA6C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Polo+Nord%2C+Casalbordino+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Polo+Nord%2C+Casalbordino+CH%2C+Italy",
+  "mapQuery": "Polo Nord, Casalbordino CH, Italy"
  },
  {
   "id": "pannamore",
@@ -3273,7 +3506,8 @@
   "address": "Pannamore, Vasto Marina CH, Italy",
   "website": null,
   "colour": "#EFA6C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pannamore%2C+Vasto+Marina+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pannamore%2C+Vasto+Marina+CH%2C+Italy",
+  "mapQuery": "Pannamore, Vasto Marina CH, Italy"
  },
  {
   "id": "scilo-gelateria-contemporanea",
@@ -3287,7 +3521,8 @@
   "address": "Viale Benedetto Croce, Chieti Scalo CH, Italy",
   "website": "https://www.instagram.com/scilogelateria/",
   "colour": "#EFA6C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Viale+Benedetto+Croce%2C+Chieti+Scalo+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Scil%C3%B2+Gelateria+Contemporanea%2C+Viale+Benedetto+Croce%2C+Chieti+Scalo+CH%2C+Italy",
+  "mapQuery": "Scilò Gelateria Contemporanea, Viale Benedetto Croce, Chieti Scalo CH, Italy"
  },
  {
   "id": "caprice-camplone",
@@ -3301,7 +3536,8 @@
   "address": "Caprice Camplone, Pescara PE, Italy",
   "website": null,
   "colour": "#EFA6C4",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Caprice+Camplone%2C+Pescara+PE%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Caprice+Camplone%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Caprice Camplone, Pescara PE, Italy"
  },
  {
   "id": "sottosale-osteria-di-mare",
@@ -3315,7 +3551,8 @@
   "address": "Via Cristoforo Colombo 78, Marina di San Vito CH, Italy",
   "website": "https://www.instagram.com/sottosaleosteria/",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Via+Cristoforo+Colombo+78%2C+Marina+di+San+Vito+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=SottoSale+Osteria+di+Mare%2C+Via+Cristoforo+Colombo+78%2C+Marina+di+San+Vito+CH%2C+Italy",
+  "mapQuery": "SottoSale Osteria di Mare, Via Cristoforo Colombo 78, Marina di San Vito CH, Italy"
  },
  {
   "id": "osteria-101",
@@ -3329,7 +3566,8 @@
   "address": "Corso Roma 115, Lanciano CH, Italy",
   "website": null,
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Corso+Roma+115%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Osteria+101%2C+Corso+Roma+115%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "Osteria 101, Corso Roma 115, Lanciano CH, Italy"
  },
  {
   "id": "bracevia-a-tutta-pecora",
@@ -3343,7 +3581,8 @@
   "address": "Piazza Sirena 9, Francavilla al Mare CH, Italy",
   "website": "https://bracevia.it/pages/osteria",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+Sirena+9%2C+Francavilla+al+Mare+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bracevia+%E2%80%94+A+Tutta+Pecora%2C+Piazza+Sirena+9%2C+Francavilla+al+Mare+CH%2C+Italy",
+  "mapQuery": "Bracevia — A Tutta Pecora, Piazza Sirena 9, Francavilla al Mare CH, Italy"
  },
  {
   "id": "la-grotta-dei-raselli",
@@ -3357,7 +3596,8 @@
   "address": "La Grotta dei Raselli, Comino, Guardiagrele CH, Italy",
   "website": "https://www.lagrottadeiraselli.it",
   "colour": "#F26D5B",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Grotta+dei+Raselli%2C+Comino%2C+Guardiagrele+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Grotta+dei+Raselli%2C+Comino%2C+Guardiagrele+CH%2C+Italy",
+  "mapQuery": "La Grotta dei Raselli, Comino, Guardiagrele CH, Italy"
  },
  {
   "id": "la-lancianese",
@@ -3371,6 +3611,7 @@
   "address": "La Lancianese, Lanciano CH, Italy",
   "website": "https://www.lalancianese.it/",
   "colour": "#A8C256",
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Lancianese%2C+Lanciano+CH%2C+Italy"
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Lancianese%2C+Lanciano+CH%2C+Italy",
+  "mapQuery": "La Lancianese, Lanciano CH, Italy"
  }
 ]
