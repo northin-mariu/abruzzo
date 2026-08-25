@@ -6,7 +6,7 @@
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {} };
+  var S = { short: {}, plan: {}, friends: {}, me: '' };
   function load() {
     try {
       var raw = localStorage.getItem(KEY);
@@ -28,6 +28,15 @@
           });
         });
       }
+      if (o.friends && typeof o.friends === 'object') {
+        Object.keys(o.friends).forEach(function (n) {
+          var l = o.friends[n];
+          if (!Array.isArray(l)) return;
+          var ids = l.filter(function (id) { return typeof id === 'string' && byId[id]; });
+          if (ids.length) S.friends[String(n).slice(0, 24)] = ids;
+        });
+      }
+      if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
     } catch (e) { /* corrupt storage must never break the page */ }
   }
   function save() {
@@ -67,13 +76,16 @@
   /* ---------- tabs ---------- */
   var TABS = [['t-welcome', 'v-welcome'], ['t-calendar', 'v-calendar'],
               ['t-activities', 'v-activities'], ['t-know', 'v-know']];
+  function showTab(tid) {
+    TABS.forEach(function (p) {
+      var on = p[0] === tid;
+      $(p[0]).setAttribute('aria-selected', on ? 'true' : 'false');
+      $(p[1]).hidden = !on;
+    });
+  }
   TABS.forEach(function (pair) {
     $(pair[0]).addEventListener('click', function () {
-      TABS.forEach(function (p) {
-        var on = p[0] === pair[0];
-        $(p[0]).setAttribute('aria-selected', on ? 'true' : 'false');
-        $(p[1]).hidden = !on;
-      });
+      showTab(pair[0]);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
@@ -98,8 +110,11 @@
                 esc(p.name) + '</a>' +
               (p.flag ? '<span class="tflag">' + esc(p.flag) + '</span>' : '') +
             '</div>' +
-            '<button class="heart" type="button" data-id="' + esc(p.id) + '" aria-pressed="false"' +
-              ' aria-label="Shortlist ' + esc(p.name) + '">' + HEART + '</button>' +
+            '<div class="thead-r">' +
+              '<span class="likedby" aria-label="Hearted by"></span>' +
+              '<button class="heart" type="button" data-id="' + esc(p.id) + '" aria-pressed="false"' +
+                ' aria-label="Shortlist ' + esc(p.name) + '">' + HEART + '</button>' +
+            '</div>' +
           '</div>' +
           '<div class="tinner">' +
             '<p class="ttown">' + esc(p.town) + ' &#183; ' + p.mins + ' min</p>' +
@@ -116,6 +131,7 @@
         el._hay = fold((p.name + ' ' + p.town + ' ' + p.desc + ' ' + p.catLabel + ' ' +
                         (p.flag || '')).toLowerCase());
         el._plan = el.querySelector('.inplan');
+        el._liked = el.querySelector('.likedby');
         el._heart = el.querySelector('.heart');
         tiles.push(el);
         frag.appendChild(el);
@@ -134,6 +150,7 @@
     syncHearts();
     if (group === 'short') renderTiles();
     else updateCounts();
+    if (!$('share-panel').hidden) refreshShare();
   }
   function syncHearts() {
     tiles.forEach(function (el) {
@@ -159,9 +176,14 @@
   // "Pescara" chip: the airport side of the coast, for landing nights and Pescara evenings.
   var AREA_TOWNS = { 'Pescara': 1, 'Montesilvano': 1, 'Francavilla al Mare': 1 };
 
+  function inGroup(p) {
+    if (group === 'eat' || group === 'do') return p.group === group;
+    if (group === 'short') return !!S.short[p.id];
+    if (group.indexOf('friend:') === 0) return friendHas(group.slice(7), p.id);
+    return true;
+  }
   function passes(p, hay, ts) {
-    if (group === 'eat' || group === 'do') { if (p.group !== group) return false; }
-    else if (group === 'short') { if (!S.short[p.id]) return false; }
+    if (!inGroup(p)) return false;
     var cats = Object.keys(active);
     if (cats.length && !active[p.cat]) return false;
     if (p.mins > band) return false;
@@ -179,6 +201,7 @@
         n[el._p.group]++;
         var w = whereInPlan(el._p.id);
         el._plan.textContent = w.length ? 'In your calendar · ' + w.join(' · ') : '';
+        el._liked.innerHTML = likedBy(el._p.id);
       }
     });
     $('sec-eat').hidden = n.eat === 0;
@@ -190,6 +213,7 @@
     if (group === 'eat') bits.push('eat & drink');
     else if (group === 'do') bits.push('out and about');
     else if (group === 'short') bits.push('shortlisted');
+    else if (group.indexOf('friend:') === 0) bits.push(group.slice(7) + "'s picks");
     var cats = Object.keys(active);
     if (cats.length) bits.push(cats.length + (cats.length === 1 ? ' category' : ' categories'));
     if (band !== 999) bits.push('within ' + band + ' min');
@@ -207,8 +231,7 @@
       tiles.forEach(function (el) {
         var p = el._p;
         if (p.cat !== k) return;
-        if (group === 'eat' || group === 'do') { if (p.group !== group) return; }
-        else if (group === 'short') { if (!S.short[p.id]) return; }
+        if (!inGroup(p)) return;
         if (p.mins > band) return;
         if (area && !AREA_TOWNS[p.town]) return;
         for (var i = 0; i < ts.length; i++) if (el._hay.indexOf(ts[i]) < 0) return;
@@ -252,14 +275,11 @@
         renderTiles();
       });
     });
-    [].slice.call($('groups').children).forEach(function (b) {
-      b.addEventListener('click', function () {
-        group = b.dataset.group;
-        [].slice.call($('groups').children).forEach(function (x) {
-          x.setAttribute('aria-pressed', x.dataset.group === group ? 'true' : 'false');
-        });
-        renderTiles();
-      });
+    // delegated, because friends' chips are added to this row after load
+    $('groups').addEventListener('click', function (ev) {
+      var b = ev.target.closest('.chip');
+      if (!b || !b.dataset.group) return;
+      setGroup(b.dataset.group);
     });
     $('area-pescara').addEventListener('click', function () {
       area = !area;
@@ -405,10 +425,138 @@
     input.focus();
   }
 
+  function setGroup(g) {
+    group = g;
+    [].slice.call($('groups').children).forEach(function (x) {
+      x.setAttribute('aria-pressed', x.dataset.group === group ? 'true' : 'false');
+    });
+    renderTiles();
+  }
+
+  /* ---------- friends' picks: shared by link, no accounts, no server ----------
+     A link looks like  #picks=Frances:id,id,id  - opening it stores Frances's hearts in this
+     browser, adds a "Frances ♥" chip beside Shortlisted, and marks her tiles. */
+  var SITE = 'https://northin-mariu.github.io/abruzzo/';
+  function friendHas(name, id) { var l = S.friends[name]; return !!(l && l.indexOf(id) >= 0); }
+  // little tiles: one badge per person who hearted this place, coloured by name
+  var WHO_COLOURS = ['#8D3B5E', '#2A7FB0', '#6B7A3A', '#C0552F', '#1B655F', '#8E3B1A', '#455CEC', '#A140BC'];
+  function whoColour(name) {
+    var h = 0;
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return WHO_COLOURS[h % WHO_COLOURS.length];
+  }
+  function likedBy(id) {
+    var names = Object.keys(S.friends).filter(function (n) { return friendHas(n, id); }).sort();
+    return names.map(function (n) {
+      return '<span class="who" style="--who:' + whoColour(n) + '" title="' + esc(n) + ' hearted this">' +
+             esc(n.charAt(0).toUpperCase()) + '</span>';
+    }).join('');
+  }
+  function renderFriendChips() {
+    var host = $('groups');
+    [].slice.call(host.querySelectorAll('[data-friend]')).forEach(function (x) { host.removeChild(x); });
+    var names = Object.keys(S.friends).sort();
+    names.forEach(function (n) {
+      var b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button';
+      b.dataset.group = 'friend:' + n; b.dataset.friend = n;
+      b.style.setProperty('--c', 'var(--fig)');
+      b.setAttribute('aria-pressed', group === 'friend:' + n ? 'true' : 'false');
+      b.innerHTML = esc(n) + ' ♥ <em>' + S.friends[n].length + '</em>';
+      host.appendChild(b);
+    });
+    var fl = $('share-friends');
+    fl.textContent = '';
+    names.forEach(function (n) {
+      var b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button'; b.dataset.forget = n;
+      b.textContent = 'Forget ' + n;
+      fl.appendChild(b);
+    });
+  }
+  function shareLink() {
+    var name = ($('share-name').value || '').trim().slice(0, 24);
+    var ids = Object.keys(S.short);
+    if (!name || !ids.length) return '';
+    return SITE + '#picks=' + encodeURIComponent(name) + ':' + ids.join(',');
+  }
+  function refreshShare() {
+    var link = shareLink();
+    var name = ($('share-name').value || '').trim();
+    var n = Object.keys(S.short).length;
+    $('share-link').value = link;
+    $('share-link').hidden = !link;
+    $('share-copy').disabled = !link;
+    var wa = $('share-wa');
+    if (link) {
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(name + "'s Abruzzo picks: " + link);
+      wa.removeAttribute('aria-disabled');
+    } else { wa.href = '#'; wa.setAttribute('aria-disabled', 'true'); }
+    $('share-hint').textContent =
+      !name ? 'Put your name in first.' :
+      !n ? 'Heart a few places first - the link carries your hearts.' :
+      'Your ' + n + (n === 1 ? ' heart is' : ' hearts are') + ' in this link. Paste it in the group: ' +
+      'anyone who opens it gets a "' + name + ' ♥" chip next to Shortlisted. ' +
+      'Send it again whenever you change your mind.';
+  }
+  function wireShare() {
+    $('share-name').value = S.me || '';
+    $('share-btn').addEventListener('click', function () {
+      var p = $('share-panel');
+      p.hidden = !p.hidden;
+      this.setAttribute('aria-expanded', p.hidden ? 'false' : 'true');
+      if (!p.hidden) { refreshShare(); if (!S.me) $('share-name').focus(); }
+    });
+    $('share-name').addEventListener('input', function () {
+      S.me = this.value.trim().slice(0, 24);
+      save();
+      refreshShare();
+    });
+    $('share-copy').addEventListener('click', function () {
+      var link = shareLink();
+      if (!link) return;
+      var btn = this;
+      function done(ok) {
+        btn.textContent = ok ? 'Copied' : 'Copy the link below';
+        if (!ok) { $('share-link').focus(); }
+        setTimeout(function () { btn.textContent = 'Copy link'; }, 2500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
+      } else { done(false); }
+    });
+    $('share-link').addEventListener('focus', function () { this.select(); });
+    $('share-friends').addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-forget]');
+      if (!b) return;
+      delete S.friends[b.dataset.forget];
+      save();
+      if (group === 'friend:' + b.dataset.forget) group = 'all';
+      renderFriendChips();
+      setGroup(group);
+    });
+  }
+  function importHash() {
+    var m = /^#picks=([^:]+):(.*)$/.exec(location.hash || '');
+    if (!m) return '';
+    var name, ids;
+    try { name = decodeURIComponent(m[1]).trim().slice(0, 24); } catch (e) { return ''; }
+    ids = m[2].split(',').filter(function (id) { return byId[id]; });
+    if (!name || !ids.length) return '';
+    S.friends[name] = ids;
+    save();
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    return 'friend:' + name;
+  }
+
   load();
+  var imported = importHash();
   buildTiles();
   syncHearts();
   wireShelf();
+  wireShare();
+  renderFriendChips();
   renderCalendar();
-  renderTiles();
+  if (imported) { showTab('t-activities'); setGroup(imported); }
+  else renderTiles();
 })();

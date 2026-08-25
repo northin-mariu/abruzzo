@@ -37,9 +37,11 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   every CC BY-SA image needs a visible credit; Commons has nothing for the pizzerie and forni
   that make up most of the list. `mapUrl` is the photo feature — it opens Google's own current
   photos at zero byte and zero licensing cost.
-- **No people mechanism.** No names, no `ABZ1|` share codes, no cross-person tally. The heart is
-  a personal shortlist in `localStorage` under `abruzzo-2026`. A real group tally needs a shared
-  backend (Cloudflare KV or Supabase); it cannot work on localStorage.
+- **People mechanism = share links, no backend** (added 2026-08-25 because Frances asked to
+  show her likes). "Share my picks" in Activities builds `#picks=Name:id,id,...`; opening such a
+  link stores that person's hearts in `S.friends` (localStorage), adds a "Name ♥" chip beside
+  Shortlisted, and prints "♥ Name" on their tiles. It is a snapshot — resend to update. Still no
+  accounts and no live tally; that would need Cloudflare KV or Supabase.
 - **No `prompt()` or `alert()`, ever.** They throw in chat-app in-app browsers and the exception
   is swallowed by the event system, so controls die silently. That was the original bug.
 - **Design system** = the `butterfly-cave-design` skill in
@@ -80,11 +82,17 @@ two Bars & music. The list is strong far away and thin near the house.
 ## Who is there when (fixed points, rendered as pills in the Calendar via `DAYS[].fixed` in app.js)
 
 - Fri 11 Sep — Matt, Sam and Vero arrive. Matt is on FR 982 STN 13:05 → PSR 16:30
-- Mon 14 Sep — Lyndsey, Frances and Anthony arrive. The only direct London flight that day is
-  FR 982 STN 17:15 → PSR 20:40 (assumed from the schedule, not confirmed from their bookings)
-- Wed 16 Sep — Lyndsey's birthday
-- Thu 17 Sep — Matt's birthday; Lauren arrives in the morning — FR 235 STN 06:25 → PSR 09:50 (assumed)
-- Sun 20 Sep — everyone flies home. Matt is on FR 983 PSR 19:25 → STN 21:00; others assumed the same
+- Mon 14 Sep — Lyndsey, Frances and Anthony arrive on FR 982 STN 17:15 → PSR 20:40, the only
+  direct London flight that day. Lyndsey confirmed 14th–20th on 2026-08-25. Late arrival: at the
+  house ~21:45, so dinner that night needs to be late-friendly (pizza oven, or Stasera Pago Io till 22:00).
+- Wed 16 Sep — Lyndsey's birthday. Lauren flies Dublin → Stansted in the evening and overnights in
+  London for the early start.
+- Thu 17 Sep — Matt's birthday; Lauren lands on FR 235 STN 06:25 → PSR 09:50 (booked 9 Aug),
+  underseat bag only, needs an airport pickup; at the villa ~10:45.
+- Sun 20 Sep — everyone flies home on FR 983 PSR 19:25 → STN 21:00. Matt has booked a minivan
+  from Stansted for the group. Lauren then needs Dublin by 09:00 Monday for class — undecided
+  between the 22:00 Sunday Stansted → Dublin (tight, ~1 hr after landing) and a Monday 06:30;
+  she asked Matt to weigh in and it was left as "chat over the weekend" (7 Aug).
 
 All flights are Ryanair from Stansted. Booking references live in Gmail, not here (public repo).
 Vero is on the group flight home on the 20th, then stays with Matt in London and flies on to
