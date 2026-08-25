@@ -76,3 +76,14 @@ The house PDF names **Chiara** — the host, lives in Vasto, replies within the 
 sends recommendations before guests arrive. The measured gaps to ask her about: nothing in
 Walks & ruins within 15 min (26 places, nearest is 16), one Spa & rainy day option within 15 min,
 two Bars & music. The list is strong far away and thin near the house.
+
+## Who is there when (fixed points, rendered as pills in the Calendar via `DAYS[].fixed` in app.js)
+
+- Fri 11 Sep — Matt, Sam and Vero arrive
+- Mon 14 Sep — Lyndsey, Frances and Anthony arrive
+- Wed 16 Sep — Lyndsey's birthday
+- Thu 17 Sep — Matt's birthday; Lauren arrives in the morning
+- Sun 20 Sep — everyone flies home
+
+Seven people in total. Matt's taste in restaurants: cheap, no-frills, fish-first locals' places
+(Os Fialhos in the Algarve, Stasera Pago Io) — lean that way over set-menu trabocchi.
