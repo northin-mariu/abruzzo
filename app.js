@@ -35,18 +35,18 @@
   }
 
   var DAYS = [
-    { d: 11, dow: 'Fri', fixed: [{ t: 'arrive', l: 'Matt, Sam and Vero arrive' }] },
+    { d: 11, dow: 'Fri', fixed: [{ t: 'arrive', l: 'Matt, Sam and Vero land 16:30' }] },
     { d: 12, dow: 'Sat', weekend: true },
     { d: 13, dow: 'Sun', weekend: true, note: 'Shops and markets shut' },
     { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday - museums shut',
-      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony arrive' }] },
+      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony land 20:40' }] },
     { d: 15, dow: 'Tue' },
     { d: 16, dow: 'Wed', fixed: [{ t: 'bday', l: "Lyndsey's birthday" }] },
-    { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" }, { t: 'arrive', l: 'Lauren arrives (morning)' }] },
+    { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" }, { t: 'arrive', l: 'Lauren lands 09:50' }] },
     { d: 18, dow: 'Fri' },
     { d: 19, dow: 'Sat', weekend: true },
     { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut',
-      fixed: [{ t: 'leave', l: 'Everyone flies home' }] }
+      fixed: [{ t: 'leave', l: 'Everyone flies home 19:25' }] }
   ];
   var SLOTS = [
     { k: 'morning', l: 'Morning' }, { k: 'fullday', l: 'Full day' },

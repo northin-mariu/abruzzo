@@ -79,11 +79,16 @@ two Bars & music. The list is strong far away and thin near the house.
 
 ## Who is there when (fixed points, rendered as pills in the Calendar via `DAYS[].fixed` in app.js)
 
-- Fri 11 Sep — Matt, Sam and Vero arrive
-- Mon 14 Sep — Lyndsey, Frances and Anthony arrive
+- Fri 11 Sep — Matt, Sam and Vero arrive. Matt is on FR 982 STN 13:05 → PSR 16:30
+- Mon 14 Sep — Lyndsey, Frances and Anthony arrive. The only direct London flight that day is
+  FR 982 STN 17:15 → PSR 20:40 (assumed from the schedule, not confirmed from their bookings)
 - Wed 16 Sep — Lyndsey's birthday
-- Thu 17 Sep — Matt's birthday; Lauren arrives in the morning
-- Sun 20 Sep — everyone flies home
+- Thu 17 Sep — Matt's birthday; Lauren arrives in the morning — FR 235 STN 06:25 → PSR 09:50 (assumed)
+- Sun 20 Sep — everyone flies home. Matt is on FR 983 PSR 19:25 → STN 21:00; others assumed the same
+
+All flights are Ryanair from Stansted. Booking references live in Gmail, not here (public repo).
+Vero is on the group flight home on the 20th, then stays with Matt in London and flies on to
+Berlin on the 22nd — the "leaving London 22nd" message is that, not an early departure from Italy.
 
 Seven people in total. Matt's taste in restaurants: cheap, no-frills, fish-first locals' places
 (Os Fialhos in the Algarve, Stasera Pago Io) — lean that way over set-menu trabocchi.
