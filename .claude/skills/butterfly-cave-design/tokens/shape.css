@@ -1,0 +1,8 @@
+/* Butterfly Cave — shape. Three radii. No drop shadows, ever:
+   elevation is --paper-2 against --paper plus a --line border. */
+:root{
+  --radius-card: 12px;    --radius-control: 8px;   --radius-pill: 999px;
+  --border-width: 1px;    --border-accent-width: 3px;
+  --shadow-none: none;
+  --ring-focus: 0 0 0 2px var(--paper), 0 0 0 4px var(--focus-ring);
+}

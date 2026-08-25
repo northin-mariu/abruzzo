@@ -1,0 +1,11 @@
+/* Butterfly Cave — motion. Short, flat, no bounce. Hover lifts 3px; nothing else moves. */
+:root{
+  --dur-fast: .15s; --dur-base: .18s;
+  --ease-out: cubic-bezier(.2,.6,.3,1);
+  --lift-hover: translateY(-3px); --press-scale: .985;
+  --transition-control: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  --transition-card: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{ --dur-fast: 0s; --dur-base: 0s; --lift-hover: none; }
+}

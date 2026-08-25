@@ -1,0 +1,70 @@
+/* Butterfly Cave — the GRAPHIC theme.
+   Source: uploads/Design.pdf (A4, type set as outlines; colours read from the
+   content streams). A centred cobalt column, cream labels across the top, navy
+   body copy, three spot colours. Modern editorial construction, 1990s bluntness:
+   flat fields, square corners, heavier rules, wide-tracked caps.
+
+   Opt in per subtree:  <body data-theme="graphic">  or  <div data-theme="graphic">
+   The sun-bleached default theme stays untouched. Same fonts, same type scale,
+   same spacing, same no-shadow rule — only colour and edge change. */
+[data-theme="graphic"]{
+  /* ground: cream paper, cobalt field */
+  --paper: #FAF3E5;
+  --paper-2: #FFFFFF;
+  --shade: #F1E7D2;
+  --line: #16304D;        /* rules are ink, not tint — this is the 90s part */
+  --line-soft: #C9D2DC;
+
+  /* ink */
+  --ink: #16304D;
+  --ink-2: #4A6480;
+  --ink-3: #8FA2B5;
+  --ink-on-colour: #FAF3E5;
+  --ink-on-light: #16304D;
+
+  /* brand: the field and its spots */
+  --stucco: #F2C14E;
+  --stucco-deep: #D9A72F;
+  --terracotta: #E8442B;
+  --pool: #1E4FD8;
+  --pool-deep: #163CA6;
+  --pool-pale: #C3D0F6;
+  --cobalt: #1E4FD8;
+  --olive: #8DBE9F;
+  --ochre: #F2C14E;
+  --fig: #E8442B;
+  --sky: #C3D0F6;
+
+  /* semantic */
+  --surface-page: var(--paper);
+  --surface-card: var(--paper-2);
+  --surface-sunk: var(--shade);
+  --surface-sticky: rgba(250,243,229,.94);
+  --surface-field: #1E4FD8;      /* the full-bleed colour block */
+  --text-on-field: #FAF3E5;
+  --accent: #1E4FD8;
+  --accent-hover: #163CA6;
+  --brand: #F2C14E;
+  --brand-hover: #D9A72F;
+  --star: #E8442B;
+  --heart: #E8442B;
+  --focus-ring: #E8442B;
+
+  /* category ramp: four spots, doubled up rather than invented */
+  --cat-coral: #E8442B;
+  --cat-teal: #8DBE9F;
+  --cat-lime: #8DBE9F;
+  --cat-cobalt: #1E4FD8;
+  --cat-ochre: #F2C14E;
+  --cat-terracotta: #E8442B;
+  --cat-fig: #1E4FD8;
+  --cat-sky: #C3D0F6;
+
+  /* edge: square and heavier */
+  --radius-card: 0px;
+  --radius-control: 0px;
+  --radius-pill: 999px;         /* pills stay pills */
+  --border-width: 2px;
+  --border-accent-width: 6px;
+  --column-max: 294px;          /* the PDF's centred field, 150.75→444.9pt */
+}

@@ -1,0 +1,13 @@
+/* Butterfly Cave — space and layout. Spacing is gap only. No margins between siblings. */
+:root{
+  --space-1: 4px;  --space-2: 7px;  --space-3: 11px; --space-4: 16px; --space-5: 20px;
+  --space-6: 26px; --space-7: 34px; --space-8: 46px; --space-9: 64px;
+  --gap-inline: var(--space-2);   /* icon <-> label, chips in a row */
+  --gap-stack: var(--space-3);    /* lines inside a card */
+  --gap-card: var(--space-4);     /* between cards in a grid */
+  --gap-section: var(--space-8);  /* between page sections */
+  --pad-card: 19px 20px 17px; --pad-panel: 18px;
+  --pad-control: 9px 12px;   --pad-pill: 7px 13px;
+  --shell-max: 1180px; --read-max: 640px; --gutter: 20px;
+  --hit-min: 44px; --card-min: 305px;
+}

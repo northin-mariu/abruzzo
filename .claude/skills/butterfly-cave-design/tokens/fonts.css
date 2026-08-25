@@ -1,0 +1,10 @@
+/* Butterfly Cave webfonts.
+   Italiana is the brand face (self-hosted in the design project, fonts/Italiana-Regular.ttf).
+   Karla carries body and meta, from the Google CDN.
+   For single-file / no-CDN builds use --font-serif-system and --font-sans-system instead. */
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..700;1,300..700&display=swap");
+@font-face{
+  font-family: "Italiana";
+  src: url("../fonts/Italiana-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}

@@ -1,0 +1,47 @@
+/* Butterfly Cave — colour.
+   Ground: sun-bleached limestone. Accents: painted flat colour.
+   Two background tones maximum. No gradients. No shadows. */
+:root{
+  /* --- ground --- */
+  --paper: #F6EFE3;        /* page ground — limestone, travertine terrace */
+  --paper-2: #FCF8F0;      /* raised surface: cards, panels (lighter, not darker) */
+  --shade: #EADFCD;        /* recessed surface: rails, wells, inputs */
+  --line: #DBC9B1;         /* every border and rule */
+  --line-soft: #EBDFCC;    /* hairline inside a raised surface */
+
+  /* --- ink --- */
+  --ink: #241E1A;
+  --ink-2: #6E6157;
+  --ink-3: #9C8D7F;
+  --peach: #F9DFD2;        /* pale stucco — type colour on any saturated fill */
+  --ink-on-colour: #F9DFD2;/* peach, never white */
+  --ink-on-light: #241E1A;
+
+  /* --- brand --- */
+  --stucco: #E9A18B;  --stucco-deep: #D4816A;  --terracotta: #C0552F;
+  --pool: #2A7FB0;    --pool-deep: #1D5F87;    --pool-pale: #BFDFF0;
+  --cobalt: #2C5BD1;  --olive: #6B7A3A;        --ochre: #E0A32E;
+  --fig: #8D3B5E;     --sky: #7FB5DA;
+
+  /* --- graphic palette --- */
+  --cobalt-electric: #1E4FD8; --cream: #FAF3E5; --navy: #16304D;
+  --vermilion: #E8442B; --marigold: #F2C14E; --sage: #8DBE9F;
+
+  /* --- semantic --- */
+  --surface-page: var(--paper);   --surface-card: var(--paper-2);
+  --surface-sunk: var(--shade);   --surface-sticky: rgba(246,239,227,.92);
+  --text-body: var(--ink);        --text-meta: var(--ink-2);
+  --text-placeholder: var(--ink-3);
+  --text-link: var(--pool);       --text-link-hover: var(--pool-deep);
+  --border-default: var(--line);  --border-strong: var(--ink-2);
+  --accent: var(--pool);          --accent-hover: var(--pool-deep);
+  --brand: var(--stucco);         --brand-hover: var(--stucco-deep);
+  --star: var(--terracotta);      --heart: var(--fig);
+  --focus-ring: var(--pool);
+
+  /* --- category ramp — 8 tokens, never a literal hex in markup --- */
+  --cat-coral: #E4674A;   --cat-teal: #2E9E96;
+  --cat-lime: #8AA43C;    --cat-cobalt: #2C5BD1;
+  --cat-ochre: #E0A32E;   --cat-terracotta: #C0552F;
+  --cat-fig: #8D3B5E;     --cat-sky: #7FB5DA;
+}

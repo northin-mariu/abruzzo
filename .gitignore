@@ -1,0 +1,10 @@
+.DS_Store
+# Local-only: personal docs, screenshots, exports and backups
+*.pdf
+*.png
+*.jpeg
+*.jpg
+*.csv
+*.pre11
+*.premaps
+files/
