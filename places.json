@@ -3658,5 +3658,50 @@
   "colour": "#A8C256",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pescheria+L%27Ancora%2C+Via+Marina+50%2C+Fossacesia+CH%2C+Italy",
   "mapQuery": "Pescheria L'Ancora, Via Marina 50, Fossacesia CH, Italy"
+ },
+ {
+  "id": "pesciolillo",
+  "name": "Pesciolillo",
+  "town": "Pescara",
+  "cat": "food",
+  "catLabel": "Eating",
+  "mins": 45,
+  "desc": "Fast fish, done properly: gourmet sea sandwiches, fritto, a few pastas, poke and crudo, counter or tables. Open every day 12:00 to midnight straight through, so it is the safe bet for a late landing — ten minutes from the airport. +39 085 421 1422.",
+  "flag": "Open till midnight",
+  "address": "Corso Vittorio Emanuele II 257, Pescara PE, Italy",
+  "website": "http://www.pesciolillo.it/",
+  "colour": "#F26D5B",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pesciolillo%2C+Corso+Vittorio+Emanuele+II+257%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Pesciolillo, Corso Vittorio Emanuele II 257, Pescara PE, Italy"
+ },
+ {
+  "id": "trattoria-nina",
+  "name": "Trattoria Nina",
+  "town": "Pescara",
+  "cat": "food",
+  "catLabel": "Eating",
+  "mins": 45,
+  "desc": "Hidden family trattoria in the centre — you ring a doorbell to get in. Home cooking, sea and land, €15–25 a head; spaghetti allo scoglio and the fish gnocchi are the ones people come back for. Service is unhurried. Mon 19:30–22:00, closed Wednesday; last orders are early, so book. +39 085 205 6915.",
+  "flag": "Book — kitchen shuts 22:00",
+  "address": "Via Trento 88, Pescara PE, Italy",
+  "website": null,
+  "colour": "#F26D5B",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+Nina%2C+Via+Trento+88%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Trattoria Nina, Via Trento 88, Pescara PE, Italy"
+ },
+ {
+  "id": "alla-brace-cibo-da-strada",
+  "name": "Alla Brace — Cibo da Strada",
+  "town": "Pescara",
+  "cat": "food",
+  "catLabel": "Eating",
+  "mins": 45,
+  "desc": "Arrosticini as street food: hand-cut sheep and liver skewers over the coals, fritti, bruschette, draught beer, a handful of tables and takeaway. €15–20 a head. Monday 19:00–23:00 — the cheap, quick option after a late flight. +39 085 793 0067.",
+  "flag": "Cheap and quick",
+  "address": "Via Giovanni Caboto 44, Pescara PE, Italy",
+  "website": "https://www.allabrace.com/",
+  "colour": "#F26D5B",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alla+Brace+%E2%80%94+Cibo+da+Strada%2C+Via+Giovanni+Caboto+44%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Alla Brace — Cibo da Strada, Via Giovanni Caboto 44, Pescara PE, Italy"
  }
 ]

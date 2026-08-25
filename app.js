@@ -155,7 +155,9 @@
     return out;
   }
 
-  var active = {}, band = 999, term = '', group = 'all';
+  var active = {}, band = 999, term = '', group = 'all', area = false;
+  // "Pescara" chip: the airport side of the coast, for landing nights and Pescara evenings.
+  var AREA_TOWNS = { 'Pescara': 1, 'Montesilvano': 1, 'Francavilla al Mare': 1 };
 
   function passes(p, hay, ts) {
     if (group === 'eat' || group === 'do') { if (p.group !== group) return false; }
@@ -163,6 +165,7 @@
     var cats = Object.keys(active);
     if (cats.length && !active[p.cat]) return false;
     if (p.mins > band) return false;
+    if (area && !AREA_TOWNS[p.town]) return false;
     for (var i = 0; i < ts.length; i++) if (hay.indexOf(ts[i]) < 0) return false;
     return true;
   }
@@ -190,9 +193,10 @@
     var cats = Object.keys(active);
     if (cats.length) bits.push(cats.length + (cats.length === 1 ? ' category' : ' categories'));
     if (band !== 999) bits.push('within ' + band + ' min');
+    if (area) bits.push('Pescara side');
     if (term) bits.push('matching “' + term + '”');
     $('count-text').textContent = bits.join(' · ');
-    $('clear').hidden = !(cats.length || band !== 999 || term || group !== 'all');
+    $('clear').hidden = !(cats.length || band !== 999 || term || group !== 'all' || area);
     $('empty').hidden = total > 0;
     updateChipCounts(ts);
     updateCounts(total);
@@ -206,12 +210,16 @@
         if (group === 'eat' || group === 'do') { if (p.group !== group) return; }
         else if (group === 'short') { if (!S.short[p.id]) return; }
         if (p.mins > band) return;
+        if (area && !AREA_TOWNS[p.town]) return;
         for (var i = 0; i < ts.length; i++) if (el._hay.indexOf(ts[i]) < 0) return;
         c++;
       });
       b.querySelector('em').textContent = c;
       b.classList.toggle('zero', c === 0);
     });
+    var an = 0;
+    tiles.forEach(function (el) { if (AREA_TOWNS[el._p.town] && !el.hidden) an++; });
+    $('area-n').textContent = an;
   }
   function updateCounts(shown) {
     // the Activities badge counts what is on screen, not the shortlist -
@@ -252,12 +260,18 @@
         renderTiles();
       });
     });
+    $('area-pescara').addEventListener('click', function () {
+      area = !area;
+      this.setAttribute('aria-pressed', area ? 'true' : 'false');
+      renderTiles();
+    });
     $('q').addEventListener('input', function () {
       term = this.value.trim().toLowerCase();
       renderTiles();
     });
     $('clear').addEventListener('click', function () {
-      active = {}; band = 999; term = ''; group = 'all'; $('q').value = '';
+      active = {}; band = 999; term = ''; group = 'all'; area = false; $('q').value = '';
+      $('area-pescara').setAttribute('aria-pressed', 'false');
       [].slice.call($('cats').children).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       [].slice.call($('bands').children).forEach(function (b) {
         b.setAttribute('aria-pressed', b.dataset.band === '999' ? 'true' : 'false');
