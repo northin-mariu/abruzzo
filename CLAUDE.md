@@ -62,10 +62,13 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
 
 ## Known gaps
 
-- **No map.** The old build's schematic map had pins with no place identifier, not index-aligned
-  with the cards (18/230 categories matched), so they could never respond to search. Bringing it
-  back needs coordinates per record — geocode the `address` fields via OpenStreetMap (ODbL allows
-  storing results; Google's terms do not).
+- **Map (added 2026-08-25).** "Show map" in Activities loads Leaflet + OpenStreetMap tiles on
+  demand (nothing loads until tapped) and pins whatever passes the current filters, coloured by
+  category; hollow pin = town-centre fallback, black pin = the house. Coordinates come from
+  `geocode.py` (Nominatim, 1 req/s, results stored in `places.json` as `lat`/`lon`/`geo`). Run it
+  after adding places: `python3 geocode.py` only touches records without coordinates.
+  `HOUSE` in app.js is the Rocca San Giovanni borgo, not the villa's door — Nominatim does not
+  know the villa; correct it if Chiara gives a pin.
 - **No opening days.** One Monday (14 Sep) and two Sundays (13, 20). The original shortlist schema
   had `closed` / `only` / `dates` / `tags` and this one lost them. Adding them back is worth more
   than twenty more places.

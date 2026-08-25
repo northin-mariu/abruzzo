@@ -151,6 +151,14 @@
     if (group === 'short') renderTiles();
     else updateCounts();
     if (!$('share-panel').hidden) refreshShare();
+    // first heart and no name yet: open the share panel so the hearts can travel under a name
+    if (!S.me && S.short[id] && Object.keys(S.short).length === 1) {
+      $('share-panel').hidden = false;
+      $('share-btn').setAttribute('aria-expanded', 'true');
+      refreshShare();
+      $('share-hint').textContent = 'Nice. Put your name in and the others can see what you like.';
+      $('share-name').focus();
+    }
   }
   function syncHearts() {
     tiles.forEach(function (el) {
@@ -179,9 +187,17 @@
   function inGroup(p) {
     if (group === 'eat' || group === 'do') return p.group === group;
     if (group === 'short') return !!S.short[p.id];
+    if (group === 'votes') return votes(p.id) > 0;
     if (group.indexOf('friend:') === 0) return friendHas(group.slice(7), p.id);
     return true;
   }
+  // votes = my heart + every friend's heart we have been sent
+  function voters(id) {
+    var names = Object.keys(S.friends).filter(function (n) { return friendHas(n, id); });
+    if (S.short[id]) names.push(S.me || 'Me');
+    return names.sort();
+  }
+  function votes(id) { return voters(id).length; }
   function passes(p, hay, ts) {
     if (!inGroup(p)) return false;
     var cats = Object.keys(active);
@@ -203,6 +219,8 @@
         el._plan.textContent = w.length ? 'In your calendar · ' + w.join(' · ') : '';
         el._liked.innerHTML = likedBy(el._p.id);
       }
+      // in the Votes view the grid re-sorts by popularity; elsewhere it keeps drive-time order
+      el.style.order = group === 'votes' ? String(1000 - votes(el._p.id)) : '';
     });
     $('sec-eat').hidden = n.eat === 0;
     $('sec-do').hidden = n.do === 0;
@@ -213,6 +231,7 @@
     if (group === 'eat') bits.push('eat & drink');
     else if (group === 'do') bits.push('out and about');
     else if (group === 'short') bits.push('shortlisted');
+    else if (group === 'votes') bits.push('with votes, most first');
     else if (group.indexOf('friend:') === 0) bits.push(group.slice(7) + "'s picks");
     var cats = Object.keys(active);
     if (cats.length) bits.push(cats.length + (cats.length === 1 ? ' category' : ' categories'));
@@ -224,6 +243,80 @@
     $('empty').hidden = total > 0;
     updateChipCounts(ts);
     updateCounts(total);
+    if (map) drawPins();
+  }
+
+  /* ---------- map: Leaflet + OpenStreetMap, loaded only when asked for ----------
+     Pins are the tiles that pass the current filters, so search and chips drive the map too. */
+  var HOUSE = { lat: 42.2486, lon: 14.4664, name: 'Butterfly Cave' };
+  var map = null, pinLayer = null, leafletLoading = false;
+  function loadLeaflet(cb) {
+    if (window.L) return cb();
+    if (leafletLoading) return;
+    leafletLoading = true;
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(css);
+    var js = document.createElement('script');
+    js.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    js.onload = function () { leafletLoading = false; cb(); };
+    js.onerror = function () {
+      leafletLoading = false;
+      $('map-note').textContent = 'The map could not load - check the connection and try again.';
+    };
+    document.head.appendChild(js);
+  }
+  function initMap() {
+    map = L.map('map', { scrollWheelZoom: false });
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    L.marker([HOUSE.lat, HOUSE.lon], {
+      icon: L.divIcon({ className: '', html: '<div class="pin house"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }),
+      zIndexOffset: 1000
+    }).addTo(map).bindPopup('<b>' + HOUSE.name + '</b>Villa Grotta delle Farfalle, Rocca San Giovanni');
+    pinLayer = L.layerGroup().addTo(map);
+    drawPins();
+  }
+  function drawPins() {
+    pinLayer.clearLayers();
+    var pts = [[HOUSE.lat, HOUSE.lon]];
+    tiles.forEach(function (el) {
+      var p = el._p;
+      if (el.hidden || typeof p.lat !== 'number') return;
+      var approx = p.geo === 'town';
+      var liked = !!S.short[p.id] || likedBy(p.id) !== '';
+      var m = L.marker([p.lat, p.lon], {
+        icon: L.divIcon({
+          className: '',
+          html: '<div class="pin' + (approx ? ' approx' : '') + (liked ? ' liked' : '') +
+                '" style="--pin:' + p.fill + '"></div>',
+          iconSize: [14, 14], iconAnchor: [7, 7]
+        }),
+        title: p.name
+      });
+      m.bindPopup('<b>' + esc(p.name) + '</b>' + esc(p.catLabel) + ' &#183; ' + esc(p.town) +
+                  ' &#183; ' + p.mins + ' min' + (approx ? ' &#183; <i>town centre, not exact</i>' : '') +
+                  (p.flag ? '<br>' + esc(p.flag) : '') +
+                  '<br><a href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>');
+      pinLayer.addLayer(m);
+      pts.push([p.lat, p.lon]);
+    });
+    if (pts.length > 1) map.fitBounds(pts, { padding: [24, 24], maxZoom: 13 });
+    else map.setView([HOUSE.lat, HOUSE.lon], 11);
+  }
+  function wireMap() {
+    $('map-btn').addEventListener('click', function () {
+      var panel = $('map-panel'), btn = this;
+      panel.hidden = !panel.hidden;
+      btn.setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
+      btn.textContent = panel.hidden ? 'Show map' : 'Hide map';
+      if (panel.hidden) return;
+      if (map) { map.invalidateSize(); drawPins(); return; }
+      loadLeaflet(function () { initMap(); });
+    });
   }
   function updateChipCounts(ts) {
     [].slice.call($('cats').children).forEach(function (b) {
@@ -249,6 +342,7 @@
     // a "0" next to Activities reads as "there are none".
     if (typeof shown === 'number') $('c-act').textContent = shown;
     $('short-n').textContent = Object.keys(S.short).length;
+    $('votes-n').textContent = PLACES.filter(function (p) { return votes(p.id) > 0; }).length;
     var n = 0;
     Object.keys(S.plan).forEach(function (d) { n += Object.keys(S.plan[d]).length; });
     var badge = $('c-plan');
@@ -498,9 +592,52 @@
       'Your ' + n + (n === 1 ? ' heart is' : ' hearts are') + ' in this link. Paste it in the group: ' +
       'anyone who opens it gets a "' + name + ' ♥" chip next to Shortlisted. ' +
       'Send it again whenever you change your mind.';
+    refreshTally();
+  }
+  function tallyText() {
+    var rows = PLACES.filter(function (p) { return votes(p.id) > 0; });
+    if (!rows.length) return '';
+    rows.sort(function (a, b) { return votes(b.id) - votes(a.id) || a.mins - b.mins; });
+    var people = Object.keys(S.friends).sort();
+    if (Object.keys(S.short).length) people.push(S.me || 'Me');
+    var out = ['Abruzzo picks - ' + rows.length + ' places, ' + people.length +
+               (people.length === 1 ? ' person' : ' people') + ' (' + people.join(', ') + ')', ''];
+    ['eat', 'do'].forEach(function (g) {
+      var sub = rows.filter(function (p) { return p.group === g; });
+      if (!sub.length) return;
+      out.push(g === 'eat' ? 'EAT & DRINK' : 'OUT AND ABOUT');
+      sub.forEach(function (p) {
+        out.push(votes(p.id) + ' ♥  ' + p.name + ' - ' + p.town + ', ' + p.mins + ' min' +
+                 (p.flag ? ' [' + p.flag + ']' : '') + '  (' + voters(p.id).join(', ') + ')');
+      });
+      out.push('');
+    });
+    return out.join('\n').trim();
+  }
+  function refreshTally() {
+    var t = tallyText();
+    $('tally-text').value = t;
+    $('tally-text').hidden = !t;
+    $('tally-copy').disabled = !t;
+    var wa = $('tally-wa');
+    if (t) { wa.href = 'https://wa.me/?text=' + encodeURIComponent(t); wa.removeAttribute('aria-disabled'); }
+    else { wa.href = '#'; wa.setAttribute('aria-disabled', 'true'); }
   }
   function wireShare() {
     $('share-name').value = S.me || '';
+    $('tally-copy').addEventListener('click', function () {
+      var t = tallyText();
+      if (!t) return;
+      var btn = this;
+      function done(ok) {
+        btn.textContent = ok ? 'Copied' : 'Copy the text below';
+        setTimeout(function () { btn.textContent = 'Copy tally'; }, 2500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { done(true); }, function () { done(false); });
+      } else { done(false); }
+    });
+    $('tally-text').addEventListener('focus', function () { this.select(); });
     $('share-btn').addEventListener('click', function () {
       var p = $('share-panel');
       p.hidden = !p.hidden;
@@ -555,6 +692,7 @@
   syncHearts();
   wireShelf();
   wireShare();
+  wireMap();
   renderFriendChips();
   renderCalendar();
   if (imported) { showTab('t-activities'); setGroup(imported); }

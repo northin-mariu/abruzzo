@@ -118,7 +118,21 @@ button{font:inherit; cursor:pointer}
 .chip[aria-pressed="true"] .dot{background:var(--peach); opacity:.7}
 .chip em{font-style:normal; font-variant-numeric:tabular-nums; opacity:.72}
 .chip.zero{opacity:.38}
-.share{margin-top:var(--s3)}
+.share{margin-top:var(--s3); display:flex; flex-wrap:wrap; gap:var(--s2); align-items:flex-start}
+.share .sharebox{flex-basis:100%}
+.mappanel{margin:var(--s4) 0}
+.mappanel[hidden]{display:none}
+.map{height:min(70vh,560px); border-radius:var(--r-card); border:1px solid var(--line);
+     background:var(--paper-2); overflow:hidden}
+.mapnote{font-size:var(--t-meta); margin-top:var(--s2); color:var(--peach)}
+.pin{width:14px; height:14px; border-radius:50%; background:var(--pin,#8E3B1A);
+     border:2px solid #FAF3E5; box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.pin.approx{background:#FAF3E5; border:3px solid var(--pin,#8E3B1A)}
+.pin.house{width:18px; height:18px; background:#241E1A; border-color:#FAF3E5}
+.pin.liked{box-shadow:0 0 0 3px #8D3B5E, 0 1px 3px rgba(0,0,0,.35)}
+.leaflet-popup-content{font:inherit; font-size:14px; line-height:1.4}
+.leaflet-popup-content b{display:block; font-family:var(--font-serif); font-size:17px}
+.leaflet-popup-content a{color:var(--pool)}
 .sharebox{display:flex; flex-direction:column; gap:var(--s2); margin-top:var(--s2); padding:var(--s3);
           border:1px solid var(--line-soft); border-radius:var(--r-control); background:var(--paper)}
 .sharebox[hidden]{display:none}
@@ -126,6 +140,9 @@ button{font:inherit; cursor:pointer}
 .sharebox input{width:100%; min-height:var(--hit); padding:9px 12px; font:inherit;
                 border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2)}
 .sharebox input[hidden]{display:none}
+.sharebox textarea{width:100%; padding:9px 12px; font:inherit; font-size:var(--t-meta); line-height:1.45;
+                   border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2); resize:vertical}
+.sharebox textarea[hidden]{display:none}
 .sharebox input:focus{border-color:var(--pool); outline:none}
 .sharebox a.chip{text-decoration:none}
 .sharebox a.chip[aria-disabled="true"]{opacity:.45; pointer-events:none}

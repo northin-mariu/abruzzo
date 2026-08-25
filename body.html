@@ -120,6 +120,8 @@
         <button class="chip" type="button" aria-pressed="false" data-group="eat" style="--c:var(--eat-deep)">Eat &amp; drink</button>
         <button class="chip" type="button" aria-pressed="false" data-group="do" style="--c:var(--do-deep)">Out and about</button>
         <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Shortlisted <em id="short-n">0</em></button>
+        <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--terracotta)"
+                title="Everything anyone has hearted, most votes first">Votes <em id="votes-n">0</em></button>
       </div>
       <div class="row" id="bands">
         <button class="chip" type="button" aria-pressed="true" data-band="999">Any distance</button>
@@ -132,6 +134,8 @@
       <div class="row" id="cats">{{CHIPS}}</div>
       <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
       <div class="share">
+        <button class="chip" type="button" id="map-btn" aria-expanded="false" aria-controls="map-panel"
+                style="--c:var(--pool)">Show map</button>
         <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
                 style="--c:var(--fig)">Share my picks</button>
         <div class="sharebox" id="share-panel" hidden>
@@ -144,8 +148,20 @@
           <input id="share-link" type="text" readonly aria-label="Your picks link" hidden>
           <p class="muted" id="share-hint"></p>
           <div class="row" id="share-friends"></div>
+          <label>The tally &#x2014; everyone&#x2019;s hearts as a list, most votes first</label>
+          <div class="row">
+            <button class="chip" type="button" id="tally-copy">Copy tally</button>
+            <a class="chip" id="tally-wa" href="#" target="_blank" rel="noopener">Tally on WhatsApp</a>
+          </div>
+          <textarea id="tally-text" readonly rows="8" aria-label="The tally" hidden></textarea>
         </div>
       </div>
+    </div>
+
+    <div class="mappanel" id="map-panel" hidden>
+      <div class="map" id="map" role="region" aria-label="Map of the places currently shown"></div>
+      <p class="muted mapnote" id="map-note">Pins follow the filters above. The house is the black pin.
+      A hollow pin means we only know the town, not the door.</p>
     </div>
 
     <section class="group" id="sec-eat">

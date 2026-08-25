@@ -60,10 +60,8 @@ No dependencies beyond the Python standard library. One record looks like this:
 
 ## Known gaps
 
-- **No map.** The previous build had a schematic map, but its pins carried no place identifier
-  and were not aligned with the place list, so they could not respond to search or filters.
-  Bringing it back properly needs coordinates on each record — geocoding the `address` fields via
-  OpenStreetMap would do it, and would also let every future place get a pin automatically.
+- **Map pins need coordinates.** After adding a place, run `python3 geocode.py` — it looks up
+  any record without `lat`/`lon` on OpenStreetMap and saves the result. Then rebuild.
 - **No opening days.** With one Monday (14 Sep) and two Sundays (13 and 20 Sep), knowing what is
   actually open matters. Adding `closed` / `only` / `tags` fields to each record would let the
   Calendar answer it.

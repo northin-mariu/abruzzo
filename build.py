@@ -37,7 +37,8 @@ def deepen(hexcol, target=4.7):
             return '#%02X%02X%02X' % tuple(round(v * 255) for v in rgb)
     return '#241E1A'
 
-KEEP = ('id', 'name', 'town', 'cat', 'catLabel', 'mins', 'desc', 'flag', 'website', 'mapUrl')
+KEEP = ('id', 'name', 'town', 'cat', 'catLabel', 'mins', 'desc', 'flag', 'website', 'mapUrl',
+        'lat', 'lon', 'geo')
 data = []
 FILL = {}
 for p in places:
