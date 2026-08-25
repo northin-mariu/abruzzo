@@ -228,6 +228,11 @@ main{position:relative; z-index:1}
 .dhead{display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap}
 .ddate{font-family:var(--font-serif); font-size:var(--t-h3)}
 .dnote{font-size:var(--t-meta); color:var(--terracotta)}
+.dfixed{display:flex; flex-wrap:wrap; gap:6px}
+.fx{display:inline-flex; align-items:center; padding:3px 10px; border-radius:999px;
+    font-size:var(--t-meta); line-height:1.3; color:var(--peach); background:var(--olive)}
+.fx-bday{background:var(--fig)}
+.fx-leave{background:var(--ink-2)}
 .slots{display:flex; flex-direction:column; gap:var(--s2)}
 .slot{display:flex; flex-direction:column; gap:5px; padding:var(--s3);
       border:1px solid var(--line-soft); border-radius:var(--r-control); background:var(--paper)}
@@ -366,7 +371,8 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
     </div>
     <div class="col">
       <p class="lead">Fix what you want to fix and leave the rest open. A <b>Full day</b> takes the whole day
-      &#x2014; choose one and the other three close until you empty it.</p>
+      &#x2014; choose one and the other three close until you empty it. Arrivals and birthdays are already
+      marked &#x2014; those are the same for everyone.</p>
     </div>
     <div class="days" id="days"></div>
     <div class="sunk">
@@ -780,12 +786,18 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   }
 
   var DAYS = [
-    { d: 11, dow: 'Fri' }, { d: 12, dow: 'Sat', weekend: true },
+    { d: 11, dow: 'Fri', fixed: [{ t: 'arrive', l: 'Matt, Sam and Vero arrive' }] },
+    { d: 12, dow: 'Sat', weekend: true },
     { d: 13, dow: 'Sun', weekend: true, note: 'Shops and markets shut' },
-    { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday \u2014 museums shut' },
-    { d: 15, dow: 'Tue' }, { d: 16, dow: 'Wed' }, { d: 17, dow: 'Thu' }, { d: 18, dow: 'Fri' },
+    { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday - museums shut',
+      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony arrive' }] },
+    { d: 15, dow: 'Tue' },
+    { d: 16, dow: 'Wed', fixed: [{ t: 'bday', l: "Lyndsey's birthday" }] },
+    { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" }, { t: 'arrive', l: 'Lauren arrives (morning)' }] },
+    { d: 18, dow: 'Fri' },
     { d: 19, dow: 'Sat', weekend: true },
-    { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut' }
+    { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut',
+      fixed: [{ t: 'leave', l: 'Everyone flies home' }] }
   ];
   var SLOTS = [
     { k: 'morning', l: 'Morning' }, { k: 'fullday', l: 'Full day' },
@@ -1024,6 +1036,11 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       wrap.className = 'day' + (day.mon ? ' mon' : (day.weekend ? ' weekend' : ''));
       var head = '<div class="dhead"><span class="ddate">' + day.dow + ' ' + day.d + ' Sep</span>' +
         (day.note ? '<span class="dnote">' + esc(day.note) + '</span>' : '') + '</div>';
+      if (day.fixed && day.fixed.length) {
+        head += '<div class="dfixed">' + day.fixed.map(function (f) {
+          return '<span class="fx fx-' + f.t + '">' + esc(f.l) + '</span>';
+        }).join('') + '</div>';
+      }
       var body = '<div class="slots">';
       SLOTS.forEach(function (sl) {
         var filled = s[sl.k], bl = !filled && blocked(day.d, sl.k);

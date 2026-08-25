@@ -35,12 +35,18 @@
   }
 
   var DAYS = [
-    { d: 11, dow: 'Fri' }, { d: 12, dow: 'Sat', weekend: true },
+    { d: 11, dow: 'Fri', fixed: [{ t: 'arrive', l: 'Matt, Sam and Vero arrive' }] },
+    { d: 12, dow: 'Sat', weekend: true },
     { d: 13, dow: 'Sun', weekend: true, note: 'Shops and markets shut' },
-    { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday — museums shut' },
-    { d: 15, dow: 'Tue' }, { d: 16, dow: 'Wed' }, { d: 17, dow: 'Thu' }, { d: 18, dow: 'Fri' },
+    { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday - museums shut',
+      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony arrive' }] },
+    { d: 15, dow: 'Tue' },
+    { d: 16, dow: 'Wed', fixed: [{ t: 'bday', l: "Lyndsey's birthday" }] },
+    { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" }, { t: 'arrive', l: 'Lauren arrives (morning)' }] },
+    { d: 18, dow: 'Fri' },
     { d: 19, dow: 'Sat', weekend: true },
-    { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut' }
+    { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut',
+      fixed: [{ t: 'leave', l: 'Everyone flies home' }] }
   ];
   var SLOTS = [
     { k: 'morning', l: 'Morning' }, { k: 'fullday', l: 'Full day' },
@@ -279,6 +285,11 @@
       wrap.className = 'day' + (day.mon ? ' mon' : (day.weekend ? ' weekend' : ''));
       var head = '<div class="dhead"><span class="ddate">' + day.dow + ' ' + day.d + ' Sep</span>' +
         (day.note ? '<span class="dnote">' + esc(day.note) + '</span>' : '') + '</div>';
+      if (day.fixed && day.fixed.length) {
+        head += '<div class="dfixed">' + day.fixed.map(function (f) {
+          return '<span class="fx fx-' + f.t + '">' + esc(f.l) + '</span>';
+        }).join('') + '</div>';
+      }
       var body = '<div class="slots">';
       SLOTS.forEach(function (sl) {
         var filled = s[sl.k], bl = !filled && blocked(day.d, sl.k);

@@ -220,6 +220,11 @@ main{position:relative; z-index:1}
 .dhead{display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap}
 .ddate{font-family:var(--font-serif); font-size:var(--t-h3)}
 .dnote{font-size:var(--t-meta); color:var(--terracotta)}
+.dfixed{display:flex; flex-wrap:wrap; gap:6px}
+.fx{display:inline-flex; align-items:center; padding:3px 10px; border-radius:999px;
+    font-size:var(--t-meta); line-height:1.3; color:var(--peach); background:var(--olive)}
+.fx-bday{background:var(--fig)}
+.fx-leave{background:var(--ink-2)}
 .slots{display:flex; flex-direction:column; gap:var(--s2)}
 .slot{display:flex; flex-direction:column; gap:5px; padding:var(--s3);
       border:1px solid var(--line-soft); border-radius:var(--r-control); background:var(--paper)}
