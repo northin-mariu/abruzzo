@@ -46,7 +46,12 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   `{ids}` under the person's name (debounced 800 ms) and everyone's hearts are pulled on load, on
   tab focus and every 60 s into `S.friends`. Forget = DELETE. No auth — the page is public, so
   a key would be public too; abuse ceiling is "someone scribbles on a trip list".
-  Matt has to create the Cloudflare account and paste the worker in; Claude cannot.
+  **Deployed 2026-08-25** in Matt's Cloudflare account (mattnorthin@gmail.com): worker
+  `abruzzo-picks` at `https://abruzzo-picks.mattnorthin.workers.dev`, KV namespace `abruzzo-picks`
+  bound as `PICKS`. `worker/smoke.sh <url>` exercises it. KV listings lag writes by ~2 s.
+  To update the worker code: dashboard → Workers & Pages → abruzzo-picks → Edit code → paste
+  `worker/abruzzo-picks.js` → Deploy (the editor is a cross-origin frame; Claude's browser tools
+  cannot type into it, so the paste is Matt's). To wipe all hearts: delete the KV namespace's keys.
 - **No `prompt()` or `alert()`, ever.** They throw in chat-app in-app browsers and the exception
   is swallowed by the event system, so controls die silently. That was the original bug.
 - **Design system** = the `butterfly-cave-design` skill in
