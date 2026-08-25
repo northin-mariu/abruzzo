@@ -40,8 +40,13 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
 - **People mechanism = share links, no backend** (added 2026-08-25 because Frances asked to
   show her likes). "Share my picks" in Activities builds `#picks=Name:id,id,...`; opening such a
   link stores that person's hearts in `S.friends` (localStorage), adds a "Name ♥" chip beside
-  Shortlisted, and prints "♥ Name" on their tiles. It is a snapshot — resend to update. Still no
-  accounts and no live tally; that would need Cloudflare KV or Supabase.
+  Shortlisted, and initial badges on their tiles. Links are a snapshot — resend to update.
+- **Live sync on top of that** (2026-08-25): `worker/abruzzo-picks.js` is a Cloudflare Worker +
+  KV (`PICKS`). `SYNC` in app.js holds its URL; empty = links only. With it set, each heart PUTs
+  `{ids}` under the person's name (debounced 800 ms) and everyone's hearts are pulled on load, on
+  tab focus and every 60 s into `S.friends`. Forget = DELETE. No auth — the page is public, so
+  a key would be public too; abuse ceiling is "someone scribbles on a trip list".
+  Matt has to create the Cloudflare account and paste the worker in; Claude cannot.
 - **No `prompt()` or `alert()`, ever.** They throw in chat-app in-app browsers and the exception
   is swallowed by the event system, so controls die silently. That was the original bug.
 - **Design system** = the `butterfly-cave-design` skill in

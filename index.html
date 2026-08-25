@@ -456,6 +456,7 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
         <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
                 style="--c:var(--fig)">Share my picks</button>
         <div class="sharebox" id="share-panel" hidden>
+          <p class="muted" id="sync-note" hidden></p>
           <label for="share-name">Your name</label>
           <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name">
           <div class="row">
@@ -971,6 +972,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     if (group === 'short') renderTiles();
     else updateCounts();
     if (!$('share-panel').hidden) refreshShare();
+    pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
     if (!S.me && S.short[id] && Object.keys(S.short).length === 1) {
       $('share-panel').hidden = false;
@@ -1487,12 +1489,79 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       var b = ev.target.closest('[data-forget]');
       if (!b) return;
       delete S.friends[b.dataset.forget];
+      forgetRemote(b.dataset.forget);
       save();
       if (group === 'friend:' + b.dataset.forget) group = 'all';
       renderFriendChips();
       setGroup(group);
     });
   }
+  /* ---------- live sync: a Cloudflare Worker + KV (see worker/abruzzo-picks.js) ----------
+     SYNC empty = links only. With SYNC set, every heart is saved under your name and everyone's
+     hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
+  var SYNC = '';
+  var syncTimer = null, syncPoll = null;
+  function syncNote(msg) {
+    var n = $('sync-note');
+    n.hidden = !msg;
+    n.textContent = msg || '';
+  }
+  function fetchJSON(url, opts) {
+    return fetch(url, opts).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.status === 204 ? null : r.json();
+    });
+  }
+  function pullPicks(quiet) {
+    if (!SYNC || !window.fetch) return;
+    fetchJSON(SYNC + '/picks').then(function (all) {
+      var changed = false;
+      Object.keys(all || {}).forEach(function (n) {
+        if (n === S.me) return;
+        var ids = (all[n] || []).filter(function (id) { return byId[id]; });
+        if (!ids.length) { if (S.friends[n]) { delete S.friends[n]; changed = true; } return; }
+        if (JSON.stringify(S.friends[n] || []) !== JSON.stringify(ids)) { S.friends[n] = ids; changed = true; }
+      });
+      if (changed) { save(); renderFriendChips(); renderTiles(); if (!$('share-panel').hidden) refreshShare(); }
+      var now = new Date();
+      syncNote('Live: hearts are shared automatically' + (S.me ? ' as ' + S.me : ' once you add your name') +
+               '. Last checked ' + ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2) + '.');
+    }).catch(function () {
+      if (!quiet) syncNote('Could not reach the shared list - showing what this phone knows. Links still work.');
+    });
+  }
+  function pushPicks() {
+    if (!SYNC || !window.fetch || !S.me) return;
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(function () {
+      fetchJSON(SYNC + '/picks/' + encodeURIComponent(S.me), {
+        method: 'PUT', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids: Object.keys(S.short) })
+      }).then(function () { pullPicks(true); })
+        .catch(function () { syncNote('Could not save to the shared list just now - it will retry on your next heart.'); });
+    }, 800);
+  }
+  function forgetRemote(name) {
+    if (!SYNC || !window.fetch || !name) return;
+    fetchJSON(SYNC + '/picks/' + encodeURIComponent(name), { method: 'DELETE' }).catch(function () {});
+  }
+  function wireSync() {
+    if (!SYNC || !window.fetch) return;
+    var before = S.me;
+    $('share-name').addEventListener('focus', function () { before = S.me; });
+    $('share-name').addEventListener('change', function () {
+      if (before && before !== S.me) forgetRemote(before);
+      before = S.me;
+      pushPicks();
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') pullPicks(true);
+    });
+    syncPoll = setInterval(function () { if (document.visibilityState === 'visible') pullPicks(true); }, 60000);
+    pullPicks();
+    if (S.me && Object.keys(S.short).length) pushPicks();
+  }
+
   function importHash() {
     var m = /^#picks=([^:]+):(.*)$/.exec(location.hash || '');
     if (!m) return '';
@@ -1517,6 +1586,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   renderCalendar();
   if (imported) { showTab('t-activities'); setGroup(imported); }
   else renderTiles();
+  wireSync();
 })();
 
 </script>

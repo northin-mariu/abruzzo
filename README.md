@@ -67,6 +67,13 @@ No dependencies beyond the Python standard library. One record looks like this:
   Calendar answer it.
 - **No group voting.** Deliberate — it needs a shared backend, and copy-paste codes were removed.
 
+## Shared hearts (live sync)
+
+`worker/abruzzo-picks.js` is a Cloudflare Worker that keeps everyone's hearts in one place.
+Deploy it once through the Cloudflare dashboard (instructions at the top of the file), then put
+its URL into `SYNC` near the bottom of `app.js` and rebuild. With `SYNC` empty the site still
+works — hearts travel by "Share my picks" links instead.
+
 ## Auto-rebuild
 
 Not set up: adding `.github/workflows/` needs a token with the `workflow` scope. To enable it,
