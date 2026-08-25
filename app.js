@@ -243,10 +243,11 @@
       });
     });
     [].slice.call($('bands').children).forEach(function (b) {
+      if (!b.dataset.band) return; // the Pescara area chip shares this row but is not a band
       b.addEventListener('click', function () {
         band = +b.dataset.band;
         [].slice.call($('bands').children).forEach(function (x) {
-          x.setAttribute('aria-pressed', +x.dataset.band === band ? 'true' : 'false');
+          if (x.dataset.band) x.setAttribute('aria-pressed', +x.dataset.band === band ? 'true' : 'false');
         });
         renderTiles();
       });
@@ -274,7 +275,7 @@
       $('area-pescara').setAttribute('aria-pressed', 'false');
       [].slice.call($('cats').children).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       [].slice.call($('bands').children).forEach(function (b) {
-        b.setAttribute('aria-pressed', b.dataset.band === '999' ? 'true' : 'false');
+        if (b.dataset.band) b.setAttribute('aria-pressed', b.dataset.band === '999' ? 'true' : 'false');
       });
       [].slice.call($('groups').children).forEach(function (b) {
         b.setAttribute('aria-pressed', b.dataset.group === 'all' ? 'true' : 'false');
