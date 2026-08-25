@@ -3613,5 +3613,50 @@
   "colour": "#A8C256",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Lancianese%2C+Lanciano+CH%2C+Italy",
   "mapQuery": "La Lancianese, Lanciano CH, Italy"
+ },
+ {
+  "id": "fritteria-stasera-pago-io",
+  "name": "Fritteria Stasera Pago Io",
+  "town": "Vallevò",
+  "cat": "food",
+  "catLabel": "Eating",
+  "mins": 5,
+  "desc": "The fried-fish canteen in the Vallevò cove, on the Via Verde so you can cycle to it. Self-service: choose at the counter, pay, wait for your tray. Every portion about €5, frittura di paranza the thing to get. Daily 12–15 and 18–22 since 2001. Nobody comes for the décor. +39 0872 609236.",
+  "flag": "Cheap fried fish",
+  "address": "Contrada Vallevò 201, Rocca San Giovanni CH, Italy",
+  "website": "https://www.facebook.com/stasera.pagoio/",
+  "colour": "#F26D5B",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fritteria+Stasera+Pago+Io%2C+Contrada+Vallev%C3%B2+201%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Fritteria Stasera Pago Io, Contrada Vallevò 201, Rocca San Giovanni CH, Italy"
+ },
+ {
+  "id": "trattoria-la-casereccia",
+  "name": "Trattoria La Casereccia",
+  "town": "San Vito Chietino",
+  "cat": "food",
+  "catLabel": "Eating",
+  "mins": 8,
+  "desc": "The €5-a-course fish trattoria — 700 reviews and the locals' choice for feeding a table without thinking about the bill. Fritto, pasta, whatever came in. Hours vary by source and it may be lunch-only midweek or shut on Wednesday, so ring the same day. +39 0872 618669 / 346 406 6821.",
+  "flag": "Phone first",
+  "address": "Via Frentana 15, San Vito Chietino CH, Italy",
+  "website": null,
+  "colour": "#F26D5B",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+La+Casereccia%2C+Via+Frentana+15%2C+San+Vito+Chietino+CH%2C+Italy",
+  "mapQuery": "Trattoria La Casereccia, Via Frentana 15, San Vito Chietino CH, Italy"
+ },
+ {
+  "id": "pescheria-l-ancora",
+  "name": "Pescheria L'Ancora",
+  "town": "Fossacesia Marina",
+  "cat": "larder",
+  "catLabel": "Provisions",
+  "mins": 6,
+  "desc": "Fishmonger with a kitchen, next to the Deco. Fritto misto, seppie e piselli, baccalà e patate, stuffed calamari, insalata di mare — ring ahead and collect it hot at a set time for supper by the pool. Tue–Sat 8–13 and 16:30–20:30, closed Sunday and Monday. 4.5 on Google. +39 0872 608134.",
+  "flag": "Takeaway — closed Sun & Mon",
+  "address": "Via Marina 50, Fossacesia CH, Italy",
+  "website": "https://www.facebook.com/pescherialancora/",
+  "colour": "#A8C256",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pescheria+L%27Ancora%2C+Via+Marina+50%2C+Fossacesia+CH%2C+Italy",
+  "mapQuery": "Pescheria L'Ancora, Via Marina 50, Fossacesia CH, Italy"
  }
 ]
