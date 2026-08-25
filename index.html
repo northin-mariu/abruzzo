@@ -1469,6 +1469,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     });
     $('share-name').addEventListener('input', function () {
       S.me = this.value.trim().slice(0, 24);
+      if (S.me && S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
       save();
       refreshShare();
     });
@@ -1523,6 +1524,8 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
         if (!ids.length) { if (S.friends[n]) { delete S.friends[n]; changed = true; } return; }
         if (JSON.stringify(S.friends[n] || []) !== JSON.stringify(ids)) { S.friends[n] = ids; changed = true; }
       });
+      // never list yourself as a friend (happens if the server knew you before this phone did)
+      if (S.me && S.friends[S.me]) { delete S.friends[S.me]; changed = true; }
       if (changed) { save(); renderFriendChips(); renderTiles(); if (!$('share-panel').hidden) refreshShare(); }
       var now = new Date();
       syncNote('Live: hearts are shared automatically' + (S.me ? ' as ' + S.me : ' once you add your name') +
