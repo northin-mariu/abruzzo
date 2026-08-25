@@ -371,9 +371,10 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
       </div>
       <div class="panel">
         <h3>The heart is yours &#x2014; and shareable</h3>
-        <p class="muted">Shortlisting is kept in your own browser; there are no accounts. To show the others
-        what you like, tap <b>Share my picks</b> in Activities and paste the link in the group. Anyone who
-        opens it sees your hearts as a chip of their own.</p>
+        <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
+        appear on the cards, and the <b>Votes</b> chip sorts the list by how many of you like a place. There
+        are no accounts, just your name. If the shared list is ever out of reach, tap <b>Share my picks</b>
+        in Activities and paste the link in the group instead.</p>
       </div>
       <div class="panel">
         <h3>The house</h3>
@@ -1499,7 +1500,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   /* ---------- live sync: a Cloudflare Worker + KV (see worker/abruzzo-picks.js) ----------
      SYNC empty = links only. With SYNC set, every heart is saved under your name and everyone's
      hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
-  var SYNC = '';
+  var SYNC = 'https://abruzzo-picks.mattnorthin.workers.dev';
   var syncTimer = null, syncPoll = null;
   function syncNote(msg) {
     var n = $('sync-note');

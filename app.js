@@ -678,7 +678,7 @@
   /* ---------- live sync: a Cloudflare Worker + KV (see worker/abruzzo-picks.js) ----------
      SYNC empty = links only. With SYNC set, every heart is saved under your name and everyone's
      hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
-  var SYNC = '';
+  var SYNC = 'https://abruzzo-picks.mattnorthin.workers.dev';
   var syncTimer = null, syncPoll = null;
   function syncNote(msg) {
     var n = $('sync-note');
