@@ -264,7 +264,25 @@
     document.head.appendChild(js);
   }
   function initMap() {
-    map = L.map('map', { scrollWheelZoom: false });
+    // on touch screens a full-width map at the top of the page would swallow every scroll gesture,
+    // so it starts locked (pins still tap) and a button on the map unlocks moving and pinching
+    var touch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    map = L.map('map', { scrollWheelZoom: false, dragging: !touch, touchZoom: !touch, tap: true });
+    if (touch) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'maplock';
+      btn.textContent = 'Move the map';
+      btn.setAttribute('aria-pressed', 'false');
+      btn.addEventListener('click', function () {
+        var on = map.dragging.enabled();
+        if (on) { map.dragging.disable(); map.touchZoom.disable(); }
+        else { map.dragging.enable(); map.touchZoom.enable(); }
+        btn.textContent = on ? 'Move the map' : 'Done moving';
+        btn.setAttribute('aria-pressed', on ? 'false' : 'true');
+      });
+      $('map').appendChild(btn);
+    }
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -351,6 +369,9 @@
     save();
     $('welcome').hidden = true;
     showTab('t-activities');
+    // on a phone the hero fills the first screen; land people on the tabs + map instead
+    var nav = document.querySelector('nav.tabs');
+    if (nav && nav.scrollIntoView) nav.scrollIntoView({ block: 'start' });
   }
   function wireWelcome() {
     $('welcome-go').addEventListener('click', closeWelcome);
@@ -653,8 +674,17 @@
     fetchJSON(SYNC + '/picks').then(function (all) {
       var changed = false;
       Object.keys(all || {}).forEach(function (n) {
-        if (n === S.me) return;
         var ids = (all[n] || []).filter(function (id) { return byId[id]; });
+        if (n === S.me) {
+          // this phone has forgotten its hearts (new phone, cleared browser) but the server has
+          // them: take them back, rather than letting the next tap overwrite them with one heart
+          if (!dirty && !Object.keys(S.short).length && ids.length) {
+            ids.forEach(function (id) { S.short[id] = true; });
+            syncHearts();
+            changed = true;
+          }
+          return;
+        }
         if (!ids.length) { if (S.friends[n]) { delete S.friends[n]; changed = true; } return; }
         if (JSON.stringify(S.friends[n] || []) !== JSON.stringify(ids)) { S.friends[n] = ids; changed = true; }
       });
@@ -662,6 +692,7 @@
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; changed = true; }
       if (changed) { save(); renderFriendChips(); renderTiles(); }
       syncOk = true;
+      if (dirty && !syncTimer) pushPicks();
         var now = new Date();
       syncNote('Live: everyone’s hearts update by themselves' +
                (S.me ? '' : ' — tap “Who’s hearting?” so yours count') +
@@ -671,16 +702,27 @@
         if (!quiet) syncNote('Could not reach the shared list — showing what this phone knows. You can share by link below.');
     });
   }
+  // dirty = hearts changed since the last successful save; cleared only when the server says ok,
+  // so a heart tapped while offline or mid-flight is retried on the next pull, the next heart,
+  // or the moment the app is backgrounded (keepalive lets that last request finish)
+  var dirty = false;
+  function pushNow(keepalive) {
+    if (!SYNC || !window.fetch || !S.me) return;
+    dirty = true;
+    var opts = {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids: Object.keys(S.short) })
+    };
+    if (keepalive) opts.keepalive = true;
+    fetchJSON(SYNC + '/picks/' + encodeURIComponent(S.me), opts)
+      .then(function () { dirty = false; if (!keepalive) pullPicks(true); })
+      .catch(function () { syncNote('Could not save to the shared list just now - it will keep trying.'); });
+  }
   function pushPicks() {
     if (!SYNC || !window.fetch || !S.me) return;
+    dirty = true;
     clearTimeout(syncTimer);
-    syncTimer = setTimeout(function () {
-      fetchJSON(SYNC + '/picks/' + encodeURIComponent(S.me), {
-        method: 'PUT', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: Object.keys(S.short) })
-      }).then(function () { pullPicks(true); })
-        .catch(function () { syncNote('Could not save to the shared list just now - it will retry on your next heart.'); });
-    }, 800);
+    syncTimer = setTimeout(function () { syncTimer = null; pushNow(false); }, 300);
   }
   function forgetRemote(name) {
     if (!SYNC || !window.fetch || !name) return;
@@ -697,8 +739,10 @@
     });
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState === 'visible') pullPicks(true);
+      else if (dirty) { clearTimeout(syncTimer); syncTimer = null; pushNow(true); }
     });
-    syncPoll = setInterval(function () { if (document.visibilityState === 'visible') pullPicks(true); }, 30000);
+    // always poll: browsers already slow timers in background tabs, and the request is tiny
+    syncPoll = setInterval(function () { pullPicks(true); }, 30000);
     pullPicks();
     if (S.me && Object.keys(S.short).length) pushPicks();
   }

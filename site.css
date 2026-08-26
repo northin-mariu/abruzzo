@@ -126,7 +126,22 @@ button{font:inherit; cursor:pointer}
 .map{height:min(52vh,440px); border-radius:calc(var(--r-card) - 4px); border:1px solid var(--line-soft);
      background:var(--shade); overflow:hidden}
 .mapnote{font-size:var(--t-meta); color:var(--ink-2); margin:0}
-@media (max-width:640px){.map{height:300px}}
+.map{position:relative}
+.maplock{position:absolute; right:10px; top:10px; z-index:800; min-height:36px; padding:6px 12px;
+         border:1px solid var(--line); border-radius:var(--r-pill); background:var(--paper-2); color:var(--ink);
+         font:inherit; font-size:var(--t-meta); font-weight:var(--w-bold); box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.maplock[aria-pressed="true"]{background:var(--pool); border-color:var(--pool); color:var(--peach)}
+@media (max-width:640px){
+  .map{height:300px}
+  .phead{min-height:104px}
+  /* on a phone the 18 category chips were a whole screen to scroll past; swipe them instead */
+  #cats,#bands{flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+               margin:0 calc(-1 * var(--pad-panel)); padding:0 var(--pad-panel)}
+  #cats::-webkit-scrollbar,#bands::-webkit-scrollbar{display:none}
+  #cats .chip,#bands .chip{flex:0 0 auto}
+  .phead-in{padding:var(--s4) var(--s4) var(--s3)}
+  .phead-title{font-size:24px}
+}
 .modal{position:fixed; inset:0; z-index:80; background:rgba(36,30,26,.55); display:flex;
        align-items:center; justify-content:center; padding:var(--s4)}
 .modal[hidden]{display:none}
