@@ -129,3 +129,13 @@ plan, applies the tap, saves, renders and PUTs — last write wins per edit, not
 Anyone can add, remove or toggle "Book it". `S.plan` values are `{id, by, booked}` (older bare-id
 saves are upgraded on load). Names in the plan are slugs, mapped back via known names.
 Matt's real hearts live under "Matt" in the store — never delete that entry when cleaning up tests.
+
+## Design compliance pass (2026-08-26)
+
+Map, welcome card, sheet, badges and calendar were checked against `.claude/skills/butterfly-cave-design`
+and fixed: no `box-shadow` anywhere (rings are `outline`, elevation is paper-2 + `--line`), no literal
+hex in markup or JS (person colours are `--who-1..7` tokens, chosen for 4.5:1 with peach initials;
+the store carries the index `c-3`, never a hex), Leaflet controls restyled (Karla, paper surfaces,
+44px zoom buttons, 12.5px attribution, popup as a paper card), CARTO light basemap with a sepia
+wash so the tiles sit on the limestone ground, welcome list uses numerals not glyphs, "Booked"
+is colour-carried (olive fill) with no tick mark. Keep it that way when adding UI.

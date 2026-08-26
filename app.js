@@ -42,10 +42,10 @@
       }
       if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
       S.welcomed = !!o.welcomed;
-      if (typeof o.colour === 'string' && /^#[0-9A-Fa-f]{6}$/.test(o.colour)) S.colour = o.colour.toUpperCase();
+      if (typeof o.colour === 'number' && o.colour >= 1 && o.colour <= 7) S.colour = o.colour;
       if (o.fc && typeof o.fc === 'object') {
         Object.keys(o.fc).forEach(function (n) {
-          if (typeof o.fc[n] === 'string' && /^#[0-9A-Fa-f]{6}$/.test(o.fc[n])) S.fc[String(n).slice(0, 24)] = o.fc[n].toUpperCase();
+          if (typeof o.fc[n] === 'number' && o.fc[n] >= 1 && o.fc[n] <= 7) S.fc[String(n).slice(0, 24)] = o.fc[n];
         });
       }
     } catch (e) { /* corrupt storage must never break the page */ }
@@ -184,7 +184,7 @@
         var e = slots[s.k];
         if (e && e.id === id) {
           out.push(d.dow + ' ' + d.d + ' ' + s.l.toLowerCase() + (e.by ? ' (' + e.by + ')' : '') +
-                   (e.booked ? ' ✓ booked' : ''));
+                   (e.booked ? ' · booked' : ''));
         }
       });
     });
@@ -298,9 +298,11 @@
       });
       $('map').appendChild(btn);
     }
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // CARTO's light basemap: quiet greys, so the category-coloured pins and the paper frame carry
+    // the page; a sepia wash in site.css pulls it towards the limestone ground
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 18, subdomains: 'abcd',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &#183; &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
     L.marker([HOUSE.lat, HOUSE.lon], {
       icon: L.divIcon({ className: '', html: '<div class="pin house"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }),
@@ -327,7 +329,7 @@
         title: p.name
       });
       m.bindPopup('<b>' + esc(p.name) + '</b>' + esc(p.catLabel) + ' &#183; ' + esc(p.town) +
-                  ' &#183; ' + p.mins + ' min' + (approx ? ' &#183; <i>town centre, not exact</i>' : '') +
+                  ' &#183; ' + p.mins + ' min' + (approx ? ' &#183; town centre, not the door' : '') +
                   (p.flag ? '<br>' + esc(p.flag) : '') +
                   '<br><a href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>');
       pinLayer.addLayer(m);
@@ -584,7 +586,7 @@
                   '<button class="bk" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
                   '" aria-pressed="' + (filled.booked ? 'true' : 'false') + '" title="' +
                   (filled.booked ? 'Booked - tap to unmark' : 'Tap once it is booked') + '">' +
-                  (filled.booked ? '✓ Booked' : 'Book it') + '</button>' +
+                  (filled.booked ? 'Booked' : 'Book it') + '</button>' +
                   '<button class="rm" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
                   '" aria-label="Remove ' + esc(p.name) + ' from ' + sl.l + ' on ' + day.dow + ' ' +
                   day.d + '">×</button></span></div>';
@@ -694,18 +696,21 @@
      browser, adds a "Frances ♥" chip beside Shortlisted, and marks her tiles. */
   function friendHas(name, id) { var l = S.friends[name]; return !!(l && l.indexOf(id) >= 0); }
   // little tiles: one badge per person who hearted this place, coloured by name
-  var WHO_COLOURS = ['#8D3B5E', '#2A7FB0', '#6B7A3A', '#C0552F', '#1B655F', '#8E3B1A', '#455CEC', '#A140BC'];
+  // person colours are the tokens --who-1 .. --who-7 in site.css (each passes 4.5:1 with peach
+  // initials); the page only ever handles the index, never a hex
+  var WHO_N = 7;
   function hashColour(name) {
     var h = 0;
     for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
-    return WHO_COLOURS[h % WHO_COLOURS.length];
+    return (h % WHO_N) + 1;
   }
-  // a chosen colour wins (yours, or one a friend chose and the store passed on); otherwise by name
-  function whoColour(name) {
+  function whoIndex(name) {
     if (name === S.me && S.colour) return S.colour;
     if (S.fc[name]) return S.fc[name];
     return hashColour(name || 'Me');
   }
+  // a chosen colour wins (yours, or one a friend chose and the store passed on); otherwise by name
+  function whoColour(name) { return 'var(--who-' + whoIndex(name) + ')'; }
   function badge(n) {
     return '<span class="who" style="--who:' + whoColour(n) + '" title="' + esc(n) + ' hearted this">' +
            esc(n.charAt(0).toUpperCase()) + '</span>';
@@ -721,12 +726,12 @@
     var host = $(hostId);
     host.textContent = '';
     var current = S.colour || hashColour(S.me || 'Me');
-    WHO_COLOURS.forEach(function (c) {
+    for (var i = 1; i <= WHO_N; i++) (function (c) {
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'sw';
-      b.style.setProperty('--sw', c);
-      b.setAttribute('aria-label', 'Colour ' + c);
+      b.style.setProperty('--sw', 'var(--who-' + c + ')');
+      b.setAttribute('aria-label', 'Colour ' + c + ' of ' + WHO_N);
       b.setAttribute('aria-pressed', c === current ? 'true' : 'false');
       b.addEventListener('click', function () {
         S.colour = c;
@@ -737,7 +742,7 @@
         pushPicks();
       });
       host.appendChild(b);
-    });
+    })(i);
   }
   function renderFriendChips() {
     var host = $('groups');
@@ -809,8 +814,8 @@
         if (n.charAt(0) === '_') return; // the shared plan and any other non-person entries
         var raw = all[n] || [];
         var ids = raw.filter(function (id) { return byId[id]; });
-        var cm = raw.filter(function (id) { return /^c-[0-9a-f]{6}$/.test(id); })[0];
-        var col = cm ? ('#' + cm.slice(2)).toUpperCase() : '';
+        var cm = raw.filter(function (id) { return /^c-[1-7]$/.test(id); })[0];
+        var col = cm ? +cm.slice(2) : 0;
         if (n === S.me) {
           if (col && !S.colour) { S.colour = col; syncHearts(); changed = true; }
           // this phone has forgotten its hearts (new phone, cleared browser) but the server has
@@ -850,7 +855,7 @@
     var opts = {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
       // the chosen colour rides along as a pseudo-id ("c-2a7fb0") so the store needs no new field
-      body: JSON.stringify({ ids: Object.keys(S.short).concat(S.colour ? ['c-' + S.colour.slice(1).toLowerCase()] : []) })
+      body: JSON.stringify({ ids: Object.keys(S.short).concat(S.colour ? ['c-' + S.colour] : []) })
     };
     if (keepalive) opts.keepalive = true;
     fetchJSON(SYNC + '/picks/' + encodeURIComponent(S.me), opts)

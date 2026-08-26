@@ -11,6 +11,10 @@
   --cream:#FAF3E5;
   --eat:#C0552F; --eat-deep:#A6461F;
   --do:#2A7FB0; --do-deep:#1D5F87;
+  --navy:#16304D; --olive-deep:#4F5B2B;
+  /* person colours: seven fills that pass 4.5:1 with peach initials (README contrast table) */
+  --who-1:var(--fig); --who-2:var(--do-deep); --who-3:var(--eat-deep); --who-4:#1B655F;
+  --who-5:var(--cobalt); --who-6:var(--navy); --who-7:var(--olive-deep);
   /* colour-field tiles, measured against --cream: 6.81 and 6.19 */
   --eat-field:#8E3B1A; --do-field:#1B655F;
   --eat-field-hover:#7A3216; --do-field-hover:#14514B;
@@ -127,9 +131,9 @@ button{font:inherit; cursor:pointer}
      background:var(--shade); overflow:hidden}
 .mapnote{font-size:var(--t-meta); color:var(--ink-2); margin:0}
 .map{position:relative}
-.maplock{position:absolute; right:10px; top:10px; z-index:800; min-height:36px; padding:6px 12px;
+.maplock{position:absolute; right:10px; top:10px; z-index:800; min-height:44px; padding:6px 14px;
          border:1px solid var(--line); border-radius:var(--r-pill); background:var(--paper-2); color:var(--ink);
-         font:inherit; font-size:var(--t-meta); font-weight:var(--w-bold); box-shadow:0 1px 4px rgba(0,0,0,.25)}
+         font:inherit; font-size:var(--t-meta); font-weight:var(--w-bold)}
 .maplock[aria-pressed="true"]{background:var(--pool); border-color:var(--pool); color:var(--peach)}
 @media (max-width:640px){
   .map{height:300px}
@@ -146,7 +150,7 @@ button{font:inherit; cursor:pointer}
        align-items:center; justify-content:center; padding:var(--s4)}
 .modal[hidden]{display:none}
 .modal-card{width:min(100%,560px); max-height:92vh; overflow:auto; background:var(--paper-2);
-            border-radius:var(--r-card); box-shadow:0 24px 70px rgba(0,0,0,.4); display:flex; flex-direction:column}
+            border:1px solid var(--line); border-radius:var(--r-card); display:flex; flex-direction:column}
 .modal-card .phead{margin:0; border-radius:var(--r-card) var(--r-card) 0 0}
 .modal-body{padding:var(--s4); display:flex; flex-direction:column; gap:var(--s3)}
 .howto{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--s3)}
@@ -164,11 +168,11 @@ button{font:inherit; cursor:pointer}
 .linkbtn{border:0; background:none; color:var(--ink-2); font:inherit; font-size:var(--t-meta);
          text-decoration:underline; text-underline-offset:3px; padding:6px 4px; cursor:pointer}
 .linkbtn[hidden]{display:none}
-.pin{width:14px; height:14px; border-radius:50%; background:var(--pin,#8E3B1A);
-     border:2px solid #FAF3E5; box-shadow:0 1px 3px rgba(0,0,0,.35)}
-.pin.approx{background:#FAF3E5; border:3px solid var(--pin,#8E3B1A)}
-.pin.house{width:18px; height:18px; background:#241E1A; border-color:#FAF3E5}
-.pin.liked{box-shadow:0 0 0 3px #8D3B5E, 0 1px 3px rgba(0,0,0,.35)}
+.pin{width:14px; height:14px; border-radius:var(--r-pill); background:var(--pin,var(--eat-deep));
+     border:2px solid var(--peach)}
+.pin.approx{background:var(--paper-2); border:3px solid var(--pin,var(--eat-deep))}
+.pin.house{width:18px; height:18px; background:var(--ink); border-color:var(--peach)}
+.pin.liked{outline:3px solid var(--fig); outline-offset:1px}
 .leaflet-popup-content{font:inherit; font-size:14px; line-height:1.4}
 .leaflet-popup-content b{display:block; font-family:var(--font-serif); font-size:17px}
 .leaflet-popup-content a{color:var(--pool)}
@@ -189,7 +193,7 @@ button{font:inherit; cursor:pointer}
 .thead-r{display:flex; align-items:center; gap:6px; flex:0 0 auto}
 .sheet{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); width:min(92vw,480px); z-index:60;
        background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:var(--r-card);
-       padding:var(--s4); box-shadow:0 14px 44px rgba(0,0,0,.3); display:flex; flex-direction:column; gap:var(--s2)}
+       padding:var(--s4); display:flex; flex-direction:column; gap:var(--s2)}
 .sheet[hidden]{display:none}
 .sheet-t{font-family:var(--font-serif); font-size:var(--t-h3)}
 .sheet input{flex:1 1 160px; min-height:var(--hit); padding:9px 12px; font:inherit;
@@ -201,14 +205,13 @@ button{font:inherit; cursor:pointer}
 .likedby:empty{display:none}
 .who{width:26px; height:26px; border-radius:50%; display:grid; place-items:center;
      background:var(--who,var(--fig)); color:var(--peach); border:2px solid var(--peach);
-     font-size:12px; font-weight:var(--w-bold); line-height:1; cursor:default;
-     box-shadow:0 1px 2px rgba(0,0,0,.25)}
+     font-size:12.5px; font-weight:var(--w-bold); line-height:1; cursor:default}
 .swlabel{font-size:var(--t-meta); margin:0}
 .swatches{display:flex; flex-wrap:wrap; gap:8px}
 .sw{width:32px; height:32px; border-radius:50%; background:var(--sw); border:3px solid transparent;
     cursor:pointer; padding:0; transition:transform var(--dur-fast) var(--ease)}
 .sw:hover{transform:scale(1.08)}
-.sw[aria-pressed="true"]{border-color:var(--ink); box-shadow:0 0 0 2px var(--paper-2) inset}
+.sw[aria-pressed="true"]{border-color:var(--paper-2); outline:2px solid var(--ink); outline-offset:1px}
 .count{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
        letter-spacing:var(--tr-label); color:var(--ink-2); display:flex; align-items:center;
        gap:var(--s3); flex-wrap:wrap; padding:var(--s1) 0}
@@ -325,7 +328,7 @@ main{position:relative; z-index:1}
 .splace{font-size:var(--t-body)}
 .sby{color:var(--who,var(--fig)); font-weight:var(--w-bold)}
 .slotbtns{display:flex; align-items:center; gap:4px; flex:0 0 auto}
-.bk{min-height:32px; padding:4px 10px; border:1px solid var(--line); border-radius:var(--r-pill);
+.bk{min-height:44px; padding:4px 12px; border:1px solid var(--line); border-radius:var(--r-pill);
     background:transparent; color:var(--ink-2); font:inherit; font-size:var(--t-meta); cursor:pointer}
 .bk[aria-pressed="true"]{background:var(--olive); border-color:var(--olive); color:var(--peach)}
 .slotrow.bkd .splace{font-weight:var(--w-bold)}
@@ -365,3 +368,23 @@ main{position:relative; z-index:1}
 footer{border-top:1px solid var(--line); margin-top:var(--s7)}
 footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter) var(--s8);
            display:flex; flex-direction:column; gap:var(--s2); font-size:var(--t-meta); color:var(--ink-2)}
+
+/* ---------------- Leaflet, brought into the house style ----------------
+   No shadows, Karla for controls, paper surfaces, 1px --line borders, 44px hit targets,
+   12.5px floor on the attribution, and a limestone wash over the basemap tiles. */
+.leaflet-container{font-family:var(--font-sans); background:var(--shade)}
+.leaflet-tile-pane{filter:sepia(.3) saturate(.55) brightness(1.02)}
+.leaflet-bar{box-shadow:none; border:1px solid var(--line); border-radius:var(--r-control); overflow:hidden}
+.leaflet-bar a,.leaflet-bar a:hover,.leaflet-bar a:focus{width:44px; height:44px; line-height:44px;
+  background:var(--paper-2); color:var(--ink); border-bottom:1px solid var(--line-soft);
+  font:400 22px/44px var(--font-sans)}
+.leaflet-bar a:last-child{border-bottom:0}
+.leaflet-bar a.leaflet-disabled{color:var(--ink-3); background:var(--paper)}
+.leaflet-popup-content-wrapper{background:var(--paper-2); color:var(--ink); border:1px solid var(--line);
+  border-radius:var(--r-card); box-shadow:none}
+.leaflet-popup-content{margin:14px 16px; font-size:var(--t-meta); line-height:1.45}
+.leaflet-popup-tip{background:var(--paper-2); box-shadow:none; border:1px solid var(--line); border-top:0; border-left:0}
+.leaflet-container a.leaflet-popup-close-button{color:var(--ink-2); font:400 20px/24px var(--font-sans); width:32px; height:32px; top:4px; right:4px}
+.leaflet-container .leaflet-control-attribution{background:var(--paper-2); color:var(--ink-2); font-size:12.5px;
+  padding:2px 8px; border-top-left-radius:var(--r-control); border:1px solid var(--line); border-right:0; border-bottom:0}
+.leaflet-container .leaflet-control-attribution a{color:var(--pool)}
