@@ -6,7 +6,7 @@
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false };
+  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false, colour: '', fc: {} };
   function load() {
     try {
       var raw = localStorage.getItem(KEY);
@@ -38,6 +38,12 @@
       }
       if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
       S.welcomed = !!o.welcomed;
+      if (typeof o.colour === 'string' && /^#[0-9A-Fa-f]{6}$/.test(o.colour)) S.colour = o.colour.toUpperCase();
+      if (o.fc && typeof o.fc === 'object') {
+        Object.keys(o.fc).forEach(function (n) {
+          if (typeof o.fc[n] === 'string' && /^#[0-9A-Fa-f]{6}$/.test(o.fc[n])) S.fc[String(n).slice(0, 24)] = o.fc[n].toUpperCase();
+        });
+      }
     } catch (e) { /* corrupt storage must never break the page */ }
   }
   function save() {
@@ -150,15 +156,16 @@
     if (S.short[id]) delete S.short[id]; else S.short[id] = true;
     save();
     syncHearts();
-    if (group === 'short') renderTiles();
-    else updateCounts();
+    renderTiles(); // badges and the Popular order follow the tap immediately
     pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
     if (!S.me && S.short[id] && Object.keys(S.short).length === 1) openWho();
   }
   function syncHearts() {
+    var mine = whoColour(S.me || 'Me');
     tiles.forEach(function (el) {
       var on = !!S.short[el._p.id];
+      el._heart.style.setProperty('--mine', mine);
       el._heart.classList.toggle('on', on);
       el._heart.setAttribute('aria-pressed', on ? 'true' : 'false');
       el._heart.setAttribute('aria-label', (on ? 'Remove ' : 'Shortlist ') + el._p.name);
@@ -354,6 +361,7 @@
     $('welcome-name-row').hidden = named;
     $('welcome-notme').hidden = !named;
     $('welcome-go').disabled = !named;
+    renderSwatches('welcome-colours');
     $('welcome').hidden = false;
     if (!named) $('welcome-name').focus();
   }
@@ -613,17 +621,49 @@
   function friendHas(name, id) { var l = S.friends[name]; return !!(l && l.indexOf(id) >= 0); }
   // little tiles: one badge per person who hearted this place, coloured by name
   var WHO_COLOURS = ['#8D3B5E', '#2A7FB0', '#6B7A3A', '#C0552F', '#1B655F', '#8E3B1A', '#455CEC', '#A140BC'];
-  function whoColour(name) {
+  function hashColour(name) {
     var h = 0;
     for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
     return WHO_COLOURS[h % WHO_COLOURS.length];
   }
+  // a chosen colour wins (yours, or one a friend chose and the store passed on); otherwise by name
+  function whoColour(name) {
+    if (name === S.me && S.colour) return S.colour;
+    if (S.fc[name]) return S.fc[name];
+    return hashColour(name || 'Me');
+  }
+  function badge(n) {
+    return '<span class="who" style="--who:' + whoColour(n) + '" title="' + esc(n) + ' hearted this">' +
+           esc(n.charAt(0).toUpperCase()) + '</span>';
+  }
+  // everyone who hearted this place, you included, as coloured initials beside the heart
   function likedBy(id) {
     var names = Object.keys(S.friends).filter(function (n) { return friendHas(n, id); }).sort();
-    return names.map(function (n) {
-      return '<span class="who" style="--who:' + whoColour(n) + '" title="' + esc(n) + ' hearted this">' +
-             esc(n.charAt(0).toUpperCase()) + '</span>';
-    }).join('');
+    if (S.short[id] && S.me) names.push(S.me);
+    return names.map(badge).join('');
+  }
+  // colour swatches for the welcome card and the name sheet
+  function renderSwatches(hostId) {
+    var host = $(hostId);
+    host.textContent = '';
+    var current = S.colour || hashColour(S.me || 'Me');
+    WHO_COLOURS.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sw';
+      b.style.setProperty('--sw', c);
+      b.setAttribute('aria-label', 'Colour ' + c);
+      b.setAttribute('aria-pressed', c === current ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        S.colour = c;
+        save();
+        [].slice.call(host.children).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        syncHearts();
+        renderTiles();
+        pushPicks();
+      });
+      host.appendChild(b);
+    });
   }
   function renderFriendChips() {
     var host = $('groups');
@@ -644,6 +684,7 @@
   }
   function openWho() {
     $('share-name').value = S.me || '';
+    renderSwatches('who-colours');
     $('who').hidden = false;
     $('share-name').focus();
   }
@@ -690,8 +731,12 @@
     fetchJSON(SYNC + '/picks').then(function (all) {
       var changed = false;
       Object.keys(all || {}).forEach(function (n) {
-        var ids = (all[n] || []).filter(function (id) { return byId[id]; });
+        var raw = all[n] || [];
+        var ids = raw.filter(function (id) { return byId[id]; });
+        var cm = raw.filter(function (id) { return /^c-[0-9a-f]{6}$/.test(id); })[0];
+        var col = cm ? ('#' + cm.slice(2)).toUpperCase() : '';
         if (n === S.me) {
+          if (col && !S.colour) { S.colour = col; syncHearts(); changed = true; }
           // this phone has forgotten its hearts (new phone, cleared browser) but the server has
           // them: take them back, rather than letting the next tap overwrite them with one heart
           if (!dirty && !Object.keys(S.short).length && ids.length) {
@@ -701,6 +746,7 @@
           }
           return;
         }
+        if (col && S.fc[n] !== col) { S.fc[n] = col; changed = true; }
         if (!ids.length) { if (S.friends[n]) { delete S.friends[n]; changed = true; } return; }
         if (JSON.stringify(S.friends[n] || []) !== JSON.stringify(ids)) { S.friends[n] = ids; changed = true; }
       });
@@ -727,7 +773,8 @@
     dirty = true;
     var opts = {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ids: Object.keys(S.short) })
+      // the chosen colour rides along as a pseudo-id ("c-2a7fb0") so the store needs no new field
+      body: JSON.stringify({ ids: Object.keys(S.short).concat(S.colour ? ['c-' + S.colour.slice(1).toLowerCase()] : []) })
     };
     if (keepalive) opts.keepalive = true;
     fetchJSON(SYNC + '/picks/' + encodeURIComponent(S.me), opts)

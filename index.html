@@ -207,9 +207,16 @@ button{font:inherit; cursor:pointer}
 .linkbox[hidden]{display:none}
 .likedby{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; max-width:120px}
 .likedby:empty{display:none}
-.who{width:24px; height:24px; border-radius:7px; display:grid; place-items:center;
-     background:var(--peach); color:var(--who,var(--fig)); border:2px solid var(--who,var(--fig));
-     font-size:12px; font-weight:var(--w-bold); line-height:1; cursor:default}
+.who{width:26px; height:26px; border-radius:50%; display:grid; place-items:center;
+     background:var(--who,var(--fig)); color:var(--peach); border:2px solid var(--peach);
+     font-size:12px; font-weight:var(--w-bold); line-height:1; cursor:default;
+     box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.swlabel{font-size:var(--t-meta); margin:0}
+.swatches{display:flex; flex-wrap:wrap; gap:8px}
+.sw{width:32px; height:32px; border-radius:50%; background:var(--sw); border:3px solid transparent;
+    cursor:pointer; padding:0; transition:transform var(--dur-fast) var(--ease)}
+.sw:hover{transform:scale(1.08)}
+.sw[aria-pressed="true"]{border-color:var(--ink); box-shadow:0 0 0 2px var(--paper-2) inset}
 .count{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
        letter-spacing:var(--tr-label); color:var(--ink-2); display:flex; align-items:center;
        gap:var(--s3); flex-wrap:wrap; padding:var(--s1) 0}
@@ -275,7 +282,7 @@ button{font:inherit; cursor:pointer}
        color:var(--cream); opacity:.8;
        transition:opacity var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease)}
 .heart:hover{opacity:1; border-color:rgba(250,243,229,.5)}
-.heart.on{opacity:1}
+.heart.on{opacity:1; background:var(--peach); border-color:var(--peach); color:var(--mine,var(--fig))}
 .heart svg{width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2.2}
 .heart.on svg{fill:currentColor}
 .inplan{font-size:var(--t-meta); color:var(--ink-2)}
@@ -525,6 +532,8 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
                aria-label="Your name">
         <button class="chip" type="button" id="who-go">That&#x2019;s me</button>
       </div>
+      <p class="muted swlabel">Your colour</p>
+      <div class="swatches" id="who-colours" role="group" aria-label="Your colour"></div>
     </div>
 
 
@@ -724,8 +733,7 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
         <ul class="howto">
           <li><span class="hownum">&#x2665;</span><span><b>Heart what you fancy.</b> Tap the heart on any
           place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
-          <li><span class="hownum">&#x25CF;</span><span><b>Everyone sees everyone&#x2019;s.</b> Initials on
-          the cards show who likes what; the <b>Popular</b> chip sorts by how many of you agree; the map shows where it
+          <li><span class="hownum">&#x25CF;</span><span><b>Everyone sees everyone&#x2019;s.</b> Coloured initials beside each heart show who likes what; the <b>Popular</b> chip sorts by how many of you agree; the map shows where it
           all is.</span></li>
           <li><span class="hownum">&#x25A0;</span><span><b>Calendar is yours.</b> Put things into days;
           arrivals and birthdays are already in. Your plan stays on your phone.</span></li>
@@ -734,6 +742,8 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
           <input id="welcome-name" type="text" maxlength="24" placeholder="Your first name"
                  autocomplete="given-name" aria-label="Your first name">
         </div>
+        <p class="muted swlabel">Pick your colour &#x2014; it marks your hearts on every card</p>
+        <div class="swatches" id="welcome-colours" role="group" aria-label="Your colour"></div>
         <div class="row">
           <button class="chip go" type="button" id="welcome-go">Andiamo</button>
           <button class="linkbtn" type="button" id="welcome-notme" hidden>Not you? Use another name</button>
@@ -903,7 +913,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false };
+  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false, colour: '', fc: {} };
   function load() {
     try {
       var raw = localStorage.getItem(KEY);
@@ -935,6 +945,12 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       }
       if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
       S.welcomed = !!o.welcomed;
+      if (typeof o.colour === 'string' && /^#[0-9A-Fa-f]{6}$/.test(o.colour)) S.colour = o.colour.toUpperCase();
+      if (o.fc && typeof o.fc === 'object') {
+        Object.keys(o.fc).forEach(function (n) {
+          if (typeof o.fc[n] === 'string' && /^#[0-9A-Fa-f]{6}$/.test(o.fc[n])) S.fc[String(n).slice(0, 24)] = o.fc[n].toUpperCase();
+        });
+      }
     } catch (e) { /* corrupt storage must never break the page */ }
   }
   function save() {
@@ -1047,15 +1063,16 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     if (S.short[id]) delete S.short[id]; else S.short[id] = true;
     save();
     syncHearts();
-    if (group === 'short') renderTiles();
-    else updateCounts();
+    renderTiles(); // badges and the Popular order follow the tap immediately
     pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
     if (!S.me && S.short[id] && Object.keys(S.short).length === 1) openWho();
   }
   function syncHearts() {
+    var mine = whoColour(S.me || 'Me');
     tiles.forEach(function (el) {
       var on = !!S.short[el._p.id];
+      el._heart.style.setProperty('--mine', mine);
       el._heart.classList.toggle('on', on);
       el._heart.setAttribute('aria-pressed', on ? 'true' : 'false');
       el._heart.setAttribute('aria-label', (on ? 'Remove ' : 'Shortlist ') + el._p.name);
@@ -1251,6 +1268,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     $('welcome-name-row').hidden = named;
     $('welcome-notme').hidden = !named;
     $('welcome-go').disabled = !named;
+    renderSwatches('welcome-colours');
     $('welcome').hidden = false;
     if (!named) $('welcome-name').focus();
   }
@@ -1510,17 +1528,49 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   function friendHas(name, id) { var l = S.friends[name]; return !!(l && l.indexOf(id) >= 0); }
   // little tiles: one badge per person who hearted this place, coloured by name
   var WHO_COLOURS = ['#8D3B5E', '#2A7FB0', '#6B7A3A', '#C0552F', '#1B655F', '#8E3B1A', '#455CEC', '#A140BC'];
-  function whoColour(name) {
+  function hashColour(name) {
     var h = 0;
     for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
     return WHO_COLOURS[h % WHO_COLOURS.length];
   }
+  // a chosen colour wins (yours, or one a friend chose and the store passed on); otherwise by name
+  function whoColour(name) {
+    if (name === S.me && S.colour) return S.colour;
+    if (S.fc[name]) return S.fc[name];
+    return hashColour(name || 'Me');
+  }
+  function badge(n) {
+    return '<span class="who" style="--who:' + whoColour(n) + '" title="' + esc(n) + ' hearted this">' +
+           esc(n.charAt(0).toUpperCase()) + '</span>';
+  }
+  // everyone who hearted this place, you included, as coloured initials beside the heart
   function likedBy(id) {
     var names = Object.keys(S.friends).filter(function (n) { return friendHas(n, id); }).sort();
-    return names.map(function (n) {
-      return '<span class="who" style="--who:' + whoColour(n) + '" title="' + esc(n) + ' hearted this">' +
-             esc(n.charAt(0).toUpperCase()) + '</span>';
-    }).join('');
+    if (S.short[id] && S.me) names.push(S.me);
+    return names.map(badge).join('');
+  }
+  // colour swatches for the welcome card and the name sheet
+  function renderSwatches(hostId) {
+    var host = $(hostId);
+    host.textContent = '';
+    var current = S.colour || hashColour(S.me || 'Me');
+    WHO_COLOURS.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sw';
+      b.style.setProperty('--sw', c);
+      b.setAttribute('aria-label', 'Colour ' + c);
+      b.setAttribute('aria-pressed', c === current ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        S.colour = c;
+        save();
+        [].slice.call(host.children).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        syncHearts();
+        renderTiles();
+        pushPicks();
+      });
+      host.appendChild(b);
+    });
   }
   function renderFriendChips() {
     var host = $('groups');
@@ -1541,6 +1591,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   }
   function openWho() {
     $('share-name').value = S.me || '';
+    renderSwatches('who-colours');
     $('who').hidden = false;
     $('share-name').focus();
   }
@@ -1587,8 +1638,12 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     fetchJSON(SYNC + '/picks').then(function (all) {
       var changed = false;
       Object.keys(all || {}).forEach(function (n) {
-        var ids = (all[n] || []).filter(function (id) { return byId[id]; });
+        var raw = all[n] || [];
+        var ids = raw.filter(function (id) { return byId[id]; });
+        var cm = raw.filter(function (id) { return /^c-[0-9a-f]{6}$/.test(id); })[0];
+        var col = cm ? ('#' + cm.slice(2)).toUpperCase() : '';
         if (n === S.me) {
+          if (col && !S.colour) { S.colour = col; syncHearts(); changed = true; }
           // this phone has forgotten its hearts (new phone, cleared browser) but the server has
           // them: take them back, rather than letting the next tap overwrite them with one heart
           if (!dirty && !Object.keys(S.short).length && ids.length) {
@@ -1598,6 +1653,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
           }
           return;
         }
+        if (col && S.fc[n] !== col) { S.fc[n] = col; changed = true; }
         if (!ids.length) { if (S.friends[n]) { delete S.friends[n]; changed = true; } return; }
         if (JSON.stringify(S.friends[n] || []) !== JSON.stringify(ids)) { S.friends[n] = ids; changed = true; }
       });
@@ -1624,7 +1680,8 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     dirty = true;
     var opts = {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ids: Object.keys(S.short) })
+      // the chosen colour rides along as a pseudo-id ("c-2a7fb0") so the store needs no new field
+      body: JSON.stringify({ ids: Object.keys(S.short).concat(S.colour ? ['c-' + S.colour.slice(1).toLowerCase()] : []) })
     };
     if (keepalive) opts.keepalive = true;
     fetchJSON(SYNC + '/picks/' + encodeURIComponent(S.me), opts)

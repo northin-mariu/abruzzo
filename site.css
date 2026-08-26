@@ -199,9 +199,16 @@ button{font:inherit; cursor:pointer}
 .linkbox[hidden]{display:none}
 .likedby{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; max-width:120px}
 .likedby:empty{display:none}
-.who{width:24px; height:24px; border-radius:7px; display:grid; place-items:center;
-     background:var(--peach); color:var(--who,var(--fig)); border:2px solid var(--who,var(--fig));
-     font-size:12px; font-weight:var(--w-bold); line-height:1; cursor:default}
+.who{width:26px; height:26px; border-radius:50%; display:grid; place-items:center;
+     background:var(--who,var(--fig)); color:var(--peach); border:2px solid var(--peach);
+     font-size:12px; font-weight:var(--w-bold); line-height:1; cursor:default;
+     box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.swlabel{font-size:var(--t-meta); margin:0}
+.swatches{display:flex; flex-wrap:wrap; gap:8px}
+.sw{width:32px; height:32px; border-radius:50%; background:var(--sw); border:3px solid transparent;
+    cursor:pointer; padding:0; transition:transform var(--dur-fast) var(--ease)}
+.sw:hover{transform:scale(1.08)}
+.sw[aria-pressed="true"]{border-color:var(--ink); box-shadow:0 0 0 2px var(--paper-2) inset}
 .count{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
        letter-spacing:var(--tr-label); color:var(--ink-2); display:flex; align-items:center;
        gap:var(--s3); flex-wrap:wrap; padding:var(--s1) 0}
@@ -267,7 +274,7 @@ button{font:inherit; cursor:pointer}
        color:var(--cream); opacity:.8;
        transition:opacity var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease)}
 .heart:hover{opacity:1; border-color:rgba(250,243,229,.5)}
-.heart.on{opacity:1}
+.heart.on{opacity:1; background:var(--peach); border-color:var(--peach); color:var(--mine,var(--fig))}
 .heart svg{width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2.2}
 .heart.on svg{fill:currentColor}
 .inplan{font-size:var(--t-meta); color:var(--ink-2)}
