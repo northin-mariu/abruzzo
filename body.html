@@ -55,9 +55,9 @@
       <div class="panel">
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
-        appear on the cards, and the <b>Votes</b> chip sorts the list by how many of you like a place. There
+        appear on the cards, and the <b>Popular</b> chip sorts the list by how many of you like a place. There
         are no accounts, just your name &#x2014; your personal link sets it, and you can change it under
-        Activities. If the shared list is ever out of reach, <b>Tally</b> offers a link to paste in the group.</p>
+        Activities.</p>
       </div>
       <div class="panel">
         <h3>The house</h3>
@@ -132,7 +132,7 @@
         <button class="chip" type="button" aria-pressed="false" data-group="do" style="--c:var(--do-deep)">Out and about</button>
         <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Shortlisted <em id="short-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--terracotta)"
-                title="Everything anyone has hearted, most votes first">Votes <em id="votes-n">0</em></button>
+                title="Everything anyone has hearted, most loved first">Popular <em id="votes-n">0</em></button>
       </div>
       <div class="row" id="bands">
         <button class="chip" type="button" aria-pressed="true" data-band="999">Any distance</button>
@@ -146,28 +146,8 @@
       <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
       <div class="share">
         <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
-        <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
-                style="--c:var(--terracotta)">Tally</button>
-        <div class="sharebox" id="share-panel" hidden>
-          <p class="muted" id="sync-note" hidden></p>
-          <label>Everyone&#x2019;s hearts as a list, most votes first</label>
-          <div class="row">
-            <button class="chip" type="button" id="tally-copy">Copy tally</button>
-            <a class="chip" id="tally-wa" href="#" target="_blank" rel="noopener">Tally on WhatsApp</a>
-          </div>
-          <textarea id="tally-text" readonly rows="8" aria-label="The tally" hidden></textarea>
-          <div class="row" id="share-friends"></div>
-          <div class="linkbox" id="linkbox" hidden>
-            <label>Share by link instead</label>
-            <div class="row">
-              <button class="chip" type="button" id="share-copy">Copy link</button>
-              <a class="chip" id="share-wa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
-            </div>
-            <input id="share-link" type="text" readonly aria-label="Your picks link" hidden>
-            <p class="muted" id="share-hint"></p>
-          </div>
-        </div>
       </div>
+      <p class="muted" id="sync-note" hidden></p>
     </div>
 
     <div class="sheet" id="who" hidden role="dialog" aria-labelledby="who-title">
@@ -379,7 +359,7 @@
           <li><span class="hownum">&#x2665;</span><span><b>Heart what you fancy.</b> Tap the heart on any
           place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
           <li><span class="hownum">&#x25CF;</span><span><b>Everyone sees everyone&#x2019;s.</b> Initials on
-          the cards show who likes what; the <b>Votes</b> chip sorts by popularity; the map shows where it
+          the cards show who likes what; the <b>Popular</b> chip sorts by how many of you agree; the map shows where it
           all is.</span></li>
           <li><span class="hownum">&#x25A0;</span><span><b>Calendar is yours.</b> Put things into days;
           arrivals and birthdays are already in. Your plan stays on your phone.</span></li>

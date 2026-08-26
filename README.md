@@ -70,9 +70,10 @@ No dependencies beyond the Python standard library. One record looks like this:
 ## Shared hearts (live sync)
 
 `worker/abruzzo-picks.js` is a Cloudflare Worker that keeps everyone's hearts in one place.
-Deploy it once through the Cloudflare dashboard (instructions at the top of the file), then put
-its URL into `SYNC` near the bottom of `app.js` and rebuild. With `SYNC` empty the site still
-works — hearts travel by "Share my picks" links instead.
+It is deployed; its URL is in `SYNC` near the bottom of `app.js`. Each person opens a personal
+link (`?me=Name`) once, then every heart is saved under that name and shows for everyone —
+initials on the cards, the "Popular" chip, rings on the map pins. With `SYNC` empty, hearts
+stay on the phone that made them.
 
 ## Auto-rebuild
 

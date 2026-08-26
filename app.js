@@ -152,7 +152,6 @@
     syncHearts();
     if (group === 'short') renderTiles();
     else updateCounts();
-    if (!$('share-panel').hidden) refreshShare();
     pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
     if (!S.me && S.short[id] && Object.keys(S.short).length === 1) openWho();
@@ -228,7 +227,7 @@
     if (group === 'eat') bits.push('eat & drink');
     else if (group === 'do') bits.push('out and about');
     else if (group === 'short') bits.push('shortlisted');
-    else if (group === 'votes') bits.push('with votes, most first');
+    else if (group === 'votes') bits.push('popular first');
     else if (group.indexOf('friend:') === 0) bits.push(group.slice(7) + "'s picks");
     var cats = Object.keys(active);
     if (cats.length) bits.push(cats.length + (cats.length === 1 ? ' category' : ' categories'));
@@ -574,7 +573,6 @@
   /* ---------- friends' picks: shared by link, no accounts, no server ----------
      A link looks like  #picks=Frances:id,id,id  - opening it stores Frances's hearts in this
      browser, adds a "Frances ♥" chip beside Shortlisted, and marks her tiles. */
-  var SITE = 'https://northin-mariu.github.io/abruzzo/';
   function friendHas(name, id) { var l = S.friends[name]; return !!(l && l.indexOf(id) >= 0); }
   // little tiles: one badge per person who hearted this place, coloured by name
   var WHO_COLOURS = ['#8D3B5E', '#2A7FB0', '#6B7A3A', '#C0552F', '#1B655F', '#8E3B1A', '#455CEC', '#A140BC'];
@@ -603,20 +601,6 @@
       b.innerHTML = esc(n) + ' ♥ <em>' + S.friends[n].length + '</em>';
       host.appendChild(b);
     });
-    var fl = $('share-friends');
-    fl.textContent = '';
-    names.forEach(function (n) {
-      var b = document.createElement('button');
-      b.className = 'chip'; b.type = 'button'; b.dataset.forget = n;
-      b.textContent = 'Forget ' + n;
-      fl.appendChild(b);
-    });
-  }
-  function shareLink() {
-    var name = ($('share-name').value || '').trim().slice(0, 24);
-    var ids = Object.keys(S.short);
-    if (!name || !ids.length) return '';
-    return SITE + '#picks=' + encodeURIComponent(name) + ':' + ids.join(',');
   }
   function updateMeChip() {
     $('me-chip').textContent = S.me ? 'You’re ' + S.me + ' · change' : 'Who’s hearting?';
@@ -633,82 +617,9 @@
     updateMeChip();
     $('who').hidden = true;
     pushPicks();
-    if (!$('share-panel').hidden) refreshShare();
-  }
-  function refreshShare() {
-    refreshTally();
-    // the link route is a fallback: only shown when there is no live store, or it is unreachable
-    var lb = $('linkbox');
-    lb.hidden = !!(SYNC && syncOk !== false);
-    if (lb.hidden) return;
-    var link = shareLink();
-    var name = S.me || '';
-    var n = Object.keys(S.short).length;
-    $('share-link').value = link;
-    $('share-link').hidden = !link;
-    $('share-copy').disabled = !link;
-    var wa = $('share-wa');
-    if (link) {
-      wa.href = 'https://wa.me/?text=' + encodeURIComponent(name + "'s Abruzzo picks: " + link);
-      wa.removeAttribute('aria-disabled');
-    } else { wa.href = '#'; wa.setAttribute('aria-disabled', 'true'); }
-    $('share-hint').textContent =
-      !name ? 'Put your name in first.' :
-      !n ? 'Heart a few places first - the link carries your hearts.' :
-      'Your ' + n + (n === 1 ? ' heart is' : ' hearts are') + ' in this link. Paste it in the group: ' +
-      'anyone who opens it gets a "' + name + ' ♥" chip next to Shortlisted. ' +
-      'Send it again whenever you change your mind.';
-  }
-  function tallyText() {
-    var rows = PLACES.filter(function (p) { return votes(p.id) > 0; });
-    if (!rows.length) return '';
-    rows.sort(function (a, b) { return votes(b.id) - votes(a.id) || a.mins - b.mins; });
-    var people = Object.keys(S.friends).sort();
-    if (Object.keys(S.short).length) people.push(S.me || 'Me');
-    var out = ['Abruzzo picks - ' + rows.length + ' places, ' + people.length +
-               (people.length === 1 ? ' person' : ' people') + ' (' + people.join(', ') + ')', ''];
-    ['eat', 'do'].forEach(function (g) {
-      var sub = rows.filter(function (p) { return p.group === g; });
-      if (!sub.length) return;
-      out.push(g === 'eat' ? 'EAT & DRINK' : 'OUT AND ABOUT');
-      sub.forEach(function (p) {
-        out.push(votes(p.id) + ' ♥  ' + p.name + ' - ' + p.town + ', ' + p.mins + ' min' +
-                 (p.flag ? ' [' + p.flag + ']' : '') + '  (' + voters(p.id).join(', ') + ')');
-      });
-      out.push('');
-    });
-    return out.join('\n').trim();
-  }
-  function refreshTally() {
-    var t = tallyText();
-    $('tally-text').value = t;
-    $('tally-text').hidden = !t;
-    $('tally-copy').disabled = !t;
-    var wa = $('tally-wa');
-    if (t) { wa.href = 'https://wa.me/?text=' + encodeURIComponent(t); wa.removeAttribute('aria-disabled'); }
-    else { wa.href = '#'; wa.setAttribute('aria-disabled', 'true'); }
   }
   function wireShare() {
     $('share-name').value = S.me || '';
-    $('tally-copy').addEventListener('click', function () {
-      var t = tallyText();
-      if (!t) return;
-      var btn = this;
-      function done(ok) {
-        btn.textContent = ok ? 'Copied' : 'Copy the text below';
-        setTimeout(function () { btn.textContent = 'Copy tally'; }, 2500);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(t).then(function () { done(true); }, function () { done(false); });
-      } else { done(false); }
-    });
-    $('tally-text').addEventListener('focus', function () { this.select(); });
-    $('share-btn').addEventListener('click', function () {
-      var p = $('share-panel');
-      p.hidden = !p.hidden;
-      this.setAttribute('aria-expanded', p.hidden ? 'false' : 'true');
-      if (!p.hidden) refreshShare();
-    });
     $('me-chip').addEventListener('click', function () { openWho(); });
     $('who-go').addEventListener('click', closeWho);
     $('share-name').addEventListener('keydown', function (ev) {
@@ -719,35 +630,10 @@
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
       save();
       updateMeChip();
-      if (!$('share-panel').hidden) refreshShare();
-    });
-    $('share-copy').addEventListener('click', function () {
-      var link = shareLink();
-      if (!link) return;
-      var btn = this;
-      function done(ok) {
-        btn.textContent = ok ? 'Copied' : 'Copy the link below';
-        if (!ok) { $('share-link').focus(); }
-        setTimeout(function () { btn.textContent = 'Copy link'; }, 2500);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
-      } else { done(false); }
-    });
-    $('share-link').addEventListener('focus', function () { this.select(); });
-    $('share-friends').addEventListener('click', function (ev) {
-      var b = ev.target.closest('[data-forget]');
-      if (!b) return;
-      delete S.friends[b.dataset.forget];
-      forgetRemote(b.dataset.forget);
-      save();
-      if (group === 'friend:' + b.dataset.forget) group = 'all';
-      renderFriendChips();
-      setGroup(group);
-    });
+      });
   }
   /* ---------- live sync: a Cloudflare Worker + KV (see worker/abruzzo-picks.js) ----------
-     SYNC empty = links only. With SYNC set, every heart is saved under your name and everyone's
+     SYNC empty = this phone only. With SYNC set, every heart is saved under your name and everyone's
      hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
   var SYNC = 'https://abruzzo-picks.mattnorthin.workers.dev';
   var syncTimer = null, syncPoll = null, syncOk = null;
@@ -776,15 +662,13 @@
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; changed = true; }
       if (changed) { save(); renderFriendChips(); renderTiles(); }
       syncOk = true;
-      if (!$('share-panel').hidden) refreshShare();
-      var now = new Date();
+        var now = new Date();
       syncNote('Live: everyone’s hearts update by themselves' +
                (S.me ? '' : ' — tap “Who’s hearting?” so yours count') +
                '. Last checked ' + ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2) + '.');
     }).catch(function () {
       syncOk = false;
-      if (!$('share-panel').hidden) refreshShare();
-      if (!quiet) syncNote('Could not reach the shared list — showing what this phone knows. You can share by link below.');
+        if (!quiet) syncNote('Could not reach the shared list — showing what this phone knows. You can share by link below.');
     });
   }
   function pushPicks() {
@@ -819,21 +703,7 @@
     if (S.me && Object.keys(S.short).length) pushPicks();
   }
 
-  function importHash() {
-    var m = /^#picks=([^:]+):(.*)$/.exec(location.hash || '');
-    if (!m) return '';
-    var name, ids;
-    try { name = decodeURIComponent(m[1]).trim().slice(0, 24); } catch (e) { return ''; }
-    ids = m[2].split(',').filter(function (id) { return byId[id]; });
-    if (!name || !ids.length) return '';
-    S.friends[name] = ids;
-    save();
-    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
-    return 'friend:' + name;
-  }
-
   load();
-  var imported = importHash();
   buildTiles();
   syncHearts();
   wireShelf();
@@ -848,8 +718,7 @@
   updateMeChip();
   renderFriendChips();
   renderCalendar();
-  if (imported) { showTab('t-activities'); setGroup(imported); }
-  else renderTiles();
+  renderTiles();
   wireSync();
   if (!S.welcomed) showWelcome();
 })();

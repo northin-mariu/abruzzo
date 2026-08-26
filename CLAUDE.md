@@ -37,14 +37,11 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   every CC BY-SA image needs a visible credit; Commons has nothing for the pizzerie and forni
   that make up most of the list. `mapUrl` is the photo feature — it opens Google's own current
   photos at zero byte and zero licensing cost.
-- **People mechanism = share links, no backend** (added 2026-08-25 because Frances asked to
-  show her likes). "Share my picks" in Activities builds `#picks=Name:id,id,...`; opening such a
-  link stores that person's hearts in `S.friends` (localStorage), adds a "Name ♥" chip beside
-  Shortlisted, and initial badges on their tiles. Links are a snapshot — resend to update.
-- **Live sync on top of that** (2026-08-25): `worker/abruzzo-picks.js` is a Cloudflare Worker +
-  KV (`PICKS`). `SYNC` in app.js holds its URL; empty = links only. With it set, each heart PUTs
-  `{ids}` under the person's name (debounced 800 ms) and everyone's hearts are pulled on load, on
-  tab focus and every 60 s into `S.friends`. Forget = DELETE. No auth — the page is public, so
+- **Shared hearts** (2026-08-25): `worker/abruzzo-picks.js` is a Cloudflare Worker +
+  KV (`PICKS`). `SYNC` in app.js holds its URL; empty = hearts stay on the phone. With it set, each
+  heart PUTs `{ids}` under the person's name (debounced 800 ms) and everyone's hearts are pulled on
+  load, on tab focus and every 30 s into `S.friends`. To remove a stray name: `curl -X DELETE
+  <SYNC>/picks/<Name>` (there is no Forget button any more). No auth — the page is public, so
   a key would be public too; abuse ceiling is "someone scribbles on a trip list".
   **Deployed 2026-08-25** in Matt's Cloudflare account (mattnorthin@gmail.com): worker
   `abruzzo-picks` at `https://abruzzo-picks.mattnorthin.workers.dev`, KV namespace `abruzzo-picks`
@@ -52,10 +49,10 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   To update the worker code: dashboard → Workers & Pages → abruzzo-picks → Edit code → paste
   `worker/abruzzo-picks.js` → Deploy (the editor is a cross-origin frame; Claude's browser tools
   cannot type into it, so the paste is Matt's). To wipe all hearts: delete the KV namespace's keys.
-  **Flow (2026-08-26):** first heart with no name opens a bottom sheet (`#who`, "Who's hearting?");
-  the chip beside Show map reads "You're Matt · change" afterwards. "Tally" opens the list; the
-  copy-link / WhatsApp-link controls (`#linkbox`) only appear when `SYNC` is empty or unreachable
-  (`syncOk === false`). Polls every 30 s while the tab is visible.
+  **Flow (2026-08-26):** the only UI is hearts + the "Popular" chip (everything anyone hearted,
+  most loved first) + friends' chips + initial badges. No tally text, no copy buttons, no share
+  links — Matt asked for none of that; the group just looks. A first heart with no name opens
+  the `#who` sheet; the chip reads "You're Matt · change" afterwards. Polls every 30 s.
   **Personal links (2026-08-26):** `?me=Frances` sets the name, strips itself from the URL and shows
   the welcome card ("Ciao, Frances") — Matt sends one per person, so nobody types a name. The
   welcome card (`#welcome`, page-level, outside the tab views) shows once per phone (`S.welcomed`)
@@ -81,8 +78,8 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
 
 ## Known gaps
 
-- **Map (added 2026-08-25).** "Show map" in Activities loads Leaflet + OpenStreetMap tiles on
-  demand (nothing loads until tapped) and pins whatever passes the current filters, coloured by
+- **Map (added 2026-08-25).** Permanent at the top of Activities; Leaflet + OpenStreetMap tiles
+  load the first time that tab is shown. Pins whatever passes the current filters, coloured by
   category; hollow pin = town-centre fallback, black pin = the house. Coordinates come from
   `geocode.py` (Nominatim, 1 req/s, results stored in `places.json` as `lat`/`lon`/`geo`). Run it
   after adding places: `python3 geocode.py` only touches records without coordinates.
