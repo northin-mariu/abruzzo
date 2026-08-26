@@ -103,6 +103,7 @@ button{font:inherit; cursor:pointer}
 /* ---------------- filter shelf ---------------- */
 .shelf{display:flex; flex-direction:column; gap:var(--s2)}
 .row{display:flex; flex-wrap:wrap; gap:var(--s2); align-items:center}
+.row[hidden]{display:none}
 .search{flex:1 1 260px; min-height:var(--hit); padding:9px 12px; font:inherit;
         font-size:var(--t-body); color:var(--ink); background:var(--paper-2);
         border:1px solid var(--line); border-radius:var(--r-control)}
@@ -120,11 +121,31 @@ button{font:inherit; cursor:pointer}
 .chip.zero{opacity:.38}
 .share{margin-top:var(--s3); display:flex; flex-wrap:wrap; gap:var(--s2); align-items:flex-start}
 .share .sharebox{flex-basis:100%}
-.mappanel{margin:var(--s4) 0}
-.mappanel[hidden]{display:none}
-.map{height:min(70vh,560px); border-radius:var(--r-card); border:1px solid var(--line);
-     background:var(--paper-2); overflow:hidden}
-.mapnote{font-size:var(--t-meta); margin-top:var(--s2); color:var(--peach)}
+.mappanel{background:var(--paper-2); border:1px solid var(--line); border-radius:var(--r-card);
+          padding:var(--s3); display:flex; flex-direction:column; gap:var(--s2)}
+.map{height:min(52vh,440px); border-radius:calc(var(--r-card) - 4px); border:1px solid var(--line-soft);
+     background:var(--shade); overflow:hidden}
+.mapnote{font-size:var(--t-meta); color:var(--ink-2); margin:0}
+@media (max-width:640px){.map{height:300px}}
+.modal{position:fixed; inset:0; z-index:80; background:rgba(36,30,26,.55); display:flex;
+       align-items:center; justify-content:center; padding:var(--s4)}
+.modal[hidden]{display:none}
+.modal-card{width:min(100%,560px); max-height:92vh; overflow:auto; background:var(--paper-2);
+            border-radius:var(--r-card); box-shadow:0 24px 70px rgba(0,0,0,.4); display:flex; flex-direction:column}
+.modal-card .phead{margin:0; border-radius:var(--r-card) var(--r-card) 0 0}
+.modal-body{padding:var(--s4); display:flex; flex-direction:column; gap:var(--s3)}
+.howto{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--s3)}
+.howto li{display:flex; gap:var(--s3); align-items:flex-start; color:var(--ink-2); line-height:1.45}
+.howto b{color:var(--ink)}
+.hownum{flex:0 0 32px; height:32px; border-radius:50%; display:grid; place-items:center;
+        background:var(--fig); color:var(--peach); font-size:14px}
+.howto li:nth-child(2) .hownum{background:var(--pool)}
+.howto li:nth-child(3) .hownum{background:var(--olive)}
+.modal input{width:100%; min-height:var(--hit); padding:9px 12px; font:inherit;
+             border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper)}
+.modal input:focus{border-color:var(--pool); outline:none}
+.chip.go{background:var(--pool); border-color:var(--pool); color:var(--peach); font-weight:var(--w-bold)}
+.chip.go:disabled{opacity:.45}
 .pin{width:14px; height:14px; border-radius:50%; background:var(--pin,#8E3B1A);
      border:2px solid #FAF3E5; box-shadow:0 1px 3px rgba(0,0,0,.35)}
 .pin.approx{background:#FAF3E5; border:3px solid var(--pin,#8E3B1A)}

@@ -56,6 +56,11 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   the chip beside Show map reads "You're Matt · change" afterwards. "Tally" opens the list; the
   copy-link / WhatsApp-link controls (`#linkbox`) only appear when `SYNC` is empty or unreachable
   (`syncOk === false`). Polls every 30 s while the tab is visible.
+  **Personal links (2026-08-26):** `?me=Frances` sets the name, strips itself from the URL and shows
+  the welcome card ("Ciao, Frances") — Matt sends one per person, so nobody types a name. The
+  welcome card (`#welcome`, page-level, outside the tab views) shows once per phone (`S.welcomed`)
+  or again whenever a personal link with a different name is opened; with no name it asks for one.
+  The map is permanent at the top of Activities (built on first show of that tab via `ensureMap`).
 - **No `prompt()` or `alert()`, ever.** They throw in chat-app in-app browsers and the exception
   is swallowed by the event system, so controls die silently. That was the original bug.
 - **Design system** = the `butterfly-cave-design` skill in

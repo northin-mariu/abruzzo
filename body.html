@@ -56,8 +56,8 @@
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
         appear on the cards, and the <b>Votes</b> chip sorts the list by how many of you like a place. There
-        are no accounts, just your name &#x2014; it asks once, the first time you heart something. If the
-        shared list is ever out of reach, <b>Tally</b> in Activities offers a link to paste in the group instead.</p>
+        are no accounts, just your name &#x2014; your personal link sets it, and you can change it under
+        Activities. If the shared list is ever out of reach, <b>Tally</b> offers a link to paste in the group.</p>
       </div>
       <div class="panel">
         <h3>The house</h3>
@@ -105,8 +105,18 @@
   <!-- ============ ACTIVITIES ============ -->
   <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
     <div class="actwrap">
+    <div class="phead">
+      <painted-bg ground="fig" layout="diagonal" count="8" seed="4102"></painted-bg>
+      <div class="phead-in"><span class="phead-title">Everything within reach</span></div>
+    </div>
+
+    <div class="mappanel" id="map-panel">
+      <div class="map" id="map" role="region" aria-label="Map of the places currently shown"></div>
+      <p class="mapnote" id="map-note">Pins follow the filters below and open in Maps. Black pin is the
+      house; a ringed pin has hearts; a hollow one is the town, not the door.</p>
+    </div>
+
     <div class="col">
-      <h2>Everything within reach</h2>
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
       drive; the heart shortlists, and the name opens Maps.</p>
     </div>
@@ -135,8 +145,6 @@
       <div class="row" id="cats">{{CHIPS}}</div>
       <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
       <div class="share">
-        <button class="chip" type="button" id="map-btn" aria-expanded="false" aria-controls="map-panel"
-                style="--c:var(--pool)">Show map</button>
         <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
         <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
                 style="--c:var(--terracotta)">Tally</button>
@@ -173,11 +181,6 @@
       </div>
     </div>
 
-    <div class="mappanel" id="map-panel" hidden>
-      <div class="map" id="map" role="region" aria-label="Map of the places currently shown"></div>
-      <p class="muted mapnote" id="map-note">Pins follow the filters above. The house is the black pin.
-      A hollow pin means we only know the town, not the door.</p>
-    </div>
 
     <section class="group" id="sec-eat">
       <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">{{N_EAT}}</span></p>
@@ -362,3 +365,32 @@
     straight-line. Opening hours change &#x2014; phone ahead.</p>
   </div>
 </footer>
+
+<div class="modal" id="welcome" hidden role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <div class="modal-card">
+      <div class="phead">
+        <painted-bg ground="aperol" layout="edges" count="9" seed="6180"></painted-bg>
+        <div class="phead-in"><span class="phead-title" id="welcome-title">Ciao</span></div>
+      </div>
+      <div class="modal-body">
+        <p class="lead" id="welcome-lead">Ten days out of Rocca San Giovanni, 11&#x2013;20 September.
+        Here is how this page works.</p>
+        <ul class="howto">
+          <li><span class="hownum">&#x2665;</span><span><b>Heart what you fancy.</b> Tap the heart on any
+          place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
+          <li><span class="hownum">&#x25CF;</span><span><b>Everyone sees everyone&#x2019;s.</b> Initials on
+          the cards show who likes what; the <b>Votes</b> chip sorts by popularity; the map shows where it
+          all is.</span></li>
+          <li><span class="hownum">&#x25A0;</span><span><b>Calendar is yours.</b> Put things into days;
+          arrivals and birthdays are already in. Your plan stays on your phone.</span></li>
+        </ul>
+        <div class="row" id="welcome-name-row" hidden>
+          <input id="welcome-name" type="text" maxlength="24" placeholder="Your first name"
+                 autocomplete="given-name" aria-label="Your first name">
+        </div>
+        <div class="row">
+          <button class="chip go" type="button" id="welcome-go">Andiamo</button>
+        </div>
+      </div>
+    </div>
+  </div>

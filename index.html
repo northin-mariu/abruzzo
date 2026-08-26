@@ -111,6 +111,7 @@ button{font:inherit; cursor:pointer}
 /* ---------------- filter shelf ---------------- */
 .shelf{display:flex; flex-direction:column; gap:var(--s2)}
 .row{display:flex; flex-wrap:wrap; gap:var(--s2); align-items:center}
+.row[hidden]{display:none}
 .search{flex:1 1 260px; min-height:var(--hit); padding:9px 12px; font:inherit;
         font-size:var(--t-body); color:var(--ink); background:var(--paper-2);
         border:1px solid var(--line); border-radius:var(--r-control)}
@@ -128,11 +129,31 @@ button{font:inherit; cursor:pointer}
 .chip.zero{opacity:.38}
 .share{margin-top:var(--s3); display:flex; flex-wrap:wrap; gap:var(--s2); align-items:flex-start}
 .share .sharebox{flex-basis:100%}
-.mappanel{margin:var(--s4) 0}
-.mappanel[hidden]{display:none}
-.map{height:min(70vh,560px); border-radius:var(--r-card); border:1px solid var(--line);
-     background:var(--paper-2); overflow:hidden}
-.mapnote{font-size:var(--t-meta); margin-top:var(--s2); color:var(--peach)}
+.mappanel{background:var(--paper-2); border:1px solid var(--line); border-radius:var(--r-card);
+          padding:var(--s3); display:flex; flex-direction:column; gap:var(--s2)}
+.map{height:min(52vh,440px); border-radius:calc(var(--r-card) - 4px); border:1px solid var(--line-soft);
+     background:var(--shade); overflow:hidden}
+.mapnote{font-size:var(--t-meta); color:var(--ink-2); margin:0}
+@media (max-width:640px){.map{height:300px}}
+.modal{position:fixed; inset:0; z-index:80; background:rgba(36,30,26,.55); display:flex;
+       align-items:center; justify-content:center; padding:var(--s4)}
+.modal[hidden]{display:none}
+.modal-card{width:min(100%,560px); max-height:92vh; overflow:auto; background:var(--paper-2);
+            border-radius:var(--r-card); box-shadow:0 24px 70px rgba(0,0,0,.4); display:flex; flex-direction:column}
+.modal-card .phead{margin:0; border-radius:var(--r-card) var(--r-card) 0 0}
+.modal-body{padding:var(--s4); display:flex; flex-direction:column; gap:var(--s3)}
+.howto{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--s3)}
+.howto li{display:flex; gap:var(--s3); align-items:flex-start; color:var(--ink-2); line-height:1.45}
+.howto b{color:var(--ink)}
+.hownum{flex:0 0 32px; height:32px; border-radius:50%; display:grid; place-items:center;
+        background:var(--fig); color:var(--peach); font-size:14px}
+.howto li:nth-child(2) .hownum{background:var(--pool)}
+.howto li:nth-child(3) .hownum{background:var(--olive)}
+.modal input{width:100%; min-height:var(--hit); padding:9px 12px; font:inherit;
+             border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper)}
+.modal input:focus{border-color:var(--pool); outline:none}
+.chip.go{background:var(--pool); border-color:var(--pool); color:var(--peach); font-weight:var(--w-bold)}
+.chip.go:disabled{opacity:.45}
 .pin{width:14px; height:14px; border-radius:50%; background:var(--pin,#8E3B1A);
      border:2px solid #FAF3E5; box-shadow:0 1px 3px rgba(0,0,0,.35)}
 .pin.approx{background:#FAF3E5; border:3px solid var(--pin,#8E3B1A)}
@@ -383,8 +404,8 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
         appear on the cards, and the <b>Votes</b> chip sorts the list by how many of you like a place. There
-        are no accounts, just your name &#x2014; it asks once, the first time you heart something. If the
-        shared list is ever out of reach, <b>Tally</b> in Activities offers a link to paste in the group instead.</p>
+        are no accounts, just your name &#x2014; your personal link sets it, and you can change it under
+        Activities. If the shared list is ever out of reach, <b>Tally</b> offers a link to paste in the group.</p>
       </div>
       <div class="panel">
         <h3>The house</h3>
@@ -432,8 +453,18 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
   <!-- ============ ACTIVITIES ============ -->
   <div class="view" id="v-activities" role="tabpanel" aria-labelledby="t-activities" hidden>
     <div class="actwrap">
+    <div class="phead">
+      <painted-bg ground="fig" layout="diagonal" count="8" seed="4102"></painted-bg>
+      <div class="phead-in"><span class="phead-title">Everything within reach</span></div>
+    </div>
+
+    <div class="mappanel" id="map-panel">
+      <div class="map" id="map" role="region" aria-label="Map of the places currently shown"></div>
+      <p class="mapnote" id="map-note">Pins follow the filters below and open in Maps. Black pin is the
+      house; a ringed pin has hearts; a hollow one is the town, not the door.</p>
+    </div>
+
     <div class="col">
-      <h2>Everything within reach</h2>
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
       drive; the heart shortlists, and the name opens Maps.</p>
     </div>
@@ -462,8 +493,6 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
       <div class="row" id="cats"><button class="chip" type="button" aria-pressed="false" data-cat="bars" style="--c:#455CEC"><span class="dot"></span>Bars &amp; music <em>14</em></button><button class="chip" type="button" aria-pressed="false" data-cat="food" style="--c:#D2220B"><span class="dot"></span>Eating <em>24</em></button><button class="chip" type="button" aria-pressed="false" data-cat="gelato" style="--c:#CE1F67"><span class="dot"></span>Gelato <em>6</em></button><button class="chip" type="button" aria-pressed="false" data-cat="larder" style="--c:#607226"><span class="dot"></span>Provisions <em>16</em></button><button class="chip" type="button" aria-pressed="false" data-cat="pizza" style="--c:#D90C0C"><span class="dot"></span>Pizza <em>15</em></button><button class="chip" type="button" aria-pressed="false" data-cat="trabocchi" style="--c:#A65708"><span class="dot"></span>Trabocchi <em>12</em></button><button class="chip" type="button" aria-pressed="false" data-cat="wine" style="--c:#CF176D"><span class="dot"></span>Wine <em>16</em></button><button class="chip" type="button" aria-pressed="false" data-cat="adrenaline" style="--c:#B74900"><span class="dot"></span>Adrenaline <em>8</em></button><button class="chip" type="button" aria-pressed="false" data-cat="beach" style="--c:#257774"><span class="dot"></span>Sea &amp; water <em>14</em></button><button class="chip" type="button" aria-pressed="false" data-cat="bikes" style="--c:#297A51"><span class="dot"></span>Bikes <em>9</em></button><button class="chip" type="button" aria-pressed="false" data-cat="handson" style="--c:#A140BC"><span class="dot"></span>Hands-on <em>9</em></button><button class="chip" type="button" aria-pressed="false" data-cat="makers" style="--c:#85690D"><span class="dot"></span>Makers <em>18</em></button><button class="chip" type="button" aria-pressed="false" data-cat="rainy" style="--c:#216FBA"><span class="dot"></span>Spa &amp; rainy day <em>10</em></button><button class="chip" type="button" aria-pressed="false" data-cat="ruins" style="--c:#8A643F"><span class="dot"></span>Walks &amp; ruins <em>26</em></button><button class="chip" type="button" aria-pressed="false" data-cat="shops" style="--c:#337A33"><span class="dot"></span>Secondhand <em>11</em></button><button class="chip" type="button" aria-pressed="false" data-cat="sights" style="--c:#B04F36"><span class="dot"></span>Sights <em>14</em></button><button class="chip" type="button" aria-pressed="false" data-cat="trips" style="--c:#DA0033"><span class="dot"></span>Big days out <em>12</em></button><button class="chip" type="button" aria-pressed="false" data-cat="weird" style="--c:#8D42E2"><span class="dot"></span>Weird <em>13</em></button></div>
       <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
       <div class="share">
-        <button class="chip" type="button" id="map-btn" aria-expanded="false" aria-controls="map-panel"
-                style="--c:var(--pool)">Show map</button>
         <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
         <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
                 style="--c:var(--terracotta)">Tally</button>
@@ -500,11 +529,6 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
       </div>
     </div>
 
-    <div class="mappanel" id="map-panel" hidden>
-      <div class="map" id="map" role="region" aria-label="Map of the places currently shown"></div>
-      <p class="muted mapnote" id="map-note">Pins follow the filters above. The house is the black pin.
-      A hollow pin means we only know the town, not the door.</p>
-    </div>
 
     <section class="group" id="sec-eat">
       <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">103</span></p>
@@ -690,6 +714,35 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
   </div>
 </footer>
 
+<div class="modal" id="welcome" hidden role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <div class="modal-card">
+      <div class="phead">
+        <painted-bg ground="aperol" layout="edges" count="9" seed="6180"></painted-bg>
+        <div class="phead-in"><span class="phead-title" id="welcome-title">Ciao</span></div>
+      </div>
+      <div class="modal-body">
+        <p class="lead" id="welcome-lead">Ten days out of Rocca San Giovanni, 11&#x2013;20 September.
+        Here is how this page works.</p>
+        <ul class="howto">
+          <li><span class="hownum">&#x2665;</span><span><b>Heart what you fancy.</b> Tap the heart on any
+          place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
+          <li><span class="hownum">&#x25CF;</span><span><b>Everyone sees everyone&#x2019;s.</b> Initials on
+          the cards show who likes what; the <b>Votes</b> chip sorts by popularity; the map shows where it
+          all is.</span></li>
+          <li><span class="hownum">&#x25A0;</span><span><b>Calendar is yours.</b> Put things into days;
+          arrivals and birthdays are already in. Your plan stays on your phone.</span></li>
+        </ul>
+        <div class="row" id="welcome-name-row" hidden>
+          <input id="welcome-name" type="text" maxlength="24" placeholder="Your first name"
+                 autocomplete="given-name" aria-label="Your first name">
+        </div>
+        <div class="row">
+          <button class="chip go" type="button" id="welcome-go">Andiamo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <script>
 /* painted-bg.js - hand-painted background layer. Inlined verbatim from the project.
    <painted-bg ground="aperol" layout="edges" count="11" seed="5507"></painted-bg> */
@@ -851,7 +904,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {}, friends: {}, me: '' };
+  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false };
   function load() {
     try {
       var raw = localStorage.getItem(KEY);
@@ -882,6 +935,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
         });
       }
       if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
+      S.welcomed = !!o.welcomed;
     } catch (e) { /* corrupt storage must never break the page */ }
   }
   function save() {
@@ -927,6 +981,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       $(p[0]).setAttribute('aria-selected', on ? 'true' : 'false');
       $(p[1]).hidden = !on;
     });
+    if (tid === 't-activities') ensureMap();
   }
   TABS.forEach(function (pair) {
     $(pair[0]).addEventListener('click', function () {
@@ -1144,18 +1199,65 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       pinLayer.addLayer(m);
       pts.push([p.lat, p.lon]);
     });
-    if (pts.length > 1) map.fitBounds(pts, { padding: [24, 24], maxZoom: 13 });
+    // with no filters on, frame the coast and the Majella (within 45 min) rather than the far day trips,
+    // which would zoom the whole thing out to half of Italy; a filtered view frames exactly its pins
+    var unfiltered = group === 'all' && !Object.keys(active).length && band === 999 && !area && !term;
+    var frame = pts;
+    if (unfiltered) {
+      frame = [[HOUSE.lat, HOUSE.lon]];
+      tiles.forEach(function (el) {
+        var p = el._p;
+        if (!el.hidden && typeof p.lat === 'number' && p.mins <= 45) frame.push([p.lat, p.lon]);
+      });
+    }
+    if (frame.length > 1) map.fitBounds(frame, { padding: [24, 24], maxZoom: 13 });
     else map.setView([HOUSE.lat, HOUSE.lon], 11);
   }
-  function wireMap() {
-    $('map-btn').addEventListener('click', function () {
-      var panel = $('map-panel'), btn = this;
-      panel.hidden = !panel.hidden;
-      btn.setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
-      btn.textContent = panel.hidden ? 'Show map' : 'Hide map';
-      if (panel.hidden) return;
-      if (map) { map.invalidateSize(); drawPins(); return; }
-      loadLeaflet(function () { initMap(); });
+  // the map sits at the top of Activities; it is built the first time that tab is shown
+  function ensureMap() {
+    if (map) { setTimeout(function () { map.invalidateSize(); drawPins(); }, 50); return; }
+    loadLeaflet(function () { initMap(); });
+  }
+
+  /* ---------- welcome card: once per phone, or whenever a personal link is opened ----------
+     A personal link is  ?me=Frances  - it sets the name and greets them, so nobody has to type. */
+  function readMeParam() {
+    var m = /[?&]me=([^&]+)/.exec(location.search || '');
+    if (!m) return '';
+    var name = '';
+    try { name = decodeURIComponent(m[1].replace(/\+/g, ' ')).trim().slice(0, 24); } catch (e) {}
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+    return name;
+  }
+  function showWelcome() {
+    var named = !!S.me;
+    $('welcome-title').textContent = named ? 'Ciao, ' + S.me : 'Ciao';
+    $('welcome-name-row').hidden = named;
+    $('welcome-go').disabled = !named;
+    $('welcome').hidden = false;
+    if (!named) $('welcome-name').focus();
+  }
+  function closeWelcome() {
+    if (!S.me) {
+      var v = ($('welcome-name').value || '').trim().slice(0, 24);
+      if (!v) { $('welcome-name').focus(); return; }
+      S.me = v;
+      if (S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
+      updateMeChip();
+      pushPicks();
+    }
+    S.welcomed = true;
+    save();
+    $('welcome').hidden = true;
+    showTab('t-activities');
+  }
+  function wireWelcome() {
+    $('welcome-go').addEventListener('click', closeWelcome);
+    $('welcome-name').addEventListener('input', function () {
+      $('welcome-go').disabled = !this.value.trim();
+    });
+    $('welcome-name').addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); closeWelcome(); }
     });
   }
   function updateChipCounts(ts) {
@@ -1634,13 +1736,20 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   syncHearts();
   wireShelf();
   wireShare();
+  wireWelcome();
+  var fromLink = readMeParam();
+  if (fromLink) {
+    if (fromLink !== S.me) { S.me = fromLink; S.welcomed = false; }
+    if (S.friends[S.me]) delete S.friends[S.me];
+    save();
+  }
   updateMeChip();
-  wireMap();
   renderFriendChips();
   renderCalendar();
   if (imported) { showTab('t-activities'); setGroup(imported); }
   else renderTiles();
   wireSync();
+  if (!S.welcomed) showWelcome();
 })();
 
 </script>

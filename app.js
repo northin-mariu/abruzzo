@@ -6,7 +6,7 @@
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {}, friends: {}, me: '' };
+  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false };
   function load() {
     try {
       var raw = localStorage.getItem(KEY);
@@ -37,6 +37,7 @@
         });
       }
       if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
+      S.welcomed = !!o.welcomed;
     } catch (e) { /* corrupt storage must never break the page */ }
   }
   function save() {
@@ -82,6 +83,7 @@
       $(p[0]).setAttribute('aria-selected', on ? 'true' : 'false');
       $(p[1]).hidden = !on;
     });
+    if (tid === 't-activities') ensureMap();
   }
   TABS.forEach(function (pair) {
     $(pair[0]).addEventListener('click', function () {
@@ -299,18 +301,65 @@
       pinLayer.addLayer(m);
       pts.push([p.lat, p.lon]);
     });
-    if (pts.length > 1) map.fitBounds(pts, { padding: [24, 24], maxZoom: 13 });
+    // with no filters on, frame the coast and the Majella (within 45 min) rather than the far day trips,
+    // which would zoom the whole thing out to half of Italy; a filtered view frames exactly its pins
+    var unfiltered = group === 'all' && !Object.keys(active).length && band === 999 && !area && !term;
+    var frame = pts;
+    if (unfiltered) {
+      frame = [[HOUSE.lat, HOUSE.lon]];
+      tiles.forEach(function (el) {
+        var p = el._p;
+        if (!el.hidden && typeof p.lat === 'number' && p.mins <= 45) frame.push([p.lat, p.lon]);
+      });
+    }
+    if (frame.length > 1) map.fitBounds(frame, { padding: [24, 24], maxZoom: 13 });
     else map.setView([HOUSE.lat, HOUSE.lon], 11);
   }
-  function wireMap() {
-    $('map-btn').addEventListener('click', function () {
-      var panel = $('map-panel'), btn = this;
-      panel.hidden = !panel.hidden;
-      btn.setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
-      btn.textContent = panel.hidden ? 'Show map' : 'Hide map';
-      if (panel.hidden) return;
-      if (map) { map.invalidateSize(); drawPins(); return; }
-      loadLeaflet(function () { initMap(); });
+  // the map sits at the top of Activities; it is built the first time that tab is shown
+  function ensureMap() {
+    if (map) { setTimeout(function () { map.invalidateSize(); drawPins(); }, 50); return; }
+    loadLeaflet(function () { initMap(); });
+  }
+
+  /* ---------- welcome card: once per phone, or whenever a personal link is opened ----------
+     A personal link is  ?me=Frances  - it sets the name and greets them, so nobody has to type. */
+  function readMeParam() {
+    var m = /[?&]me=([^&]+)/.exec(location.search || '');
+    if (!m) return '';
+    var name = '';
+    try { name = decodeURIComponent(m[1].replace(/\+/g, ' ')).trim().slice(0, 24); } catch (e) {}
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+    return name;
+  }
+  function showWelcome() {
+    var named = !!S.me;
+    $('welcome-title').textContent = named ? 'Ciao, ' + S.me : 'Ciao';
+    $('welcome-name-row').hidden = named;
+    $('welcome-go').disabled = !named;
+    $('welcome').hidden = false;
+    if (!named) $('welcome-name').focus();
+  }
+  function closeWelcome() {
+    if (!S.me) {
+      var v = ($('welcome-name').value || '').trim().slice(0, 24);
+      if (!v) { $('welcome-name').focus(); return; }
+      S.me = v;
+      if (S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
+      updateMeChip();
+      pushPicks();
+    }
+    S.welcomed = true;
+    save();
+    $('welcome').hidden = true;
+    showTab('t-activities');
+  }
+  function wireWelcome() {
+    $('welcome-go').addEventListener('click', closeWelcome);
+    $('welcome-name').addEventListener('input', function () {
+      $('welcome-go').disabled = !this.value.trim();
+    });
+    $('welcome-name').addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); closeWelcome(); }
     });
   }
   function updateChipCounts(ts) {
@@ -789,11 +838,18 @@
   syncHearts();
   wireShelf();
   wireShare();
+  wireWelcome();
+  var fromLink = readMeParam();
+  if (fromLink) {
+    if (fromLink !== S.me) { S.me = fromLink; S.welcomed = false; }
+    if (S.friends[S.me]) delete S.friends[S.me];
+    save();
+  }
   updateMeChip();
-  wireMap();
   renderFriendChips();
   renderCalendar();
   if (imported) { showTab('t-activities'); setGroup(imported); }
   else renderTiles();
   wireSync();
+  if (!S.welcomed) showWelcome();
 })();
