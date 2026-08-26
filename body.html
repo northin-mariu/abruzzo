@@ -56,8 +56,8 @@
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
         appear on the cards, and the <b>Votes</b> chip sorts the list by how many of you like a place. There
-        are no accounts, just your name. If the shared list is ever out of reach, tap <b>Share my picks</b>
-        in Activities and paste the link in the group instead.</p>
+        are no accounts, just your name &#x2014; it asks once, the first time you heart something. If the
+        shared list is ever out of reach, <b>Tally</b> in Activities offers a link to paste in the group instead.</p>
       </div>
       <div class="panel">
         <h3>The house</h3>
@@ -137,26 +137,39 @@
       <div class="share">
         <button class="chip" type="button" id="map-btn" aria-expanded="false" aria-controls="map-panel"
                 style="--c:var(--pool)">Show map</button>
+        <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
         <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
-                style="--c:var(--fig)">Share my picks</button>
+                style="--c:var(--terracotta)">Tally</button>
         <div class="sharebox" id="share-panel" hidden>
           <p class="muted" id="sync-note" hidden></p>
-          <label for="share-name">Your name</label>
-          <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name">
-          <div class="row">
-            <button class="chip" type="button" id="share-copy">Copy link</button>
-            <a class="chip" id="share-wa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
-          </div>
-          <input id="share-link" type="text" readonly aria-label="Your picks link" hidden>
-          <p class="muted" id="share-hint"></p>
-          <div class="row" id="share-friends"></div>
-          <label>The tally &#x2014; everyone&#x2019;s hearts as a list, most votes first</label>
+          <label>Everyone&#x2019;s hearts as a list, most votes first</label>
           <div class="row">
             <button class="chip" type="button" id="tally-copy">Copy tally</button>
             <a class="chip" id="tally-wa" href="#" target="_blank" rel="noopener">Tally on WhatsApp</a>
           </div>
           <textarea id="tally-text" readonly rows="8" aria-label="The tally" hidden></textarea>
+          <div class="row" id="share-friends"></div>
+          <div class="linkbox" id="linkbox" hidden>
+            <label>Share by link instead</label>
+            <div class="row">
+              <button class="chip" type="button" id="share-copy">Copy link</button>
+              <a class="chip" id="share-wa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
+            </div>
+            <input id="share-link" type="text" readonly aria-label="Your picks link" hidden>
+            <p class="muted" id="share-hint"></p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="sheet" id="who" hidden role="dialog" aria-labelledby="who-title">
+      <p class="sheet-t" id="who-title">Who&#x2019;s hearting?</p>
+      <p class="muted">First name is fine &#x2014; the others will see your hearts under it. Use the same
+      one every time.</p>
+      <div class="row">
+        <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name"
+               aria-label="Your name">
+        <button class="chip" type="button" id="who-go">That&#x2019;s me</button>
       </div>
     </div>
 

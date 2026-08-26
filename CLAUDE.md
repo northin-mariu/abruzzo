@@ -52,6 +52,10 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   To update the worker code: dashboard → Workers & Pages → abruzzo-picks → Edit code → paste
   `worker/abruzzo-picks.js` → Deploy (the editor is a cross-origin frame; Claude's browser tools
   cannot type into it, so the paste is Matt's). To wipe all hearts: delete the KV namespace's keys.
+  **Flow (2026-08-26):** first heart with no name opens a bottom sheet (`#who`, "Who's hearting?");
+  the chip beside Show map reads "You're Matt · change" afterwards. "Tally" opens the list; the
+  copy-link / WhatsApp-link controls (`#linkbox`) only appear when `SYNC` is empty or unreachable
+  (`syncOk === false`). Polls every 30 s while the tab is visible.
 - **No `prompt()` or `alert()`, ever.** They throw in chat-app in-app browsers and the exception
   is swallowed by the event system, so controls die silently. That was the original bug.
 - **Design system** = the `butterfly-cave-design` skill in

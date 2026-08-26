@@ -153,13 +153,7 @@
     if (!$('share-panel').hidden) refreshShare();
     pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
-    if (!S.me && S.short[id] && Object.keys(S.short).length === 1) {
-      $('share-panel').hidden = false;
-      $('share-btn').setAttribute('aria-expanded', 'true');
-      refreshShare();
-      $('share-hint').textContent = 'Nice. Put your name in and the others can see what you like.';
-      $('share-name').focus();
-    }
+    if (!S.me && S.short[id] && Object.keys(S.short).length === 1) openWho();
   }
   function syncHearts() {
     tiles.forEach(function (el) {
@@ -575,9 +569,31 @@
     if (!name || !ids.length) return '';
     return SITE + '#picks=' + encodeURIComponent(name) + ':' + ids.join(',');
   }
+  function updateMeChip() {
+    $('me-chip').textContent = S.me ? 'You’re ' + S.me + ' · change' : 'Who’s hearting?';
+  }
+  function openWho() {
+    $('share-name').value = S.me || '';
+    $('who').hidden = false;
+    $('share-name').focus();
+  }
+  function closeWho() {
+    S.me = ($('share-name').value || '').trim().slice(0, 24);
+    if (S.me && S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
+    save();
+    updateMeChip();
+    $('who').hidden = true;
+    pushPicks();
+    if (!$('share-panel').hidden) refreshShare();
+  }
   function refreshShare() {
+    refreshTally();
+    // the link route is a fallback: only shown when there is no live store, or it is unreachable
+    var lb = $('linkbox');
+    lb.hidden = !!(SYNC && syncOk !== false);
+    if (lb.hidden) return;
     var link = shareLink();
-    var name = ($('share-name').value || '').trim();
+    var name = S.me || '';
     var n = Object.keys(S.short).length;
     $('share-link').value = link;
     $('share-link').hidden = !link;
@@ -593,7 +609,6 @@
       'Your ' + n + (n === 1 ? ' heart is' : ' hearts are') + ' in this link. Paste it in the group: ' +
       'anyone who opens it gets a "' + name + ' ♥" chip next to Shortlisted. ' +
       'Send it again whenever you change your mind.';
-    refreshTally();
   }
   function tallyText() {
     var rows = PLACES.filter(function (p) { return votes(p.id) > 0; });
@@ -643,13 +658,19 @@
       var p = $('share-panel');
       p.hidden = !p.hidden;
       this.setAttribute('aria-expanded', p.hidden ? 'false' : 'true');
-      if (!p.hidden) { refreshShare(); if (!S.me) $('share-name').focus(); }
+      if (!p.hidden) refreshShare();
+    });
+    $('me-chip').addEventListener('click', function () { openWho(); });
+    $('who-go').addEventListener('click', closeWho);
+    $('share-name').addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); closeWho(); }
     });
     $('share-name').addEventListener('input', function () {
       S.me = this.value.trim().slice(0, 24);
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
       save();
-      refreshShare();
+      updateMeChip();
+      if (!$('share-panel').hidden) refreshShare();
     });
     $('share-copy').addEventListener('click', function () {
       var link = shareLink();
@@ -680,7 +701,7 @@
      SYNC empty = links only. With SYNC set, every heart is saved under your name and everyone's
      hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
   var SYNC = 'https://abruzzo-picks.mattnorthin.workers.dev';
-  var syncTimer = null, syncPoll = null;
+  var syncTimer = null, syncPoll = null, syncOk = null;
   function syncNote(msg) {
     var n = $('sync-note');
     n.hidden = !msg;
@@ -704,12 +725,17 @@
       });
       // never list yourself as a friend (happens if the server knew you before this phone did)
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; changed = true; }
-      if (changed) { save(); renderFriendChips(); renderTiles(); if (!$('share-panel').hidden) refreshShare(); }
+      if (changed) { save(); renderFriendChips(); renderTiles(); }
+      syncOk = true;
+      if (!$('share-panel').hidden) refreshShare();
       var now = new Date();
-      syncNote('Live: hearts are shared automatically' + (S.me ? ' as ' + S.me : ' once you add your name') +
+      syncNote('Live: everyone’s hearts update by themselves' +
+               (S.me ? '' : ' — tap “Who’s hearting?” so yours count') +
                '. Last checked ' + ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2) + '.');
     }).catch(function () {
-      if (!quiet) syncNote('Could not reach the shared list - showing what this phone knows. Links still work.');
+      syncOk = false;
+      if (!$('share-panel').hidden) refreshShare();
+      if (!quiet) syncNote('Could not reach the shared list — showing what this phone knows. You can share by link below.');
     });
   }
   function pushPicks() {
@@ -739,7 +765,7 @@
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState === 'visible') pullPicks(true);
     });
-    syncPoll = setInterval(function () { if (document.visibilityState === 'visible') pullPicks(true); }, 60000);
+    syncPoll = setInterval(function () { if (document.visibilityState === 'visible') pullPicks(true); }, 30000);
     pullPicks();
     if (S.me && Object.keys(S.short).length) pushPicks();
   }
@@ -763,6 +789,7 @@
   syncHearts();
   wireShelf();
   wireShare();
+  updateMeChip();
   wireMap();
   renderFriendChips();
   renderCalendar();

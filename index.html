@@ -156,6 +156,16 @@ button{font:inherit; cursor:pointer}
 .sharebox a.chip[aria-disabled="true"]{opacity:.45; pointer-events:none}
 .sharebox .chip:disabled{opacity:.45; cursor:not-allowed}
 .thead-r{display:flex; align-items:center; gap:6px; flex:0 0 auto}
+.sheet{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); width:min(92vw,480px); z-index:60;
+       background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:var(--r-card);
+       padding:var(--s4); box-shadow:0 14px 44px rgba(0,0,0,.3); display:flex; flex-direction:column; gap:var(--s2)}
+.sheet[hidden]{display:none}
+.sheet-t{font-family:var(--font-serif); font-size:var(--t-h3)}
+.sheet input{flex:1 1 160px; min-height:var(--hit); padding:9px 12px; font:inherit;
+             border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2)}
+.sheet input:focus{border-color:var(--pool); outline:none}
+.linkbox{display:flex; flex-direction:column; gap:var(--s2); padding-top:var(--s2); border-top:1px dashed var(--line)}
+.linkbox[hidden]{display:none}
 .likedby{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; max-width:120px}
 .likedby:empty{display:none}
 .who{width:24px; height:24px; border-radius:7px; display:grid; place-items:center;
@@ -373,8 +383,8 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
         appear on the cards, and the <b>Votes</b> chip sorts the list by how many of you like a place. There
-        are no accounts, just your name. If the shared list is ever out of reach, tap <b>Share my picks</b>
-        in Activities and paste the link in the group instead.</p>
+        are no accounts, just your name &#x2014; it asks once, the first time you heart something. If the
+        shared list is ever out of reach, <b>Tally</b> in Activities offers a link to paste in the group instead.</p>
       </div>
       <div class="panel">
         <h3>The house</h3>
@@ -454,26 +464,39 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
       <div class="share">
         <button class="chip" type="button" id="map-btn" aria-expanded="false" aria-controls="map-panel"
                 style="--c:var(--pool)">Show map</button>
+        <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
         <button class="chip" type="button" id="share-btn" aria-expanded="false" aria-controls="share-panel"
-                style="--c:var(--fig)">Share my picks</button>
+                style="--c:var(--terracotta)">Tally</button>
         <div class="sharebox" id="share-panel" hidden>
           <p class="muted" id="sync-note" hidden></p>
-          <label for="share-name">Your name</label>
-          <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name">
-          <div class="row">
-            <button class="chip" type="button" id="share-copy">Copy link</button>
-            <a class="chip" id="share-wa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
-          </div>
-          <input id="share-link" type="text" readonly aria-label="Your picks link" hidden>
-          <p class="muted" id="share-hint"></p>
-          <div class="row" id="share-friends"></div>
-          <label>The tally &#x2014; everyone&#x2019;s hearts as a list, most votes first</label>
+          <label>Everyone&#x2019;s hearts as a list, most votes first</label>
           <div class="row">
             <button class="chip" type="button" id="tally-copy">Copy tally</button>
             <a class="chip" id="tally-wa" href="#" target="_blank" rel="noopener">Tally on WhatsApp</a>
           </div>
           <textarea id="tally-text" readonly rows="8" aria-label="The tally" hidden></textarea>
+          <div class="row" id="share-friends"></div>
+          <div class="linkbox" id="linkbox" hidden>
+            <label>Share by link instead</label>
+            <div class="row">
+              <button class="chip" type="button" id="share-copy">Copy link</button>
+              <a class="chip" id="share-wa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
+            </div>
+            <input id="share-link" type="text" readonly aria-label="Your picks link" hidden>
+            <p class="muted" id="share-hint"></p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="sheet" id="who" hidden role="dialog" aria-labelledby="who-title">
+      <p class="sheet-t" id="who-title">Who&#x2019;s hearting?</p>
+      <p class="muted">First name is fine &#x2014; the others will see your hearts under it. Use the same
+      one every time.</p>
+      <div class="row">
+        <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name"
+               aria-label="Your name">
+        <button class="chip" type="button" id="who-go">That&#x2019;s me</button>
       </div>
     </div>
 
@@ -975,13 +998,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     if (!$('share-panel').hidden) refreshShare();
     pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
-    if (!S.me && S.short[id] && Object.keys(S.short).length === 1) {
-      $('share-panel').hidden = false;
-      $('share-btn').setAttribute('aria-expanded', 'true');
-      refreshShare();
-      $('share-hint').textContent = 'Nice. Put your name in and the others can see what you like.';
-      $('share-name').focus();
-    }
+    if (!S.me && S.short[id] && Object.keys(S.short).length === 1) openWho();
   }
   function syncHearts() {
     tiles.forEach(function (el) {
@@ -1397,9 +1414,31 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     if (!name || !ids.length) return '';
     return SITE + '#picks=' + encodeURIComponent(name) + ':' + ids.join(',');
   }
+  function updateMeChip() {
+    $('me-chip').textContent = S.me ? 'You\u2019re ' + S.me + ' \u00b7 change' : 'Who\u2019s hearting?';
+  }
+  function openWho() {
+    $('share-name').value = S.me || '';
+    $('who').hidden = false;
+    $('share-name').focus();
+  }
+  function closeWho() {
+    S.me = ($('share-name').value || '').trim().slice(0, 24);
+    if (S.me && S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
+    save();
+    updateMeChip();
+    $('who').hidden = true;
+    pushPicks();
+    if (!$('share-panel').hidden) refreshShare();
+  }
   function refreshShare() {
+    refreshTally();
+    // the link route is a fallback: only shown when there is no live store, or it is unreachable
+    var lb = $('linkbox');
+    lb.hidden = !!(SYNC && syncOk !== false);
+    if (lb.hidden) return;
     var link = shareLink();
-    var name = ($('share-name').value || '').trim();
+    var name = S.me || '';
     var n = Object.keys(S.short).length;
     $('share-link').value = link;
     $('share-link').hidden = !link;
@@ -1415,7 +1454,6 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       'Your ' + n + (n === 1 ? ' heart is' : ' hearts are') + ' in this link. Paste it in the group: ' +
       'anyone who opens it gets a "' + name + ' \u2665" chip next to Shortlisted. ' +
       'Send it again whenever you change your mind.';
-    refreshTally();
   }
   function tallyText() {
     var rows = PLACES.filter(function (p) { return votes(p.id) > 0; });
@@ -1465,13 +1503,19 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       var p = $('share-panel');
       p.hidden = !p.hidden;
       this.setAttribute('aria-expanded', p.hidden ? 'false' : 'true');
-      if (!p.hidden) { refreshShare(); if (!S.me) $('share-name').focus(); }
+      if (!p.hidden) refreshShare();
+    });
+    $('me-chip').addEventListener('click', function () { openWho(); });
+    $('who-go').addEventListener('click', closeWho);
+    $('share-name').addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); closeWho(); }
     });
     $('share-name').addEventListener('input', function () {
       S.me = this.value.trim().slice(0, 24);
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
       save();
-      refreshShare();
+      updateMeChip();
+      if (!$('share-panel').hidden) refreshShare();
     });
     $('share-copy').addEventListener('click', function () {
       var link = shareLink();
@@ -1502,7 +1546,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
      SYNC empty = links only. With SYNC set, every heart is saved under your name and everyone's
      hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
   var SYNC = 'https://abruzzo-picks.mattnorthin.workers.dev';
-  var syncTimer = null, syncPoll = null;
+  var syncTimer = null, syncPoll = null, syncOk = null;
   function syncNote(msg) {
     var n = $('sync-note');
     n.hidden = !msg;
@@ -1526,12 +1570,17 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       });
       // never list yourself as a friend (happens if the server knew you before this phone did)
       if (S.me && S.friends[S.me]) { delete S.friends[S.me]; changed = true; }
-      if (changed) { save(); renderFriendChips(); renderTiles(); if (!$('share-panel').hidden) refreshShare(); }
+      if (changed) { save(); renderFriendChips(); renderTiles(); }
+      syncOk = true;
+      if (!$('share-panel').hidden) refreshShare();
       var now = new Date();
-      syncNote('Live: hearts are shared automatically' + (S.me ? ' as ' + S.me : ' once you add your name') +
+      syncNote('Live: everyone\u2019s hearts update by themselves' +
+               (S.me ? '' : ' \u2014 tap \u201cWho\u2019s hearting?\u201d so yours count') +
                '. Last checked ' + ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2) + '.');
     }).catch(function () {
-      if (!quiet) syncNote('Could not reach the shared list - showing what this phone knows. Links still work.');
+      syncOk = false;
+      if (!$('share-panel').hidden) refreshShare();
+      if (!quiet) syncNote('Could not reach the shared list \u2014 showing what this phone knows. You can share by link below.');
     });
   }
   function pushPicks() {
@@ -1561,7 +1610,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState === 'visible') pullPicks(true);
     });
-    syncPoll = setInterval(function () { if (document.visibilityState === 'visible') pullPicks(true); }, 60000);
+    syncPoll = setInterval(function () { if (document.visibilityState === 'visible') pullPicks(true); }, 30000);
     pullPicks();
     if (S.me && Object.keys(S.short).length) pushPicks();
   }
@@ -1585,6 +1634,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   syncHearts();
   wireShelf();
   wireShare();
+  updateMeChip();
   wireMap();
   renderFriendChips();
   renderCalendar();

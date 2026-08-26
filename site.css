@@ -148,6 +148,16 @@ button{font:inherit; cursor:pointer}
 .sharebox a.chip[aria-disabled="true"]{opacity:.45; pointer-events:none}
 .sharebox .chip:disabled{opacity:.45; cursor:not-allowed}
 .thead-r{display:flex; align-items:center; gap:6px; flex:0 0 auto}
+.sheet{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); width:min(92vw,480px); z-index:60;
+       background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:var(--r-card);
+       padding:var(--s4); box-shadow:0 14px 44px rgba(0,0,0,.3); display:flex; flex-direction:column; gap:var(--s2)}
+.sheet[hidden]{display:none}
+.sheet-t{font-family:var(--font-serif); font-size:var(--t-h3)}
+.sheet input{flex:1 1 160px; min-height:var(--hit); padding:9px 12px; font:inherit;
+             border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2)}
+.sheet input:focus{border-color:var(--pool); outline:none}
+.linkbox{display:flex; flex-direction:column; gap:var(--s2); padding-top:var(--s2); border-top:1px dashed var(--line)}
+.linkbox[hidden]{display:none}
 .likedby{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; max-width:120px}
 .likedby:empty{display:none}
 .who{width:24px; height:24px; border-radius:7px; display:grid; place-items:center;
