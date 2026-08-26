@@ -169,6 +169,9 @@ button{font:inherit; cursor:pointer}
 .modal input:focus{border-color:var(--pool); outline:none}
 .chip.go{background:var(--pool); border-color:var(--pool); color:var(--peach); font-weight:var(--w-bold)}
 .chip.go:disabled{opacity:.45}
+.linkbtn{border:0; background:none; color:var(--ink-2); font:inherit; font-size:var(--t-meta);
+         text-decoration:underline; text-underline-offset:3px; padding:6px 4px; cursor:pointer}
+.linkbtn[hidden]{display:none}
 .pin{width:14px; height:14px; border-radius:50%; background:var(--pin,#8E3B1A);
      border:2px solid #FAF3E5; box-shadow:0 1px 3px rgba(0,0,0,.35)}
 .pin.approx{background:#FAF3E5; border:3px solid var(--pin,#8E3B1A)}
@@ -733,6 +736,7 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
         </div>
         <div class="row">
           <button class="chip go" type="button" id="welcome-go">Andiamo</button>
+          <button class="linkbtn" type="button" id="welcome-notme" hidden>Not you? Use another name</button>
         </div>
       </div>
     </div>
@@ -1245,9 +1249,24 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
     var named = !!S.me;
     $('welcome-title').textContent = named ? 'Ciao, ' + S.me : 'Ciao';
     $('welcome-name-row').hidden = named;
+    $('welcome-notme').hidden = !named;
     $('welcome-go').disabled = !named;
     $('welcome').hidden = false;
     if (!named) $('welcome-name').focus();
+  }
+  // "Not Frances?" - the link was forwarded or opened on someone else's phone
+  function notMe() {
+    S.me = '';
+    S.short = {};
+    syncHearts();
+    save();
+    updateMeChip();
+    $('welcome-title').textContent = 'Ciao';
+    $('welcome-notme').hidden = true;
+    $('welcome-name-row').hidden = false;
+    $('welcome-name').value = '';
+    $('welcome-go').disabled = true;
+    $('welcome-name').focus();
   }
   function closeWelcome() {
     if (!S.me) {
@@ -1268,6 +1287,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   }
   function wireWelcome() {
     $('welcome-go').addEventListener('click', closeWelcome);
+    $('welcome-notme').addEventListener('click', notMe);
     $('welcome-name').addEventListener('input', function () {
       $('welcome-go').disabled = !this.value.trim();
     });
@@ -1648,7 +1668,14 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   wireWelcome();
   var fromLink = readMeParam();
   if (fromLink) {
-    if (fromLink !== S.me) { S.me = fromLink; S.welcomed = false; }
+    if (fromLink !== S.me) {
+      // a different person's link on a phone that already had a name (Matt checking Frances's
+      // link, or a shared iPad): the hearts on this phone belong to the old name and are safe on
+      // the server, so start the new name with none rather than re-filing them under it
+      if (S.me) { S.short = {}; syncHearts(); }
+      S.me = fromLink;
+      S.welcomed = false;
+    }
     if (S.friends[S.me]) delete S.friends[S.me];
     save();
   }

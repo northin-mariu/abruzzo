@@ -352,9 +352,24 @@
     var named = !!S.me;
     $('welcome-title').textContent = named ? 'Ciao, ' + S.me : 'Ciao';
     $('welcome-name-row').hidden = named;
+    $('welcome-notme').hidden = !named;
     $('welcome-go').disabled = !named;
     $('welcome').hidden = false;
     if (!named) $('welcome-name').focus();
+  }
+  // "Not Frances?" - the link was forwarded or opened on someone else's phone
+  function notMe() {
+    S.me = '';
+    S.short = {};
+    syncHearts();
+    save();
+    updateMeChip();
+    $('welcome-title').textContent = 'Ciao';
+    $('welcome-notme').hidden = true;
+    $('welcome-name-row').hidden = false;
+    $('welcome-name').value = '';
+    $('welcome-go').disabled = true;
+    $('welcome-name').focus();
   }
   function closeWelcome() {
     if (!S.me) {
@@ -375,6 +390,7 @@
   }
   function wireWelcome() {
     $('welcome-go').addEventListener('click', closeWelcome);
+    $('welcome-notme').addEventListener('click', notMe);
     $('welcome-name').addEventListener('input', function () {
       $('welcome-go').disabled = !this.value.trim();
     });
@@ -755,7 +771,14 @@
   wireWelcome();
   var fromLink = readMeParam();
   if (fromLink) {
-    if (fromLink !== S.me) { S.me = fromLink; S.welcomed = false; }
+    if (fromLink !== S.me) {
+      // a different person's link on a phone that already had a name (Matt checking Frances's
+      // link, or a shared iPad): the hearts on this phone belong to the old name and are safe on
+      // the server, so start the new name with none rather than re-filing them under it
+      if (S.me) { S.short = {}; syncHearts(); }
+      S.me = fromLink;
+      S.welcomed = false;
+    }
     if (S.friends[S.me]) delete S.friends[S.me];
     save();
   }

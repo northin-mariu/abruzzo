@@ -161,6 +161,9 @@ button{font:inherit; cursor:pointer}
 .modal input:focus{border-color:var(--pool); outline:none}
 .chip.go{background:var(--pool); border-color:var(--pool); color:var(--peach); font-weight:var(--w-bold)}
 .chip.go:disabled{opacity:.45}
+.linkbtn{border:0; background:none; color:var(--ink-2); font:inherit; font-size:var(--t-meta);
+         text-decoration:underline; text-underline-offset:3px; padding:6px 4px; cursor:pointer}
+.linkbtn[hidden]{display:none}
 .pin{width:14px; height:14px; border-radius:50%; background:var(--pin,#8E3B1A);
      border:2px solid #FAF3E5; box-shadow:0 1px 3px rgba(0,0,0,.35)}
 .pin.approx{background:#FAF3E5; border:3px solid var(--pin,#8E3B1A)}
