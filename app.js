@@ -24,7 +24,11 @@
           S.plan[d] = {};
           SLOTS.forEach(function (s) {
             var v = slots[s.k];
-            if (typeof v === 'string' && byId[v]) S.plan[d][s.k] = v;
+            // older saves held a bare id; the shared plan holds {id, by, booked}
+            if (typeof v === 'string' && byId[v]) S.plan[d][s.k] = { id: v, by: '', booked: false };
+            else if (v && typeof v === 'object' && typeof v.id === 'string' && byId[v.id]) {
+              S.plan[d][s.k] = { id: v.id, by: String(v.by || '').slice(0, 24), booked: !!v.booked };
+            }
           });
         });
       }
@@ -177,7 +181,11 @@
       var slots = S.plan[d.d];
       if (!slots) return;
       SLOTS.forEach(function (s) {
-        if (slots[s.k] === id) out.push(d.dow + ' ' + d.d + ' · ' + s.l.toLowerCase());
+        var e = slots[s.k];
+        if (e && e.id === id) {
+          out.push(d.dow + ' ' + d.d + ' ' + s.l.toLowerCase() + (e.by ? ' (' + e.by + ')' : '') +
+                   (e.booked ? ' ✓ booked' : ''));
+        }
       });
     });
     return out;
@@ -219,7 +227,7 @@
       if (ok) {
         n[el._p.group]++;
         var w = whereInPlan(el._p.id);
-        el._plan.textContent = w.length ? 'In your calendar · ' + w.join(' · ') : '';
+        el._plan.textContent = w.length ? 'In the plan · ' + w.join(' · ') : '';
         el._liked.innerHTML = likedBy(el._p.id);
       }
       // in the Votes view the grid re-sorts by popularity; elsewhere it keeps drive-time order
@@ -489,6 +497,59 @@
   /* ---------- calendar ---------- */
   var openPicker = null;
   function slotsFor(d) { return (S.plan[d] = S.plan[d] || {}); }
+
+  /* ---------- the shared plan ----------
+     One calendar for the group. It lives in the same store as the hearts, under the pseudo-name
+     "_plan", each slot encoded as  d14--dinner--<place id>--<who>--b1  (b1 = booked). Every change
+     fetches the latest plan first, applies the tap, then saves - so two people editing different
+     slots within the same minute do not wipe each other out. */
+  function slugName(n) {
+    return String(n || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 14) || 'someone';
+  }
+  function nameFromSlug(s) {
+    var known = Object.keys(S.friends).concat(Object.keys(S.fc), S.me ? [S.me] : []);
+    for (var i = 0; i < known.length; i++) if (slugName(known[i]) === s) return known[i];
+    return s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ');
+  }
+  function encodePlan() {
+    var out = [];
+    DAYS.forEach(function (d) {
+      var slots = S.plan[d.d];
+      if (!slots) return;
+      SLOTS.forEach(function (s) {
+        var e = slots[s.k];
+        if (e && byId[e.id]) out.push('d' + d.d + '--' + s.k + '--' + e.id + '--' + slugName(e.by) + '--b' + (e.booked ? '1' : '0'));
+      });
+    });
+    return out;
+  }
+  function decodePlan(list) {
+    var plan = {};
+    (list || []).forEach(function (s) {
+      var m = /^d(\d{1,2})--([a-z]+)--([a-z0-9-]+?)--([a-z0-9-]+)--b([01])$/.exec(s);
+      if (!m || !byId[m[3]]) return;
+      var day = +m[1], slot = m[2];
+      if (!DAYS.some(function (d) { return d.d === day; }) || !SLOTS.some(function (x) { return x.k === slot; })) return;
+      (plan[day] = plan[day] || {})[slot] = { id: m[3], by: nameFromSlug(m[4]), booked: m[5] === '1' };
+    });
+    return plan;
+  }
+  function pushPlan() {
+    if (!SYNC || !window.fetch) return;
+    fetchJSON(SYNC + '/picks/_plan', {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids: encodePlan() })
+    }).catch(function () { syncNote('Could not save the plan just now - it will keep trying.'); });
+  }
+  function applyPlan(list) {
+    var fresh = decodePlan(list);
+    if (JSON.stringify(fresh) !== JSON.stringify(S.plan)) { S.plan = fresh; save(); renderCalendar(); renderTiles(); }
+  }
+  function planChange(fn) {
+    function go() { fn(); save(); renderCalendar(); renderTiles(); pushPlan(); }
+    if (!SYNC || !window.fetch) return go();
+    fetchJSON(SYNC + '/picks').then(function (all) { if (all && all._plan) applyPlan(all._plan); go(); }, go);
+  }
   function blocked(d, k) {
     var s = slotsFor(d);
     return k === 'fullday' ? !!(s.morning || s.lunch || s.dinner) : !!s.fullday;
@@ -514,12 +575,19 @@
                 (bl ? ' blocked' : '') + '">' +
                 '<span class="label">' + sl.l + '</span>';
         if (filled) {
-          var p = byId[filled];
-          body += '<div class="slotrow"><span class="splace">' + esc(p.name) +
-                  '<span class="where">' + esc(p.town) + ' · ' + p.mins + ' min</span></span>' +
+          var p = byId[filled.id];
+          body += '<div class="slotrow' + (filled.booked ? ' bkd' : '') + '"><span class="splace">' + esc(p.name) +
+                  '<span class="where">' + esc(p.town) + ' · ' + p.mins + ' min' +
+                  (filled.by ? ' · <span class="sby" style="--who:' + whoColour(filled.by) + '">' + esc(filled.by) + '</span>' : '') +
+                  '</span></span>' +
+                  '<span class="slotbtns">' +
+                  '<button class="bk" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
+                  '" aria-pressed="' + (filled.booked ? 'true' : 'false') + '" title="' +
+                  (filled.booked ? 'Booked - tap to unmark' : 'Tap once it is booked') + '">' +
+                  (filled.booked ? '✓ Booked' : 'Book it') + '</button>' +
                   '<button class="rm" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
                   '" aria-label="Remove ' + esc(p.name) + ' from ' + sl.l + ' on ' + day.dow + ' ' +
-                  day.d + '">×</button></div>';
+                  day.d + '">×</button></span></div>';
         } else {
           body += '<button class="addbtn" type="button" data-day="' + day.d + '" data-slot="' + sl.k + '"' +
                   (bl ? ' disabled' : '') + '>' +
@@ -536,8 +604,15 @@
   $('days').addEventListener('click', function (ev) {
     var rm = ev.target.closest('.rm');
     if (rm) {
-      delete slotsFor(+rm.dataset.day)[rm.dataset.slot];
-      save(); renderCalendar(); renderTiles();
+      planChange(function () { delete slotsFor(+rm.dataset.day)[rm.dataset.slot]; });
+      return;
+    }
+    var bk = ev.target.closest('.bk');
+    if (bk) {
+      planChange(function () {
+        var e = slotsFor(+bk.dataset.day)[bk.dataset.slot];
+        if (e) e.booked = !e.booked;
+      });
       return;
     }
     var add = ev.target.closest('.addbtn');
@@ -595,9 +670,8 @@
         b.innerHTML = '<span>' + (S.short[p.id] ? '♥ ' : '') + esc(p.name) + '</span>' +
                       '<span class="t">' + esc(p.town) + ' · ' + p.mins + ' min</span>';
         b.addEventListener('click', function () {
-          slotsFor(day)[slot] = p.id;
           openPicker = null;
-          save(); renderCalendar(); renderTiles();
+          planChange(function () { slotsFor(day)[slot] = { id: p.id, by: S.me || 'someone', booked: false }; });
         });
         list.appendChild(b);
       });
@@ -730,7 +804,9 @@
     if (!SYNC || !window.fetch) return;
     fetchJSON(SYNC + '/picks').then(function (all) {
       var changed = false;
+      if (all && all._plan) applyPlan(all._plan);
       Object.keys(all || {}).forEach(function (n) {
+        if (n.charAt(0) === '_') return; // the shared plan and any other non-person entries
         var raw = all[n] || [];
         var ids = raw.filter(function (id) { return byId[id]; });
         var cm = raw.filter(function (id) { return /^c-[0-9a-f]{6}$/.test(id); })[0];

@@ -323,6 +323,12 @@ main{position:relative; z-index:1}
 .slot.blocked{opacity:.45}
 .slotrow{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s2)}
 .splace{font-size:var(--t-body)}
+.sby{color:var(--who,var(--fig)); font-weight:var(--w-bold)}
+.slotbtns{display:flex; align-items:center; gap:4px; flex:0 0 auto}
+.bk{min-height:32px; padding:4px 10px; border:1px solid var(--line); border-radius:var(--r-pill);
+    background:transparent; color:var(--ink-2); font:inherit; font-size:var(--t-meta); cursor:pointer}
+.bk[aria-pressed="true"]{background:var(--olive); border-color:var(--olive); color:var(--peach)}
+.slotrow.bkd .splace{font-weight:var(--w-bold)}
 .splace .where{display:block; color:var(--ink-2); font-size:var(--t-meta); font-variant-numeric:tabular-nums}
 .addbtn{min-height:36px; padding:5px var(--s3); border:1px dashed var(--line);
         border-radius:var(--r-control); background:transparent; color:var(--ink-2);

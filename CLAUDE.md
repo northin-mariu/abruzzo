@@ -119,3 +119,13 @@ Berlin on the 22nd — the "leaving London 22nd" message is that, not an early d
 
 Seven people in total. Matt's taste in restaurants: cheap, no-frills, fish-first locals' places
 (Os Fialhos in the Algarve, Stasera Pago Io) — lean that way over set-menu trabocchi.
+
+## Shared plan (2026-08-26)
+
+The Calendar is one plan for the group, stored in the same KV store under the pseudo-name
+`_plan`: each slot is an id like `d14--dinner--<place id>--<who slug>--b1` (b1 = booked), which
+passes the worker's id regex, so no worker change was needed. `planChange(fn)` fetches the latest
+plan, applies the tap, saves, renders and PUTs — last write wins per edit, not per session.
+Anyone can add, remove or toggle "Book it". `S.plan` values are `{id, by, booked}` (older bare-id
+saves are upgraded on load). Names in the plan are slugs, mapped back via known names.
+Matt's real hearts live under "Matt" in the store — never delete that entry when cleaning up tests.
