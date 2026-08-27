@@ -4546,5 +4546,23 @@
   "lat": 42.09983,
   "lon": 14.72073,
   "geo": "exact"
+ },
+ {
+  "id": "hawaii-pescara",
+  "name": "Hawaii Pescara",
+  "town": "Pescara",
+  "cat": "beachbar",
+  "catLabel": "Beach bars",
+  "mins": 45,
+  "desc": "Pescara's beach 'urban village' on the Riviera: beach, restaurant, terrace and a proper event lawn. The one to know about is Sundays — 'Come di Domenica', 16:00 to 22:00, lunch drifting into a sunset DJ set with tables on the sand — and 'Giovedì Posh' on Thursdays, DJ and tables under the stars. Guest DJs are announced on Instagram a few days ahead. Pairs with the train home from Pescara Centrale. +39 085 939 6664.",
+  "flag": "Sunday sunset DJ set",
+  "address": "Viale della Riviera 154, Pescara PE, Italy",
+  "website": "https://www.hawaiipescara.it/eventi/",
+  "colour": "#29B6D6",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hawaii+Pescara%2C+Viale+della+Riviera+154%2C+Pescara+PE%2C+Italy",
+  "mapQuery": "Hawaii Pescara, Viale della Riviera 154, Pescara PE, Italy",
+  "lat": 42.49208,
+  "lon": 14.18724,
+  "geo": "exact"
  }
 ]
