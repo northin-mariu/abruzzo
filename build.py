@@ -12,7 +12,7 @@ HERE = pathlib.Path(__file__).parent
 places = json.loads((HERE / 'places.json').read_text(encoding='utf-8'))
 
 # Two groups; the 17 original categories stay as the band label.
-EAT = {'trabocchi', 'pizza', 'gelato', 'food', 'wine', 'larder', 'bars'}
+EAT = {'trabocchi', 'pizza', 'gelato', 'food', 'wine', 'larder', 'bars', 'beachbar'}
 # Each category keeps its own hue, darkened until cream type clears 4.5:1 on it.
 # Source hues live in places.json's `colour`; change one there and the fill follows.
 def _hx(h):
