@@ -59,14 +59,15 @@
     { d: 12, dow: 'Sat', weekend: true },
     { d: 13, dow: 'Sun', weekend: true, note: 'Shops and markets shut' },
     { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday - museums shut',
-      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony land 20:40' }] },
+      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony land 20:40 - Matt collects' }] },
     { d: 15, dow: 'Tue' },
     { d: 16, dow: 'Wed', fixed: [{ t: 'bday', l: "Lyndsey's birthday" }] },
-    { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" }, { t: 'arrive', l: 'Lauren lands 09:50' }] },
+    { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" }, { t: 'arrive', l: 'Lauren lands 09:50 - collected' }] },
     { d: 18, dow: 'Fri' },
     { d: 19, dow: 'Sat', weekend: true },
     { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut',
-      fixed: [{ t: 'leave', l: 'Everyone flies home 19:25' }] }
+      fixed: [{ t: 'leave', l: 'Leave the house by 16:45 - flight 19:25' },
+              { t: 'leave', l: "Minivan from Stansted to Matt's, 21:00" }] }
   ];
   var SLOTS = [
     { k: 'morning', l: 'Morning' }, { k: 'fullday', l: 'Full day' },
