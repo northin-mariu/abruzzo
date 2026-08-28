@@ -226,7 +226,7 @@
   }
   function renderTiles() {
     var ts = term ? fold(term).split(/\s+/).filter(Boolean) : [];
-    var n = { eat: 0, do: 0 };
+    var n = { eat: 0, do: 0 }, floated = 0;
     tiles.forEach(function (el) {
       var ok = passes(el._p, el._hay, ts);
       el.hidden = !ok;
@@ -236,9 +236,14 @@
         el._plan.textContent = w.length ? 'In the plan · ' + w.join(' · ') : '';
         el._liked.innerHTML = likedBy(el._p.id);
       }
-      // in the Votes view the grid re-sorts by popularity; elsewhere it keeps drive-time order
-      el.style.order = group === 'votes' ? String(1000 - votes(el._p.id)) : '';
+      // hearted places float to the top of whatever you are looking at, most-wanted first;
+      // everything on the same number of hearts keeps its drive-time order underneath
+      var v = votes(el._p.id);
+      el.style.order = String(-v);
+      if (ok && v) floated++;
     });
+    // only worth saying once something has actually moved
+    $('floatnote').hidden = floated === 0;
     $('sec-eat').hidden = n.eat === 0;
     $('sec-do').hidden = n.do === 0;
     $('n-eat').textContent = n.eat;

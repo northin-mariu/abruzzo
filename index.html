@@ -312,6 +312,9 @@ main{position:relative; z-index:1}
 .shelf.onfield{background:var(--paper-2)}
 .empty{padding:var(--s6) 0; color:var(--ink-2)}
 .empty[hidden]{display:none}
+/* says why the order changed, once a heart has actually moved something */
+.floatnote{font-size:var(--t-meta); margin:0}
+.floatnote[hidden]{display:none}
 
 /* ---------------- calendar ---------------- */
 .days{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
@@ -566,6 +569,7 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
     </div>
 
 
+    <p class="muted floatnote" id="floatnote" hidden>Hearted places sit at the top.</p>
     <section class="group" id="sec-eat">
       <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">110</span></p>
       <div class="cards" id="grid-eat"></div>
@@ -1207,7 +1211,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   }
   function renderTiles() {
     var ts = term ? fold(term).split(/\s+/).filter(Boolean) : [];
-    var n = { eat: 0, do: 0 };
+    var n = { eat: 0, do: 0 }, floated = 0;
     tiles.forEach(function (el) {
       var ok = passes(el._p, el._hay, ts);
       el.hidden = !ok;
@@ -1217,9 +1221,14 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
         el._plan.textContent = w.length ? 'In the plan \u00b7 ' + w.join(' \u00b7 ') : '';
         el._liked.innerHTML = likedBy(el._p.id);
       }
-      // in the Votes view the grid re-sorts by popularity; elsewhere it keeps drive-time order
-      el.style.order = group === 'votes' ? String(1000 - votes(el._p.id)) : '';
+      // hearted places float to the top of whatever you are looking at, most-wanted first;
+      // everything on the same number of hearts keeps its drive-time order underneath
+      var v = votes(el._p.id);
+      el.style.order = String(-v);
+      if (ok && v) floated++;
     });
+    // only worth saying once something has actually moved
+    $('floatnote').hidden = floated === 0;
     $('sec-eat').hidden = n.eat === 0;
     $('sec-do').hidden = n.do === 0;
     $('n-eat').textContent = n.eat;

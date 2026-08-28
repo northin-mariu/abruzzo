@@ -304,6 +304,9 @@ main{position:relative; z-index:1}
 .shelf.onfield{background:var(--paper-2)}
 .empty{padding:var(--s6) 0; color:var(--ink-2)}
 .empty[hidden]{display:none}
+/* says why the order changed, once a heart has actually moved something */
+.floatnote{font-size:var(--t-meta); margin:0}
+.floatnote[hidden]{display:none}
 
 /* ---------------- calendar ---------------- */
 .days{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
