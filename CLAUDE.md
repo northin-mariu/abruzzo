@@ -58,6 +58,11 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   welcome card (`#welcome`, page-level, outside the tab views) shows once per phone (`S.welcomed`)
   or again whenever a personal link with a different name is opened; with no name it asks for one.
   The map is permanent at the top of Activities (built on first show of that tab via `ensureMap`).
+  **Names are mandatory (2026-08-28):** a heart with no name never leaves the phone, so an unnamed
+  phone is asked on every heart (not just the first) and the welcome card reappears on load
+  whenever `S.me` is empty, even if `S.welcomed` is set by an older build. That was the
+  "generic link shows someone else's initial" report: the badge was Sam's S, and the real
+  bug was that the unnamed phone's own hearts were invisible and never synced.
 - **No `prompt()` or `alert()`, ever.** They throw in chat-app in-app browsers and the exception
   is swallowed by the event system, so controls die silently. That was the original bug.
 - **Design system** = the `butterfly-cave-design` skill in
