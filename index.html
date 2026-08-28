@@ -259,14 +259,16 @@ button{font:inherit; cursor:pointer}
       border:1px solid rgba(250,243,229,.28); color:var(--cream);
       transition:transform var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease)}
 .tile[hidden]{display:none}
-.tile{background:var(--tile,var(--do-field))}
+.tile{background:var(--tile,var(--do-field)); cursor:pointer}
 .tile:hover{transform:translateY(-3px); filter:brightness(.88)}
 .thead{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s3)}
 .thead-l{display:flex; flex-direction:column; gap:var(--s2); min-width:0}
 .tcat{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
       letter-spacing:var(--tr-label); color:var(--cream)}
+/* the name is a button now: it opens the place sheet rather than leaving the site */
 .tname{font-family:var(--font-serif); font-size:clamp(24px,2.6vw,30px); line-height:1.14;
-       letter-spacing:var(--tr-heading); color:var(--cream); text-decoration:none; text-wrap:balance}
+       letter-spacing:var(--tr-heading); color:var(--cream); text-decoration:none; text-wrap:balance;
+       border:0; background:none; padding:0; margin:0; text-align:left; cursor:pointer; font-weight:400}
 .tname:hover{text-decoration:underline}
 .tflag{font-size:var(--t-meta); letter-spacing:.1em; text-transform:uppercase; color:var(--cream);
        opacity:.85}
@@ -315,6 +317,18 @@ main{position:relative; z-index:1}
 /* says why the order changed, once a heart has actually moved something */
 .floatnote{font-size:var(--t-meta); margin:0}
 .floatnote[hidden]{display:none}
+
+/* place sheet: a tap on a tile opens this instead of throwing the phone at Google Maps */
+.pband{background:var(--tile,var(--eat-deep)); padding:var(--s3) var(--s4);
+       border-radius:var(--r-card) var(--r-card) 0 0}
+.pband .tcat{color:var(--peach)}
+#place .modal-body h3{margin:0}
+.pmeta{margin:0}
+.pflag{margin:0; color:var(--ink); font-weight:var(--w-bold)}
+.pwho, .pplan{margin:0}
+.pwho[hidden], .pplan[hidden], .pflag[hidden]{display:none}
+.pwho .who{vertical-align:-3px; margin-right:4px}
+#place .modal-body{gap:var(--s3)}
 
 /* ---------------- calendar ---------------- */
 .days{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
@@ -830,6 +844,31 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
     </div>
   </div>
 
+<div class="modal" id="place" hidden role="dialog" aria-modal="true" aria-labelledby="place-name">
+  <div class="modal-card">
+    <div class="pband" id="place-band"><span class="tcat" id="place-cat"></span></div>
+    <div class="modal-body">
+      <h3 id="place-name"></h3>
+      <p class="muted pmeta" id="place-where"></p>
+      <p class="pflag" id="place-flag" hidden></p>
+      <p id="place-desc"></p>
+      <p class="muted pwho" id="place-who" hidden></p>
+      <p class="muted pplan" id="place-plan" hidden></p>
+      <div class="row">
+        <button class="chip" type="button" id="place-heart"></button>
+        <button class="chip" type="button" id="place-show">Show me on the map</button>
+      </div>
+      <div class="row">
+        <a class="cta" id="place-maplink" target="_blank" rel="noopener">Open in maps <span aria-hidden="true">&#x2197;</span></a>
+        <a class="cta" id="place-web" target="_blank" rel="noopener" hidden>Website <span aria-hidden="true">&#x2197;</span></a>
+      </div>
+      <div class="row">
+        <button class="chip go" type="button" id="place-close">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 /* painted-bg.js - hand-painted background layer. Inlined verbatim from the project.
    <painted-bg ground="aperol" layout="edges" count="11" seed="5507"></painted-bg> */
@@ -1107,8 +1146,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
           '<div class="thead">' +
             '<div class="thead-l">' +
               '<span class="tcat">' + esc(p.catLabel) + '</span>' +
-              '<a class="tname" href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">' +
-                esc(p.name) + '</a>' +
+              '<button class="tname" type="button">' + esc(p.name) + '</button>' +
               (p.flag ? '<span class="tflag">' + esc(p.flag) + '</span>' : '') +
             '</div>' +
             '<div class="thead-r">' +
@@ -1139,8 +1177,16 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
       });
       $('grid-' + g).appendChild(frag);
     });
-    $('grid-eat').addEventListener('click', onHeart);
-    $('grid-do').addEventListener('click', onHeart);
+    $('grid-eat').addEventListener('click', onTileClick);
+    $('grid-do').addEventListener('click', onTileClick);
+  }
+  // a tap anywhere on a tile opens the place sheet; the heart and the two outbound
+  // links keep their own jobs, so nothing is taken away, only added
+  function onTileClick(ev) {
+    if (ev.target.closest('.heart')) return onHeart(ev);
+    if (ev.target.closest('a')) return;
+    var el = ev.target.closest('.tile');
+    if (el && el._p) openPlace(el._p);
   }
   function onHeart(ev) {
     var b = ev.target.closest('.heart');
@@ -1329,6 +1375,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
                   (p.flag ? '<br>' + esc(p.flag) : '') +
                   '<br><a href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>');
       pinLayer.addLayer(m);
+      el._marker = m; // so "Show me on the map" can open this pin
       pts.push([p.lat, p.lon]);
     });
     // with no filters on, frame the coast and the Majella (within 45 min) rather than the far day trips,
@@ -1349,6 +1396,88 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   function ensureMap() {
     if (map) { setTimeout(function () { map.invalidateSize(); drawPins(); }, 50); return; }
     loadLeaflet(function () { initMap(); });
+  }
+
+  /* ---------- place sheet ----------
+     Tapping a tile used to be a one-way trip to Google Maps. Now it opens this: the same copy
+     plus who wants it, where it already sits in the plan, and the pin on our own map. The
+     outbound links are still here, they are just no longer the only thing a tap can do. */
+  var sheetPlace = null;
+  function tileFor(id) {
+    for (var i = 0; i < tiles.length; i++) if (tiles[i]._p.id === id) return tiles[i];
+    return null;
+  }
+  function openPlace(p) {
+    sheetPlace = p;
+    $('place-band').style.setProperty('--tile', p.fill);
+    $('place-cat').textContent = p.catLabel;
+    $('place-name').textContent = p.name;
+    $('place-where').textContent = p.town + ' \u00b7 ' + p.mins + ' min from the house' +
+      (p.geo === 'town' ? ' \u00b7 pin is the town centre, not the door' : '');
+    $('place-flag').textContent = p.flag || '';
+    $('place-flag').hidden = !p.flag;
+    $('place-desc').textContent = p.desc;
+
+    var who = voters(p.id);
+    $('place-who').innerHTML = who.length
+      ? who.map(badge).join('') + ' ' + esc(listNames(who)) + (who.length === 1 ? ' wants this' : ' want this')
+      : '';
+    $('place-who').hidden = !who.length;
+
+    var w = whereInPlan(p.id);
+    $('place-plan').textContent = w.length ? 'In the plan \u00b7 ' + w.join(' \u00b7 ') : '';
+    $('place-plan').hidden = !w.length;
+
+    $('place-heart').textContent = S.short[p.id] ? 'Hearted \u2013 tap to remove' : 'Heart this';
+    $('place-heart').setAttribute('aria-pressed', S.short[p.id] ? 'true' : 'false');
+    $('place-show').hidden = typeof p.lat !== 'number';
+    $('place-maplink').href = p.mapUrl;
+    $('place-web').href = p.website || '#';
+    $('place-web').hidden = !p.website;
+    $('place').hidden = false;
+    $('place-close').focus();
+  }
+  function listNames(names) {
+    if (names.length === 1) return names[0];
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  }
+  function closePlace() { $('place').hidden = true; sheetPlace = null; }
+  function heartFromSheet() {
+    var p = sheetPlace;
+    if (!p) return;
+    if (S.short[p.id]) delete S.short[p.id]; else S.short[p.id] = true;
+    save();
+    syncHearts();
+    renderTiles();
+    pushPicks();
+    openPlace(p); // redraw the sheet so the label and the badges follow the tap
+    if (!S.me) openWho();
+  }
+  function showOnMap() {
+    var p = sheetPlace;
+    if (!p || typeof p.lat !== 'number') return;
+    closePlace();
+    showTab('t-activities');
+    ensureMap();
+    // the map may still be loading on the first ever tap, so try again briefly
+    var tries = 0;
+    (function go() {
+      if (!map) { if (tries++ < 20) return setTimeout(go, 150); return; }
+      $('map-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      map.setView([p.lat, p.lon], 14);
+      var el = tileFor(p.id);
+      if (el && el._marker) el._marker.openPopup();
+    })();
+  }
+  function wirePlace() {
+    $('place-close').addEventListener('click', closePlace);
+    $('place-heart').addEventListener('click', heartFromSheet);
+    $('place-show').addEventListener('click', showOnMap);
+    // tapping the dimmed area behind the card closes it, the way a phone expects
+    $('place').addEventListener('click', function (ev) { if (ev.target === $('place')) closePlace(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !$('place').hidden) closePlace();
+    });
   }
 
   /* ---------- welcome card: once per phone, or whenever a personal link is opened ----------
@@ -1893,6 +2022,7 @@ var PLACES = [{"id":"trabocco-sasso-della-cajana","name":"Trabocco Sasso della C
   wireShelf();
   wireShare();
   wireWelcome();
+  wirePlace();
   var fromLink = readMeParam();
   if (fromLink) {
     if (fromLink !== S.me) {

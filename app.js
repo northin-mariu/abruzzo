@@ -122,8 +122,7 @@
           '<div class="thead">' +
             '<div class="thead-l">' +
               '<span class="tcat">' + esc(p.catLabel) + '</span>' +
-              '<a class="tname" href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">' +
-                esc(p.name) + '</a>' +
+              '<button class="tname" type="button">' + esc(p.name) + '</button>' +
               (p.flag ? '<span class="tflag">' + esc(p.flag) + '</span>' : '') +
             '</div>' +
             '<div class="thead-r">' +
@@ -154,8 +153,16 @@
       });
       $('grid-' + g).appendChild(frag);
     });
-    $('grid-eat').addEventListener('click', onHeart);
-    $('grid-do').addEventListener('click', onHeart);
+    $('grid-eat').addEventListener('click', onTileClick);
+    $('grid-do').addEventListener('click', onTileClick);
+  }
+  // a tap anywhere on a tile opens the place sheet; the heart and the two outbound
+  // links keep their own jobs, so nothing is taken away, only added
+  function onTileClick(ev) {
+    if (ev.target.closest('.heart')) return onHeart(ev);
+    if (ev.target.closest('a')) return;
+    var el = ev.target.closest('.tile');
+    if (el && el._p) openPlace(el._p);
   }
   function onHeart(ev) {
     var b = ev.target.closest('.heart');
@@ -344,6 +351,7 @@
                   (p.flag ? '<br>' + esc(p.flag) : '') +
                   '<br><a href="' + esc(p.mapUrl) + '" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>');
       pinLayer.addLayer(m);
+      el._marker = m; // so "Show me on the map" can open this pin
       pts.push([p.lat, p.lon]);
     });
     // with no filters on, frame the coast and the Majella (within 45 min) rather than the far day trips,
@@ -364,6 +372,88 @@
   function ensureMap() {
     if (map) { setTimeout(function () { map.invalidateSize(); drawPins(); }, 50); return; }
     loadLeaflet(function () { initMap(); });
+  }
+
+  /* ---------- place sheet ----------
+     Tapping a tile used to be a one-way trip to Google Maps. Now it opens this: the same copy
+     plus who wants it, where it already sits in the plan, and the pin on our own map. The
+     outbound links are still here, they are just no longer the only thing a tap can do. */
+  var sheetPlace = null;
+  function tileFor(id) {
+    for (var i = 0; i < tiles.length; i++) if (tiles[i]._p.id === id) return tiles[i];
+    return null;
+  }
+  function openPlace(p) {
+    sheetPlace = p;
+    $('place-band').style.setProperty('--tile', p.fill);
+    $('place-cat').textContent = p.catLabel;
+    $('place-name').textContent = p.name;
+    $('place-where').textContent = p.town + ' \u00b7 ' + p.mins + ' min from the house' +
+      (p.geo === 'town' ? ' \u00b7 pin is the town centre, not the door' : '');
+    $('place-flag').textContent = p.flag || '';
+    $('place-flag').hidden = !p.flag;
+    $('place-desc').textContent = p.desc;
+
+    var who = voters(p.id);
+    $('place-who').innerHTML = who.length
+      ? who.map(badge).join('') + ' ' + esc(listNames(who)) + (who.length === 1 ? ' wants this' : ' want this')
+      : '';
+    $('place-who').hidden = !who.length;
+
+    var w = whereInPlan(p.id);
+    $('place-plan').textContent = w.length ? 'In the plan \u00b7 ' + w.join(' \u00b7 ') : '';
+    $('place-plan').hidden = !w.length;
+
+    $('place-heart').textContent = S.short[p.id] ? 'Hearted \u2013 tap to remove' : 'Heart this';
+    $('place-heart').setAttribute('aria-pressed', S.short[p.id] ? 'true' : 'false');
+    $('place-show').hidden = typeof p.lat !== 'number';
+    $('place-maplink').href = p.mapUrl;
+    $('place-web').href = p.website || '#';
+    $('place-web').hidden = !p.website;
+    $('place').hidden = false;
+    $('place-close').focus();
+  }
+  function listNames(names) {
+    if (names.length === 1) return names[0];
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  }
+  function closePlace() { $('place').hidden = true; sheetPlace = null; }
+  function heartFromSheet() {
+    var p = sheetPlace;
+    if (!p) return;
+    if (S.short[p.id]) delete S.short[p.id]; else S.short[p.id] = true;
+    save();
+    syncHearts();
+    renderTiles();
+    pushPicks();
+    openPlace(p); // redraw the sheet so the label and the badges follow the tap
+    if (!S.me) openWho();
+  }
+  function showOnMap() {
+    var p = sheetPlace;
+    if (!p || typeof p.lat !== 'number') return;
+    closePlace();
+    showTab('t-activities');
+    ensureMap();
+    // the map may still be loading on the first ever tap, so try again briefly
+    var tries = 0;
+    (function go() {
+      if (!map) { if (tries++ < 20) return setTimeout(go, 150); return; }
+      $('map-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      map.setView([p.lat, p.lon], 14);
+      var el = tileFor(p.id);
+      if (el && el._marker) el._marker.openPopup();
+    })();
+  }
+  function wirePlace() {
+    $('place-close').addEventListener('click', closePlace);
+    $('place-heart').addEventListener('click', heartFromSheet);
+    $('place-show').addEventListener('click', showOnMap);
+    // tapping the dimmed area behind the card closes it, the way a phone expects
+    $('place').addEventListener('click', function (ev) { if (ev.target === $('place')) closePlace(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !$('place').hidden) closePlace();
+    });
   }
 
   /* ---------- welcome card: once per phone, or whenever a personal link is opened ----------
@@ -908,6 +998,7 @@
   wireShelf();
   wireShare();
   wireWelcome();
+  wirePlace();
   var fromLink = readMeParam();
   if (fromLink) {
     if (fromLink !== S.me) {

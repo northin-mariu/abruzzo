@@ -424,3 +424,28 @@
       </div>
     </div>
   </div>
+
+<div class="modal" id="place" hidden role="dialog" aria-modal="true" aria-labelledby="place-name">
+  <div class="modal-card">
+    <div class="pband" id="place-band"><span class="tcat" id="place-cat"></span></div>
+    <div class="modal-body">
+      <h3 id="place-name"></h3>
+      <p class="muted pmeta" id="place-where"></p>
+      <p class="pflag" id="place-flag" hidden></p>
+      <p id="place-desc"></p>
+      <p class="muted pwho" id="place-who" hidden></p>
+      <p class="muted pplan" id="place-plan" hidden></p>
+      <div class="row">
+        <button class="chip" type="button" id="place-heart"></button>
+        <button class="chip" type="button" id="place-show">Show me on the map</button>
+      </div>
+      <div class="row">
+        <a class="cta" id="place-maplink" target="_blank" rel="noopener">Open in maps <span aria-hidden="true">&#x2197;</span></a>
+        <a class="cta" id="place-web" target="_blank" rel="noopener" hidden>Website <span aria-hidden="true">&#x2197;</span></a>
+      </div>
+      <div class="row">
+        <button class="chip go" type="button" id="place-close">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

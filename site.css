@@ -251,14 +251,16 @@ button{font:inherit; cursor:pointer}
       border:1px solid rgba(250,243,229,.28); color:var(--cream);
       transition:transform var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease)}
 .tile[hidden]{display:none}
-.tile{background:var(--tile,var(--do-field))}
+.tile{background:var(--tile,var(--do-field)); cursor:pointer}
 .tile:hover{transform:translateY(-3px); filter:brightness(.88)}
 .thead{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s3)}
 .thead-l{display:flex; flex-direction:column; gap:var(--s2); min-width:0}
 .tcat{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
       letter-spacing:var(--tr-label); color:var(--cream)}
+/* the name is a button now: it opens the place sheet rather than leaving the site */
 .tname{font-family:var(--font-serif); font-size:clamp(24px,2.6vw,30px); line-height:1.14;
-       letter-spacing:var(--tr-heading); color:var(--cream); text-decoration:none; text-wrap:balance}
+       letter-spacing:var(--tr-heading); color:var(--cream); text-decoration:none; text-wrap:balance;
+       border:0; background:none; padding:0; margin:0; text-align:left; cursor:pointer; font-weight:400}
 .tname:hover{text-decoration:underline}
 .tflag{font-size:var(--t-meta); letter-spacing:.1em; text-transform:uppercase; color:var(--cream);
        opacity:.85}
@@ -307,6 +309,18 @@ main{position:relative; z-index:1}
 /* says why the order changed, once a heart has actually moved something */
 .floatnote{font-size:var(--t-meta); margin:0}
 .floatnote[hidden]{display:none}
+
+/* place sheet: a tap on a tile opens this instead of throwing the phone at Google Maps */
+.pband{background:var(--tile,var(--eat-deep)); padding:var(--s3) var(--s4);
+       border-radius:var(--r-card) var(--r-card) 0 0}
+.pband .tcat{color:var(--peach)}
+#place .modal-body h3{margin:0}
+.pmeta{margin:0}
+.pflag{margin:0; color:var(--ink); font-weight:var(--w-bold)}
+.pwho, .pplan{margin:0}
+.pwho[hidden], .pplan[hidden], .pflag[hidden]{display:none}
+.pwho .who{vertical-align:-3px; margin-right:4px}
+#place .modal-body{gap:var(--s3)}
 
 /* ---------------- calendar ---------------- */
 .days{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
