@@ -164,7 +164,9 @@
     renderTiles(); // badges and the Popular order follow the tap immediately
     pushPicks();
     // first heart and no name yet: open the share panel so the hearts can travel under a name
-    if (!S.me && S.short[id] && Object.keys(S.short).length === 1) openWho();
+    // no name yet: every heart asks, not just the first. A heart with no name never leaves
+    // this phone, so going quiet after one ask is how a person's picks vanish silently.
+    if (!S.me && S.short[id]) openWho();
   }
   function syncHearts() {
     var mine = whoColour(S.me || 'Me');
@@ -916,5 +918,7 @@
   renderCalendar();
   renderTiles();
   wireSync();
-  if (!S.welcomed) showWelcome();
+  // a name is what makes hearts travel, so ask again on any phone that has none - including
+  // one welcomed by an older build, before the name was asked for
+  if (!S.welcomed || !S.me) showWelcome();
 })();
