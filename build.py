@@ -11,8 +11,13 @@ import json, re, html, pathlib
 HERE = pathlib.Path(__file__).parent
 places = json.loads((HERE / 'places.json').read_text(encoding='utf-8'))
 
-# Two groups; the 17 original categories stay as the band label.
-EAT = {'trabocchi', 'pizza', 'gelato', 'food', 'wine', 'larder', 'bars', 'beachbar'}
+# Three groups; the original categories stay as the band label.
+# `wine` and `distill` were pulled out of Eat & drink into a section of their own (2026-08-29).
+CELLAR = {'wine', 'distill'}
+EAT = {'trabocchi', 'pizza', 'gelato', 'food', 'larder', 'bars', 'beachbar'}
+# `house` is the doing-nothing section Vero asked for; it leads, because it is where you are.
+HOUSE = {'house'}
+ORDER = {'house': 0, 'eat': 1, 'cellar': 2, 'do': 3}
 # Each category keeps its own hue, darkened until cream type clears 4.5:1 on it.
 # Source hues live in places.json's `colour`; change one there and the fill follows.
 def _hx(h):
@@ -38,7 +43,7 @@ def deepen(hexcol, target=4.7):
     return '#241E1A'
 
 KEEP = ('id', 'name', 'town', 'cat', 'catLabel', 'mins', 'desc', 'flag', 'website', 'mapUrl',
-        'lat', 'lon', 'geo')
+        'lat', 'lon', 'geo', 'added')
 data = []
 FILL = {}
 for p in places:
@@ -46,17 +51,21 @@ for p in places:
         FILL[p['cat']] = deepen(p['colour'])
 for p in places:
     r = {k: p.get(k) for k in KEEP}
-    r['group'] = 'eat' if p['cat'] in EAT else 'do'
+    r['group'] = ('house' if p['cat'] in HOUSE else
+                  'cellar' if p['cat'] in CELLAR else
+                  'eat' if p['cat'] in EAT else 'do')
     r['fill'] = FILL.get(p['cat'], '#8E3B1A')
     data.append(r)
-data.sort(key=lambda r: (r['group'] != 'eat', r['mins']))
+data.sort(key=lambda r: (ORDER[r['group']], r['mins']))
 
 cats = {}
 for r in data:
     c = cats.setdefault(r['cat'], {'label': r['catLabel'], 'group': r['group'], 'n': 0})
     c['n'] += 1
 n_eat = sum(1 for r in data if r['group'] == 'eat')
-n_do = len(data) - n_eat
+n_cellar = sum(1 for r in data if r['group'] == 'cellar')
+n_house = sum(1 for r in data if r['group'] == 'house')
+n_do = len(data) - n_eat - n_cellar - n_house
 n15 = sum(1 for r in data if r['mins'] <= 15)
 n30 = sum(1 for r in data if r['mins'] <= 30)
 towns = len({r['town'] for r in data})
@@ -71,13 +80,15 @@ chips = ''.join(
     '<span class="dot"></span>{l} <em>{n}</em></button>'.format(
         c=c, col=FILL.get(c, '#8E3B1A'),
         l=html.escape(m['label']), n=m['n'])
-    for c, m in sorted(cats.items(), key=lambda kv: (kv[1]['group'] != 'eat', kv[0])))
+    for c, m in sorted(cats.items(), key=lambda kv: (ORDER[kv[1]['group']], kv[0])))
 
 page = BODY
 for key, val in [
     ('{{CHIPS}}', chips),
     ('{{TOTAL}}', str(len(data))),
     ('{{N_EAT}}', str(n_eat)),
+    ('{{N_CELLAR}}', str(n_cellar)),
+    ('{{N_HOUSE}}', str(n_house)),
     ('{{N_DO}}', str(n_do)),
     ('{{N15}}', str(n15)),
     ('{{N30}}', str(n30)),
@@ -115,8 +126,8 @@ for i, s in enumerate(scripts):
 out = HERE / 'index.html'
 out.write_text(doc, encoding='utf-8')
 print('built %s  %d KB' % (out.name, len(doc.encode()) // 1024))
-print('  %d places  (%d eat / %d out and about)  %d towns  %d categories'
-      % (len(data), n_eat, n_do, towns, len(cats)))
+print('  %d places  (%d house / %d eat / %d cellar / %d out and about)  %d towns  %d categories'
+      % (len(data), n_house, n_eat, n_cellar, n_do, towns, len(cats)))
 print('  within 15 min: %d   within 30 min: %d' % (n15, n30))
 print('  fills: ' + ' '.join('%s=%s' % (k, v) for k, v in sorted(FILL.items())))
 leftover = sorted({ch for ch in doc if ord(ch) > 127})

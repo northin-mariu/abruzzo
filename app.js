@@ -6,7 +6,7 @@
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false, colour: '', fc: {} };
+  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false, colour: '', fc: {}, tips: [] };
   function load() {
     try {
       var raw = localStorage.getItem(KEY);
@@ -40,6 +40,9 @@
           if (ids.length) S.friends[String(n).slice(0, 24)] = ids;
         });
       }
+      if (Array.isArray(o.tips)) {
+        S.tips = o.tips.filter(function (t) { return t && typeof t.n === 'string'; }).slice(0, 40);
+      }
       if (typeof o.me === 'string') S.me = o.me.slice(0, 24);
       S.welcomed = !!o.welcomed;
       if (typeof o.colour === 'number' && o.colour >= 1 && o.colour <= 7) S.colour = o.colour;
@@ -57,11 +60,14 @@
   var DAYS = [
     { d: 11, dow: 'Fri', fixed: [{ t: 'arrive', l: 'Matt, Sam and Vero land 16:30' }] },
     { d: 12, dow: 'Sat', weekend: true },
-    { d: 13, dow: 'Sun', weekend: true, note: 'Shops and markets shut' },
+    { d: 13, dow: 'Sun', weekend: true, note: 'Shops and markets shut',
+      fixed: [{ t: 'fest', l: 'Feste di Settembre, Lanciano - piazza fills, then the Nottata at 4am' }] },
     { d: 14, dow: 'Mon', mon: true, note: 'Your only Monday - museums shut',
-      fixed: [{ t: 'arrive', l: 'Lyndsey, Frances and Anthony land 20:40 - Matt collects' }] },
-    { d: 15, dow: 'Tue' },
+      fixed: [{ t: 'fest', l: 'Nottata, 4am: fireworks and the luminarie lit, Lanciano' },
+              { t: 'arrive', l: 'Lyndsey, Frances and Anthony land 20:40 - Matt collects' }] },
+    { d: 15, dow: 'Tue', fixed: [{ t: 'fest', l: 'Feste di Settembre - concert in Piazza Plebiscito, Lanciano' }] },
     { d: 16, dow: 'Wed', fixed: [{ t: 'bday', l: "Lyndsey's birthday" },
+      { t: 'fest', l: 'Feste di Settembre closes - concert and a pyromusical finale, Lanciano' },
       { t: 'bday', l: 'Crossover party - stay up past midnight and it is both birthdays' }] },
     { d: 17, dow: 'Thu', fixed: [{ t: 'bday', l: "Matt's birthday" },
       { t: 'bday', l: 'Poolside BBQ at the house' },
@@ -107,12 +113,20 @@
   });
 
   /* ---------- activities ---------- */
+  // Anything given an `added` date in places.json wears a badge and floats up for three weeks,
+  // then quietly becomes an ordinary tile. No second list to keep tidy.
+  var NEW_MS = 21 * 864e5;
+  function isNew(p) {
+    if (!p || !p.added) return false;
+    var t = Date.parse(p.added);
+    return !isNaN(t) && (Date.now() - t) < NEW_MS;
+  }
   var HEART = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.3C.4 8.6 2.2 5' +
               ' 5.6 5c2 0 3.3 1.1 4.4 2.6C11.1 6.1 12.4 5 14.4 5c3.4 0 5.2 3.6 3.6 6.7C19.5 16.1 12 21 12 21z"/></svg>';
   var tiles = [];
 
   function buildTiles() {
-    ['eat', 'do'].forEach(function (g) {
+    ['house', 'eat', 'cellar', 'do'].forEach(function (g) {
       var frag = document.createDocumentFragment();
       PLACES.filter(function (p) { return p.group === g; }).forEach(function (p) {
         var el = document.createElement('article');
@@ -124,6 +138,7 @@
               '<span class="tcat">' + esc(p.catLabel) + '</span>' +
               '<button class="tname" type="button">' + esc(p.name) + '</button>' +
               (p.flag ? '<span class="tflag">' + esc(p.flag) + '</span>' : '') +
+              (isNew(p) ? '<span class="tnew">Just added</span>' : '') +
             '</div>' +
             '<div class="thead-r">' +
               '<span class="likedby" aria-label="Hearted by"></span>' +
@@ -153,7 +168,9 @@
       });
       $('grid-' + g).appendChild(frag);
     });
+    $('grid-house').addEventListener('click', onTileClick);
     $('grid-eat').addEventListener('click', onTileClick);
+    $('grid-cellar').addEventListener('click', onTileClick);
     $('grid-do').addEventListener('click', onTileClick);
   }
   // a tap anywhere on a tile opens the place sheet; the heart and the two outbound
@@ -209,7 +226,8 @@
   var AREA_TOWNS = { 'Pescara': 1, 'Montesilvano': 1, 'Francavilla al Mare': 1 };
 
   function inGroup(p) {
-    if (group === 'eat' || group === 'do') return p.group === group;
+    if (group === 'eat' || group === 'do' || group === 'cellar' || group === 'house') return p.group === group;
+    if (group === 'new') return isNew(p);
     if (group === 'short') return !!S.short[p.id];
     if (group === 'votes') return votes(p.id) > 0;
     if (group.indexOf('friend:') === 0) return friendHas(group.slice(7), p.id);
@@ -233,7 +251,7 @@
   }
   function renderTiles() {
     var ts = term ? fold(term).split(/\s+/).filter(Boolean) : [];
-    var n = { eat: 0, do: 0 }, floated = 0;
+    var n = { house: 0, eat: 0, cellar: 0, do: 0 }, floated = 0;
     tiles.forEach(function (el) {
       var ok = passes(el._p, el._hay, ts);
       el.hidden = !ok;
@@ -245,20 +263,29 @@
       }
       // hearted places float to the top of whatever you are looking at, most-wanted first;
       // everything on the same number of hearts keeps its drive-time order underneath
-      var v = votes(el._p.id);
-      el.style.order = String(-v);
-      if (ok && v) floated++;
+      // hearts outrank a new arrival, but a new arrival still sits above everything
+      // nobody has hearted yet - so an added place is seen without burying the shortlist
+      var v = votes(el._p.id), fresh = isNew(el._p) ? 1 : 0;
+      el.style.order = String(-(v * 4 + fresh));
+      if (ok && (v || fresh)) floated++;
     });
     // only worth saying once something has actually moved
     $('floatnote').hidden = floated === 0;
+    $('sec-house').hidden = n.house === 0;
     $('sec-eat').hidden = n.eat === 0;
+    $('sec-cellar').hidden = n.cellar === 0;
     $('sec-do').hidden = n.do === 0;
+    $('n-house').textContent = n.house;
     $('n-eat').textContent = n.eat;
+    $('n-cellar').textContent = n.cellar;
     $('n-do').textContent = n.do;
-    var total = n.eat + n.do;
+    var total = n.house + n.eat + n.cellar + n.do;
     var bits = [total + (total === 1 ? ' place' : ' places')];
-    if (group === 'eat') bits.push('eat & drink');
+    if (group === 'house') bits.push('at the house');
+    else if (group === 'eat') bits.push('eat & drink');
+    else if (group === 'cellar') bits.push('wineries & distilleries');
     else if (group === 'do') bits.push('out and about');
+    else if (group === 'new') bits.push('just added');
     else if (group === 'short') bits.push('shortlisted');
     else if (group === 'votes') bits.push('popular first');
     else if (group.indexOf('friend:') === 0) bits.push(group.slice(7) + "'s picks");
@@ -272,6 +299,8 @@
     $('empty').hidden = total > 0;
     updateChipCounts(ts);
     updateCounts(total);
+    lastTs = ts;
+    renderTips();
     if (map) drawPins();
   }
 
@@ -875,6 +904,8 @@
     updateMeChip();
     $('who').hidden = true;
     pushPicks();
+    if (tipPending && S.me) openTip();
+    tipPending = false;
   }
   function wireShare() {
     $('share-name').value = S.me || '';
@@ -890,6 +921,117 @@
       updateMeChip();
       });
   }
+
+  /* ---------- tips: places the group adds themselves ----------
+     Same worker, a second route. A tip is free text, so it cannot ride in the picks array
+     (those ids are [a-z0-9-]); /tips holds { name: [{n,t,w,u,ts}] } and is replaced per person,
+     the same last-write-wins shape as the hearts. A tip is not in PLACES, so it has no drive
+     time, no pin and no heart - promote a good one into places.json and it gets all three. */
+  var T = {}, lastTs = [];
+  function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
+  function tipMapUrl(tp) {
+    return 'https://www.google.com/maps/search/?api=1&query=' +
+           encodeURIComponent(tp.n + (tp.t ? ', ' + tp.t : '') + ', Italy');
+  }
+  function renderTips() {
+    var ts = lastTs, host = $('grid-tips'), all = [];
+    // every other filter is about categories and drive times, which a tip does not have;
+    // rather than guess one, the section steps out of the way until they are cleared
+    var plain = group === 'all' && !Object.keys(active).length && band === 999 && !area;
+    if (plain) {
+      Object.keys(T).forEach(function (who) {
+        if (!Array.isArray(T[who])) return;
+        T[who].forEach(function (tp) { if (tp && tp.n) all.push({ who: who, tp: tp }); });
+      });
+      if (ts && ts.length) {
+        all = all.filter(function (x) {
+          var hay = fold((x.tp.n + ' ' + (x.tp.t || '') + ' ' + (x.tp.w || '') + ' ' + x.who).toLowerCase());
+          for (var i = 0; i < ts.length; i++) if (hay.indexOf(ts[i]) < 0) return false;
+          return true;
+        });
+      }
+      all.sort(function (a, b) { return (b.tp.ts || 0) - (a.tp.ts || 0); });
+    }
+    $('sec-tips').hidden = all.length === 0;
+    $('n-tips').textContent = all.length;
+    host.textContent = '';
+    all.forEach(function (x) {
+      var tp = x.tp, mine = x.who === S.me, url = safeUrl(tp.u);
+      var el = document.createElement('article');
+      el.className = 'tile tip';
+      el.style.setProperty('--who', whoColour(x.who));
+      el.innerHTML =
+        '<div class="thead">' +
+          '<div class="thead-l">' +
+            '<span class="tcat">' + esc(x.who) + '’s tip</span>' +
+            '<span class="tname">' + esc(tp.n) + '</span>' +
+          '</div>' +
+          '<div class="thead-r"><span class="likedby">' + badge(x.who) + '</span></div>' +
+        '</div>' +
+        '<div class="tinner">' +
+          (tp.t ? '<p class="ttown">' + esc(tp.t) + '</p>' : '') +
+          '<p class="tdesc">' + esc(tp.w || '') + '</p>' +
+          '<div class="tfoot">' +
+            '<a class="cta" href="' + esc(tipMapUrl(tp)) + '" target="_blank" rel="noopener">' +
+              'Open in maps <span aria-hidden="true">↗</span></a>' +
+            (url ? '<a class="cta" href="' + esc(url) + '" target="_blank" rel="noopener">' +
+              'Link <span aria-hidden="true">↗</span></a>' : '') +
+            (mine ? '<button class="tdrop" type="button" data-ts="' + (tp.ts || 0) + '">Remove</button>' : '') +
+          '</div>' +
+        '</div>';
+      host.appendChild(el);
+    });
+  }
+  var tipPending = false;
+  function tipNote(m) { var el = $('tip-note'); el.hidden = !m; el.textContent = m || ''; }
+  function openTip() {
+    // a tip with no name behind it is the same dead end as an unnamed heart, so ask first,
+    // then come straight back here rather than making them find the button again
+    if (!S.me) { tipPending = true; openWho(); return; }
+    tipPending = false;
+    ['tip-name', 'tip-town', 'tip-why', 'tip-url'].forEach(function (id) { $(id).value = ''; });
+    tipNote('');
+    $('tip').hidden = false;
+    $('tip-name').focus();
+  }
+  function saveTip() {
+    var nm = ($('tip-name').value || '').trim().slice(0, 70);
+    if (!nm) { tipNote('It needs a name at least.'); $('tip-name').focus(); return; }
+    if (S.tips.length >= 40) { tipNote('Forty tips is the limit — remove one first.'); return; }
+    S.tips.push({
+      n: nm,
+      t: ($('tip-town').value || '').trim().slice(0, 40),
+      w: ($('tip-why').value || '').trim().slice(0, 400),
+      u: safeUrl(($('tip-url').value || '').trim().slice(0, 300)),
+      ts: Date.now()
+    });
+    save();
+    T[S.me] = S.tips;
+    $('tip').hidden = true;
+    renderTips();
+    pushTips();
+  }
+  function wireTips() {
+    $('tip-add').addEventListener('click', openTip);
+    $('tip-save').addEventListener('click', saveTip);
+    $('tip-cancel').addEventListener('click', function () { $('tip').hidden = true; });
+    $('grid-tips').addEventListener('click', function (ev) {
+      var b = ev.target.closest && ev.target.closest('.tdrop');
+      if (!b) return;
+      var stamp = +b.dataset.ts;
+      S.tips = S.tips.filter(function (t) { return (t.ts || 0) !== stamp; });
+      save();
+      T[S.me] = S.tips;
+      renderTips();
+      pushTips();
+    });
+  }
+  function updateNewChip() {
+    var k = PLACES.filter(isNew).length;
+    $('new-chip').hidden = k === 0;
+    $('new-n').textContent = k;
+  }
+
   /* ---------- live sync: a Cloudflare Worker + KV (see worker/abruzzo-picks.js) ----------
      SYNC empty = this phone only. With SYNC set, every heart is saved under your name and everyone's
      hearts are pulled on load, on returning to the tab, and every minute. Links still work. */
@@ -969,6 +1111,30 @@
     clearTimeout(syncTimer);
     syncTimer = setTimeout(function () { syncTimer = null; pushNow(false); }, 300);
   }
+  function pullTips() {
+    if (!SYNC || !window.fetch) return;
+    fetchJSON(SYNC + '/tips').then(function (all) {
+      T = (all && typeof all === 'object') ? all : {};
+      // this phone has forgotten its own tips but the server still has them: take them back,
+      // rather than letting the next save replace everyone's copy with an empty list
+      if (S.me && !S.tips.length && Array.isArray(T[S.me]) && T[S.me].length) {
+        S.tips = T[S.me].slice(0, 40);
+        save();
+      }
+      if (S.me) T[S.me] = S.tips;
+      renderTips();
+    }).catch(function () { /* an old worker with no /tips route just means no shared tips */ });
+  }
+  function pushTips() {
+    if (!SYNC || !window.fetch || !S.me) return;
+    fetchJSON(SYNC + '/tips/' + encodeURIComponent(S.me), {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tips: S.tips })
+    }).then(function () { tipNote(''); pullTips(); })
+      .catch(function () {
+        tipNote('Could not reach the shared list — that one is on this phone only for now.');
+      });
+  }
   function forgetRemote(name) {
     if (!SYNC || !window.fetch || !name) return;
     fetchJSON(SYNC + '/picks/' + encodeURIComponent(name), { method: 'DELETE' }).catch(function () {});
@@ -983,12 +1149,13 @@
       pushPicks();
     });
     document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible') pullPicks(true);
+      if (document.visibilityState === 'visible') { pullPicks(true); pullTips(); }
       else if (dirty) { clearTimeout(syncTimer); syncTimer = null; pushNow(true); }
     });
     // always poll: browsers already slow timers in background tabs, and the request is tiny
-    syncPoll = setInterval(function () { pullPicks(true); }, 30000);
+    syncPoll = setInterval(function () { pullPicks(true); pullTips(); }, 30000);
     pullPicks();
+    pullTips();
     if (S.me && Object.keys(S.short).length) pushPicks();
   }
 
@@ -997,6 +1164,7 @@
   syncHearts();
   wireShelf();
   wireShare();
+  wireTips();
   wireWelcome();
   wirePlace();
   var fromLink = readMeParam();
@@ -1013,6 +1181,7 @@
     save();
   }
   updateMeChip();
+  updateNewChip();
   renderFriendChips();
   renderCalendar();
   renderTiles();

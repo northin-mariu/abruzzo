@@ -26,10 +26,13 @@ script is how mojibake got in twice during development.
 ## Structure
 
 Four tabs: Welcome, Calendar (10 days × Morning / Full day / Lunch / Dinner, with full-day
-exclusion), Activities (230 tiles split Eat & drink / Out and about), Things to know.
+exclusion), Activities (262 tiles in four sections), Things to know.
 
-The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars` are
-**Eat & drink** (86); the other eleven are **Out and about** (144).
+**Four sections (2026-08-29)**, set by `ORDER` / `HOUSE` / `CELLAR` / `EAT` in build.py:
+**At the house** (3) · **Eat & drink** (91) · **Wineries & distilleries** (23) ·
+**Out and about** (145). Each needs a `grid-`, `sec-` and `n-` element in body.html and an entry
+in the `['house','eat','cellar','do']` list in app.js `buildTiles`; the group chips in `#groups`
+and `inGroup()` follow. Adding a fifth means touching all four places.
 
 ## Decisions already made — do not re-litigate
 
@@ -81,6 +84,36 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
   compact pills, not banners. The Calendar and Things to know tabs keep painted banners in pool
   and fig.
 
+## Sections, tips and just-added (2026-08-29)
+
+- **Wineries & distilleries** is `wine` + a new `distill` category (`--cellar #8D3B5E`, 6.51 vs
+  cream). The four distilleries that were filed under Provisions and Weird moved into it, and
+  three that were missing were added (L·AB Francavilla, 7579 Brecciarola, Ival Fara Filiorum
+  Petri). BP Service stays in the section flagged "Designated driver" - a driver for the day is
+  the answer to a distillery run, not a misfile.
+- **At the house** is Vero's ask (WhatsApp, 2026-08-29): Sleeping in, Laying by the pool, A long
+  lunch on the terrace. It leads the page deliberately - they are droppable into Calendar slots,
+  which is the point: a morning with "Sleeping in" in it is a morning nobody can fill with a drive.
+  These carry `lat/lon: null, geo: "none"` so they take no map pin.
+- **Just added.** Give a place `"added": "YYYY-MM-DD"` in places.json and for three weeks
+  (`NEW_MS` in app.js) it wears an ochre "Just added" badge, floats up, and is counted by the
+  "Just added" chip. The float is `order = -(votes * 4 + isNew)`, so hearts still outrank a new
+  arrival but a new arrival beats anything nobody has hearted. It expires by itself - there is no
+  second list to keep tidy.
+- **Group tips.** `+ Add a place` writes free text to a second worker route, `/tips`, keyed the
+  same way as the hearts (`t:` prefix in the same KV namespace, replaced per person, last write
+  wins). Tips render in a "From the group" section above everything, coloured by the author.
+  A tip is **not** in PLACES, so it has no drive time, no pin, no heart and no calendar slot -
+  promote a good one into places.json and it gets all four. The section steps aside whenever any
+  filter other than the search box is on, because a tip has no category or drive time to match.
+  Requires the worker redeploy below; until then `/tips` 404s and tips stay on the phone.
+- **Sheets are page-level, and must stay there.** `main.shell` and `.actwrap` are both
+  `position:relative; z-index:1`, so a `position:fixed` sheet inside them is trapped in their
+  stacking context and the sticky nav (z-index 20) and Leaflet's panes (400) paint straight over
+  it. `#who` and `#tip` now sit after `</main>` at z-index 1200. Do not move them back inside a view.
+  `.sheet input` sets `flex:1`, which stretches a stacked form to fill the column - `.rows` opts
+  out with `flex:0 0 auto`.
+
 ## Known gaps
 
 - **Map (added 2026-08-25).** Permanent at the top of Activities; Leaflet + OpenStreetMap tiles
@@ -93,6 +126,14 @@ The 17 categories map to two groups: `trabocchi, pizza, food, wine, larder, bars
 - **No opening days.** One Monday (14 Sep) and two Sundays (13, 20). The original shortlist schema
   had `closed` / `only` / `dates` / `tags` and this one lost them. Adding them back is worth more
   than twenty more places.
+- **Worker redeploy owed (2026-08-29).** `worker/abruzzo-picks.js` gained the `/tips` routes but
+  is not deployed. Dashboard -> Workers & Pages -> abruzzo-picks -> Edit code -> paste the file ->
+  Deploy. The editor is a cross-origin frame, so the paste is Matt's. Until then "+ Add a place"
+  saves to the phone only and says so.
+- **CARTO tiles now watermarked.** `a.basemaps.cartocdn.com/light_all` still returns 200 but the
+  PNG itself carries "APIKEY REQUIRED" across it, so the map reads as broken on the live site too.
+  Fix is either a free CARTO key or a swap to standard OSM tiles - the latter loses the sepia
+  limestone wash the design pass chose. Not done; ask first.
 - **Auto-rebuild not set up.** `.github/workflows/` needs a token with the `workflow` scope; this
   session's has only `repo`. Run `gh auth refresh -s workflow`, or add it via the web UI.
 

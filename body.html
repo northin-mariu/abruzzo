@@ -128,8 +128,12 @@
       </div>
       <div class="row" id="groups">
         <button class="chip" type="button" aria-pressed="true" data-group="all">Everything</button>
+        <button class="chip" type="button" aria-pressed="false" data-group="house" style="--c:var(--pool-deep)">At the house</button>
         <button class="chip" type="button" aria-pressed="false" data-group="eat" style="--c:var(--eat-deep)">Eat &amp; drink</button>
+        <button class="chip" type="button" aria-pressed="false" data-group="cellar" style="--c:var(--cellar-deep)">Wineries &amp; distilleries</button>
         <button class="chip" type="button" aria-pressed="false" data-group="do" style="--c:var(--do-deep)">Out and about</button>
+        <button class="chip" type="button" aria-pressed="false" data-group="new" id="new-chip" hidden
+                style="--c:var(--ochre)" title="Added in the last three weeks">Just added <em id="new-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Shortlisted <em id="short-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--terracotta)"
                 title="Everything anyone has hearted, most loved first">Popular <em id="votes-n">0</em></button>
@@ -146,28 +150,30 @@
       <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
       <div class="share">
         <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
+        <button class="chip" type="button" id="tip-add" style="--c:var(--olive-deep)">+ Add a place</button>
       </div>
       <p class="muted" id="sync-note" hidden></p>
     </div>
 
-    <div class="sheet" id="who" hidden role="dialog" aria-labelledby="who-title">
-      <p class="sheet-t" id="who-title">Who&#x2019;s hearting?</p>
-      <p class="muted">First name is fine &#x2014; the others will see your hearts under it. Use the same
-      one every time.</p>
-      <div class="row">
-        <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name"
-               aria-label="Your name">
-        <button class="chip" type="button" id="who-go">That&#x2019;s me</button>
-      </div>
-      <p class="muted swlabel">Your colour</p>
-      <div class="swatches" id="who-colours" role="group" aria-label="Your colour"></div>
-    </div>
+    
 
-
-    <p class="muted floatnote" id="floatnote" hidden>Hearted places sit at the top.</p>
+    
+    <p class="muted floatnote" id="floatnote" hidden>Just-added and hearted places sit at the top.</p>
+    <section class="group" id="sec-tips" hidden>
+      <p class="grouppill">From the group <span class="n" id="n-tips">0</span></p>
+      <div class="cards" id="grid-tips"></div>
+    </section>
+    <section class="group" id="sec-house">
+      <p class="grouppill">At the house <span class="n" id="n-house">{{N_HOUSE}}</span></p>
+      <div class="cards" id="grid-house"></div>
+    </section>
     <section class="group" id="sec-eat">
       <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">{{N_EAT}}</span></p>
       <div class="cards" id="grid-eat"></div>
+    </section>
+    <section class="group" id="sec-cellar">
+      <p class="grouppill">Wineries &amp; distilleries <span class="n" id="n-cellar">{{N_CELLAR}}</span></p>
+      <div class="cards" id="grid-cellar"></div>
     </section>
     <section class="group" id="sec-do">
       <p class="grouppill">Out and about <span class="n" id="n-do">{{N_DO}}</span></p>
@@ -393,6 +399,40 @@
     straight-line. Opening hours change &#x2014; phone ahead.</p>
   </div>
 </footer>
+
+<!-- the two sheets live at page level, not inside .shell: see the z-index note in site.css -->
+<div class="sheet" id="who" hidden role="dialog" aria-labelledby="who-title">
+      <p class="sheet-t" id="who-title">Who&#x2019;s hearting?</p>
+      <p class="muted">First name is fine &#x2014; the others will see your hearts under it. Use the same
+      one every time.</p>
+      <div class="row">
+        <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name"
+               aria-label="Your name">
+        <button class="chip" type="button" id="who-go">That&#x2019;s me</button>
+      </div>
+      <p class="muted swlabel">Your colour</p>
+      <div class="swatches" id="who-colours" role="group" aria-label="Your colour"></div>
+    </div>
+
+<div class="sheet" id="tip" hidden role="dialog" aria-labelledby="tip-title">
+      <p class="sheet-t" id="tip-title">Add a place</p>
+      <p class="muted">Anything you have found that is not on the list. Everyone sees it, under your
+      name, straight away.</p>
+      <div class="rows">
+        <input id="tip-name" type="text" maxlength="70" placeholder="What is it called?"
+               aria-label="Place name">
+        <input id="tip-town" type="text" maxlength="40" placeholder="Which town?" aria-label="Town">
+        <textarea id="tip-why" maxlength="400" rows="3" aria-label="Why"
+                  placeholder="Why &#x2014; a line is plenty"></textarea>
+        <input id="tip-url" type="url" maxlength="300" placeholder="Link (optional)"
+               aria-label="Link, optional">
+      </div>
+      <div class="row">
+        <button class="chip" type="button" id="tip-save">Add it</button>
+        <button class="chip" type="button" id="tip-cancel">Cancel</button>
+      </div>
+      <p class="muted" id="tip-note" hidden></p>
+    </div>
 
 <div class="modal" id="welcome" hidden role="dialog" aria-modal="true" aria-labelledby="welcome-title">
     <div class="modal-card">

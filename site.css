@@ -18,6 +18,8 @@
   /* colour-field tiles, measured against --cream: 6.81 and 6.19 */
   --eat-field:#8E3B1A; --do-field:#1B655F;
   --eat-field-hover:#7A3216; --do-field-hover:#14514B;
+  /* Wineries & distilleries, split out of Eat & drink 2026-08-29: 6.51 vs cream */
+  --cellar:#8D3B5E; --cellar-deep:#7A3350;
 
   --font-serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   --font-sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -191,14 +193,26 @@ button{font:inherit; cursor:pointer}
 .sharebox a.chip[aria-disabled="true"]{opacity:.45; pointer-events:none}
 .sharebox .chip:disabled{opacity:.45; cursor:not-allowed}
 .thead-r{display:flex; align-items:center; gap:6px; flex:0 0 auto}
-.sheet{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); width:min(92vw,480px); z-index:60;
+/* z-index 1200: Leaflet's own panes sit at 400 and its controls at 1000, and .leaflet-container
+   makes no stacking context of its own, so at 60 the map painted straight over this sheet.
+   The height is capped clear of the sticky tab bar, and a tall sheet scrolls inside itself. */
+.sheet{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); width:min(92vw,480px); z-index:1200;
        background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:var(--r-card);
-       padding:var(--s4); display:flex; flex-direction:column; gap:var(--s2)}
+       padding:var(--s4); display:flex; flex-direction:column; gap:var(--s2);
+       max-height:calc(100dvh - 150px); overflow-y:auto}
 .sheet[hidden]{display:none}
 .sheet-t{font-family:var(--font-serif); font-size:var(--t-h3)}
 .sheet input{flex:1 1 160px; min-height:var(--hit); padding:9px 12px; font:inherit;
              border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2)}
 .sheet input:focus{border-color:var(--pool); outline:none}
+.rows{display:flex; flex-direction:column; gap:var(--s2)}
+/* the sheet is a flex column and `.sheet input` sets flex:1, which would stretch each of these
+   to fill it - a stacked form has to opt out of that explicitly */
+.rows input,.rows textarea{flex:0 0 auto; width:100%; min-height:var(--hit); padding:9px 12px;
+       font:inherit; font-size:var(--t-body); border:1px solid var(--line);
+       border-radius:var(--r-control); background:var(--paper-2); color:var(--ink); resize:vertical}
+.rows textarea{min-height:74px}
+.rows input:focus,.rows textarea:focus{border-color:var(--pool); outline:none}
 .linkbox{display:flex; flex-direction:column; gap:var(--s2); padding-top:var(--s2); border-top:1px dashed var(--line)}
 .linkbox[hidden]{display:none}
 .likedby{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; max-width:120px}
@@ -264,6 +278,16 @@ button{font:inherit; cursor:pointer}
 .tname:hover{text-decoration:underline}
 .tflag{font-size:var(--t-meta); letter-spacing:.1em; text-transform:uppercase; color:var(--cream);
        opacity:.85}
+.tnew{align-self:flex-start; font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
+      letter-spacing:var(--tr-label); color:var(--ink); background:var(--ochre);
+      border-radius:var(--r-pill); padding:2px 10px}
+/* a tip carries its author's colour instead of a category hue, and has no drive time to show */
+.tile.tip{--tile:var(--who,var(--olive-deep))}
+.tby{display:flex; align-items:center; gap:var(--s2); font-size:var(--t-meta); color:var(--ink-2);
+     text-transform:uppercase; letter-spacing:var(--tr-label)}
+.tdrop{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
+       letter-spacing:var(--tr-label); border:0; background:none; padding:0; cursor:pointer;
+       color:var(--ink-2); text-decoration:underline}
 .tinner{background:var(--paper-2); border-radius:var(--r-card); padding:var(--s4); flex:1;
         display:flex; flex-direction:column; gap:var(--s3)}
 .ttown{font-size:var(--t-meta); text-transform:uppercase; letter-spacing:var(--tr-label);
@@ -307,7 +331,11 @@ main{position:relative; z-index:1}
 .empty{padding:var(--s6) 0; color:var(--ink-2)}
 .empty[hidden]{display:none}
 /* says why the order changed, once a heart has actually moved something */
-.floatnote{font-size:var(--t-meta); margin:0}
+/* it sits on the painted field, where no ink colour is safe against blue, yellow and orange
+   at once - so it gets its own paper ground, like the group pills above it */
+.floatnote{font-size:var(--t-meta); margin:0; align-self:flex-start; color:var(--ink-2);
+      background:var(--paper); border:1px solid var(--line-soft); border-radius:var(--r-pill);
+      padding:3px 12px}
 .floatnote[hidden]{display:none}
 
 /* place sheet: a tap on a tile opens this instead of throwing the phone at Google Maps */
@@ -336,6 +364,7 @@ main{position:relative; z-index:1}
     font-size:var(--t-meta); line-height:1.3; color:var(--peach); background:var(--olive)}
 .fx-bday{background:var(--fig)}
 .fx-leave{background:var(--ink-2)}
+.fx-fest{background:var(--pool-deep)}
 .slots{display:flex; flex-direction:column; gap:var(--s2)}
 .slot{display:flex; flex-direction:column; gap:5px; padding:var(--s3);
       border:1px solid var(--line-soft); border-radius:var(--r-control); background:var(--paper)}
