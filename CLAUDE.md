@@ -106,7 +106,13 @@ and `inGroup()` follow. Adding a fifth means touching all four places.
   A tip is **not** in PLACES, so it has no drive time, no pin, no heart and no calendar slot -
   promote a good one into places.json and it gets all four. The section steps aside whenever any
   filter other than the search box is on, because a tip has no category or drive time to match.
-  Requires the worker redeploy below; until then `/tips` 404s and tips stay on the phone.
+  **Deployed 2026-08-29** and round-trip tested (PUT, read back, `javascript:` link stripped
+  server-side, DELETE). KV listings lag a write by ~2s, so a read straight after a PUT returns the
+  old value - wait, do not conclude it failed.
+  The dashboard editor *can* be driven after all: click into it, Cmd+A, Cmd+V. The trap is the
+  clipboard - `pbcopy` the file and verify with `pbpaste` immediately before pasting, because
+  anything that copies a URL in between silently replaces it. Cmd+Z restores if a paste goes wrong,
+  and nothing reaches the live worker until Deploy is clicked.
 - **Sheets are page-level, and must stay there.** `main.shell` and `.actwrap` are both
   `position:relative; z-index:1`, so a `position:fixed` sheet inside them is trapped in their
   stacking context and the sticky nav (z-index 20) and Leaflet's panes (400) paint straight over
@@ -126,10 +132,6 @@ and `inGroup()` follow. Adding a fifth means touching all four places.
 - **No opening days.** One Monday (14 Sep) and two Sundays (13, 20). The original shortlist schema
   had `closed` / `only` / `dates` / `tags` and this one lost them. Adding them back is worth more
   than twenty more places.
-- **Worker redeploy owed (2026-08-29).** `worker/abruzzo-picks.js` gained the `/tips` routes but
-  is not deployed. Dashboard -> Workers & Pages -> abruzzo-picks -> Edit code -> paste the file ->
-  Deploy. The editor is a cross-origin frame, so the paste is Matt's. Until then "+ Add a place"
-  saves to the phone only and says so.
 - **CARTO tiles now watermarked.** `a.basemaps.cartocdn.com/light_all` still returns 200 but the
   PNG itself carries "APIKEY REQUIRED" across it, so the map reads as broken on the live site too.
   Fix is either a free CARTO key or a swap to standard OSM tiles - the latter loses the sepia
