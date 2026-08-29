@@ -9,3 +9,8 @@
 *.premaps
 files/
 phone.html
+
+# The Google Places key lives in ~/.abruzzo-google-key, outside this repo. Belt and braces:
+*.key
+.abruzzo-google-key
+.env
