@@ -526,7 +526,12 @@
       S.me = v;
       if (S.friends[S.me]) { delete S.friends[S.me]; renderFriendChips(); renderTiles(); }
       updateMeChip();
-      pushPicks();
+      // Do NOT push here with an empty shortlist. A name typed on a phone that has no hearts yet
+      // would PUT {"ids":["c-1"]} - just the colour - and the worker replaces the whole record,
+      // erasing whatever that person had hearted from another device. That is exactly how Matt's
+      // six hearts became zero. The colour rides along with the first real heart instead, and
+      // pullPicks pulls the server's hearts back down in the meantime.
+      if (Object.keys(S.short).length) pushPicks();
     }
     S.welcomed = true;
     save();
@@ -653,34 +658,91 @@
         if (e && byId[e.id]) out.push('d' + d.d + '--' + s.k + '--' + e.id + '--' + slugName(e.by) + '--b' + (e.booked ? '1' : '0'));
       });
     });
-    return out;
+    return out.concat(foreignPlan);
   }
+  // Entries this build does not recognise - a place added after this tab was loaded - are kept
+  // aside verbatim and written back by encodePlan. Without this, an out-of-date phone silently
+  // deletes everyone else's newest calendar entries the moment its owner taps anything.
+  var foreignPlan = [];
   function decodePlan(list) {
     var plan = {};
+    foreignPlan = [];
     (list || []).forEach(function (s) {
       var m = /^d(\d{1,2})--([a-z]+)--([a-z0-9-]+?)--([a-z0-9-]+)--b([01])$/.exec(s);
-      if (!m || !byId[m[3]]) return;
+      if (!m) return;
+      if (!byId[m[3]]) { foreignPlan.push(s); return; }
       var day = +m[1], slot = m[2];
       if (!DAYS.some(function (d) { return d.d === day; }) || !SLOTS.some(function (x) { return x.k === slot; })) return;
       (plan[day] = plan[day] || {})[slot] = { id: m[3], by: nameFromSlug(m[4]), booked: m[5] === '1' };
     });
     return plan;
   }
+  // syncNote writes into the Activities panel, which is hidden whenever anyone is on the
+  // Calendar - so the old "could not save" warning was invisible to the only people who
+  // could see it matter. The calendar gets its own line.
+  function planNote(msg) {
+    var el = $('plan-note');
+    if (!el) return;
+    el.hidden = !msg;
+    el.textContent = msg || '';
+  }
   function pushPlan() {
     if (!SYNC || !window.fetch) return;
+    planDirty = true;
     fetchJSON(SYNC + '/picks/_plan', {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ids: encodePlan() })
-    }).catch(function () { syncNote('Could not save the plan just now - it will keep trying.'); });
+    }).then(function () { planDirty = false; planNote(''); },
+            function () {
+              // it said "it will keep trying" and then never did - pushPlan had exactly one
+              // caller, a fresh tap. planDirty stays set and the poll re-drives it.
+              planNote('Saved on this phone. Could not reach the shared calendar - it will keep trying.');
+            });
   }
+  // renderCalendar calls slotsFor for all ten days, and slotsFor CREATES the day as a side
+  // effect, so S.plan always carries ten keys while a decoded plan carries only the days that
+  // hold something. Comparing the two raw made every poll look like a change, so the calendar
+  // repainted every 30 seconds - tearing any open place-picker out from under the tap that
+  // opened it. That was "I updated the calendar and it went nowhere". Compare the encoded
+  // shape instead, which is blind to empty days.
+  function planKey(plan) {
+    var out = [];
+    DAYS.forEach(function (d) {
+      var slots = plan[d.d];
+      if (!slots) return;
+      SLOTS.forEach(function (x) {
+        var e = slots[x.k];
+        if (e && e.id) out.push(d.d + '|' + x.k + '|' + e.id + '|' + e.by + '|' + (e.booked ? 1 : 0));
+      });
+    });
+    return out.join('\n');
+  }
+  var planPending = false;
   function applyPlan(list) {
     var fresh = decodePlan(list);
-    if (JSON.stringify(fresh) !== JSON.stringify(S.plan)) { S.plan = fresh; save(); renderCalendar(); renderTiles(); }
+    if (planKey(fresh) === planKey(S.plan)) return;
+    S.plan = fresh;
+    save();
+    renderTiles();
+    // the picker is a child of #days and renderCalendar empties #days, so a repaint while one
+    // is open would delete the box, the search text and the focus mid-tap. Hold it until it closes.
+    if (openPicker) { planPending = true; return; }
+    renderCalendar();
   }
+  var planDirty = false;
   function planChange(fn) {
     function go() { fn(); save(); renderCalendar(); renderTiles(); pushPlan(); }
     if (!SYNC || !window.fetch) return go();
-    fetchJSON(SYNC + '/picks').then(function (all) { if (all && all._plan) applyPlan(all._plan); go(); }, go);
+    fetchJSON(SYNC + '/picks').then(function (all) { if (all && all._plan) applyPlan(all._plan); go(); },
+      function () {
+        // The old code passed `go` as the error handler too, so a dropped read turned straight
+        // into a blind write of whatever stale plan this phone was holding - deleting anything
+        // anyone else had added since. Apply it locally, mark it unsent, and let the next
+        // successful poll push it once we have actually seen the server's copy.
+        fn(); save(); renderCalendar(); renderTiles();
+        planDirty = true;
+        planNote('Saved on this phone. The shared calendar could not be reached - it will retry.');
+      });
   }
   function blocked(d, k) {
     var s = slotsFor(d);
@@ -751,8 +813,17 @@
     if (add && !add.disabled) showPicker(add, +add.dataset.day, add.dataset.slot);
   });
 
+  // eating slots want food first, then the terrace lunch, then somewhere to drink; the rest of
+  // the day wants things to do first. Anything unknown falls to the back rather than to the front.
+  var MEAL_RANK = { eat: 0, house: 1, cellar: 2, do: 3 };
+  var DO_RANK = { do: 0, house: 1, cellar: 2, eat: 3 };
+  function flushPlan() {
+    if (!planPending || openPicker) return;
+    planPending = false;
+    renderCalendar();
+  }
   function showPicker(btn, day, slot) {
-    if (openPicker) { openPicker.remove(); openPicker = null; }
+    if (openPicker) { openPicker.remove(); openPicker = null; flushPlan(); }
     var box = document.createElement('div');
     box.className = 'picker';
     var input = document.createElement('input');
@@ -778,9 +849,11 @@
       });
       pool.sort(function (a, b) {
         var as, bs;
-        if (MEAL[slot]) { as = a.group === 'eat' ? 0 : 1; bs = b.group === 'eat' ? 0 : 1; }
+        // Two more sections landed on 29 Aug and this ranking still only knew 'eat' and 'do', so
+        // a winery or "a long lunch on the terrace" sorted with the museums. RANK orders all four.
+        if (MEAL[slot]) { as = MEAL_RANK[a.group]; bs = MEAL_RANK[b.group]; }
         else if (slot === 'fullday') { as = a.mins > 45 ? 0 : 1; bs = b.mins > 45 ? 0 : 1; }
-        else { as = a.group === 'do' ? 0 : 1; bs = b.group === 'do' ? 0 : 1; }
+        else { as = DO_RANK[a.group]; bs = DO_RANK[b.group]; }
         if (as !== bs) return as - bs;
         var ash = S.short[a.id] ? 0 : 1, bsh = S.short[b.id] ? 0 : 1;
         if (ash !== bsh) return ash - bsh;
@@ -903,7 +976,7 @@
     save();
     updateMeChip();
     $('who').hidden = true;
-    pushPicks();
+    if (Object.keys(S.short).length) pushPicks();
     if (tipPending && S.me) openTip();
     tipPending = false;
   }
@@ -1052,7 +1125,10 @@
     if (!SYNC || !window.fetch) return;
     fetchJSON(SYNC + '/picks').then(function (all) {
       var changed = false;
-      if (all && all._plan) applyPlan(all._plan);
+      // an unsent local edit is ahead of the server: take the server's copy now and it is lost.
+      // Push ours first; the next poll picks up everyone else's once we are back in sync.
+      if (all && all._plan && !planDirty) applyPlan(all._plan);
+      if (planDirty) pushPlan();
       Object.keys(all || {}).forEach(function (n) {
         if (n.charAt(0) === '_') return; // the shared plan and any other non-person entries
         var raw = all[n] || [];
@@ -1144,7 +1220,9 @@
     var before = S.me;
     $('share-name').addEventListener('focus', function () { before = S.me; });
     $('share-name').addEventListener('change', function () {
-      if (before && before !== S.me) forgetRemote(before);
+      // `before && before !== S.me` alone fires on an emptied box too, sending DELETE /picks/Matt
+      // and removing that person's hearts for everybody. Only hand the name over to a real new one.
+      if (before && S.me && before !== S.me) forgetRemote(before);
       before = S.me;
       pushPicks();
     });
@@ -1152,8 +1230,14 @@
       if (document.visibilityState === 'visible') { pullPicks(true); pullTips(); }
       else if (dirty) { clearTimeout(syncTimer); syncTimer = null; pushNow(true); }
     });
-    // always poll: browsers already slow timers in background tabs, and the request is tiny
-    syncPoll = setInterval(function () { pullPicks(true); pullTips(); }, 30000);
+    // Poll every 60s, not 30s, and fetch tips only every other tick. Each /picks and /tips call
+    // costs a KV *list* on the worker and the free plan allows 1,000 lists a day - at 30s with
+    // both, one open phone burns the lot in about four hours. This is a quarter of that traffic.
+    var tick = 0;
+    syncPoll = setInterval(function () {
+      pullPicks(true);
+      if (++tick % 2 === 0) pullTips();
+    }, 60000);
     pullPicks();
     pullTips();
     if (S.me && Object.keys(S.short).length) pushPicks();

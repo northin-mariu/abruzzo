@@ -359,6 +359,11 @@ main{position:relative; z-index:1}
 .dhead{display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap}
 .ddate{font-family:var(--font-serif); font-size:var(--t-h3)}
 .dnote{font-size:var(--t-meta); color:var(--terracotta)}
+/* the calendar's own "did that save?" line - syncNote lives in the Activities panel, which is
+   hidden whenever anyone is actually on this tab */
+.plannote{font-size:var(--t-meta); margin:0; align-self:flex-start; color:var(--ink);
+      background:var(--ochre); border-radius:var(--r-pill); padding:4px 14px}
+.plannote[hidden]{display:none}
 .dfixed{display:flex; flex-wrap:wrap; gap:6px}
 .fx{display:inline-flex; align-items:center; padding:3px 10px; border-radius:999px;
     font-size:var(--t-meta); line-height:1.3; color:var(--peach); background:var(--olive)}
