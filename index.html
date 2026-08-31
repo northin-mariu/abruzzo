@@ -512,6 +512,9 @@ a{color:var(--pool-deep)}
 /* two-letter badges when two travellers share an initial (Lauren / Lyndsey) */
 .who.w2{font-size:9.5px; letter-spacing:0}
 
+/* a typed note in the picker reads as an action, not a place */
+.pick-note span:first-child{color:var(--pool-deep); font-weight:var(--w-bold)}
+
 </style>
 </head>
 <body>
@@ -1219,7 +1222,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
             var v = slots[s.k];
             // older saves held a bare id; the shared plan holds {id, by, booked}
             if (typeof v === 'string' && byId[v]) S.plan[d][s.k] = { id: v, by: '', booked: false };
-            else if (v && typeof v === 'object' && typeof v.id === 'string' && byId[v.id]) {
+            else if (v && typeof v === 'object' && typeof v.id === 'string' && (byId[v.id] || isNote(v.id))) {
               S.plan[d][s.k] = { id: v.id, by: String(v.by || '').slice(0, 24), booked: !!v.booked };
             }
           });
@@ -1240,7 +1243,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
       if (Array.isArray(o.ops)) {
         S.ops = o.ops.filter(function (x) {
           return x && typeof x === 'object' && typeof x.day === 'number' && typeof x.slot === 'string' &&
-                 typeof x.at === 'number' && (x.e === null || (x.e && typeof x.e.id === 'string' && byId[x.e.id]));
+                 typeof x.at === 'number' && (x.e === null || (x.e && typeof x.e.id === 'string' && (byId[x.e.id] || isNote(x.e.id))));
         }).slice(-40);
       }
       // an unsent calendar edit must survive a reload - phones kill background tabs constantly
@@ -1967,6 +1970,19 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     for (var i = 0; i < known.length; i++) if (slugName(known[i]) === s) return known[i];
     return s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ');
   }
+  // A typed note ("Pasta night", "leave by 9") rides in the id itself as x-pasta-night:
+  // the worker's plan filter already accepts it, and old builds shelve unknown ids verbatim
+  // (foreignPlan) instead of deleting them. Display re-spaces the slug; punctuation is lost,
+  // which is the price of needing no server change.
+  function noteId(t) {
+    var s = String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 30).replace(/-+$/, '');
+    return s ? 'x-' + s : '';
+  }
+  function isNote(id) { return typeof id === 'string' && id.indexOf('x-') === 0 && !byId[id]; }
+  function noteLabel(id) {
+    var t = id.slice(2).replace(/-/g, ' ');
+    return t.charAt(0).toUpperCase() + t.slice(1);
+  }
   function encodePlan() {
     var out = [];
     DAYS.forEach(function (d) {
@@ -1974,7 +1990,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
       if (!slots) return;
       SLOTS.forEach(function (s) {
         var e = slots[s.k];
-        if (e && byId[e.id]) out.push('d' + d.d + '--' + s.k + '--' + e.id + '--' + slugName(e.by) + '--b' + (e.booked ? '1' : '0'));
+        if (e && (byId[e.id] || isNote(e.id))) out.push('d' + d.d + '--' + s.k + '--' + e.id + '--' + slugName(e.by) + '--b' + (e.booked ? '1' : '0'));
       });
     });
     return out.concat(foreignPlan);
@@ -1989,7 +2005,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     (list || []).forEach(function (s) {
       var m = /^d(\d{1,2})--([a-z]+)--([a-z0-9-]+?)--([a-z0-9-]+)--b([01])$/.exec(s);
       if (!m) return;
-      if (!byId[m[3]]) { foreignPlan.push(s); return; }
+      if (!byId[m[3]] && !isNote(m[3])) { foreignPlan.push(s); return; }
       var day = +m[1], slot = m[2];
       // a slot key this build does not know (the next redesign) is kept verbatim, like an unknown id
       if (!DAYS.some(function (d) { return d.d === day; }) || !SLOTS.some(function (x) { return x.k === slot; })) { foreignPlan.push(s); return; }
@@ -2080,7 +2096,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     var changed = false;
     liveOps().forEach(function (o) {
       // an op naming a place that left places.json would make renderCalendar throw
-      if (o.e && !byId[o.e.id]) return;
+      if (o.e && !byId[o.e.id] && !isNote(o.e.id)) return;
       var cur = (plan[o.day] || {})[o.slot];
       var same = (!cur && !o.e) ||
                  (cur && o.e && cur.id === o.e.id && slugName(cur.by) === slugName(o.e.by) && !!cur.booked === !!o.e.booked);
@@ -2136,11 +2152,13 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
         body += '<div class="slot k-' + sl.kind + (sl.k === 'fullday' && filled ? ' filled-full' : '') + '">' +
                 '<span class="label">' + sl.l + '</span>';
         if (filled) {
-          var p = byId[filled.id], g = !!p.generic;
+          var p = byId[filled.id], note = !p && isNote(filled.id), g = !!(p && p.generic);
+          var nm = note ? noteLabel(filled.id) : (p ? p.name : filled.id);
           var who = filled.by ? '<span class="sby" style="--who:' + whoColour(filled.by) + '">' + esc(filled.by) + '</span>' : '';
-          var where = g ? (p.tbc ? esc(p.tbc) + (who ? ' \u00b7 ' + who : '') : who)
-                        : (p.mins === 0 ? 'at the house' : esc(p.town) + ' \u00b7 ' + p.mins + ' min') + (who ? ' \u00b7 ' + who : '');
-          body += '<div class="slotrow' + (filled.booked ? ' bkd' : '') + '"><span class="splace">' + esc(p.name) +
+          var where = note ? who
+                    : g ? (p.tbc ? esc(p.tbc) + (who ? ' \u00b7 ' + who : '') : who)
+                    : (p.mins === 0 ? 'at the house' : esc(p.town) + ' \u00b7 ' + p.mins + ' min') + (who ? ' \u00b7 ' + who : '');
+          body += '<div class="slotrow' + (filled.booked ? ' bkd' : '') + '"><span class="splace">' + esc(nm) +
                   (where ? '<span class="where">' + where + '</span>' : '') + '</span>' +
                   '<span class="slotbtns">';
           if (g && p.tbc) {
@@ -2150,13 +2168,13 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
                     '" title="Choose the place - most hearted first">Confirm a place</button>';
           } else if (!g) {
             body += '<button class="bk" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
-                    '" aria-label="' + (filled.booked ? 'Unmark ' : 'Mark ') + esc(p.name) + ' booked, ' + sl.l + ' on ' + day.dow + ' ' + day.d +
+                    '" aria-label="' + (filled.booked ? 'Unmark ' : 'Mark ') + esc(nm) + ' booked, ' + sl.l + ' on ' + day.dow + ' ' + day.d +
                     '" aria-pressed="' + (filled.booked ? 'true' : 'false') + '" title="' +
                     (filled.booked ? 'Booked - tap to unmark' : 'Tap once it is booked') + '">' +
                     (filled.booked ? 'Booked' : 'Booked?') + '</button>';
           }
           body += '<button class="rm" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
-                  '" aria-label="Remove ' + esc(p.name) + ' from ' + sl.l + ' on ' + day.dow + ' ' +
+                  '" aria-label="Remove ' + esc(nm) + ' from ' + sl.l + ' on ' + day.dow + ' ' +
                   day.d + '">\u00d7</button></span></div>';
         } else {
           body += '<button class="addbtn" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
@@ -2242,7 +2260,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     box.className = 'picker';
     var input = document.createElement('input');
     input.type = 'search';
-    input.placeholder = confirming ? 'Search for the place' : 'Search ' + PLACES.length + ' places';
+    input.placeholder = confirming ? 'Search for the place' : 'Search places \u2014 or type your own';
     input.setAttribute('aria-label', 'Search places to add');
     var list = document.createElement('div');
     list.className = 'plist';
@@ -2326,10 +2344,11 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
         return a.mins - b.mins;
       });
       list.textContent = '';
+      var nid = noteId(input.value);
       if (!pool.length) {
-        msg.textContent = 'Nothing matches that.';
-        return;
-      }
+        msg.textContent = nid ? 'Nothing on the list matches \u2014 put it in below, in your own words'
+                              : 'Nothing matches that.';
+      } else
       // show every match, not a silent top-N; the list scrolls
       msg.textContent = pool.length + (pool.length === 1 ? ' place' : ' places') + ' \u00b7 ' +
         (confirming ? 'most hearted first'
@@ -2346,6 +2365,15 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
         b.addEventListener('click', function () { choose(p); });
         list.appendChild(b);
       });
+      if (nid) {
+        var nb = document.createElement('button');
+        nb.className = 'pick pick-note';
+        nb.type = 'button';
+        nb.innerHTML = '<span>\u270F\uFE0F Put \u201C' + esc(input.value.trim()) + '\u201D straight in</span>' +
+                       '<span class="t">your own words \u2014 not from the list</span>';
+        nb.addEventListener('click', function () { choose({ id: nid }); });
+        list.appendChild(nb);
+      }
     }
     input.addEventListener('input', fill);
     fill();

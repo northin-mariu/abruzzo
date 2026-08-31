@@ -500,3 +500,6 @@ a{color:var(--pool-deep)}
 #map .leaflet-control-attribution a{color:var(--pool-deep)}
 /* two-letter badges when two travellers share an initial (Lauren / Lyndsey) */
 .who.w2{font-size:9.5px; letter-spacing:0}
+
+/* a typed note in the picker reads as an action, not a place */
+.pick-note span:first-child{color:var(--pool-deep); font-weight:var(--w-bold)}
