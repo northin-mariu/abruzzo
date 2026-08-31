@@ -80,7 +80,9 @@ chips = ''.join(
     '<span class="dot"></span>{l} <em>{n}</em></button>'.format(
         c=c, col=FILL.get(c, '#8E3B1A'),
         l=html.escape(m['label']), n=m['n'])
-    for c, m in sorted(cats.items(), key=lambda kv: (ORDER[kv[1]['group']], kv[0])))
+    # the 'house' section chip already exists in #groups; a twin category chip said the same words
+    for c, m in sorted(cats.items(), key=lambda kv: (ORDER[kv[1]['group']], kv[0]))
+    if m['group'] != 'house')
 
 page = BODY
 for key, val in [
@@ -99,6 +101,10 @@ for key, val in [
 doc = ('<!doctype html>\n<html lang="en">\n<head>\n'
        '<meta charset="utf-8">\n'
        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+       # the map's two origins and the worker: start their handshakes while the HTML is still loading
+       '<link rel="preconnect" href="https://unpkg.com" crossorigin>\n'
+       '<link rel="preconnect" href="https://a.basemaps.cartocdn.com">\n'
+       '<link rel="preconnect" href="https://abruzzo-picks.mattnorthin.workers.dev">\n'
        '<title>Ten days out of Rocca San Giovanni</title>\n'
        '<meta name="description" content="Everything within reach of Butterfly Cave, '
        '11-20 September 2026. {n} places, {t} towns.">\n'

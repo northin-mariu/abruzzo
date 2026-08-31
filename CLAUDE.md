@@ -25,8 +25,8 @@ script is how mojibake got in twice during development.
 
 ## Structure
 
-Four tabs: Welcome, Calendar (10 days × Morning / Full day / Lunch / Dinner, with full-day
-exclusion), Activities (262 tiles in four sections), Things to know.
+Four tabs: Welcome, Calendar (10 days × seven slots, see below), Activities (262 tiles in four
+sections), Things to know.
 
 **Four sections (2026-08-29)**, set by `ORDER` / `HOUSE` / `CELLAR` / `EAT` in build.py:
 **At the house** (3) · **Eat & drink** (91) · **Wineries & distilleries** (23) ·
@@ -107,7 +107,27 @@ and `inGroup()` follow. Adding a fifth means touching all four places.
   promote a good one into places.json and it gets all four. The section steps aside whenever any
   filter other than the search box is on, because a tip has no category or drive time to match.
   **Deployed 2026-08-29** and round-trip tested (PUT, read back, `javascript:` link stripped
-  server-side, DELETE). KV listings lag a write by ~2s, so a read straight after a PUT returns the
+  server-side, DELETE).
+  **Worker v2 (2026-08-30, code written and unit-tested, NOT YET DEPLOYED - ask Matt):**
+  - Index keys `p:_index` / `t:_index` (the list of names): a GET is one get for the index plus
+    one per person in parallel, never a KV `list` (free plan: 1,000 lists/day - seven phones
+    polling spent that in ~95 minutes; the poll also now skips while the tab is hidden, which is
+    how a backgrounded laptop was burning the whole day's quota alone). The index builds itself
+    from existing keys on the first request after deploy (one list, once). Response shapes are
+    unchanged, so old and new app builds both work against it.
+  - At most 32 names per prefix (33rd -> 507), so junk names cannot inflate every poll's reads.
+  - Names are NFC-normalised with invisible characters stripped; `_`-prefixed refused except
+    `_plan` on /picks; leading-dot and letterless names refused.
+  - `_plan` only accepts plan-shaped ids (`dNN--slot--id--who--bN`), so a phone stuck named
+    "_plan" can no longer replace the calendar with its hearts.
+  - Backups: the first `_plan` write of each UTC day keeps the previous value under
+    `bak:_plan:<date>` (60 days); a write that EMPTIES a non-empty plan keeps it under
+    `bak:_plan:wiped`. Restore: `GET /picks/_plan/backup/<date|wiped>`, PUT the ids back.
+  - `GET /picks/:name` returns one record (1 read); bodies are measured by `text().length`
+    (the Content-Length header can lie), over 64 KB -> 413; tips' 70-char cut no longer leaves
+    a lone UTF-16 surrogate (which used to crash every phone's render loop - see below);
+    all errors return JSON with CORS headers (503), never Cloudflare's HTML page.
+  Tests: scratchpad `worker.test.mjs`, 37 checks against a fake KV that counts operations. KV listings lag a write by ~2s, so a read straight after a PUT returns the
   old value - wait, do not conclude it failed.
   The dashboard editor *can* be driven after all: click into it, Cmd+A, Cmd+V. The trap is the
   clipboard - `pbcopy` the file and verify with `pbpaste` immediately before pasting, because
@@ -172,11 +192,104 @@ Seven people in total. Matt's taste in restaurants: cheap, no-frills, fish-first
 
 The Calendar is one plan for the group, stored in the same KV store under the pseudo-name
 `_plan`: each slot is an id like `d14--dinner--<place id>--<who slug>--b1` (b1 = booked), which
-passes the worker's id regex, so no worker change was needed. `planChange(fn)` fetches the latest
-plan, applies the tap, saves, renders and PUTs — last write wins per edit, not per session.
+passes the worker's id regex, so no worker change was needed. `planChange(day, slot, fn)` fetches the
+latest plan, applies the tap, saves, renders and PUTs — last write wins per edit, not per session.
 Anyone can add, remove or toggle "Book it". `S.plan` values are `{id, by, booked}` (older bare-id
 saves are upgraded on load). Names in the plan are slugs, mapped back via known names.
+
+**Sync hardening (2026-08-30).** The strength test proved the whole-plan write loses edits: KV
+hands a phone a copy up to a minute old, so two edits within that window kept only the later one,
+and a phone back from a dead spot overwrote everything made meanwhile. Fixes, all in app.js:
+- **Op-replay**: every tap is recorded (`S.ops`, persisted, ≤40) and re-applied on top of every
+  server copy for 3 minutes — or, while unsent, indefinitely; if the server copy was missing one,
+  it is pushed again. Lost updates now heal at the loser's next poll. Residual risk: the loser
+  closes the tab within ~60 s of the clash AND never reopens - rare; a Durable Object would
+  remove it (see "structural upgrade" below).
+- **Hearts, two devices**: first successful pull takes the union of local + server for your own
+  name (then pushes if local had more); after that the server wins for your name unless this
+  phone wrote in the last 2 minutes (then it re-pushes). The blind push-on-load is gone.
+- **Ghosts**: names absent from a `/picks` reply are dropped from `S.friends`/`S.fc` — the curl
+  DELETE recipe and renames now actually propagate.
+- **Names**: `cleanName()` everywhere a name enters (load, ?me=, welcome, who-sheet, input):
+  NFC, invisible chars and lone surrogates stripped, no leading `_`/`.`, must contain a letter or
+  digit. The who-sheet refuses a name another person is already hearting under (unless this
+  phone has no hearts - that is the same person on a new phone) via `nameTaken()` + `#who-note`.
+- `byId` is `Object.create(null)` ('constructor' is not a place); `tipMapUrl` try/catches
+  encodeURIComponent (a lone surrogate in one tip used to kill renderTiles on every phone -
+  hearts and taps silently stopped syncing while the note still said "Live"); the sync note says
+  "Not updating since HH:MM" when quiet polls start failing; pulls have an in-flight guard;
+  the 60 s poll skips while `document.hidden` (background tabs were eating the KV quota).
+- **Structural upgrade, not done**: per-slot KV keys or a Durable Object would remove the race
+  window entirely instead of healing it. Decide only if the group actually trips over it.
+Tests: scratchpad `sync2.js` (16 checks: stale read-back re-assert, offline reconnect merge,
+ghost removal, two-device union, `?me=_plan`), `cal2.js` (34 checks, calendar behaviour) and
+`pending.js` (5 checks: an unnamed phone's calendar add parks the choice, asks via #who, then
+commits under the new name - `pendingChoice` in app.js).
+**Adversarially re-verified (2026-08-30 evening):** a fresh agent re-ran the original
+concurrency scenario harness against the new build - all 13 data-loss scenarios heal (different
+slots at the next poll; a same-slot conflict settles on one tap within ~3 min instead of losing
+one silently; offline merges; ghosts drop; two-device hearts union). Only residue: phones whose
+poll timers are in perfect lockstep during a sub-second burst - lab-grade, not real phones.
+Harness copies: scratchpad `concurrency/*-new*`.
 Matt's real hearts live under "Matt" in the store — never delete that entry when cleaning up tests.
+
+## Calendar rebuild (2026-08-30)
+
+Matt's ask: morning / day / afternoon / evening for things to do, breakfast / lunch / dinner for
+food, "generic options first, then confirm a place once we get more votes".
+
+- **Seven slots a day, in day order:** All day, Breakfast, Morning, Lunch, Afternoon, Dinner,
+  Evening (`SLOTS` in app.js, each with `kind: 'eat' | 'do'`, coloured by `.slot.k-eat/.k-do`).
+  Chronological rather than a food row and an events row - it reads like a day. `fullday` keeps
+  its old store key under the "All day" label so existing entries still land.
+- **All day folds Morning and Afternoon away** (and either of those hides All day). Meals and the
+  evening are never blocked - a day in Sulmona still ends with dinner somewhere. Blocked rows are
+  not rendered at all (`blocked()` + the early `return` in `renderCalendar`), not greyed out.
+- **Rough ideas** (`GENERIC` in app.js): "Eat out", "Beach", "Day trip", "Pizza night at the
+  house"... stored in the shared plan under `g-` ids, so they pass the worker's id rule and an
+  older build keeps them verbatim as foreign entries. They are in `byId` but not in `PLACES`:
+  no tile, no pin, no drive time, no heart. Each declares `pick` (which slots show it on the
+  picker's quick strip) and, for the `tbc` ones, `confirm` (which section leads the confirm
+  picker). The three "At the house" places sit on the same strip via `QUICK_PLACES`.
+- **Confirm a place:** a filled `tbc` idea shows a "Confirm a place" button (`.cf`) instead of
+  "Book it". It opens the same picker in `'confirm'` mode: no quick strip, sorted by hearts
+  across the whole group first (`votes()`), then the idea's own section. Every picker row now
+  shows its heart count. Choosing replaces the slot's id and credits whoever confirmed.
+- **Forward compatibility:** `decodePlan` now keeps entries with an unknown *slot key* as
+  foreign too, not just unknown ids - so the next redesign cannot be wiped by a phone on this one.
+  Phones still on the 29-Aug build drop unknown slot keys on their next write; the risk window
+  is one Pages cache (10 min) plus however long a tab stays open.
+- Verified by `cal2.js` (scratchpad harness, 34 checks, jsdom against a fake worker): rendering,
+  quick strips per slot, PUT bodies, foreign-entry preservation, fold-away, confirm ordering,
+  offline reload of a rough idea, zero exceptions.
+
+## Copy pass (2026-08-30, from the content review)
+
+Applied: hero and Welcome no longer claim everything is "within an hour" (48 places are not);
+one word for the act everywhere - hearts ("Yours \u2665" chip, "your hearts", "'s hearts",
+"hearted this", aria Heart/Un-heart); welcome-modal step 3 teaches the rough-idea flow; band
+chips say "Within 15 min" not "\u226415 min"; At-the-house entries say "at the house" instead
+of "0 min" (tiles, place sheet, calendar, picker); the duplicate At-the-house category chip is
+gone (build.py skips house cats); "Eating" catLabel is "Restaurants"; "Book it" is "Booked?";
+one offline message family ("Saved on this phone - it will send itself when the connection is
+back."); JS strings use em dashes like the HTML; last year's line-ups trimmed from the two
+festival cards; calendar sunk note no longer repeats Things to know; an unnamed phone's first
+calendar add asks for a name exactly as the first heart does.
+Not done, deliberately left for Matt/later: splitting the 145-tile "Out and about" section (or
+curating its chip order); rewriting the ~20 descriptions that open with logistics; the Tremiti
+description cut. See the UX judge's list.
+
+## Ergonomics pass (2026-08-30, from the mobile lens)
+
+Applied: 44px thumb floor on .cta / .clear / .linkbtn / .addbtn / .rm / .q / .pick (swatches
+40px on a 48px pitch); the calendar picker gained three exits (Cancel button, Escape, tap
+outside - capture-phase listener attached a tick late so the opening tap cannot close it) and
+scrolls itself into view; all four tabs fit a 390px phone (counts hidden, padding trimmed at
+<=640px); .tdesc and #place-desc read at 17px on phones; #q gets enterkeyhint="search"; a fixed
+"Search & filters" pill (#backfilters) appears 1800px deep in Activities and scrolls back to the
+search row. Tests: scratchpad `exit.js` (7 checks). Recommended but NOT built (judge's list, for
+Matt): bottom-sheet picker, flat one-list Popular sort, day-jump pills, "add to a day" from the
+place sheet, sticky filter row.
 
 ## Design compliance pass (2026-08-26)
 

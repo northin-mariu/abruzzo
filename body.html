@@ -8,7 +8,7 @@
   <div class="hero-in">
     <p class="hero-pill">Butterfly Cave &#xb7; 11&#x2013;20 September 2026</p>
     <h1>Ten days out of Rocca San Giovanni</h1>
-    <p class="hero-lead">{{TOTAL}} places within an hour of the house, and somewhere to put them.
+    <p class="hero-lead">{{TOTAL}} places within reach of the house &#x2014; most under an hour &#x2014; and somewhere to put them.
     Nothing here is an itinerary &#x2014; it&#x2019;s a menu.</p>
   </div>
 </header>
@@ -32,7 +32,7 @@
       groves and vineyards on every side, the Adriatic one way and the Majella the other. Foce beach and the
       Via Verde are a two-minute drive or a twenty-minute walk; Cavalluccio beach is five. Pescara airport is
       forty-five minutes.</p>
-      <p class="muted">Everything in Activities is within about an hour. <b>Straight-line distance, not road</b>
+      <p class="muted">Most of Activities is within an hour of the house; the far end is a proper day out. <b>Straight-line distance, not road</b>
       &#x2014; allow more inland, where the roads turn.</p>
     </div>
 
@@ -49,8 +49,8 @@
       <div class="panel">
         <h3>How this works</h3>
         <p class="muted"><b>Activities</b> is the whole list &#x2014; filter it, and tap a heart to shortlist
-        what appeals. <b>Calendar</b> is the shared plan: put things into Morning, Lunch or Dinner, or give
-        something a Full day, and mark them booked. <b>Things to know</b> is what will otherwise catch you out.</p>
+        what appeals. <b>Calendar</b> is the shared plan: put a rough idea into any slot from Breakfast to
+        Evening, confirm the place once the hearts are in, and mark it booked. <b>Things to know</b> is what will otherwise catch you out.</p>
       </div>
       <div class="panel">
         <h3>The heart is yours &#x2014; and shareable</h3>
@@ -87,19 +87,20 @@
   <div class="view" id="v-calendar" role="tabpanel" aria-labelledby="t-calendar" hidden>
     <div class="phead">
       <painted-bg ground="pool" layout="diagonal" count="8" seed="3301"></painted-bg>
-      <div class="phead-in"><span class="phead-title">Ten days, four slots each</span></div>
+      <div class="phead-in"><span class="phead-title">Ten days, breakfast to evening</span></div>
     </div>
     <div class="col">
-      <p class="lead">One plan for all of us. Put a place into a Morning, Lunch or Dinner, or give it a
-      <b>Full day</b> &#x2014; it shows who added it, and everyone sees the same ten days. Tap
-      <b>Book it</b> once a table or a boat is confirmed. Arrivals and birthdays are already in.</p>
+      <p class="lead">One plan, the same on everyone&#x2019;s phone. Drop a rough idea into any slot
+      &#x2014; &#x201C;Eat out&#x201D;, &#x201C;Beach&#x201D;, &#x201C;Day trip&#x201D; &#x2014; then tap
+      <b>Confirm a place</b> once the hearts are in. <b>Booked?</b> marks a table or a boat as called.
+      Arrivals and birthdays are already in.</p>
     </div>
-    <p class="muted plannote" id="plan-note" hidden></p>
+    <p class="muted plannote" id="plan-note" role="status" hidden></p>
     <div class="days" id="days"></div>
     <div class="sunk">
-      <p class="muted" style="font-size:var(--t-meta)"><b>Sunday and Monday are the awkward ones.</b>
-      14 September is your only Monday and most museums shut; the two Sundays, 13 and 20, close a lot of shops
-      and every weekly market. Anyone can add or remove &#x2014; it is a shared sheet, so be kind to it.</p>
+      <p class="muted" style="font-size:var(--t-meta)"><b>Sunday and Monday are the awkward ones</b>
+      &#x2014; the day cards say so, and Things to know has the detail. Anyone can add or remove
+      &#x2014; it is a shared sheet, so be kind to it.</p>
     </div>
   </div>
 
@@ -124,7 +125,7 @@
 
     <div class="panel shelf onfield">
       <div class="row">
-        <input class="search" id="q" type="search" aria-label="Search places"
+        <input class="search" id="q" type="search" enterkeyhint="search" aria-label="Search places"
                placeholder="Search a place, a town, a dish &#x2014; trabocco, Lanciano, brodetto">
       </div>
       <div class="row" id="groups">
@@ -134,50 +135,51 @@
         <button class="chip" type="button" aria-pressed="false" data-group="cellar" style="--c:var(--cellar-deep)">Wineries &amp; distilleries</button>
         <button class="chip" type="button" aria-pressed="false" data-group="do" style="--c:var(--do-deep)">Out and about</button>
         <button class="chip" type="button" aria-pressed="false" data-group="new" id="new-chip" hidden
-                style="--c:var(--ochre)" title="Added in the last three weeks">Just added <em id="new-n">0</em></button>
-        <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Shortlisted <em id="short-n">0</em></button>
-        <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--terracotta)"
+                style="--c:var(--olive-deep)" title="Added in the last three weeks">Just added <em id="new-n">0</em></button>
+        <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Yours &#x2665; <em id="short-n">0</em></button>
+        <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--eat-deep)"
                 title="Everything anyone has hearted, most loved first">Popular <em id="votes-n">0</em></button>
       </div>
       <div class="row" id="bands">
         <button class="chip" type="button" aria-pressed="true" data-band="999">Any distance</button>
-        <button class="chip" type="button" aria-pressed="false" data-band="15">&#x2264;15 min</button>
-        <button class="chip" type="button" aria-pressed="false" data-band="30">&#x2264;30 min</button>
-        <button class="chip" type="button" aria-pressed="false" data-band="60">&#x2264;1 hr</button>
+        <button class="chip" type="button" aria-pressed="false" data-band="15">Within 15 min</button>
+        <button class="chip" type="button" aria-pressed="false" data-band="30">Within 30 min</button>
+        <button class="chip" type="button" aria-pressed="false" data-band="60">Within an hour</button>
         <button class="chip" type="button" aria-pressed="false" id="area-pescara" style="--c:var(--fig)"
                 title="Pescara, Montesilvano and Francavilla &#x2014; the airport side">Pescara <em id="area-n">0</em></button>
       </div>
       <div class="row" id="cats">{{CHIPS}}</div>
-      <p class="count"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
+      <p class="count" role="status"><span id="count-text"></span><button class="clear" id="clear" hidden>Clear filters</button></p>
       <div class="share">
         <button class="chip" type="button" id="me-chip" style="--c:var(--fig)">Who&#x2019;s hearting?</button>
         <button class="chip" type="button" id="tip-add" style="--c:var(--olive-deep)">+ Add a place</button>
       </div>
-      <p class="muted" id="sync-note" hidden></p>
+      <p class="muted" id="sync-note" role="status" hidden></p>
     </div>
 
     
 
     
     <p class="muted floatnote" id="floatnote" hidden>Just-added and hearted places sit at the top.</p>
+    <button class="chip backfilters" type="button" id="backfilters" hidden>&#x2191; Search &amp; filters</button>
     <section class="group" id="sec-tips" hidden>
-      <p class="grouppill">From the group <span class="n" id="n-tips">0</span></p>
+      <p class="grouppill" role="heading" aria-level="2">From the group <span class="n" id="n-tips">0</span></p>
       <div class="cards" id="grid-tips"></div>
     </section>
     <section class="group" id="sec-house">
-      <p class="grouppill">At the house <span class="n" id="n-house">{{N_HOUSE}}</span></p>
+      <p class="grouppill" role="heading" aria-level="2">At the house <span class="n" id="n-house">{{N_HOUSE}}</span></p>
       <div class="cards" id="grid-house"></div>
     </section>
     <section class="group" id="sec-eat">
-      <p class="grouppill">Eat &amp; drink <span class="n" id="n-eat">{{N_EAT}}</span></p>
+      <p class="grouppill" role="heading" aria-level="2">Eat &amp; drink <span class="n" id="n-eat">{{N_EAT}}</span></p>
       <div class="cards" id="grid-eat"></div>
     </section>
     <section class="group" id="sec-cellar">
-      <p class="grouppill">Wineries &amp; distilleries <span class="n" id="n-cellar">{{N_CELLAR}}</span></p>
+      <p class="grouppill" role="heading" aria-level="2">Wineries &amp; distilleries <span class="n" id="n-cellar">{{N_CELLAR}}</span></p>
       <div class="cards" id="grid-cellar"></div>
     </section>
     <section class="group" id="sec-do">
-      <p class="grouppill">Out and about <span class="n" id="n-do">{{N_DO}}</span></p>
+      <p class="grouppill" role="heading" aria-level="2">Out and about <span class="n" id="n-do">{{N_DO}}</span></p>
       <div class="cards" id="grid-do"></div>
     </section>
     <p class="empty" id="empty" hidden>Nothing matches that. Try clearing a filter.</p>
@@ -317,8 +319,8 @@
       <div class="kitem" style="--c:var(--fig)">
         <h4>San Matteo &#x2014; the festa starts as you leave</h4>
         <p>The patron saint&#x2019;s festa runs 19&#x2013;23 September: an opening concert on the first
-        night in Piazza degli Eroi (last year an Aura Band evening put on by Bar Vittoria and the Pro
-        Loco), a visiting band and fireworks on the 21st, and a second fireworks night on the 23rd. With
+        night in Piazza degli Eroi, a visiting band and fireworks on the 21st, and a second fireworks
+        night on the 23rd. With
         the 19th your last Saturday, the opening night is yours; watch the Comitato feste San Matteo
         Apostolo page for the 2026 line-up.</p>
       </div>
@@ -326,9 +328,8 @@
         <h4>Chieti&#x2019;s Notte Gialla &#x2014; your last Saturday</h4>
         <p>Saturday 19 September, Chieti Scalo, forty minutes inland: the lower town pedestrianised and
         dressed in yellow, shops open late, nine or so stages and street corners with bands and DJs
-        &#x2014; the last edition ran tribute acts (Renato Zero, Depeche Mode, 883), a blues band, rock and
-        roll and DJs into the small hours. Big, free, cheerfully un-cool. The 2026 line-up lands the week
-        before on the Eventi Scalini pages.</p>
+        into the small hours. Big, free, cheerfully un-cool. The 2026 line-up lands the week before on
+        the Eventi Scalini pages.</p>
       </div>
       <div class="kitem" style="--c:var(--fig)">
         <h4>Vendemmia is on</h4>
@@ -403,20 +404,21 @@
 
 <!-- the two sheets live at page level, not inside .shell: see the z-index note in site.css -->
 <div class="sheet" id="who" hidden role="dialog" aria-labelledby="who-title">
-      <p class="sheet-t" id="who-title">Who&#x2019;s hearting?</p>
+      <p class="sheet-t" id="who-title" role="heading" aria-level="3">Who&#x2019;s hearting?</p>
       <p class="muted">First name is fine &#x2014; the others will see your hearts under it. Use the same
       one every time.</p>
       <div class="row">
-        <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name"
+        <input id="share-name" type="text" maxlength="24" placeholder="Frances" autocomplete="given-name" aria-describedby="who-note"
                aria-label="Your name">
         <button class="chip" type="button" id="who-go">That&#x2019;s me</button>
       </div>
+      <p class="muted" id="who-note" role="alert" hidden></p>
       <p class="muted swlabel">Your colour</p>
       <div class="swatches" id="who-colours" role="group" aria-label="Your colour"></div>
     </div>
 
 <div class="sheet" id="tip" hidden role="dialog" aria-labelledby="tip-title">
-      <p class="sheet-t" id="tip-title">Add a place</p>
+      <p class="sheet-t" id="tip-title" role="heading" aria-level="3">Add a place</p>
       <p class="muted">Anything you have found that is not on the list. Everyone sees it, under your
       name, straight away.</p>
       <div class="rows">
@@ -432,14 +434,14 @@
         <button class="chip" type="button" id="tip-save">Add it</button>
         <button class="chip" type="button" id="tip-cancel">Cancel</button>
       </div>
-      <p class="muted" id="tip-note" hidden></p>
+      <p class="muted" id="tip-note" role="status" hidden></p>
     </div>
 
 <div class="modal" id="welcome" hidden role="dialog" aria-modal="true" aria-labelledby="welcome-title">
     <div class="modal-card">
       <div class="phead">
         <painted-bg ground="aperol" layout="edges" count="9" seed="6180"></painted-bg>
-        <div class="phead-in"><span class="phead-title" id="welcome-title">Ciao</span></div>
+        <div class="phead-in"><span class="phead-title" id="welcome-title" role="heading" aria-level="2">Ciao</span></div>
       </div>
       <div class="modal-body">
         <p class="lead" id="welcome-lead">Ten days out of Rocca San Giovanni, 11&#x2013;20 September.
@@ -449,8 +451,9 @@
           place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
           <li><span class="hownum">2</span><span><b>Everyone sees everyone&#x2019;s.</b> Coloured initials beside each heart show who likes what; the <b>Popular</b> chip sorts by how many of you agree; the map shows where it
           all is.</span></li>
-          <li><span class="hownum">3</span><span><b>Calendar is the plan.</b> One shared sheet for the ten days. Put a place into a
-            day &#x2014; it shows who added it &#x2014; and tap <b>Book it</b> once it is confirmed.</span></li>
+          <li><span class="hownum">3</span><span><b>Calendar is the plan.</b> One shared sheet for the ten days. Drop in a rough
+            idea &#x2014; Eat out, Beach &#x2014; then <b>Confirm a place</b> once the hearts are in,
+            and <b>Booked?</b> once the table is called.</span></li>
         </ul>
         <div class="row" id="welcome-name-row" hidden>
           <input id="welcome-name" type="text" maxlength="24" placeholder="Your first name"

@@ -38,7 +38,11 @@
 @media (prefers-reduced-motion:reduce){ :root{ --dur-fast:0s; --dur-base:0s } }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* the hidden attribute must beat every display: rule below - .chip and .cta are inline-flex,
+   which used to win and leave "hidden" buttons on screen */
+[hidden]{display:none!important}
+html{-webkit-tap-highlight-color:transparent}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0; background:var(--paper); color:var(--ink);
      font:var(--w-reg) var(--t-body)/var(--lead-body) var(--font-sans);
      -webkit-font-smoothing:antialiased}
@@ -50,9 +54,12 @@ h3{font-size:var(--t-h3); line-height:var(--lead-snug)}
 p{margin:0}
 b{font-weight:var(--w-bold)}
 a{color:var(--pool)}
-a:hover{color:var(--pool-deep)}
+@media (hover:hover){a:hover{color:var(--pool-deep)}}
 button{font:inherit; cursor:pointer}
 :focus-visible{outline:2px solid var(--pool); outline-offset:2px}
+/* the pool ring vanishes on the colour fields; cream is 6:1 on all of them */
+.tile :focus-visible, .tile:focus-visible, .chip[aria-pressed="true"]:focus-visible,
+.tab[aria-selected="true"]:focus-visible, .maplock[aria-pressed="true"]:focus-visible{outline-color:var(--cream)}
 .shell{max-width:var(--shell); margin:0 auto; padding:0 var(--gutter)}
 .col{max-width:var(--read); display:flex; flex-direction:column; gap:var(--s3)}
 .kicker{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
@@ -83,16 +90,17 @@ button{font:inherit; cursor:pointer}
 
 /* ---------------- tabs ---------------- */
 .tabs{position:sticky; top:0; z-index:20; background:rgba(246,239,227,.92);
-      backdrop-filter:blur(14px); border-bottom:1px solid var(--line)}
+      -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border-bottom:1px solid var(--line)}
 .tabs-in{max-width:var(--shell); margin:0 auto; padding:var(--s3) var(--gutter);
          display:flex; gap:var(--s2); overflow-x:auto}
 .tab{white-space:nowrap; min-height:var(--hit); padding:9px 13px; border:1px solid var(--line);
      border-radius:var(--r-pill); background:var(--paper-2); color:var(--ink);
      font-size:var(--t-meta); transition:background var(--dur-fast) var(--ease),
      border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease)}
-.tab:hover{border-color:var(--pool); color:var(--pool-deep)}
-.tab[aria-selected="true"]{background:var(--pool); border-color:var(--pool); color:var(--peach)}
+@media (hover:hover){.tab:hover{border-color:var(--pool); color:var(--pool-deep)}}
+.tab[aria-selected="true"]{background:var(--pool-deep); border-color:var(--pool-deep); color:var(--peach)}
 .tab .c{font-variant-numeric:tabular-nums; opacity:.75; margin-left:5px}
+.tab[aria-selected="true"] .c{opacity:1}
 .view{padding:var(--s7) 0 var(--s9); display:flex; flex-direction:column; gap:var(--s6)}
 .view[hidden]{display:none}
 
@@ -101,7 +109,7 @@ button{font:inherit; cursor:pointer}
        padding:var(--pad-panel); display:flex; flex-direction:column; gap:var(--s3)}
 .sunk{background:var(--shade); border:1px solid var(--line); border-radius:var(--r-card);
       padding:var(--pad-panel); display:flex; flex-direction:column; gap:var(--s3)}
-.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(var(--card-min),100%),1fr)); gap:var(--s4)}
 .facts{display:flex; flex-wrap:wrap; gap:var(--s3) var(--s7)}
 .fact{display:flex; flex-direction:column; gap:var(--s1)}
 .fact .v{font-family:var(--font-serif); font-size:var(--t-h3); font-variant-numeric:tabular-nums}
@@ -113,17 +121,18 @@ button{font:inherit; cursor:pointer}
 .search{flex:1 1 260px; min-height:var(--hit); padding:9px 12px; font:inherit;
         font-size:var(--t-body); color:var(--ink); background:var(--paper-2);
         border:1px solid var(--line); border-radius:var(--r-control)}
-.search:focus{border-color:var(--pool); outline:none}
+.search:focus{border-color:var(--pool)}
 .chip{min-height:var(--hit); padding:var(--s2) 13px; border:1px solid var(--line);
       border-radius:var(--r-pill); background:var(--paper-2); color:var(--ink);
       font-size:var(--t-meta); display:inline-flex; align-items:center; gap:var(--s2);
       transition:background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
       color var(--dur-fast) var(--ease)}
-.chip:hover{border-color:var(--c,var(--pool))}
-.chip[aria-pressed="true"]{background:var(--c,var(--pool)); border-color:var(--c,var(--pool)); color:var(--peach)}
+@media (hover:hover){.chip:hover{border-color:var(--c,var(--pool))}}
+.chip[aria-pressed="true"]{background:var(--c,var(--pool-deep)); border-color:var(--c,var(--pool-deep)); color:var(--peach)}
 .chip .dot{width:8px; height:8px; border-radius:50%; background:var(--c,var(--pool)); flex:0 0 auto}
 .chip[aria-pressed="true"] .dot{background:var(--peach); opacity:.7}
 .chip em{font-style:normal; font-variant-numeric:tabular-nums; opacity:.72}
+.chip[aria-pressed="true"] em{opacity:1}
 .chip.zero{opacity:.38}
 .share{margin-top:var(--s3); display:flex; flex-wrap:wrap; gap:var(--s2); align-items:flex-start}
 .share .sharebox{flex-basis:100%}
@@ -136,7 +145,7 @@ button{font:inherit; cursor:pointer}
 .maplock{position:absolute; right:10px; top:10px; z-index:800; min-height:44px; padding:6px 14px;
          border:1px solid var(--line); border-radius:var(--r-pill); background:var(--paper-2); color:var(--ink);
          font:inherit; font-size:var(--t-meta); font-weight:var(--w-bold)}
-.maplock[aria-pressed="true"]{background:var(--pool); border-color:var(--pool); color:var(--peach)}
+.maplock[aria-pressed="true"]{background:var(--pool-deep); border-color:var(--pool-deep); color:var(--peach)}
 @media (max-width:640px){
   .map{height:300px}
   .phead{min-height:104px}
@@ -151,7 +160,7 @@ button{font:inherit; cursor:pointer}
 .modal{position:fixed; inset:0; z-index:80; background:rgba(36,30,26,.55); display:flex;
        align-items:center; justify-content:center; padding:var(--s4)}
 .modal[hidden]{display:none}
-.modal-card{width:min(100%,560px); max-height:92vh; overflow:auto; background:var(--paper-2);
+.modal-card{width:min(100%,560px); max-height:min(92vh,100%); overflow:auto; background:var(--paper-2);
             border:1px solid var(--line); border-radius:var(--r-card); display:flex; flex-direction:column}
 .modal-card .phead{margin:0; border-radius:var(--r-card) var(--r-card) 0 0}
 .modal-body{padding:var(--s4); display:flex; flex-direction:column; gap:var(--s3)}
@@ -164,10 +173,11 @@ button{font:inherit; cursor:pointer}
 .howto li:nth-child(3) .hownum{background:var(--olive)}
 .modal input{width:100%; min-height:var(--hit); padding:9px 12px; font:inherit;
              border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper)}
-.modal input:focus{border-color:var(--pool); outline:none}
+.modal input:focus{border-color:var(--pool)}
 .chip.go{background:var(--pool); border-color:var(--pool); color:var(--peach); font-weight:var(--w-bold)}
 .chip.go:disabled{opacity:.45}
 .linkbtn{border:0; background:none; color:var(--ink-2); font:inherit; font-size:var(--t-meta);
+        min-height:44px;
          text-decoration:underline; text-underline-offset:3px; padding:6px 4px; cursor:pointer}
 .linkbtn[hidden]{display:none}
 .pin{width:14px; height:14px; border-radius:var(--r-pill); background:var(--pin,var(--eat-deep));
@@ -175,9 +185,9 @@ button{font:inherit; cursor:pointer}
 .pin.approx{background:var(--paper-2); border:3px solid var(--pin,var(--eat-deep))}
 .pin.house{width:18px; height:18px; background:var(--ink); border-color:var(--peach)}
 .pin.liked{outline:3px solid var(--fig); outline-offset:1px}
-.leaflet-popup-content{font:inherit; font-size:14px; line-height:1.4}
-.leaflet-popup-content b{display:block; font-family:var(--font-serif); font-size:17px}
-.leaflet-popup-content a{color:var(--pool)}
+#map .leaflet-popup-content{font:inherit; font-size:14px; line-height:1.4}
+#map .leaflet-popup-content b{display:block; font-family:var(--font-serif); font-size:17px}
+#map .leaflet-popup-content a{color:var(--pool)}
 .sharebox{display:flex; flex-direction:column; gap:var(--s2); margin-top:var(--s2); padding:var(--s3);
           border:1px solid var(--line-soft); border-radius:var(--r-control); background:var(--paper)}
 .sharebox[hidden]{display:none}
@@ -188,7 +198,7 @@ button{font:inherit; cursor:pointer}
 .sharebox textarea{width:100%; padding:9px 12px; font:inherit; font-size:var(--t-meta); line-height:1.45;
                    border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2); resize:vertical}
 .sharebox textarea[hidden]{display:none}
-.sharebox input:focus{border-color:var(--pool); outline:none}
+.sharebox input:focus{border-color:var(--pool)}
 .sharebox a.chip{text-decoration:none}
 .sharebox a.chip[aria-disabled="true"]{opacity:.45; pointer-events:none}
 .sharebox .chip:disabled{opacity:.45; cursor:not-allowed}
@@ -199,12 +209,12 @@ button{font:inherit; cursor:pointer}
 .sheet{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); width:min(92vw,480px); z-index:1200;
        background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:var(--r-card);
        padding:var(--s4); display:flex; flex-direction:column; gap:var(--s2);
-       max-height:calc(100dvh - 150px); overflow-y:auto}
+       max-height:calc(100vh - 150px); max-height:calc(100dvh - 150px); overflow-y:auto}
 .sheet[hidden]{display:none}
 .sheet-t{font-family:var(--font-serif); font-size:var(--t-h3)}
 .sheet input{flex:1 1 160px; min-height:var(--hit); padding:9px 12px; font:inherit;
              border:1px solid var(--line); border-radius:var(--r-control); background:var(--paper-2)}
-.sheet input:focus{border-color:var(--pool); outline:none}
+.sheet input:focus{border-color:var(--pool)}
 .rows{display:flex; flex-direction:column; gap:var(--s2)}
 /* the sheet is a flex column and `.sheet input` sets flex:1, which would stretch each of these
    to fill it - a stacked form has to opt out of that explicitly */
@@ -212,7 +222,7 @@ button{font:inherit; cursor:pointer}
        font:inherit; font-size:var(--t-body); border:1px solid var(--line);
        border-radius:var(--r-control); background:var(--paper-2); color:var(--ink); resize:vertical}
 .rows textarea{min-height:74px}
-.rows input:focus,.rows textarea:focus{border-color:var(--pool); outline:none}
+.rows input:focus,.rows textarea:focus{border-color:var(--pool)}
 .linkbox{display:flex; flex-direction:column; gap:var(--s2); padding-top:var(--s2); border-top:1px dashed var(--line)}
 .linkbox[hidden]{display:none}
 .likedby{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; max-width:120px}
@@ -222,16 +232,16 @@ button{font:inherit; cursor:pointer}
      font-size:12.5px; font-weight:var(--w-bold); line-height:1; cursor:default}
 .swlabel{font-size:var(--t-meta); margin:0}
 .swatches{display:flex; flex-wrap:wrap; gap:8px}
-.sw{width:32px; height:32px; border-radius:50%; background:var(--sw); border:3px solid transparent;
+.sw{width:40px; height:40px; border-radius:50%; background:var(--sw); border:3px solid transparent;
     cursor:pointer; padding:0; transition:transform var(--dur-fast) var(--ease)}
-.sw:hover{transform:scale(1.08)}
+@media (hover:hover){.sw:hover{transform:scale(1.08)}}
 .sw[aria-pressed="true"]{border-color:var(--paper-2); outline:2px solid var(--ink); outline-offset:1px}
 .count{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
        letter-spacing:var(--tr-label); color:var(--ink-2); display:flex; align-items:center;
        gap:var(--s3); flex-wrap:wrap; padding:var(--s1) 0}
-.clear{border:0; background:none; color:var(--pool); font:inherit; font-size:var(--t-meta);
+.clear{border:0; background:none; color:var(--pool-deep); font:inherit; font-size:var(--t-meta);
        font-weight:var(--w-bold); text-transform:uppercase; letter-spacing:var(--tr-label);
-       padding:0; text-decoration:underline}
+       padding:0; text-decoration:underline; min-height:44px; display:inline-flex; align-items:center}
 .clear[hidden]{display:none}
 
 /* ---------------- painted section banners ----------------
@@ -265,8 +275,10 @@ button{font:inherit; cursor:pointer}
       border:1px solid rgba(250,243,229,.28); color:var(--cream);
       transition:transform var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease)}
 .tile[hidden]{display:none}
-.tile{background:var(--tile,var(--do-field)); cursor:pointer}
-.tile:hover{transform:translateY(-3px); filter:brightness(.88)}
+.tile{background:var(--tile,var(--do-field)); cursor:pointer;
+      /* 262 tiles are built at load: let the browser skip laying out the ones off screen */
+      content-visibility:auto; contain-intrinsic-size:auto 260px}
+@media (hover:hover){.tile:hover{transform:translateY(-3px); filter:brightness(.88)}}
 .thead{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s3)}
 .thead-l{display:flex; flex-direction:column; gap:var(--s2); min-width:0}
 .tcat{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
@@ -275,7 +287,7 @@ button{font:inherit; cursor:pointer}
 .tname{font-family:var(--font-serif); font-size:clamp(24px,2.6vw,30px); line-height:1.14;
        letter-spacing:var(--tr-heading); color:var(--cream); text-decoration:none; text-wrap:balance;
        border:0; background:none; padding:0; margin:0; text-align:left; cursor:pointer; font-weight:400}
-.tname:hover{text-decoration:underline}
+@media (hover:hover){.tname:hover{text-decoration:underline}}
 .tflag{font-size:var(--t-meta); letter-spacing:.1em; text-transform:uppercase; color:var(--cream);
        opacity:.85}
 .tnew{align-self:flex-start; font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
@@ -295,14 +307,15 @@ button{font:inherit; cursor:pointer}
 .tdesc{font-size:var(--t-body); color:var(--ink); flex:1; text-wrap:pretty}
 .tfoot{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s4)}
 .cta{font-size:var(--t-meta); font-weight:var(--w-bold); text-transform:uppercase;
-     letter-spacing:var(--tr-label); text-decoration:none; display:inline-flex; gap:var(--s2)}
+     letter-spacing:var(--tr-label); text-decoration:none; display:inline-flex; gap:var(--s2);
+     min-height:44px; align-items:center}
 .cta{color:var(--tile,var(--do-field))}
-.cta:hover{text-decoration:underline}
+@media (hover:hover){.cta:hover{text-decoration:underline}}
 .heart{width:var(--hit); height:var(--hit); flex:0 0 auto; display:grid; place-items:center;
        background:none; border:1px solid transparent; border-radius:var(--r-control);
        color:var(--cream); opacity:.8;
        transition:opacity var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease)}
-.heart:hover{opacity:1; border-color:rgba(250,243,229,.5)}
+@media (hover:hover){.heart:hover{opacity:1; border-color:rgba(250,243,229,.5)}}
 .heart.on{opacity:1; background:var(--peach); border-color:var(--peach); color:var(--mine,var(--fig))}
 .heart svg{width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2.2}
 .heart.on svg{fill:currentColor}
@@ -351,14 +364,14 @@ main{position:relative; z-index:1}
 #place .modal-body{gap:var(--s3)}
 
 /* ---------------- calendar ---------------- */
-.days{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
+.days{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(var(--card-min),100%),1fr)); gap:var(--s4)}
 .day{background:var(--paper-2); border:1px solid var(--line); border-radius:var(--r-card);
      padding:var(--pad-panel); display:flex; flex-direction:column; gap:var(--s3)}
 .day.weekend{border-left:3px solid var(--sky)}
 .day.mon{border-left:3px solid var(--terracotta)}
 .dhead{display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap}
 .ddate{font-family:var(--font-serif); font-size:var(--t-h3)}
-.dnote{font-size:var(--t-meta); color:var(--terracotta)}
+.dnote{font-size:var(--t-meta); color:var(--eat-deep)}
 /* the calendar's own "did that save?" line - syncNote lives in the Activities panel, which is
    hidden whenever anyone is actually on this tab */
 .plannote{font-size:var(--t-meta); margin:0; align-self:flex-start; color:var(--ink);
@@ -366,51 +379,69 @@ main{position:relative; z-index:1}
 .plannote[hidden]{display:none}
 .dfixed{display:flex; flex-wrap:wrap; gap:6px}
 .fx{display:inline-flex; align-items:center; padding:3px 10px; border-radius:999px;
-    font-size:var(--t-meta); line-height:1.3; color:var(--peach); background:var(--olive)}
+    font-size:var(--t-meta); line-height:1.3; color:var(--peach); background:var(--olive-deep)}
 .fx-bday{background:var(--fig)}
 .fx-leave{background:var(--ink-2)}
 .fx-fest{background:var(--pool-deep)}
 .slots{display:flex; flex-direction:column; gap:var(--s2)}
-.slot{display:flex; flex-direction:column; gap:5px; padding:var(--s3);
+/* seven slots a day, so each is one row: label on the left, what is in it (or "+ Add") on the
+   right, and the picker wrapping onto its own line underneath when open */
+.slot{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s2) var(--s3); padding:var(--s2) var(--s3);
       border:1px solid var(--line-soft); border-radius:var(--r-control); background:var(--paper)}
+.slot .label{flex:0 0 74px; margin:0}
+.slot.k-eat .label{color:var(--eat-deep)}
+.slot.k-do .label{color:var(--do-deep)}
 .slot.filled-full{background:var(--pool-pale); border-color:var(--pool)}
-.slot.blocked{opacity:.45}
+.slot .slotrow{flex:1 1 160px}
+.slot .addbtn{flex:1 1 120px; text-align:left; min-height:44px}
+.slot .picker{flex:1 1 100%}
 .slotrow{display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s2)}
 .splace{font-size:var(--t-body)}
 .sby{color:var(--who,var(--fig)); font-weight:var(--w-bold)}
 .slotbtns{display:flex; align-items:center; gap:4px; flex:0 0 auto}
 .bk{min-height:44px; padding:4px 12px; border:1px solid var(--line); border-radius:var(--r-pill);
     background:transparent; color:var(--ink-2); font:inherit; font-size:var(--t-meta); cursor:pointer}
-.bk[aria-pressed="true"]{background:var(--olive); border-color:var(--olive); color:var(--peach)}
+.bk[aria-pressed="true"]{background:var(--olive-deep); border-color:var(--olive-deep); color:var(--peach)}
 .slotrow.bkd .splace{font-weight:var(--w-bold)}
+/* a rough idea's next step is choosing the place, not booking it */
+.cf{min-height:44px; padding:4px 12px; border:1px solid var(--pool); border-radius:var(--r-pill);
+    background:transparent; color:var(--pool-deep); font:inherit; font-size:var(--t-meta); cursor:pointer}
+@media (hover:hover){.cf:hover{background:var(--pool-pale)}}
+/* the quick strip at the top of the picker: rough ideas and the at-the-house entries */
+.qp{display:flex; flex-wrap:wrap; gap:6px}
+.q{min-height:44px; padding:6px 12px; border:1px solid var(--line); border-radius:var(--r-pill);
+   background:var(--paper-2); color:var(--ink); font:inherit; font-size:var(--t-meta); cursor:pointer;
+   transition:border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease)}
+@media (hover:hover){.q:hover{border-color:var(--pool); color:var(--pool-deep)}}
+.q em{font-style:normal; color:var(--ink-2); margin-left:4px}
 .splace .where{display:block; color:var(--ink-2); font-size:var(--t-meta); font-variant-numeric:tabular-nums}
 .addbtn{min-height:36px; padding:5px var(--s3); border:1px dashed var(--line);
         border-radius:var(--r-control); background:transparent; color:var(--ink-2);
         font-size:var(--t-meta); transition:border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease)}
-.addbtn:hover:not(:disabled){border-color:var(--pool); color:var(--pool-deep); border-style:solid}
+@media (hover:hover){.addbtn:hover:not(:disabled){border-color:var(--pool); color:var(--pool-deep); border-style:solid}}
 .addbtn:disabled{cursor:not-allowed; color:var(--ink-3); border-color:var(--line-soft)}
-.rm{min-height:36px; min-width:36px; border:1px solid transparent; border-radius:var(--r-control);
+.rm{min-height:44px; min-width:44px; border:1px solid transparent; border-radius:var(--r-control);
     background:none; color:var(--ink-3); font-size:var(--t-lead); line-height:1; padding:0 var(--s2);
     transition:color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease)}
-.rm:hover{color:var(--terracotta); border-color:var(--line)}
+@media (hover:hover){.rm:hover{color:var(--terracotta); border-color:var(--line)}}
 .picker{display:flex; flex-direction:column; gap:var(--s2); padding:var(--s3);
         background:var(--shade); border:1px solid var(--line); border-radius:var(--r-control)}
 .picker input{width:100%; min-height:var(--hit); padding:9px 12px; font:inherit;
               font-size:var(--t-body); color:var(--ink); background:var(--paper-2);
               border:1px solid var(--line); border-radius:var(--r-control)}
-.picker input:focus{border-color:var(--pool); outline:none}
+.picker input:focus{border-color:var(--pool)}
 .plist{display:flex; flex-direction:column; gap:var(--s1); max-height:340px; overflow-y:auto;
        overscroll-behavior:contain}
-.pick{text-align:left; padding:9px var(--s3); border:1px solid var(--line-soft);
+.pick{text-align:left; padding:9px var(--s3); border:1px solid var(--line-soft); min-height:44px; align-items:center;
       border-radius:var(--r-control); background:var(--paper-2); color:var(--ink);
       font-size:var(--t-meta); display:flex; justify-content:space-between; gap:var(--s3);
       transition:border-color var(--dur-fast) var(--ease)}
-.pick:hover{border-color:var(--pool)}
+@media (hover:hover){.pick:hover{border-color:var(--pool)}}
 .pick .t{color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums}
-.pickmsg{font-size:var(--t-meta); color:var(--ink-3); padding:var(--s2) 0}
+.pickmsg{font-size:var(--t-meta); color:var(--ink-2); padding:var(--s2) 0}
 
 /* ---------------- things to know ---------------- */
-.know{display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--card-min),1fr)); gap:var(--s4)}
+.know{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(var(--card-min),100%),1fr)); gap:var(--s4)}
 .kitem{background:var(--paper-2); border:1px solid var(--line); border-left:3px solid var(--c,var(--ochre));
        border-radius:var(--r-card); padding:var(--pad-card); display:flex; flex-direction:column; gap:var(--s2)}
 .kitem h4{font-size:var(--t-lead); line-height:1.3}
@@ -423,19 +454,49 @@ footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter
 /* ---------------- Leaflet, brought into the house style ----------------
    No shadows, Karla for controls, paper surfaces, 1px --line borders, 44px hit targets,
    12.5px floor on the attribution, and a limestone wash over the basemap tiles. */
-.leaflet-container{font-family:var(--font-sans); background:var(--shade)}
-.leaflet-tile-pane{filter:sepia(.3) saturate(.55) brightness(1.02)}
-.leaflet-bar{box-shadow:none; border:1px solid var(--line); border-radius:var(--r-control); overflow:hidden}
-.leaflet-bar a,.leaflet-bar a:hover,.leaflet-bar a:focus{width:44px; height:44px; line-height:44px;
+#map.leaflet-container{font-family:var(--font-sans); background:var(--shade)}
+#map .leaflet-tile-pane{filter:sepia(.3) saturate(.55) brightness(1.02)}
+#map .leaflet-bar{box-shadow:none; border:1px solid var(--line); border-radius:var(--r-control); overflow:hidden}
+#map .leaflet-bar a,#map .leaflet-bar a:hover,#map .leaflet-bar a:focus{width:44px; height:44px; line-height:44px;
   background:var(--paper-2); color:var(--ink); border-bottom:1px solid var(--line-soft);
   font:400 22px/44px var(--font-sans)}
-.leaflet-bar a:last-child{border-bottom:0}
-.leaflet-bar a.leaflet-disabled{color:var(--ink-3); background:var(--paper)}
-.leaflet-popup-content-wrapper{background:var(--paper-2); color:var(--ink); border:1px solid var(--line);
+#map .leaflet-bar a:last-child{border-bottom:0}
+#map .leaflet-bar a.leaflet-disabled{color:var(--ink-3); background:var(--paper)}
+#map .leaflet-popup-content-wrapper{background:var(--paper-2); color:var(--ink); border:1px solid var(--line);
   border-radius:var(--r-card); box-shadow:none}
-.leaflet-popup-content{margin:14px 16px; font-size:var(--t-meta); line-height:1.45}
-.leaflet-popup-tip{background:var(--paper-2); box-shadow:none; border:1px solid var(--line); border-top:0; border-left:0}
-.leaflet-container a.leaflet-popup-close-button{color:var(--ink-2); font:400 20px/24px var(--font-sans); width:32px; height:32px; top:4px; right:4px}
-.leaflet-container .leaflet-control-attribution{background:var(--paper-2); color:var(--ink-2); font-size:12.5px;
+#map .leaflet-popup-content{margin:14px 16px; font-size:var(--t-meta); line-height:1.45}
+#map .leaflet-popup-tip{background:var(--paper-2); box-shadow:none; border:1px solid var(--line); border-top:0; border-left:0}
+#map.leaflet-container a.leaflet-popup-close-button{color:var(--ink-2); font:400 20px/24px var(--font-sans); width:32px; height:32px; top:4px; right:4px}
+#map.leaflet-container .leaflet-control-attribution{background:var(--paper-2); color:var(--ink-2); font-size:12.5px;
   padding:2px 8px; border-top-left-radius:var(--r-control); border:1px solid var(--line); border-right:0; border-bottom:0}
-.leaflet-container .leaflet-control-attribution a{color:var(--pool)}
+#map.leaflet-container .leaflet-control-attribution a{color:var(--pool)}
+
+/* ---------------- touch ---------------- */
+/* a pressed state of its own, since hover is off on touch screens */
+.tile:active{transform:scale(.985)}
+.pick:active, .q:active, .addbtn:active{background:var(--shade)}
+/* 16px is the size below which iOS zooms the page in when a box gets focus - and leaves it zoomed */
+input, textarea{font-size:16px!important}
+
+/* ---------------- phone-size and escape hatches (2026-08-30 mobile lens) ---------------- */
+/* the picker's search rides with a Cancel - a dialog needs a way out */
+.pkrow{display:flex; gap:var(--s2); align-items:center}
+.pkrow input{flex:1}
+.pkx{flex:0 0 auto; min-height:44px; padding:4px 14px; border:1px solid var(--line); border-radius:var(--r-pill);
+     background:transparent; color:var(--ink-2); font:inherit; font-size:var(--t-meta); cursor:pointer}
+@media (hover:hover){.pkx:hover{border-color:var(--terracotta); color:var(--terracotta)}}
+/* sixty tiles deep, the way back to search and filters */
+.backfilters{position:fixed; right:14px; bottom:18px; z-index:15}
+@media (max-width:640px){
+  /* all four tabs fit a 390px phone once the counts step aside */
+  .tab{padding:9px 10px}
+  .tab .c{display:none}
+  /* the descriptions are the content; 17px is the scale's reading size */
+  .tdesc, #place-desc{font-size:var(--t-lead)}
+}
+
+/* links on paper: the deep pool clears 4.5:1 at any size; --pool stays for fills */
+a{color:var(--pool-deep)}
+#map .leaflet-control-attribution a{color:var(--pool-deep)}
+/* two-letter badges when two travellers share an initial (Lauren / Lyndsey) */
+.who.w2{font-size:9.5px; letter-spacing:0}
