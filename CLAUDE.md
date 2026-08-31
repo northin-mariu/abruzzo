@@ -300,3 +300,17 @@ the store carries the index `c-3`, never a hex), Leaflet controls restyled (Karl
 44px zoom buttons, 12.5px attribution, popup as a paper card), CARTO light basemap with a sepia
 wash so the tiles sit on the limestone ground, welcome list uses numerals not glyphs, "Booked"
 is colour-carried (olive fill) with no tick mark. Keep it that way when adding UI.
+
+## 2026-08-31 – review-fix pass (after the overnight rebuild)
+- Adversarial review of the whole overnight diff found 7 confirmed issues; 6 fixed in ad91d8b, 1 accepted
+  (two-letter badge collisions – impossible with this guest list).
+- Key fixes: `planDirty` now persisted in S (offline calendar edits survive reloads and flush on
+  backgrounding); a `/picks` response with no `_plan` key is no longer treated as an empty plan;
+  worker never deletes an existing record on a full index and its migration no longer drops `_plan`;
+  `cleanName` strips all unpaired surrogates on both sides (encodeURIComponent can't throw).
+- Test state: 99 checks across five suites + reviewer harnesses (scratchpad `review2/`) + `t1fix.js`.
+- Worker v2 (fixed) is in `worker/abruzzo-picks.js` @ ad91d8b — deploy = paste into the dashboard
+  editor, or PUT to `/api/v4/accounts/<acct>/workers/scripts/abruzzo-picks/content` (multipart:
+  `metadata` `{"main_module":"abruzzo-picks.js"}` + the file; cookie auth works from any
+  dash.cloudflare.com page; preserves the PICKS binding). Deploy-day sanity check:
+  `GET /picks/_plan` returns 405 on v1, 200 on v2.
