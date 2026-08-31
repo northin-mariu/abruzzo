@@ -60,11 +60,24 @@ const json = (o, status = 200) => new Response(JSON.stringify(o), {
   status, headers: { ...CORS, 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
 });
 
+// drop unpaired surrogate halves - the 24-char cut can split an emoji, and a lone half
+// makes encodeURIComponent throw on any client that echoes the name into a URL
+function wellFormed(v) {
+  let out = '';
+  for (let i = 0; i < v.length; i++) {
+    const c = v.charCodeAt(i);
+    if (c >= 0xD800 && c <= 0xDBFF) {
+      const d = v.charCodeAt(i + 1);
+      if (d >= 0xDC00 && d <= 0xDFFF) { out += v[i] + v[i + 1]; i++; }
+    } else if (!(c >= 0xDC00 && c <= 0xDFFF)) out += v[i];
+  }
+  return out;
+}
 function cleanName(raw) {
   let v = String(raw || '');
   try { v = v.normalize('NFC'); } catch {}
   v = v.replace(INVISIBLE, '').replace(/\s+/g, ' ').trim().slice(0, 24).trim();
-  return v;
+  return wellFormed(v);
 }
 
 async function handle(request, env) {
@@ -87,7 +100,9 @@ async function handle(request, env) {
       const page = await env.PICKS.list({ prefix, cursor });
       for (const k of page.keys) {
         const n = k.name.slice(prefix.length);
-        if (n && n !== '_index' && names.length < NAMES_MAX) names.push(n);
+        // no cap here: these keys already exist, and KV lists uppercase names before
+        // underscore, so a cap made _plan exactly the key that fell off
+        if (n && n !== '_index') names.push(n);
       }
       cursor = page.list_complete ? undefined : page.cursor;
     } while (cursor);
@@ -194,11 +209,16 @@ async function handle(request, env) {
       }
       const record = { t: Date.now() };
       record[field] = value;
-      await env.PICKS.put(prefix + name, JSON.stringify(record));
+      // join the index BEFORE writing: a refusal must never delete a record that already
+      // existed, and a crash between the two writes now leaves a stub, not lost data
       if (!(await indexAdd(name))) {
-        await env.PICKS.delete(prefix + name);
-        return json({ error: 'full' }, 507);
+        const had = await env.PICKS.get(prefix + name);
+        if (had === null) return json({ error: 'full' }, 507);
+        // the record predates the full index (an orphan): re-adopt it rather than lose it
+        const idx = await readIndex();
+        if (!idx.includes(name)) { idx.push(name); await env.PICKS.put(INDEX, JSON.stringify(idx)); }
       }
+      await env.PICKS.put(prefix + name, JSON.stringify(record));
       return json({ ok: true, name, n: value.length });
     }
     if (request.method === 'DELETE') {

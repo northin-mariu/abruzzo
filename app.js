@@ -7,17 +7,30 @@
 
   /* ---------- state, persisted per browser ---------- */
   var KEY = 'abruzzo-2026';
-  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false, colour: '', fc: {}, tips: [], ops: [] };
+  var S = { short: {}, plan: {}, friends: {}, me: '', welcomed: false, colour: '', fc: {}, tips: [], ops: [], planDirty: false };
   // one rule for every way a name arrives: no leading underscore (that is the store's own
   // namespace - "_plan" is the calendar), no invisible characters, one space at most, 24 chars
+  // drop every unpaired surrogate half, anywhere - one loose half makes encodeURIComponent
+  // throw, which used to kill sync silently for a name pasted out of mangled text
+  function wellFormed(v) {
+    var out = '', i, c, d;
+    for (i = 0; i < v.length; i++) {
+      c = v.charCodeAt(i);
+      if (c >= 0xD800 && c <= 0xDBFF) {
+        d = v.charCodeAt(i + 1);
+        if (d >= 0xDC00 && d <= 0xDFFF) { out += v.charAt(i) + v.charAt(i + 1); i++; }
+      } else if (!(c >= 0xDC00 && c <= 0xDFFF)) {
+        out += v.charAt(i);
+      }
+    }
+    return out;
+  }
   function cleanName(v) {
     v = String(v == null ? '' : v);
     try { v = v.normalize('NFC'); } catch (e) {}
-    v = v.replace(/[\u0000-\u001F\u007F-\u009F\u00AD\u200B-\u200F\u2028-\u202F\u2060-\u206F\uFEFF]/g, '')
-         .replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/g, '')
-         .replace(/^[\uDC00-\uDFFF]/, '')
-         .replace(/\s+/g, ' ').trim().replace(/^[_.]+/, '').slice(0, 24).trim()
-         .replace(/[\uD800-\uDBFF]$/, '');
+    v = v.replace(/[\u0000-\u001F\u007F-\u009F\u00AD\u200B-\u200F\u2028-\u202F\u2060-\u206F\uFEFF]/g, '');
+    v = wellFormed(v).replace(/\s+/g, ' ').trim().replace(/^[_.]+/, '').slice(0, 24).trim();
+    v = wellFormed(v); // the 24-char cut can split an emoji in half
     // a name with no letter or digit in it slugs to nothing and can never sync
     return /[a-z0-9]/i.test(v) ? v : '';
   }
@@ -61,9 +74,11 @@
       if (Array.isArray(o.ops)) {
         S.ops = o.ops.filter(function (x) {
           return x && typeof x === 'object' && typeof x.day === 'number' && typeof x.slot === 'string' &&
-                 typeof x.at === 'number' && (x.e === null || (x.e && typeof x.e.id === 'string'));
+                 typeof x.at === 'number' && (x.e === null || (x.e && typeof x.e.id === 'string' && byId[x.e.id]));
         }).slice(-40);
       }
+      // an unsent calendar edit must survive a reload - phones kill background tabs constantly
+      S.planDirty = !!o.planDirty && S.ops.length > 0;
       S.welcomed = !!o.welcomed;
       if (typeof o.colour === 'number' && o.colour >= 1 && o.colour <= 7) S.colour = o.colour;
       if (o.fc && typeof o.fc === 'object') {
@@ -191,7 +206,8 @@
   // aria-modal promises the background is out of reach: keep Tab inside the card
   document.addEventListener('keydown', function (ev) {
     if (ev.key !== 'Tab') return;
-    var modal = !$('welcome').hidden ? $('welcome') : (!$('place').hidden ? $('place') : null);
+    var modal = !$('who').hidden ? $('who') : (!$('tip').hidden ? $('tip')
+              : (!$('welcome').hidden ? $('welcome') : (!$('place').hidden ? $('place') : null)));
     if (!modal) return;
     var f = [].slice.call(modal.querySelectorAll('button, [href], input, textarea')).filter(function (x) {
       return !x.hidden && !x.disabled && !x.closest('[hidden]');
@@ -611,8 +627,8 @@
     $('place').addEventListener('click', function (ev) { if (ev.target === $('place')) closePlace(); });
     document.addEventListener('keydown', function (ev) {
       if (ev.key !== 'Escape') return;
-      if (!$('place').hidden) { closePlace(); return; }
       if (!$('who').hidden) { closeWho(); return; }
+      if (!$('place').hidden) { closePlace(); return; }
       if (!$('tip').hidden) { $('tip').hidden = true; focusBack(); return; }
       if (!$('welcome').hidden && S.me) closeWelcome();
     });
@@ -824,16 +840,20 @@
     el.hidden = !msg;
     el.textContent = msg || '';
   }
-  function pushPlan() {
+  function pushPlan(keepalive) {
     if (!SYNC || !window.fetch) return;
-    planDirty = true;
-    fetchJSON(SYNC + '/picks/_plan', {
+    S.planDirty = true; save();
+    var opts = {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ids: encodePlan() })
-    }).then(function () { planDirty = false; planNote(''); S.ops = liveOps(); save(); },
+    };
+    if (keepalive) opts.keepalive = true;
+    fetchJSON(SYNC + '/picks/_plan', opts)
+      .then(function () { S.planDirty = false; planNote(''); S.ops = liveOps(); save(); },
             function () {
               // it said "it will keep trying" and then never did - pushPlan had exactly one
-              // caller, a fresh tap. planDirty stays set and the poll re-drives it.
+              // caller, a fresh tap. planDirty stays set - the poll re-drives it, and it
+              // lives in S now, so a reload no longer forgets the promise.
               planNote('Saved on this phone \u2014 it will send itself when the connection is back.');
             });
   }
@@ -871,7 +891,7 @@
     if (reassert && !noPush) pushPlan();
     return reassert;
   }
-  var planDirty = false;
+  // planDirty lives in S (persisted) so "it will send itself" survives a reload.
   /* The plan is one document that every phone rewrites in full, and KV can hand a phone a copy
      up to a minute old. So a tap is also remembered as an operation on one slot - {day, slot,
      e, at} - and put back on top of every server copy for the next three minutes (or, while
@@ -888,11 +908,13 @@
   }
   function liveOps() {
     var now = Date.now();
-    return (S.ops || []).filter(function (o) { return planDirty || (now - o.at) < OP_MS; });
+    return (S.ops || []).filter(function (o) { return S.planDirty || (now - o.at) < OP_MS; });
   }
   function replayOps(plan) {
     var changed = false;
     liveOps().forEach(function (o) {
+      // an op naming a place that left places.json would make renderCalendar throw
+      if (o.e && !byId[o.e.id]) return;
       var cur = (plan[o.day] || {})[o.slot];
       var same = (!cur && !o.e) ||
                  (cur && o.e && cur.id === o.e.id && slugName(cur.by) === slugName(o.e.by) && !!cur.booked === !!o.e.booked);
@@ -907,14 +929,14 @@
     function apply() { fn(); recordOp(day, slot); save(); renderCalendar(); renderTiles(); }
     if (!SYNC || !window.fetch) { apply(); return; }
     fetchJSON(SYNC + '/picks').then(function (all) {
-      applyPlan(all ? all._plan : undefined, true); // server first, our recent taps back on top
+      if (all && Array.isArray(all._plan)) applyPlan(all._plan, true); // server first, our recent taps back on top
       apply();
       pushPlan();
     }, function () {
       // a dropped read must not become a blind write: keep the tap, mark it unsent, and the
       // next successful poll merges it into whatever the server has by then
       apply();
-      planDirty = true;
+      S.planDirty = true; save();
       planNote('Saved on this phone \u2014 it will send itself when the connection is back.');
     });
   }
@@ -1509,8 +1531,13 @@
       // the server's plan, with this phone's recent and unsent taps put back on top; applyPlan
       // sends them again by itself, so an outage never ends in a blind overwrite. After the
       // people, so the plan's name slugs resolve against fresh friends on the very first pull.
-      var reassert = applyPlan(all._plan);
-      if (planDirty && !reassert) { planDirty = false; planNote(''); }
+      // no _plan key at all (a wiped store, a half-migrated index) is not "the plan is
+      // empty" - a deliberately emptied plan still arrives as _plan: []
+      var reassert = false;
+      if (Array.isArray(all._plan)) {
+        reassert = applyPlan(all._plan);
+        if (S.planDirty && !reassert) { S.planDirty = false; save(); planNote(''); }
+      }
       if (changed) { save(); renderFriendChips(); renderTiles(); }
       syncOk = true;
       if (dirty && !syncTimer) pushPicks();
@@ -1591,8 +1618,9 @@
       pushPicks();
     });
     document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible') { pullPicks(true); pullTips(); }
-      else if (dirty) { clearTimeout(syncTimer); syncTimer = null; pushNow(true); }
+      if (document.visibilityState === 'visible') { pullPicks(true); pullTips(); return; }
+      if (dirty) { clearTimeout(syncTimer); syncTimer = null; pushNow(true); }
+      if (S.planDirty) pushPlan(true); // pocketed mid-edit must not hold the calendar hostage
     });
     // Poll every 60s, not 30s, and fetch tips only every other tick. Each /picks and /tips call
     // costs a KV *list* on the worker and the free plan allows 1,000 lists a day - at 30s with
