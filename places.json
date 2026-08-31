@@ -4846,5 +4846,24 @@
   "lon": 13.92388,
   "geo": "exact",
   "added": "2026-08-31"
+ },
+ {
+  "id": "pinsa-making-with-vero",
+  "name": "Neapolitan-fusion pinsa making with Vero",
+  "town": "Butterfly Cave",
+  "cat": "house",
+  "catLabel": "At the house",
+  "mins": 0,
+  "desc": "The pinsa is Roman and Naples has strong views about fusion, so this is strictly a house-rules event: dough proved by the pool, stretched on the terrace, toppings from whatever the market run brought back. Chef Vero will quote hydration percentages with total confidence. Nobody calls it “basically pizza” — not within 200 km of Naples, and never to the chef.",
+  "flag": "Vero’s masterclass",
+  "address": "Rocca San Giovanni CH, Italy",
+  "website": null,
+  "colour": "#5BA8C8",
+  "added": "2026-08-31",
+  "mapQuery": "Rocca San Giovanni CH, Italy",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rocca+San+Giovanni+CH%2C+Italy",
+  "lat": null,
+  "lon": null,
+  "geo": "none"
  }
 ]
