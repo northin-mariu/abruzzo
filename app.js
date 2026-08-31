@@ -398,7 +398,7 @@
     else if (group === 'do') bits.push('out and about');
     else if (group === 'new') bits.push('just added');
     else if (group === 'short') bits.push('your hearts');
-    else if (group === 'votes') bits.push('popular first');
+    else if (group === 'votes') bits.push('group hearts');
     else if (group.indexOf('friend:') === 0) bits.push(group.slice(7) + "'s hearts");
     var cats = Object.keys(active);
     if (cats.length) bits.push(cats.length + (cats.length === 1 ? ' category' : ' categories'));
@@ -456,11 +456,11 @@
       });
       $('map').appendChild(btn);
     }
-    // CARTO's light basemap: quiet greys, so the category-coloured pins and the paper frame carry
-    // the page; a sepia wash in site.css pulls it towards the limestone ground
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 18, subdomains: 'abcd',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &#183; &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    // OpenStreetMap's own tiles: no API key, no watermark; the sepia wash in site.css mutes
+    // their colour towards the limestone ground so the category pins still carry the map
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     L.marker([HOUSE.lat, HOUSE.lon], {
       keyboard: false, title: 'Butterfly Cave, the house',
@@ -720,6 +720,7 @@
     $('area-n').textContent = an;
   }
   function updateCounts(shown) {
+    renderTurnout();
     // the Activities badge counts what is on screen, not the shortlist -
     // a "0" next to Activities reads as "there are none".
     if (typeof shown === 'number') $('c-act').textContent = shown;
@@ -814,6 +815,7 @@
     var t = id.slice(2).replace(/-/g, ' ');
     return t.charAt(0).toUpperCase() + t.slice(1);
   }
+  function labelFor(id) { return byId[id] ? byId[id].name : (isNote(id) ? noteLabel(id) : id); }
   function encodePlan() {
     var out = [];
     DAYS.forEach(function (d) {
@@ -852,6 +854,30 @@
     if (!el) return;
     el.hidden = !msg;
     el.textContent = msg || '';
+  }
+  var undoEl = null, undoTimer = null;
+  function offerUndo(day, slot, e) {
+    if (!e) return;
+    if (!undoEl) {
+      undoEl = document.createElement('div');
+      undoEl.className = 'undo';
+      undoEl.setAttribute('role', 'status');
+      document.body.appendChild(undoEl);
+    }
+    clearTimeout(undoTimer);
+    undoEl.textContent = 'Removed \u201c' + labelFor(e.id) + '\u201d';
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'undo-btn';
+    b.textContent = 'Undo';
+    b.addEventListener('click', function () {
+      undoEl.hidden = true;
+      focusAfter = { day: day, slot: slot };
+      planChange(day, slot, function () { slotsFor(day)[slot] = { id: e.id, by: e.by, booked: !!e.booked }; });
+    });
+    undoEl.appendChild(b);
+    undoEl.hidden = false;
+    undoTimer = setTimeout(function () { undoEl.hidden = true; }, 8000);
   }
   function pushPlan(keepalive) {
     if (!SYNC || !window.fetch) return;
@@ -1002,7 +1028,7 @@
                     '" aria-label="' + (filled.booked ? 'Unmark ' : 'Mark ') + esc(nm) + ' booked, ' + sl.l + ' on ' + day.dow + ' ' + day.d +
                     '" aria-pressed="' + (filled.booked ? 'true' : 'false') + '" title="' +
                     (filled.booked ? 'Booked - tap to unmark' : 'Tap once it is booked') + '">' +
-                    (filled.booked ? 'Booked' : 'Booked?') + '</button>';
+                    (filled.booked ? '\u2713 Booked' : 'Mark booked') + '</button>';
           }
           body += '<button class="rm" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
                   '" aria-label="Remove ' + esc(nm) + ' from ' + sl.l + ' on ' + day.dow + ' ' +
@@ -1030,8 +1056,10 @@
   $('days').addEventListener('click', function (ev) {
     var rm = ev.target.closest('.rm');
     if (rm) {
-      focusAfter = { day: +rm.dataset.day, slot: rm.dataset.slot };
-      planChange(+rm.dataset.day, rm.dataset.slot, function () { delete slotsFor(+rm.dataset.day)[rm.dataset.slot]; });
+      var rd = +rm.dataset.day, rs = rm.dataset.slot, prev = slotsFor(rd)[rs];
+      focusAfter = { day: rd, slot: rs };
+      planChange(rd, rs, function () { delete slotsFor(rd)[rs]; });
+      offerUndo(rd, rs, prev);
       return;
     }
     var bk = ev.target.closest('.bk');
@@ -1282,6 +1310,21 @@
       });
       host.appendChild(b);
     })(i);
+  }
+  var GUESTS = ['Matt', 'Sam', 'Lauren', 'Lyndsey', 'Anthony', 'Frances', 'Vero'];
+  function renderTurnout() {
+    var el = $('turnout');
+    if (!el) return;
+    var have = {};
+    Object.keys(S.friends).forEach(function (n) { have[n.toLowerCase()] = 1; });
+    if (S.me && Object.keys(S.short).length) have[S.me.toLowerCase()] = 1;
+    var got = GUESTS.filter(function (g) { return have[g.toLowerCase()]; });
+    var missing = GUESTS.filter(function (g) { return !have[g.toLowerCase()]; });
+    if (!got.length) { el.hidden = true; return; }
+    el.textContent = missing.length
+      ? 'Hearts in from ' + got.length + ' of ' + GUESTS.length + ' \u2014 still to come: ' + listNames(missing) + '.'
+      : 'All ' + GUESTS.length + ' of you have hearted something \u2014 time to confirm some plans.';
+    el.hidden = false;
   }
   function renderFriendChips() {
     var host = $('groups');

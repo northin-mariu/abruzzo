@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
-<link rel="preconnect" href="https://a.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://tile.openstreetmap.org">
 <link rel="preconnect" href="https://abruzzo-picks.mattnorthin.workers.dev">
 <title>Ten days out of Rocca San Giovanni</title>
 <meta name="description" content="Everything within reach of Butterfly Cave, 11-20 September 2026. 262 places, 92 towns.">
@@ -458,7 +458,7 @@ main{position:relative; z-index:1}
 .kitem h4{font-size:var(--t-lead); line-height:1.3}
 .kitem p{font-size:var(--t-body); color:var(--ink-2)}
 
-footer{border-top:1px solid var(--line); margin-top:var(--s7)}
+footer{border-top:1px solid var(--line); margin-top:var(--s7); background:var(--paper)}
 footer .in{max-width:var(--shell); margin:0 auto; padding:var(--s6) var(--gutter) var(--s8);
            display:flex; flex-direction:column; gap:var(--s2); font-size:var(--t-meta); color:var(--ink-2)}
 
@@ -514,6 +514,21 @@ a{color:var(--pool-deep)}
 
 /* a typed note in the picker reads as an action, not a place */
 .pick-note span:first-child{color:var(--pool-deep); font-weight:var(--w-bold)}
+
+/* ---------------- ship batch (2026-08-31): picker fit, undo toast, turnout ---------------- */
+/* pj-11: the picker is a flex child of .slot - without a full-width basis it rode the same
+   row as the label and clipped its Cancel until the next relayout */
+.slot .picker{flex:1 1 100%; min-width:0; box-sizing:border-box}
+.pkrow input{min-width:0}
+.pick{min-width:0}
+.turnout{font-size:var(--t-meta); color:var(--ink-2); margin:2px 0 0}
+.undo{position:fixed; left:50%; transform:translateX(-50%); bottom:18px; z-index:90; max-width:92vw;
+      display:flex; gap:var(--s2); align-items:center; padding:4px 6px 4px 16px;
+      background:var(--ink); color:var(--paper-2); border-radius:var(--r-pill);
+      box-shadow:0 6px 20px rgba(43,36,26,.35); font-size:var(--t-meta)}
+.undo-btn{border:0; background:none; color:var(--peach); font:inherit; font-size:var(--t-meta);
+          font-weight:var(--w-bold); text-transform:uppercase; letter-spacing:var(--tr-label);
+          text-decoration:underline; min-height:44px; padding:0 12px; cursor:pointer}
 
 </style>
 </head>
@@ -575,7 +590,7 @@ a{color:var(--pool-deep)}
       <div class="panel">
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
-        appear on the cards, and the <b>Popular</b> chip sorts the list by how many of you like a place. There
+        appear on the cards, and the <b>Group &#x2665;</b> chip gathers everything anyone has hearted, most agreed first. There
         are no accounts, just your name &#x2014; your personal link sets it, and you can change it under
         Activities.</p>
       </div>
@@ -596,9 +611,9 @@ a{color:var(--pool-deep)}
         are working. The catch is that summer-season things stop the moment the month turns.</p>
       </div>
       <div class="panel">
-        <h3>Every place opens in Maps</h3>
-        <p class="muted">Tap any name, or &#x201c;open in maps&#x201d;, and Google shows you where it is,
-        what it looks like inside, and whether anyone thinks it is any good.</p>
+        <h3>Tap a name for the full story</h3>
+        <p class="muted">Every place opens into its own card &#x2014; what it is, why it made the list,
+        who&#x2019;s hearted it &#x2014; with an &#x201c;open in maps&#x201d; link for directions and photos.</p>
       </div>
     </div>
   </div>
@@ -640,7 +655,7 @@ a{color:var(--pool-deep)}
 
     <div class="col">
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
-      drive; the heart shortlists, and the name opens Maps.</p>
+      drive; the heart is your vote, and a name opens the full story &#x2014; and who&#x2019;s hearted it.</p>
     </div>
 
     <div class="panel shelf onfield">
@@ -658,8 +673,9 @@ a{color:var(--pool-deep)}
                 style="--c:var(--olive-deep)" title="Added in the last three weeks">Just added <em id="new-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Yours &#x2665; <em id="short-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--eat-deep)"
-                title="Everything anyone has hearted, most loved first">Popular <em id="votes-n">0</em></button>
+                title="Everything anyone has hearted, most loved first">Group &#x2665; <em id="votes-n">0</em></button>
       </div>
+      <p class="turnout" id="turnout" role="status" hidden></p>
       <div class="row" id="bands">
         <button class="chip" type="button" aria-pressed="true" data-band="999">Any distance</button>
         <button class="chip" type="button" aria-pressed="false" data-band="15">Within 15 min</button>
@@ -917,8 +933,8 @@ a{color:var(--pool-deep)}
 <footer>
   <div class="in">
     <p>Butterfly Cave &#x2014; Villa Grotta delle Farfalle, Rocca San Giovanni (CH). 11&#x2013;20 September 2026.</p>
-    <p>262 places across 92 towns. Built from <code>places.json</code>; drive times are
-    straight-line. Opening hours change &#x2014; phone ahead.</p>
+    <p>262 places across 92 towns, gathered for this trip. Drive times are as the crow
+    flies &#x2014; add a little. Opening hours change &#x2014; phone ahead.</p>
   </div>
 </footer>
 
@@ -969,7 +985,7 @@ a{color:var(--pool-deep)}
         <ul class="howto">
           <li><span class="hownum">1</span><span><b>Heart what you fancy.</b> Tap the heart on any
           place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
-          <li><span class="hownum">2</span><span><b>Everyone sees everyone&#x2019;s.</b> Coloured initials beside each heart show who likes what; the <b>Popular</b> chip sorts by how many of you agree; the map shows where it
+          <li><span class="hownum">2</span><span><b>Everyone sees everyone&#x2019;s.</b> Coloured initials beside each heart show who likes what; the <b>Group &#x2665;</b> chip gathers what anyone has hearted, most agreed first; the map shows where it
           all is.</span></li>
           <li><span class="hownum">3</span><span><b>Calendar is the plan.</b> One shared sheet for the ten days. Drop in a rough
             idea &#x2014; Eat out, Beach &#x2014; then <b>Confirm a place</b> once the hearts are in,
@@ -1567,7 +1583,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     else if (group === 'do') bits.push('out and about');
     else if (group === 'new') bits.push('just added');
     else if (group === 'short') bits.push('your hearts');
-    else if (group === 'votes') bits.push('popular first');
+    else if (group === 'votes') bits.push('group hearts');
     else if (group.indexOf('friend:') === 0) bits.push(group.slice(7) + "'s hearts");
     var cats = Object.keys(active);
     if (cats.length) bits.push(cats.length + (cats.length === 1 ? ' category' : ' categories'));
@@ -1625,11 +1641,11 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
       });
       $('map').appendChild(btn);
     }
-    // CARTO's light basemap: quiet greys, so the category-coloured pins and the paper frame carry
-    // the page; a sepia wash in site.css pulls it towards the limestone ground
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 18, subdomains: 'abcd',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &#183; &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    // OpenStreetMap's own tiles: no API key, no watermark; the sepia wash in site.css mutes
+    // their colour towards the limestone ground so the category pins still carry the map
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     L.marker([HOUSE.lat, HOUSE.lon], {
       keyboard: false, title: 'Butterfly Cave, the house',
@@ -1889,6 +1905,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     $('area-n').textContent = an;
   }
   function updateCounts(shown) {
+    renderTurnout();
     // the Activities badge counts what is on screen, not the shortlist -
     // a "0" next to Activities reads as "there are none".
     if (typeof shown === 'number') $('c-act').textContent = shown;
@@ -1983,6 +2000,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     var t = id.slice(2).replace(/-/g, ' ');
     return t.charAt(0).toUpperCase() + t.slice(1);
   }
+  function labelFor(id) { return byId[id] ? byId[id].name : (isNote(id) ? noteLabel(id) : id); }
   function encodePlan() {
     var out = [];
     DAYS.forEach(function (d) {
@@ -2021,6 +2039,30 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
     if (!el) return;
     el.hidden = !msg;
     el.textContent = msg || '';
+  }
+  var undoEl = null, undoTimer = null;
+  function offerUndo(day, slot, e) {
+    if (!e) return;
+    if (!undoEl) {
+      undoEl = document.createElement('div');
+      undoEl.className = 'undo';
+      undoEl.setAttribute('role', 'status');
+      document.body.appendChild(undoEl);
+    }
+    clearTimeout(undoTimer);
+    undoEl.textContent = 'Removed \u201c' + labelFor(e.id) + '\u201d';
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'undo-btn';
+    b.textContent = 'Undo';
+    b.addEventListener('click', function () {
+      undoEl.hidden = true;
+      focusAfter = { day: day, slot: slot };
+      planChange(day, slot, function () { slotsFor(day)[slot] = { id: e.id, by: e.by, booked: !!e.booked }; });
+    });
+    undoEl.appendChild(b);
+    undoEl.hidden = false;
+    undoTimer = setTimeout(function () { undoEl.hidden = true; }, 8000);
   }
   function pushPlan(keepalive) {
     if (!SYNC || !window.fetch) return;
@@ -2171,7 +2213,7 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
                     '" aria-label="' + (filled.booked ? 'Unmark ' : 'Mark ') + esc(nm) + ' booked, ' + sl.l + ' on ' + day.dow + ' ' + day.d +
                     '" aria-pressed="' + (filled.booked ? 'true' : 'false') + '" title="' +
                     (filled.booked ? 'Booked - tap to unmark' : 'Tap once it is booked') + '">' +
-                    (filled.booked ? 'Booked' : 'Booked?') + '</button>';
+                    (filled.booked ? '\u2713 Booked' : 'Mark booked') + '</button>';
           }
           body += '<button class="rm" type="button" data-day="' + day.d + '" data-slot="' + sl.k +
                   '" aria-label="Remove ' + esc(nm) + ' from ' + sl.l + ' on ' + day.dow + ' ' +
@@ -2199,8 +2241,10 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
   $('days').addEventListener('click', function (ev) {
     var rm = ev.target.closest('.rm');
     if (rm) {
-      focusAfter = { day: +rm.dataset.day, slot: rm.dataset.slot };
-      planChange(+rm.dataset.day, rm.dataset.slot, function () { delete slotsFor(+rm.dataset.day)[rm.dataset.slot]; });
+      var rd = +rm.dataset.day, rs = rm.dataset.slot, prev = slotsFor(rd)[rs];
+      focusAfter = { day: rd, slot: rs };
+      planChange(rd, rs, function () { delete slotsFor(rd)[rs]; });
+      offerUndo(rd, rs, prev);
       return;
     }
     var bk = ev.target.closest('.bk');
@@ -2451,6 +2495,21 @@ var PLACES = [{"id":"sleeping-in","name":"Sleeping in","town":"Butterfly Cave","
       });
       host.appendChild(b);
     })(i);
+  }
+  var GUESTS = ['Matt', 'Sam', 'Lauren', 'Lyndsey', 'Anthony', 'Frances', 'Vero'];
+  function renderTurnout() {
+    var el = $('turnout');
+    if (!el) return;
+    var have = {};
+    Object.keys(S.friends).forEach(function (n) { have[n.toLowerCase()] = 1; });
+    if (S.me && Object.keys(S.short).length) have[S.me.toLowerCase()] = 1;
+    var got = GUESTS.filter(function (g) { return have[g.toLowerCase()]; });
+    var missing = GUESTS.filter(function (g) { return !have[g.toLowerCase()]; });
+    if (!got.length) { el.hidden = true; return; }
+    el.textContent = missing.length
+      ? 'Hearts in from ' + got.length + ' of ' + GUESTS.length + ' \u2014 still to come: ' + listNames(missing) + '.'
+      : 'All ' + GUESTS.length + ' of you have hearted something \u2014 time to confirm some plans.';
+    el.hidden = false;
   }
   function renderFriendChips() {
     var host = $('groups');

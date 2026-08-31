@@ -55,7 +55,7 @@
       <div class="panel">
         <h3>The heart is yours &#x2014; and shareable</h3>
         <p class="muted">Hearts are saved under your name and everyone sees everyone&#x2019;s &#x2014; initials
-        appear on the cards, and the <b>Popular</b> chip sorts the list by how many of you like a place. There
+        appear on the cards, and the <b>Group &#x2665;</b> chip gathers everything anyone has hearted, most agreed first. There
         are no accounts, just your name &#x2014; your personal link sets it, and you can change it under
         Activities.</p>
       </div>
@@ -76,9 +76,9 @@
         are working. The catch is that summer-season things stop the moment the month turns.</p>
       </div>
       <div class="panel">
-        <h3>Every place opens in Maps</h3>
-        <p class="muted">Tap any name, or &#x201c;open in maps&#x201d;, and Google shows you where it is,
-        what it looks like inside, and whether anyone thinks it is any good.</p>
+        <h3>Tap a name for the full story</h3>
+        <p class="muted">Every place opens into its own card &#x2014; what it is, why it made the list,
+        who&#x2019;s hearted it &#x2014; with an &#x201c;open in maps&#x201d; link for directions and photos.</p>
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@
 
     <div class="col">
       <p class="lead">Eating and drinking, then everything you do. Filter by what it is and how far you would
-      drive; the heart shortlists, and the name opens Maps.</p>
+      drive; the heart is your vote, and a name opens the full story &#x2014; and who&#x2019;s hearted it.</p>
     </div>
 
     <div class="panel shelf onfield">
@@ -138,8 +138,9 @@
                 style="--c:var(--olive-deep)" title="Added in the last three weeks">Just added <em id="new-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="short" style="--c:var(--fig)">Yours &#x2665; <em id="short-n">0</em></button>
         <button class="chip" type="button" aria-pressed="false" data-group="votes" style="--c:var(--eat-deep)"
-                title="Everything anyone has hearted, most loved first">Popular <em id="votes-n">0</em></button>
+                title="Everything anyone has hearted, most loved first">Group &#x2665; <em id="votes-n">0</em></button>
       </div>
+      <p class="turnout" id="turnout" role="status" hidden></p>
       <div class="row" id="bands">
         <button class="chip" type="button" aria-pressed="true" data-band="999">Any distance</button>
         <button class="chip" type="button" aria-pressed="false" data-band="15">Within 15 min</button>
@@ -397,8 +398,8 @@
 <footer>
   <div class="in">
     <p>Butterfly Cave &#x2014; Villa Grotta delle Farfalle, Rocca San Giovanni (CH). 11&#x2013;20 September 2026.</p>
-    <p>{{TOTAL}} places across {{TOWNS}} towns. Built from <code>places.json</code>; drive times are
-    straight-line. Opening hours change &#x2014; phone ahead.</p>
+    <p>{{TOTAL}} places across {{TOWNS}} towns, gathered for this trip. Drive times are as the crow
+    flies &#x2014; add a little. Opening hours change &#x2014; phone ahead.</p>
   </div>
 </footer>
 
@@ -449,7 +450,7 @@
         <ul class="howto">
           <li><span class="hownum">1</span><span><b>Heart what you fancy.</b> Tap the heart on any
           place. It is saved under your name &#x2014; no account, nothing to sign up for.</span></li>
-          <li><span class="hownum">2</span><span><b>Everyone sees everyone&#x2019;s.</b> Coloured initials beside each heart show who likes what; the <b>Popular</b> chip sorts by how many of you agree; the map shows where it
+          <li><span class="hownum">2</span><span><b>Everyone sees everyone&#x2019;s.</b> Coloured initials beside each heart show who likes what; the <b>Group &#x2665;</b> chip gathers what anyone has hearted, most agreed first; the map shows where it
           all is.</span></li>
           <li><span class="hownum">3</span><span><b>Calendar is the plan.</b> One shared sheet for the ten days. Drop in a rough
             idea &#x2014; Eat out, Beach &#x2014; then <b>Confirm a place</b> once the hearts are in,

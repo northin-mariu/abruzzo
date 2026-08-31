@@ -103,7 +103,7 @@ doc = ('<!doctype html>\n<html lang="en">\n<head>\n'
        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
        # the map's two origins and the worker: start their handshakes while the HTML is still loading
        '<link rel="preconnect" href="https://unpkg.com" crossorigin>\n'
-       '<link rel="preconnect" href="https://a.basemaps.cartocdn.com">\n'
+       '<link rel="preconnect" href="https://tile.openstreetmap.org">\n'
        '<link rel="preconnect" href="https://abruzzo-picks.mattnorthin.workers.dev">\n'
        '<title>Ten days out of Rocca San Giovanni</title>\n'
        '<meta name="description" content="Everything within reach of Butterfly Cave, '
