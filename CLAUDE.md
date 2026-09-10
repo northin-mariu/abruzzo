@@ -314,3 +314,36 @@ is colour-carried (olive fill) with no tick mark. Keep it that way when adding U
   `metadata` `{"main_module":"abruzzo-picks.js"}` + the file; cookie auth works from any
   dash.cloudflare.com page; preserves the PICKS binding). Deploy-day sanity check:
   `GET /picks/_plan` returns 405 on v1, 200 on v2.
+
+## Trip logistics state (2026-09-06) — pointers, not a diary
+
+The plan and the site are two different things. The site is this repo; the *logistics* live in:
+- **Notion "Abruzzo Outreach"** (`collection://98651d64-b42a-45f6-a566-a15a47501ee3`) — every
+  winery/distillery/driver contacted, with Status/Price/Next. 57 rows; 10 yes, 35 silent.
+- **Memory `abruzzo-trip-plan-state`** (`~/.claude/projects/-Users-mattnorthin/memory/`) — the
+  condensed decisions, every booking phone number, cake shops, family meet-up, money and villa admin.
+- **Google Calendar** event `dh18g1mrhusv55e7o9fpsvajgc` (Fri 18) — the Termoli day with train times.
+- **`supremo` skill** — live plan/hearts from the worker: `python3 ~/.claude/skills/supremo/supremo.py`.
+
+Decisions that affect the site's Calendar data (`_plan`) and should not be re-argued:
+- **Wed 16 wine day is DIY, not a package:** Cantine Mucci 12:30 → Jannamico shop, Corso Trento e
+  Trieste 23 → La Vinarte 18:00 → dinner → midnight cake. All ≤15 min from the house. borGO's
+  €230pp "Birthday Barrel Run" was declined. Driver: ask Executive NCC for per-transfer pricing.
+- **Fri 18 = Termoli** with Aunty Maria & Ross (train from Fossacesia–Torino di Sangro, Cala Sveva
+  beach club, back for Trabocco Punta Isolata). Vieste is out (3 h each way, festa clash).
+- **Sat 12 / Sun 13 = markets** (Ortona + Lanciano Saturday market; Lanciano Mercantico Sunday).
+  Sun 13 is no longer an empty day. Vintage shopping goes on Monday's Pescara run (Welcome to Storia).
+- **Three plan entries are wrong and need fixing in `_plan`:** Il Podere del Carlone (Mon 14) is in
+  Vasto and the Monday arrivals land 20:40 — swap for something late-friendly near the house;
+  Pizzeria il Coccodrillo (Thu 17 "lunch") is dinner-only — Thursday is Forno Zulli takeaway on the
+  beach; Agriturismo Caniloro (Wed 16) may be closed Wednesdays — confirm before it stays.
+- **Nothing is booked** as of 6 Sept: both trabocchi, Caniloro, Clemente (Sulmona, Sun 20), a
+  Lanciano table for the Ermal Meta night (Tue 15), the two cakes (order by Fri 11), La Vinarte
+  (needs Matt's mobile), Mucci, the Termoli umbrellas. Drafts exist; Matt sends.
+- **Trattoria delle Frapa** name checked 2026-09-10: it is spelt Frapa (trattoriadellefrapa.com), website and
+  phone added to the tile. Still possible: Forno Zulli's coccodrillo and a Vasto scapece stop (offered 3 Sept).
+- **Live check 2026-09-10:** site 200, map tiles clean (no watermark), worker on v2, hearts from 6 of 7, 31 plan
+  entries. Eight plan notes are by a phone named "Reviewer" (x- typed notes, trip-plausible) — Matt to say whose.
+- **Supermarkets added 2026-09-10** as Provisions (`larder`): Spazio Conad Lanciano (the big shop,
+  open Sun 9–21, on the road in from the airport), Eurospin Rocca San Giovanni (5 min, basics),
+  Conad San Vito Chietino (top-ups), Coop Lanciano (backup). Geocoded, built, pushed.
