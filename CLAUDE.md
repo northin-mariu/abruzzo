@@ -343,7 +343,7 @@ Decisions that affect the site's Calendar data (`_plan`) and should not be re-ar
 - **Trattoria delle Frapa** name checked 2026-09-10: it is spelt Frapa (trattoriadellefrapa.com), website and
   phone added to the tile. Still possible: Forno Zulli's coccodrillo and a Vasto scapece stop (offered 3 Sept).
 - **Live check 2026-09-10:** site 200, map tiles clean (no watermark), worker on v2, hearts from 6 of 7, 31 plan
-  entries. Eight plan notes are by a phone named "Reviewer" (x- typed notes, trip-plausible) — Matt to say whose.
+  entries. Eight typed notes credited to "Reviewer" were Matt locking bits in; re-credited to matt in `_plan` same day.
 - **Supermarkets added 2026-09-10** as Provisions (`larder`): Spazio Conad Lanciano (the big shop,
   open Sun 9–21, on the road in from the airport), Eurospin Rocca San Giovanni (5 min, basics),
   Conad San Vito Chietino (top-ups), Coop Lanciano (backup). Geocoded, built, pushed.
