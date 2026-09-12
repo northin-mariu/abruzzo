@@ -131,7 +131,10 @@ def main():
         return
     k = key()
     places = json.loads((HERE / 'places.json').read_text(encoding='utf-8'))
-    todo = [p for p in places if (refresh or not p.get('google')) and p.get('cat') != 'house']
+    if refresh:
+        for p in places:
+            p.pop('google_skip', None)
+    todo = [p for p in places if (refresh or not (p.get('google') or p.get('google_skip'))) and p.get('cat') != 'house']
     if sample:
         todo = todo[:sample]
     print('looking up %d of %d places\n' % (len(todo), len(places)))
@@ -145,10 +148,14 @@ def main():
             continue
         if not g:
             print('  -- %-34s no match' % p['name'][:34])
+            if not sample:
+                p['google_skip'] = True
             continue
         s = shape(g)
         if not accept(p, s['name']):
             print('  xx %-34s %-28s rejected: does not look like the same place' % (p['name'][:34], (s['name'] or '')[:28]))
+            if not sample:
+                p['google_skip'] = True  # --refresh clears these
             continue
         got += 1
         rated += 'rating' in s
