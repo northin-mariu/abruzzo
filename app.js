@@ -572,6 +572,28 @@
     $('place-plan').textContent = w.length ? 'In the plan \u00b7 ' + w.join(' \u00b7 ') : '';
     $('place-plan').hidden = !w.length;
 
+    // what Google knows: the rating with its count (Google's terms want the source named),
+    // today's hours up front with the week behind a tap, and a number you can ring from the sheet
+    var g = p.google || {};
+    var meta = [];
+    if (g.rating) meta.push(g.rating + ' on Google from ' + String(g.reviews || 0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' reviews');
+    if (g.price) meta.push(g.price);
+    $('place-google').textContent = meta.join(' \u00b7 ');
+    $('place-google').hidden = !meta.length;
+    var hrs = g.hours || [];
+    if (hrs.length) {
+      var dow = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()];
+      var today = hrs.filter(function (h) { return h.indexOf(dow + ':') === 0; })[0] || '';
+      $('place-hours-today').textContent = today ? 'Today \u00b7 ' + today.slice(dow.length + 1).trim() : 'Opening hours';
+      $('place-hours-week').innerHTML = hrs.map(function (h) { return '<li>' + esc(h) + '</li>'; }).join('') +
+        '<li>Hours from Google, checked ' + esc(g.pulled || '') + ' \u2014 ring to be sure</li>';
+    }
+    $('place-hours').hidden = !hrs.length;
+    $('place-hours').open = false;
+    var tel = g.phone ? g.phone.replace(/\D/g, '') : '';
+    $('place-ring').href = tel ? 'tel:+39' + tel : '#';
+    $('place-ring').textContent = tel ? 'Ring ' + g.phone : '';
+    $('place-ring').hidden = !tel;
     $('place-heart').textContent = S.short[p.id] ? 'Hearted \u2014 tap to remove' : 'Heart this';
     $('place-heart').setAttribute('aria-pressed', S.short[p.id] ? 'true' : 'false');
     $('place-show').hidden = typeof p.lat !== 'number';

@@ -15,7 +15,25 @@
   "mapQuery": "Trabocco Sasso della Cajana, Contrada Vallevo 64, Rocca San Giovanni CH, Italy",
   "lat": 42.28866,
   "lon": 14.47579,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJZUnh_E0dMRMRfi4wFoEtX9s",
+   "name": "Trabocco Sasso della Cajana",
+   "rating": 4.7,
+   "reviews": 1192,
+   "price": "€€€",
+   "phone": "347 913 5043",
+   "hours": [
+    "Monday: 7:30 – 11:00 PM",
+    "Tuesday: 12:30 – 3:30 PM",
+    "Wednesday: 12:30 – 3:30 PM, 7:30 – 11:00 PM",
+    "Thursday: 12:30 – 3:30 PM, 7:30 – 11:30 PM",
+    "Friday: 12:30 – 3:00 PM, 7:30 – 11:00 PM",
+    "Saturday: 1:00 – 3:00 PM, 7:30 – 11:00 PM",
+    "Sunday: 1:00 – 3:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-isolata",
@@ -33,7 +51,26 @@
   "mapQuery": "Trabocco Punta Isolata, Contrada Vallevo, Rocca San Giovanni CH, Italy",
   "lat": 42.28866,
   "lon": 14.47579,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ628LnCQdMRMRM4_9LyH-uiY",
+   "name": "Trabocco Punta Isolata",
+   "rating": 4.6,
+   "reviews": 2804,
+   "price": "€€€€",
+   "blurb": "Set menus of Italian seafood classics & local wine in a rustic-chic stilted venue on the sea.",
+   "phone": "339 581 1338",
+   "hours": [
+    "Monday: 1:00 – 2:30 PM, 8:00 – 10:00 PM",
+    "Tuesday: 1:00 – 2:30 PM, 8:00 – 10:00 PM",
+    "Wednesday: 1:00 – 2:30 PM, 8:00 – 10:00 PM",
+    "Thursday: 1:00 – 2:30 PM, 8:00 – 10:00 PM",
+    "Friday: 1:00 – 2:30 PM, 8:00 – 10:00 PM",
+    "Saturday: 1:00 – 2:30 PM, 8:00 – 10:00 PM",
+    "Sunday: 1:00 – 2:30 PM, 8:00 – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-tufano",
@@ -51,7 +88,16 @@
   "mapQuery": "Trabocco Punta Tufano, Contrada Vallevo 78, Rocca San Giovanni CH, Italy",
   "lat": 42.28866,
   "lon": 14.47579,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJZUnh_E0dMRMR3e96zlX0yrA",
+   "name": "Trabocco Punta Tufano",
+   "rating": 4.6,
+   "reviews": 693,
+   "price": "€€€",
+   "phone": "333 443 6831",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-torre",
@@ -69,7 +115,14 @@
   "mapQuery": "Trabocco Punta Torre, Rocca San Giovanni CH, Italy",
   "lat": 42.27364,
   "lon": 14.50006,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ__8OFhQdMRMRJPHJut-JrCY",
+   "name": "Trabocco Punta Torre",
+   "rating": 4.6,
+   "reviews": 394,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-cavalluccio",
@@ -87,7 +140,26 @@
   "mapQuery": "Trabocco Punta Cavalluccio, Contrada Piane Favaro 267, Rocca San Giovanni CH, Italy",
   "lat": 42.26913,
   "lon": 14.50353,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJc2gksWwdMRMRITQaTFLCeaY",
+   "name": "Trabocco Punta Cavalluccio",
+   "rating": 4.6,
+   "reviews": 3432,
+   "price": "€€€€",
+   "blurb": "Seafood tasting menus & wine pairings atop a classic wooden \"trabocco\" fishermen's pier.",
+   "phone": "338 598 0985",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Wednesday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Thursday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Friday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Saturday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Sunday: 12:30 – 2:00 PM, 8:00 – 9:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-punciosa",
@@ -105,7 +177,25 @@
   "mapQuery": "Trabocco Punta Punciosa, Contrada Cavalluccio, Rocca San Giovanni CH, Italy",
   "lat": 42.27405,
   "lon": 14.48619,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJD9neBGwdMRMRY-kfqyRs4ro",
+   "name": "Trabocco Punta Punciosa Restaurant",
+   "rating": 4.3,
+   "reviews": 796,
+   "price": "€€€€",
+   "phone": "377 384 7417",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-rocciosa",
@@ -123,7 +213,25 @@
   "mapQuery": "Trabocco Punta Rocciosa, Via Finocchieto 1, Fossacesia CH, Italy",
   "lat": 42.25624,
   "lon": 14.49949,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJMzqp8x8dMRMRA20avWvqiSk",
+   "name": "Trabocco Punta Rocciosa",
+   "rating": 4.5,
+   "reviews": 514,
+   "price": "€€€",
+   "phone": "350 101 0801",
+   "hours": [
+    "Monday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Tuesday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Wednesday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Thursday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Friday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Saturday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Sunday: 12:00 – 3:00 PM, 7:30 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-pesce-palombo",
@@ -141,7 +249,26 @@
   "mapQuery": "Trabocco Pesce Palombo, SS16, Fossacesia Marina, Fossacesia CH, Italy",
   "lat": 42.24706,
   "lon": 14.51417,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJSS4cLG8dMRMRTIvYHADj0OA",
+   "name": "Ristorante Trabocco Pesce Palombo",
+   "rating": 4.5,
+   "reviews": 1805,
+   "price": "€€€",
+   "blurb": "Seafood from the Adriatic served in a traditional wooden stilt fishing hut accessed by a bridge.",
+   "phone": "333 305 5300",
+   "hours": [
+    "Monday: 1:00 – 2:30 PM, 8:00 – 9:30 PM",
+    "Tuesday: 1:00 – 2:30 PM, 8:00 – 9:30 PM",
+    "Wednesday: 1:00 – 2:30 PM, 8:00 – 9:30 PM",
+    "Thursday: 1:00 – 2:30 PM, 8:00 – 9:30 PM",
+    "Friday: 1:00 – 2:30 PM, 8:00 – 9:30 PM",
+    "Saturday: 1:00 – 2:30 PM, 8:00 – 9:30 PM",
+    "Sunday: 1:00 – 2:30 PM, 8:00 – 9:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-valle-grotte",
@@ -159,7 +286,26 @@
   "mapQuery": "Trabocco Valle Grotte, SS16 km 482, San Vito Chietino CH, Italy",
   "lat": 42.30804,
   "lon": 14.44659,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ_cZO0rgdMRMRGttO-_KM8Qk",
+   "name": "Trabocco Valle Grotte",
+   "rating": 4.5,
+   "reviews": 1795,
+   "price": "€€€€",
+   "blurb": "Rustic restaurant serving simple seafood & fish recipes in an open-air space on a pier.",
+   "phone": "338 186 6074",
+   "hours": [
+    "Monday: 10:00 AM – 11:00 PM",
+    "Tuesday: 10:00 AM – 11:00 PM",
+    "Wednesday: 10:00 AM – 11:00 PM",
+    "Thursday: 10:00 AM – 11:00 PM",
+    "Friday: 10:00 AM – 11:00 PM",
+    "Saturday: 10:00 AM – 11:00 PM",
+    "Sunday: 10:00 AM – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-turchino",
@@ -177,7 +323,15 @@
   "mapQuery": "Trabocco Turchino, San Vito Chietino CH, Italy",
   "lat": 42.30066,
   "lon": 14.46089,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJY7A53-UDMRMRtljSXZ3bk5U",
+   "name": "Trabocco Turchino",
+   "rating": 4.7,
+   "reviews": 188,
+   "phone": "085 980 8009",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-le-morge",
@@ -195,7 +349,24 @@
   "mapQuery": "Trabocco Punta Le Morge, Torino di Sangro CH, Italy",
   "lat": 42.18814,
   "lon": 14.54082,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJYWfIppbhMBMRVhG_Ft5T16U",
+   "name": "Trabocco Le Morge",
+   "rating": 4.7,
+   "reviews": 355,
+   "phone": "350 143 1276",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: Closed",
+    "Saturday: Closed",
+    "Sunday: 10:00 AM – 12:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-cungarelle",
@@ -213,7 +384,26 @@
   "mapQuery": "Trabocco Cungarelle, SS16 km 516, Vasto CH, Italy",
   "lat": 42.16564,
   "lon": 14.68211,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJzW-cLUXcMBMRCV0YtEXle_c",
+   "name": "Trabocco Cungarelle",
+   "rating": 4.4,
+   "reviews": 1986,
+   "price": "€€€€",
+   "blurb": "Refined seafood dishes & wine in an open-sided shack on stilts in the water, accessed by a bridge.",
+   "phone": "340 862 9815",
+   "hours": [
+    "Monday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Tuesday: 1:30 – 2:30 PM, 7:00 – 9:30 PM",
+    "Wednesday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Thursday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Friday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Saturday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Sunday: 1:00 – 2:30 PM, 7:00 – 9:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-il-coccodrillo-forno-zulli",
@@ -231,7 +421,25 @@
   "mapQuery": "Pizzeria il Coccodrillo / Forno Zulli, Via Mazzini 12, Rocca San Giovanni CH, Italy",
   "lat": 42.24936,
   "lon": 14.46377,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJYUyU0lb9MBMR84zAdxtKRL0",
+   "name": "Pizzeria Il Coccodrillo",
+   "rating": 4.5,
+   "reviews": 1290,
+   "price": "€€",
+   "phone": "335 878 7409",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 7:00 – 11:00 PM",
+    "Wednesday: 7:00 – 11:00 PM",
+    "Thursday: 7:00 – 11:00 PM",
+    "Friday: 7:00 – 11:00 PM",
+    "Saturday: 7:00 – 11:00 PM",
+    "Sunday: 7:00 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-piana-del-sole",
@@ -249,7 +457,25 @@
   "mapQuery": "Pizzeria Piana del Sole, Contrada Villa Stanazzo 217, Lanciano CH, Italy",
   "lat": 42.22703,
   "lon": 14.42138,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ5UpcZKn9MBMRUM_h2OAaCcg",
+   "name": "Pizzeria Piana del Sole",
+   "rating": 4.5,
+   "reviews": 696,
+   "price": "€€",
+   "phone": "338 272 5846",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: 2:30 PM – 12:00 AM",
+    "Thursday: 2:30 PM – 12:00 AM",
+    "Friday: 2:30 PM – 12:00 AM",
+    "Saturday: 2:30 PM – 12:00 AM",
+    "Sunday: 2:30 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-il-caminetto",
@@ -267,7 +493,16 @@
   "mapQuery": "Pizzeria Il Caminetto, Via della Marina 75, Fossacesia CH, Italy",
   "lat": 42.01067,
   "lon": 14.03588,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJqSK2AabiMBMRvTvddRy8HiU",
+   "name": "Il Caminetto",
+   "rating": 4.3,
+   "reviews": 319,
+   "price": "€€",
+   "phone": "0872 60325",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "coc-pizzeria",
@@ -285,7 +520,16 @@
   "mapQuery": "COCÒ Pizzeria, Via Lungomare 145, Fossacesia CH, Italy",
   "lat": 42.24551,
   "lon": 14.51882,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ5WDC4zXjMBMRfiW5Nfhy8jg",
+   "name": "COCÒ - Pizzeria",
+   "rating": 4.2,
+   "reviews": 105,
+   "price": "€€",
+   "phone": "342 047 4896",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-napule",
@@ -303,7 +547,25 @@
   "mapQuery": "Pizzeria Napule è, Contrada Villa Andreoli 341, Lanciano CH, Italy",
   "lat": 42.21044,
   "lon": 14.39928,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJAQyEIHX9MBMRPwcRIqqHUTI",
+   "name": "Pizzeria Napule è",
+   "rating": 4.5,
+   "reviews": 793,
+   "price": "€€",
+   "phone": "0872 634966",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 7:00 – 11:00 PM",
+    "Wednesday: 7:00 – 11:00 PM",
+    "Thursday: 7:00 – 11:00 PM",
+    "Friday: 7:00 – 11:00 PM",
+    "Saturday: 7:00 PM – 12:00 AM",
+    "Sunday: 7:00 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-trattoria-ruhental",
@@ -321,7 +583,25 @@
   "mapQuery": "Pizzeria Trattoria Ruhental, Via Follani 138, Lanciano CH, Italy",
   "lat": 42.20193,
   "lon": 14.39369,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJQefg08_9MBMRCuC0XfxGhgg",
+   "name": "Pizzeria Trattoria Ruhental",
+   "rating": 4.5,
+   "reviews": 572,
+   "price": "€€",
+   "phone": "0872 44101",
+   "hours": [
+    "Monday: 7:15 – 11:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: 7:15 – 11:00 PM",
+    "Friday: 7:15 – 11:00 PM",
+    "Saturday: 7:15 – 11:00 PM",
+    "Sunday: 12:30 – 2:30 PM, 7:15 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "forno-susi",
@@ -339,7 +619,25 @@
   "mapQuery": "Forno Susi, Via Luigi de Crecchio 82, Lanciano CH, Italy",
   "lat": 42.22889,
   "lon": 14.39508,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJIUy6Psz9MBMRKlmHuFWk64E",
+   "name": "Forno Susi Lanciano",
+   "rating": 4.6,
+   "reviews": 296,
+   "price": "€",
+   "phone": "0872 40676",
+   "hours": [
+    "Monday: 6:00 AM – 9:00 PM",
+    "Tuesday: 6:00 AM – 9:00 PM",
+    "Wednesday: 6:00 AM – 9:00 PM",
+    "Thursday: 6:00 AM – 9:00 PM",
+    "Friday: 6:00 AM – 9:00 PM",
+    "Saturday: 6:00 AM – 9:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-il-sogno",
@@ -357,7 +655,25 @@
   "mapQuery": "Pizzeria Il Sogno, Via F. Masciangelo 26, Lanciano CH, Italy",
   "lat": 42.23053,
   "lon": 14.39078,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJ4_JoHbf9MBMRVppfQlHKh-Q",
+   "name": "Pizzeria Il Sogno",
+   "rating": 4.5,
+   "reviews": 385,
+   "price": "€€",
+   "phone": "331 503 1045",
+   "hours": [
+    "Monday: 6:00 – 10:30 PM",
+    "Tuesday: Closed",
+    "Wednesday: 6:00 – 10:30 PM",
+    "Thursday: 6:00 – 10:30 PM",
+    "Friday: 6:00 – 10:30 PM",
+    "Saturday: 6:00 – 10:30 PM",
+    "Sunday: 6:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "kitchenetta",
@@ -375,7 +691,25 @@
   "mapQuery": "Kitchenetta, Ortona CH, Italy",
   "lat": 42.34964,
   "lon": 14.40391,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ9zb2fZ0BMRMRS09dBWNC9GU",
+   "name": "KITCHENETTA ristorante pizzeria",
+   "rating": 4.5,
+   "reviews": 717,
+   "price": "€€",
+   "phone": "085 903 1227",
+   "hours": [
+    "Monday: 12:00 – 3:00 PM, 7:30 – 11:00 PM",
+    "Tuesday: 12:00 – 3:00 PM",
+    "Wednesday: 12:00 – 3:00 PM",
+    "Thursday: 12:00 – 3:00 PM",
+    "Friday: 12:00 – 3:00 PM, 7:30 – 11:00 PM",
+    "Saturday: 7:30 – 11:30 PM",
+    "Sunday: 7:30 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "osteria-la-frasca",
@@ -393,7 +727,25 @@
   "mapQuery": "Osteria La Frasca, Contrada San Giacomo 165, Scerni CH, Italy",
   "lat": 42.09911,
   "lon": 14.58822,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJA5Pk4hPmMBMR3lY3JbhR-NU",
+   "name": "Osteria La Frasca",
+   "rating": 4.6,
+   "reviews": 971,
+   "price": "€€",
+   "phone": "0873 512988",
+   "hours": [
+    "Monday: 7:00 – 11:30 PM",
+    "Tuesday: Closed",
+    "Wednesday: 7:30 – 11:30 PM",
+    "Thursday: 7:00 – 11:30 PM",
+    "Friday: 7:00 – 11:30 PM",
+    "Saturday: 7:00 – 11:30 PM",
+    "Sunday: 7:30 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "giangi-pizza-e-ricerca",
@@ -411,7 +763,25 @@
   "mapQuery": "Giangi Pizza e Ricerca, Via Valle Arielli 27, Arielli CH, Italy",
   "lat": 42.26194,
   "lon": 14.30751,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJCaWjF9D_MBMRtSUrowIuUkg",
+   "name": "Pizzeria Giangi",
+   "rating": 4.5,
+   "reviews": 835,
+   "price": "€€",
+   "phone": "320 644 1223",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 5:30 – 11:00 PM",
+    "Wednesday: 5:30 – 11:00 PM",
+    "Thursday: 5:30 – 11:00 PM",
+    "Friday: 5:30 – 11:00 PM",
+    "Saturday: 5:30 – 11:00 PM",
+    "Sunday: 5:30 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "black-wood-pub-pizzeria",
@@ -429,7 +799,25 @@
   "mapQuery": "Black Wood Pub & Pizzeria, Via San Rocco 30, San Salvo CH, Italy",
   "lat": 42.05235,
   "lon": 14.73414,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJH-Uld0bDMBMRaSubUKimD6c",
+   "name": "Black Wood",
+   "rating": 4.6,
+   "reviews": 611,
+   "price": "€€",
+   "phone": "349 701 1409",
+   "hours": [
+    "Monday: 7:30 PM – 12:00 AM",
+    "Tuesday: 7:30 PM – 12:00 AM",
+    "Wednesday: 7:30 PM – 12:00 AM",
+    "Thursday: 7:30 PM – 12:00 AM",
+    "Friday: 7:30 PM – 12:00 AM",
+    "Saturday: 7:30 PM – 12:00 AM",
+    "Sunday: 7:30 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pizzeria-la-sorgente",
@@ -447,7 +835,25 @@
   "mapQuery": "Pizzeria La Sorgente, Via Antonio Gramsci 9, Guardiagrele CH, Italy",
   "lat": 42.19654,
   "lon": 14.21922,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJjWL36JZWMBMRZmGFpVg0vc0",
+   "name": "Pizzeria \"La Sorgente\"",
+   "rating": 4.5,
+   "reviews": 765,
+   "price": "€€",
+   "phone": "0871 800111",
+   "hours": [
+    "Monday: 12:30 – 2:30 PM",
+    "Tuesday: 12:30 – 2:30 PM, 7:30 – 11:00 PM",
+    "Wednesday: 12:30 – 2:30 PM, 7:30 – 11:00 PM",
+    "Thursday: 12:30 – 2:30 PM, 7:30 – 11:00 PM",
+    "Friday: 12:30 – 2:30 PM, 7:30 – 11:00 PM",
+    "Saturday: 7:30 – 11:00 PM",
+    "Sunday: 7:30 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fermenta-pizzeria-gourmet",
@@ -465,7 +871,26 @@
   "mapQuery": "Fermenta Pizzeria Gourmet, Viale Unita d'Italia 3, Chieti CH, Italy",
   "lat": 42.37293,
   "lon": 14.14353,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJq45Rko-tMRMRpA8apapItbo",
+   "name": "Fermenta",
+   "rating": 4.4,
+   "reviews": 1789,
+   "price": "€€",
+   "blurb": "Neapolitan-style pizza with unique toppings, plus craft brews, in a spacious, rustic-chic locale.",
+   "phone": "339 740 2070",
+   "hours": [
+    "Monday: 7:30 PM – 12:00 AM",
+    "Tuesday: Closed",
+    "Wednesday: 7:30 PM – 12:00 AM",
+    "Thursday: 7:30 PM – 12:00 AM",
+    "Friday: 7:30 PM – 12:00 AM",
+    "Saturday: 7:30 PM – 12:00 AM",
+    "Sunday: 7:30 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "rabottini-pizza",
@@ -483,7 +908,25 @@
   "mapQuery": "Rabottini Pizza, Via Raffaello Sanzio 66, Pescara PE, Italy",
   "lat": 42.48148,
   "lon": 14.19077,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJaz767OGnMRMRkvl7MwUq-Qs",
+   "name": "Pizzeria Rabottini",
+   "rating": 4.5,
+   "reviews": 699,
+   "price": "€€",
+   "phone": "085 204 7610",
+   "hours": [
+    "Monday: 7:15 – 10:30 PM",
+    "Tuesday: 7:15 – 10:30 PM",
+    "Wednesday: Closed",
+    "Thursday: 7:15 – 10:30 PM",
+    "Friday: 7:15 – 10:30 PM",
+    "Saturday: 7:30 – 10:30 PM",
+    "Sunday: 7:15 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-delle-frapa",
@@ -501,7 +944,16 @@
   "mapQuery": "Trattoria delle Frapa, Contrada Torre Sansone 120, Lanciano CH, Italy",
   "lat": 42.23053,
   "lon": 14.39078,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJv-ynAHECMRMRtIeUFiGrVJA",
+   "name": "Trattoria delle Frapa",
+   "rating": 4.6,
+   "reviews": 269,
+   "price": "€€",
+   "phone": "0872 54554",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-caniloro",
@@ -519,7 +971,15 @@
   "mapQuery": "Agriturismo Caniloro, Contrada Sant'Onofrio, Lanciano CH, Italy",
   "lat": 42.1679,
   "lon": 14.41077,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJU-XVgfL7MBMR5fyEOfPlyng",
+   "name": "Agriturismo Caniloro",
+   "rating": 4.5,
+   "reviews": 479,
+   "phone": "0872 50297",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-il-grappolo",
@@ -537,7 +997,15 @@
   "mapQuery": "Agriturismo Il Grappolo, Contrada Torre Sansone 141, Lanciano CH, Italy",
   "lat": 42.23053,
   "lon": 14.39078,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJQ8vaIHACMRMRwhZP2X--Dy8",
+   "name": "Agriturismo Il Grappolo",
+   "rating": 4.5,
+   "reviews": 248,
+   "phone": "0872 54181",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-san-domenico",
@@ -555,7 +1023,25 @@
   "mapQuery": "Trattoria San Domenico, Vicolo San Domenico 1, Ortona CH, Italy",
   "lat": 42.35824,
   "lon": 14.40586,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJI_poY2oEMRMR1y3JvBnM4B0",
+   "name": "Trattoria San Domenico",
+   "rating": 4.3,
+   "reviews": 854,
+   "price": "€€€",
+   "phone": "085 906 6442",
+   "hours": [
+    "Monday: 1:00 – 3:30 PM, 8:00 – 10:30 PM",
+    "Tuesday: 1:00 – 3:30 PM, 8:00 – 10:30 PM",
+    "Wednesday: 1:00 – 3:30 PM, 8:00 – 10:30 PM",
+    "Thursday: Closed",
+    "Friday: 1:00 – 3:30 PM, 8:00 – 10:30 PM",
+    "Saturday: 1:00 – 3:30 PM, 8:00 – 10:30 PM",
+    "Sunday: 1:00 – 3:30 PM, 8:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bio-agriturismo-le-mignole",
@@ -573,7 +1059,14 @@
   "mapQuery": "Bio Agriturismo Le Mignole, Orsogna CH, Italy",
   "lat": 42.21894,
   "lon": 14.27911,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJYYtyk2H_MBMRa05sKNHzXOU",
+   "name": "Le mignole Agriturismo",
+   "rating": 4.3,
+   "reviews": 153,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-le-magnolie",
@@ -591,7 +1084,24 @@
   "mapQuery": "Agriturismo Le Magnolie, Via dei Palombari 54, Vasto CH, Italy",
   "lat": 42.10114,
   "lon": 14.70046,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ6X1UXgXdMBMRfwXXe2UQ3os",
+   "name": "Agriturismo Le Magnolie",
+   "rating": 4.4,
+   "reviews": 214,
+   "phone": "0873 363249",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "il-podere-del-carlone",
@@ -609,7 +1119,24 @@
   "mapQuery": "Il Podere del Carlone, Via San Lorenzo 340, Vasto CH, Italy",
   "lat": 42.16418,
   "lon": 14.65632,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ89eQN1XnMBMRRUuaND-qSFo",
+   "name": "Il Podere Del Carlone",
+   "rating": 4.5,
+   "reviews": 399,
+   "phone": "339 520 1202",
+   "hours": [
+    "Monday: 12:00 – 2:30 PM",
+    "Tuesday: 12:00 – 2:30 PM",
+    "Wednesday: 12:00 – 2:30 PM",
+    "Thursday: 12:00 – 2:30 PM",
+    "Friday: 12:00 – 2:30 PM",
+    "Saturday: 12:00 – 2:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-da-ferri",
@@ -627,7 +1154,25 @@
   "mapQuery": "Trattoria da Ferri, Via Osca 58, Vasto CH, Italy",
   "lat": 42.16918,
   "lon": 14.71226,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJh0AT4l7eMBMR1EOHY0cjjjE",
+   "name": "Da Ferri",
+   "rating": 4.4,
+   "reviews": 1599,
+   "price": "€€€",
+   "phone": "0873 310320",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:00 – 2:30 PM, 7:30 – 9:30 PM",
+    "Wednesday: 12:00 – 2:30 PM, 7:30 – 9:30 PM",
+    "Thursday: 12:00 – 2:30 PM, 7:30 – 9:30 PM",
+    "Friday: 12:00 – 2:30 PM, 7:30 – 9:30 PM",
+    "Saturday: 12:00 – 2:30 PM, 7:30 – 9:30 PM",
+    "Sunday: 12:00 – 2:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-travaglini",
@@ -645,7 +1190,15 @@
   "mapQuery": "Agriturismo Travaglini, Contrada Piano delle Vigne, Casoli CH, Italy",
   "lat": 42.14134,
   "lon": 14.31265,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJw96HWj34MBMR6A-I-a7exb8",
+   "name": "Agriturismo Travaglini",
+   "rating": 4.6,
+   "reviews": 115,
+   "phone": "328 223 4108",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-colle-tripio",
@@ -663,7 +1216,24 @@
   "mapQuery": "Agriturismo Colle Tripio, Villa San Vincenzo, Guardiagrele CH, Italy",
   "lat": 42.18783,
   "lon": 14.26655,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJIbvnxKb4MBMRHM-akVGS0Ec",
+   "name": "Agriturismo Colle Tripio",
+   "rating": 4.7,
+   "reviews": 409,
+   "phone": "348 883 8793",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: Closed",
+    "Saturday: 9:00 AM – 11:00 PM",
+    "Sunday: 12:45 – 6:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-macelleria-di-romantino",
@@ -681,7 +1251,25 @@
   "mapQuery": "La Macelleria di Romantino, Via Modesto della Porta 35, Guardiagrele CH, Italy",
   "lat": 42.19067,
   "lon": 14.2219,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJmflsynSpMRMR_ix7jz6Ng7o",
+   "name": "L 'Osteria di Romantino",
+   "rating": 4.7,
+   "reviews": 281,
+   "price": "€€",
+   "phone": "0871 85971",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 3:00 PM, 7:00 – 10:00 PM",
+    "Wednesday: 12:30 – 3:00 PM, 7:30 – 10:00 PM",
+    "Thursday: 12:30 – 3:00 PM, 7:30 – 10:00 PM",
+    "Friday: 12:30 – 3:00 PM, 7:30 – 10:00 PM",
+    "Saturday: 12:30 – 3:00 PM, 7:30 – 10:00 PM",
+    "Sunday: 12:00 – 2:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-pesolillo",
@@ -699,7 +1287,15 @@
   "mapQuery": "Agriturismo Pesolillo, Strada Colle Rotondo 45, Chieti CH, Italy",
   "lat": 42.41004,
   "lon": 14.21529,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJieANcd2oMRMR3vlKjXwAS6k",
+   "name": "Pesolillo Agriturismo e Vini Bio",
+   "rating": 4.5,
+   "reviews": 861,
+   "phone": "348 111 5481",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "villa-maiella",
@@ -717,7 +1313,24 @@
   "mapQuery": "Villa Maiella, Via Sette Dolori 30, Guardiagrele CH, Italy",
   "lat": 42.18685,
   "lon": 14.20117,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJRflHgMhWMBMRDZUqNJXb6cE",
+   "name": "Villa Maiella",
+   "rating": 4.8,
+   "reviews": 803,
+   "phone": "0871 809319",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: 12:00 – 1:45 PM, 8:00 – 9:30 PM",
+    "Thursday: 12:00 – 1:45 PM, 8:00 – 9:30 PM",
+    "Friday: 12:00 – 1:45 PM, 8:00 – 9:30 PM",
+    "Saturday: 12:00 – 1:45 PM, 8:00 – 9:30 PM",
+    "Sunday: 12:00 – 2:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-il-feudo",
@@ -735,7 +1348,24 @@
   "mapQuery": "Agriturismo Il Feudo, Via Raiese 36, Pennapiedimonte CH, Italy",
   "lat": 42.15206,
   "lon": 14.19476,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJLV4N705XMBMR7OXAMxMtfBA",
+   "name": "Camere Il Feudo",
+   "rating": 3.9,
+   "reviews": 53,
+   "phone": "339 873 6863",
+   "hours": [
+    "Monday: 12:00 – 10:30 PM",
+    "Tuesday: 12:00 – 10:30 PM",
+    "Wednesday: Closed",
+    "Thursday: 12:00 – 10:30 PM",
+    "Friday: 12:00 – 10:30 PM",
+    "Saturday: 12:00 – 11:30 PM",
+    "Sunday: 12:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-tholos",
@@ -753,7 +1383,15 @@
   "mapQuery": "Agriturismo Tholos, Roccamorice PE, Italy",
   "lat": 42.2135,
   "lon": 14.02459,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJG2FgSu5OMBMRn4o6vPHTRIw",
+   "name": "Agriturismo Tholos",
+   "rating": 4.7,
+   "reviews": 487,
+   "phone": "085 857 2590",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cantina-frentana",
@@ -771,7 +1409,24 @@
   "mapQuery": "Cantina Frentana, Contrada Perazza 32, Rocca San Giovanni CH, Italy",
   "lat": 42.24225,
   "lon": 14.45823,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJjaDtTET9MBMRjVD3u1zXEsw",
+   "name": "Frentana Cantina Sociale Soc. Coop. Arl",
+   "rating": 4.6,
+   "reviews": 251,
+   "phone": "0872 60152",
+   "hours": [
+    "Monday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Tuesday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Wednesday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Thursday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Friday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Saturday: 8:00 AM – 12:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-vinarte",
@@ -789,7 +1444,24 @@
   "mapQuery": "La Vinarte, Santa Maria Imbaro CH, Italy",
   "lat": 42.21774,
   "lon": 14.44922,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJZ5TSMv_8MBMR7nvKkdsaR1A",
+   "name": "Azienda Agricola La Vinarte",
+   "rating": 4.7,
+   "reviews": 300,
+   "phone": "340 763 4659",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bp-service",
@@ -807,7 +1479,22 @@
   "mapQuery": "BP Service, Contrada Severini 5, Treglio CH, Italy",
   "lat": 42.25232,
   "lon": 14.42649,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJBd578tD9MBMRE-AFuMbXj1I",
+   "name": "Bp Service srl - Autonoleggio Lanciano",
+   "phone": "0872 596800",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Friday: 9:00 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Saturday: 9:00 AM – 12:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "green-road-bike",
@@ -825,7 +1512,24 @@
   "mapQuery": "Green Road Bike, Lido Saraceni, Ortona CH, Italy",
   "lat": 42.34446,
   "lon": 14.41303,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJzWGZ_MgFMRMRmcIFXyJeZ6k",
+   "name": "Green Road Bike",
+   "rating": 4.9,
+   "reviews": 1062,
+   "phone": "388 721 0195",
+   "hours": [
+    "Monday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Tuesday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Wednesday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Thursday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Friday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Saturday: 8:30 AM – 7:30 PM",
+    "Sunday: 8:30 AM – 7:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriverde",
@@ -843,7 +1547,24 @@
   "mapQuery": "Agriverde, Caldari di Ortona, Ortona CH, Italy",
   "lat": 42.29277,
   "lon": 14.36571,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ0_XVNZwBMRMRhjqIobR5vZM",
+   "name": "Cantina Agriverde",
+   "rating": 4.1,
+   "reviews": 8,
+   "phone": "085 903 2101",
+   "hours": [
+    "Monday: 8:30 AM – 5:30 PM",
+    "Tuesday: 8:30 AM – 5:30 PM",
+    "Wednesday: 8:30 AM – 5:30 PM",
+    "Thursday: 8:30 AM – 5:30 PM",
+    "Friday: 8:30 AM – 5:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "feudo-antico",
@@ -861,7 +1582,24 @@
   "mapQuery": "Feudo Antico, Tollo CH, Italy",
   "lat": 42.348,
   "lon": 14.31808,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJh3_FLc4AMRMRc1_uxaqNwh4",
+   "name": "Feudo Antico",
+   "rating": 4.6,
+   "reviews": 128,
+   "phone": "0871 962 5253",
+   "hours": [
+    "Monday: 9:00 AM – 7:00 PM",
+    "Tuesday: 9:00 AM – 7:00 PM",
+    "Wednesday: 9:00 AM – 7:00 PM",
+    "Thursday: 9:00 AM – 7:00 PM",
+    "Friday: 9:00 AM – 7:00 PM",
+    "Saturday: 9:00 AM – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fontefico",
@@ -879,7 +1617,24 @@
   "mapQuery": "Fontefico, Vasto CH, Italy",
   "lat": 42.12434,
   "lon": 14.70592,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJBw7MnOLdMBMR0xW0BScTCz0",
+   "name": "Fontefico",
+   "rating": 4.9,
+   "reviews": 249,
+   "phone": "335 712 4154",
+   "hours": [
+    "Monday: 9:30 AM – 7:00 PM",
+    "Tuesday: 9:30 AM – 7:00 PM",
+    "Wednesday: 9:30 AM – 7:00 PM",
+    "Thursday: 9:30 AM – 7:00 PM",
+    "Friday: 9:30 AM – 7:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "tenuta-ulisse",
@@ -897,7 +1652,24 @@
   "mapQuery": "Tenuta Ulisse, Crecchio CH, Italy",
   "lat": 42.29854,
   "lon": 14.3269,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJMSb9rS8AMRMRteUwfc47yJ4",
+   "name": "Tenuta Ulisse Winery",
+   "rating": 4.9,
+   "reviews": 682,
+   "phone": "0871 942007",
+   "hours": [
+    "Monday: 9:00 AM – 7:00 PM",
+    "Tuesday: 9:00 AM – 7:00 PM",
+    "Wednesday: 9:00 AM – 7:00 PM",
+    "Thursday: 9:00 AM – 7:00 PM",
+    "Friday: 9:00 AM – 7:00 PM",
+    "Saturday: 9:00 AM – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cantina-orsogna-1964",
@@ -915,7 +1687,25 @@
   "mapQuery": "Cantina Orsogna 1964, Orsogna CH, Italy",
   "lat": 42.21894,
   "lon": 14.27911,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ1WZBqfRVMBMRQ5KS28-LF7A",
+   "name": "Cantina Orsogna",
+   "rating": 4.5,
+   "reviews": 211,
+   "price": "€€",
+   "phone": "0871 86321",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Sunday: 9:00 AM – 1:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "italia-sweet-italia-fabrizio-lucci",
@@ -933,7 +1723,24 @@
   "mapQuery": "Italia Sweet Italia — Fabrizio Lucci, Vasto CH, Italy",
   "lat": 42.12434,
   "lon": 14.70592,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJzcgfrTndMBMRlksPMv2nU_E",
+   "name": "Italia Sweet Italia - Experience Abruzzo and Beyond",
+   "rating": 5,
+   "reviews": 128,
+   "phone": "349 863 0483",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cascina-del-colle",
@@ -951,7 +1758,24 @@
   "mapQuery": "Cascina del Colle, Villamagna CH, Italy",
   "lat": 42.33329,
   "lon": 14.23681,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJaxZ90KurMRMRsI3yIi50Z9A",
+   "name": "Cascina Del Colle",
+   "rating": 4.8,
+   "reviews": 49,
+   "phone": "0871 301093",
+   "hours": [
+    "Monday: 8:00 AM – 12:30 PM, 2:00 – 5:30 PM",
+    "Tuesday: 8:30 AM – 12:30 PM, 2:00 – 5:30 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 2:00 – 5:30 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 2:00 – 5:30 PM",
+    "Friday: 8:30 AM – 12:30 PM, 2:00 – 5:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "masciarelli",
@@ -969,7 +1793,24 @@
   "mapQuery": "Masciarelli, San Martino sulla Marrucina CH, Italy",
   "lat": 42.22337,
   "lon": 14.21481,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJu6jxuSZUMBMRUatP67HsjGc",
+   "name": "Masciarelli Tenute Agricole Srl",
+   "rating": 4.4,
+   "reviews": 69,
+   "phone": "0871 85241",
+   "hours": [
+    "Monday: 10:00 AM – 4:30 PM",
+    "Tuesday: 10:00 AM – 4:30 PM",
+    "Wednesday: 10:00 AM – 4:30 PM",
+    "Thursday: 10:00 AM – 4:30 PM",
+    "Friday: 10:00 AM – 4:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agricola-tiberio",
@@ -987,7 +1828,15 @@
   "mapQuery": "Agricola Tiberio, Cugnoli PE, Italy",
   "lat": 42.30806,
   "lon": 13.93317,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ-S17wttKMBMRNwmVpQLvjHQ",
+   "name": "Agricola Tiberio",
+   "rating": 4.7,
+   "reviews": 20,
+   "phone": "085 857 6744",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "torre-dei-beati",
@@ -1005,7 +1854,15 @@
   "mapQuery": "Torre dei Beati, Loreto Aprutino PE, Italy",
   "lat": 42.43463,
   "lon": 13.98323,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJE0IqRHi2MRMRn40xEQthpLs",
+   "name": "Torre dei Beati",
+   "rating": 4.6,
+   "reviews": 24,
+   "phone": "085 491 6069",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "de-fermo",
@@ -1023,7 +1880,24 @@
   "mapQuery": "De Fermo, Loreto Aprutino PE, Italy",
   "lat": 42.43463,
   "lon": 13.98323,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJt38Z3Be0MRMRFsIZemhWzcM",
+   "name": "Società Agricola Nicoletta de Fermo s.s.",
+   "rating": 5,
+   "reviews": 23,
+   "phone": "085 828 9136",
+   "hours": [
+    "Monday: 9:00 AM – 5:00 PM",
+    "Tuesday: 9:00 AM – 5:00 PM",
+    "Wednesday: 9:00 AM – 5:00 PM",
+    "Thursday: 9:00 AM – 5:00 PM",
+    "Friday: 9:00 AM – 5:00 PM",
+    "Saturday: 9:00 AM – 5:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "emidio-pepe",
@@ -1041,7 +1915,25 @@
   "mapQuery": "Emidio Pepe, Torano Nuovo TE, Italy",
   "lat": 42.82437,
   "lon": 13.77859,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ1cit17LxMRMRefDxskWU-eY",
+   "name": "Emidio Pepe",
+   "rating": 4.6,
+   "reviews": 234,
+   "blurb": "Warm accommodations in a winery with a restaurant with food & wine pairings, plus winery tours.",
+   "phone": "0861 856493",
+   "hours": [
+    "Monday: 9:30 AM – 1:00 PM, 3:00 – 6:30 PM",
+    "Tuesday: 9:30 AM – 1:00 PM, 3:00 – 6:30 PM",
+    "Wednesday: 9:30 AM – 1:00 PM, 3:00 – 6:30 PM",
+    "Thursday: 9:30 AM – 1:00 PM, 3:00 – 6:30 PM",
+    "Friday: 9:30 AM – 1:00 PM, 3:00 – 6:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "corso-di-cucina-nonna-filomena",
@@ -1077,7 +1969,24 @@
   "mapQuery": "Frantoio Giocondo, San Vito Chietino CH, Italy",
   "lat": 42.29604,
   "lon": 14.44452,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJsXALe-ECMRMRwA6gv4IrJjs",
+   "name": "Frantoio Oleario Giocondo de Santis 1930 - Oli Extravergini di Oliva",
+   "rating": 4.8,
+   "reviews": 47,
+   "phone": "345 226 6119",
+   "hours": [
+    "Monday: 4:00 – 8:00 PM",
+    "Tuesday: 4:00 – 8:00 PM",
+    "Wednesday: 4:00 – 8:00 PM",
+    "Thursday: 4:00 – 8:00 PM",
+    "Friday: 4:00 – 8:00 PM",
+    "Saturday: 4:00 – 8:00 PM",
+    "Sunday: 4:00 – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agriturismo-caniloro-cooking",
@@ -1095,7 +2004,15 @@
   "mapQuery": "Agriturismo Caniloro — cooking, Contrada Sant'Onofrio, Lanciano CH, Italy",
   "lat": 42.1679,
   "lon": 14.41077,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJU-XVgfL7MBMR5fyEOfPlyng",
+   "name": "Agriturismo Caniloro",
+   "rating": 4.5,
+   "reviews": 479,
+   "phone": "0872 50297",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "feudo-antico-cantine-aperte-in-vendemmia",
@@ -1113,7 +2030,24 @@
   "mapQuery": "Feudo Antico — Cantine Aperte in Vendemmia, Tollo CH, Italy",
   "lat": 42.348,
   "lon": 14.31808,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJh3_FLc4AMRMRc1_uxaqNwh4",
+   "name": "Feudo Antico",
+   "rating": 4.6,
+   "reviews": 128,
+   "phone": "0871 962 5253",
+   "hours": [
+    "Monday: 9:00 AM – 7:00 PM",
+    "Tuesday: 9:00 AM – 7:00 PM",
+    "Wednesday: 9:00 AM – 7:00 PM",
+    "Thursday: 9:00 AM – 7:00 PM",
+    "Friday: 9:00 AM – 7:00 PM",
+    "Saturday: 9:00 AM – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fontefico-cooking-class",
@@ -1149,7 +2083,24 @@
   "mapQuery": "Accademia della Ventricina, Contrada Ragna 61, Scerni CH, Italy",
   "lat": 42.09672,
   "lon": 14.58815,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJb-M8KDrmMBMRQI35Zw2cydE",
+   "name": "Accademia Della Ventricina",
+   "rating": 5,
+   "reviews": 23,
+   "phone": "339 308 6378",
+   "hours": [
+    "Monday: 9:30 AM – 1:00 PM, 3:30 – 6:30 PM",
+    "Tuesday: 9:30 AM – 1:00 PM, 3:30 – 6:30 PM",
+    "Wednesday: 9:30 AM – 1:00 PM, 3:30 – 6:30 PM",
+    "Thursday: 9:30 AM – 1:00 PM, 3:30 – 6:30 PM",
+    "Friday: 9:30 AM – 1:00 PM, 3:30 – 6:30 PM",
+    "Saturday: 9:30 AM – 1:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "adi-apicoltura",
@@ -1167,7 +2118,24 @@
   "mapQuery": "ADI Apicoltura, Tornareccio CH, Italy",
   "lat": 42.03814,
   "lon": 14.41612,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJJy7qq3zxMBMRl_-dLOUNsK4",
+   "name": "Adi Apicoltura",
+   "rating": 4.9,
+   "reviews": 133,
+   "phone": "0872 868160",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cesarine-home-cooks",
@@ -1221,7 +2189,15 @@
   "mapQuery": "Spiaggia La Foce, Contrada Foce, Rocca San Giovanni CH, Italy",
   "lat": 42.27387,
   "lon": 14.48774,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ5578lT0dMRMRg5dkwxXo3i0",
+   "name": "Foce Beach",
+   "rating": 4.4,
+   "reviews": 549,
+   "phone": "0872 60121",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "vallev",
@@ -1239,7 +2215,12 @@
   "mapQuery": "Vallevo, Rocca San Giovanni CH, Italy",
   "lat": 42.28714,
   "lon": 14.47952,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJE8V8USkdMRMRBiaraUzmzBo",
+   "name": "Vallevò",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "punta-cavalluccio-beach",
@@ -1257,7 +2238,26 @@
   "mapQuery": "Punta Cavalluccio, Rocca San Giovanni CH, Italy",
   "lat": 42.26925,
   "lon": 14.50292,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJc2gksWwdMRMRITQaTFLCeaY",
+   "name": "Trabocco Punta Cavalluccio",
+   "rating": 4.6,
+   "reviews": 3432,
+   "price": "€€€€",
+   "blurb": "Seafood tasting menus & wine pairings atop a classic wooden \"trabocco\" fishermen's pier.",
+   "phone": "338 598 0985",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Wednesday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Thursday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Friday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Saturday: 12:30 – 2:00 PM, 8:00 – 9:30 PM",
+    "Sunday: 12:30 – 2:00 PM, 8:00 – 9:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fossacesia-marina",
@@ -1275,7 +2275,12 @@
   "mapQuery": "Fossacesia Marina, Fossacesia CH, Italy",
   "lat": 42.24926,
   "lon": 14.51132,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ11_ZR4DiMBMRVrSYuGD_mdc",
+   "name": "Fossacesia Marina",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "majellando-dinghy-hire-no-licence",
@@ -1311,7 +2316,24 @@
   "mapQuery": "Freedom Boat, Marina del Sole, Fossacesia CH, Italy",
   "lat": 42.23738,
   "lon": 14.53779,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ166qdsbjMBMRwvsv63-zgfU",
+   "name": "Freedom Boat Escursioni - Costa dei Trabocchi",
+   "rating": 5,
+   "reviews": 424,
+   "phone": "329 390 5663",
+   "hours": [
+    "Monday: 8:00 AM – 10:00 PM",
+    "Tuesday: 8:00 AM – 10:00 PM",
+    "Wednesday: 8:00 AM – 10:00 PM",
+    "Thursday: 8:00 AM – 10:00 PM",
+    "Friday: 8:00 AM – 10:00 PM",
+    "Saturday: 8:00 AM – 10:00 PM",
+    "Sunday: 8:00 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lido-punta-le-morge-naturist",
@@ -1329,7 +2351,24 @@
   "mapQuery": "Lido Punta Le Morge — naturist, Lago Dragoni, Torino di Sangro CH, Italy",
   "lat": 42.2202,
   "lon": 14.56636,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJSyR64pPhMBMRQ7kFxTBNk5c",
+   "name": "Spiaggia Naturista Lido Punta Le Morge",
+   "rating": 4.6,
+   "reviews": 361,
+   "phone": "392 285 9554",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ripari-di-giobbe",
@@ -1347,7 +2386,12 @@
   "mapQuery": "Ripari di Giobbe, Ortona CH, Italy",
   "lat": 42.36901,
   "lon": 14.39059,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ_-5FzCQEMRMRLUF8R8f7uJc",
+   "name": "Ripari di Giobbe",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "acquatica-scuba",
@@ -1365,7 +2409,24 @@
   "mapQuery": "Acquatica Scuba, Marina di Pescara, Pescara PE, Italy",
   "lat": 42.46652,
   "lon": 14.23084,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJmaW0ctWlMRMR6ykUtmnI36c",
+   "name": "Acquatica Scuba ASD",
+   "rating": 4.9,
+   "reviews": 75,
+   "phone": "328 441 0287",
+   "hours": [
+    "Monday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Tuesday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Wednesday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Thursday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Friday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Saturday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Sunday: 9:30 AM – 1:00 PM, 4:00 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "punta-aderci-nature-reserve",
@@ -1383,7 +2444,24 @@
   "mapQuery": "Punta Aderci nature reserve, Riserva Naturale Punta Aderci, Vasto CH, Italy",
   "lat": 42.18093,
   "lon": 14.67189,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJNwrmdS_eMBMRc2YBXpFRy-0",
+   "name": "Regional Natural Reserve Punta Aderci",
+   "rating": 4.7,
+   "reviews": 6426,
+   "phone": "334 629 0593",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "majellando-soft-rafting-on-the-sangro",
@@ -1437,7 +2515,24 @@
   "mapQuery": "La Riccia — licence-free RIB, San Domino, Porto San Domino, Isole Tremiti FG, Italy",
   "lat": 42.06658,
   "lon": 14.76999,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJJSHxEHjjNhMR3q03WKjc7N0",
+   "name": "Angelica La Riccia delle Tremiti",
+   "rating": 4.9,
+   "reviews": 487,
+   "phone": "348 917 1971",
+   "hours": [
+    "Monday: 8:00 AM – 8:00 PM",
+    "Tuesday: 8:00 AM – 8:00 PM",
+    "Wednesday: 8:00 AM – 8:00 PM",
+    "Thursday: 8:00 AM – 8:00 PM",
+    "Friday: 8:00 AM – 8:00 PM",
+    "Saturday: 8:00 AM – 8:00 PM",
+    "Sunday: 8:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "marlin-tremiti-diving",
@@ -1455,7 +2550,24 @@
   "mapQuery": "Marlin Tremiti — diving, Isole Tremiti FG, Italy",
   "lat": 42.0634,
   "lon": 14.78113,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJMw2O4wIeNxMRTbLOxeUbz68",
+   "name": "Marlintremiti",
+   "rating": 4.8,
+   "reviews": 100,
+   "phone": "336 829 746",
+   "hours": [
+    "Monday: 8:00 AM – 8:00 PM",
+    "Tuesday: 8:00 AM – 8:00 PM",
+    "Wednesday: 8:00 AM – 8:00 PM",
+    "Thursday: 8:00 AM – 8:00 PM",
+    "Friday: 8:00 AM – 8:00 PM",
+    "Saturday: 8:00 AM – 8:00 PM",
+    "Sunday: 8:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "via-verde-dei-trabocchi",
@@ -1473,7 +2585,23 @@
   "mapQuery": "Via Verde dei Trabocchi, Via Verde, Fossacesia Marina, Fossacesia CH, Italy",
   "lat": 42.24855,
   "lon": 14.5125,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJe8eJG5gDMRMRIgLnF1HWadg",
+   "name": "Via Verde dei Trabocchi",
+   "rating": 4.7,
+   "reviews": 88,
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bicimania-sorgini",
@@ -1491,7 +2619,24 @@
   "mapQuery": "BiciMania / Sorgini, Via Lungomare 11, Fossacesia CH, Italy",
   "lat": 42.25174,
   "lon": 14.50863,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJowjnS6_iMBMRTAxXnkgZnuE",
+   "name": "BiciMania Di Sorgini Francesco",
+   "rating": 4.9,
+   "reviews": 94,
+   "phone": "0872 60408",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Wednesday: 9:00 AM – 1:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Friday: 9:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bike-train",
@@ -1527,7 +2672,24 @@
   "mapQuery": "Al Murè, Via Cristoforo Colombo 72, San Vito Chietino CH, Italy",
   "lat": 42.30538,
   "lon": 14.45057,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJiwcEDUcDMRMRzeUZ9ZeGUWY",
+   "name": "Al Murè Beach Bar, noleggio ombrelloni,noleggio Bici, Kayak, Sup e skateboard",
+   "rating": 4.5,
+   "reviews": 382,
+   "phone": "329 659 0866",
+   "hours": [
+    "Monday: 9:00 AM – 9:00 PM",
+    "Tuesday: 9:00 AM – 9:00 PM",
+    "Wednesday: 9:00 AM – 9:00 PM",
+    "Thursday: 9:00 AM – 9:00 PM",
+    "Friday: 8:30 AM – 10:30 PM",
+    "Saturday: 8:30 AM – 10:30 PM",
+    "Sunday: 8:30 AM – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "green-road-bike-rental-delivery",
@@ -1545,7 +2707,24 @@
   "mapQuery": "Green Road Bike — rental & delivery, Via Cervana, Lido Saraceni, Ortona CH, Italy",
   "lat": 42.35674,
   "lon": 14.4078,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJzWGZ_MgFMRMRmcIFXyJeZ6k",
+   "name": "Green Road Bike",
+   "rating": 4.9,
+   "reviews": 1062,
+   "phone": "388 721 0195",
+   "hours": [
+    "Monday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Tuesday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Wednesday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Thursday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Friday: 8:30 AM – 1:00 PM, 3:00 – 7:30 PM",
+    "Saturday: 8:30 AM – 7:30 PM",
+    "Sunday: 8:30 AM – 7:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "officine-forti",
@@ -1563,7 +2742,24 @@
   "mapQuery": "Officine Forti, Via G. Federico 11, Ortona CH, Italy",
   "lat": 42.35221,
   "lon": 14.40298,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJPbKv4S4FMRMRjJtCbUtXCWs",
+   "name": "OFFICINE FORTI - Noleggio, riparazione e vendita biciclette Ortona e Costa dei Trabocchi",
+   "rating": 5,
+   "reviews": 149,
+   "phone": "347 826 7418",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Friday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Saturday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Sunday: 9:00 AM – 12:30 PM, 3:30 – 7:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bikexplora",
@@ -1581,7 +2777,24 @@
   "mapQuery": "BikExplora, Via Martiri Istriani 1, Vasto CH, Italy",
   "lat": 42.09894,
   "lon": 14.7183,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJi20WQCfdMBMRihyb7Liz8kU",
+   "name": "BikeXplora",
+   "rating": 5,
+   "reviews": 438,
+   "phone": "392 812 0120",
+   "hours": [
+    "Monday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Tuesday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Friday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Saturday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bike-park-majella",
@@ -1617,7 +2830,14 @@
   "mapQuery": "Blockhaus, Roccamorice PE, Italy",
   "lat": 42.14876,
   "lon": 14.11381,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJvd1X9wdQMBMRTG2H0SZSHJA",
+   "name": "Monte Blockhaus",
+   "rating": 4.8,
+   "reviews": 146,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "circolo-ippico-jack-o-neill",
@@ -1635,7 +2855,24 @@
   "mapQuery": "Circolo Ippico Jack O'Neill, SS16 78, Vasto CH, Italy",
   "lat": 42.1044,
   "lon": 14.71508,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJOfVk6mreMBMRluskf-pvtUY",
+   "name": "Circolo Ippico Jack O' Neill",
+   "rating": 4.7,
+   "reviews": 554,
+   "phone": "340 696 5819",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 8:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+    "Wednesday: 8:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+    "Thursday: 8:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+    "Friday: 8:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+    "Saturday: 8:00 AM – 12:00 PM, 4:00 – 7:00 PM",
+    "Sunday: 9:00 AM – 12:00 PM, 3:30 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "parco-avventura-majella",
@@ -1653,7 +2890,25 @@
   "mapQuery": "Parco Avventura Majella, Piana delle Mele, Guardiagrele CH, Italy",
   "lat": 42.17698,
   "lon": 14.16906,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJuao96h9RMBMREyN6zWXml7o",
+   "name": "Parco Naturale Majella",
+   "rating": 4.7,
+   "reviews": 1909,
+   "blurb": "Adventure park in the forest with canopy obstacle courses for all ages plus hiking & biking trails.",
+   "phone": "0871 335544",
+   "hours": [
+    "Monday: 10:00 AM – 8:00 PM",
+    "Tuesday: 10:00 AM – 8:00 PM",
+    "Wednesday: 10:00 AM – 8:00 PM",
+    "Thursday: 10:00 AM – 8:00 PM",
+    "Friday: 10:00 AM – 8:00 PM",
+    "Saturday: 10:00 AM – 8:00 PM",
+    "Sunday: 10:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "vertical-park",
@@ -1671,7 +2926,23 @@
   "mapQuery": "Vertical Park, Pennapiedimonte CH, Italy",
   "lat": 42.15206,
   "lon": 14.19476,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJAcCXalpTMBMRqOVkKQ0Eqxc",
+   "name": "Parco Naturale Majella - Vertical Park",
+   "rating": 4.9,
+   "reviews": 40,
+   "hours": [
+    "Monday: 10:00 AM – 8:00 PM",
+    "Tuesday: 10:00 AM – 8:00 PM",
+    "Wednesday: 10:00 AM – 8:00 PM",
+    "Thursday: 10:00 AM – 8:00 PM",
+    "Friday: 10:00 AM – 8:00 PM",
+    "Saturday: 10:00 AM – 8:00 PM",
+    "Sunday: 10:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "canyoning-abruzzo-adventures",
@@ -1689,7 +2960,15 @@
   "mapQuery": "Canyoning — Abruzzo Adventures, Palena CH, Italy",
   "lat": 41.97109,
   "lon": 14.13618,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJZeHeoGNnMBMR3TdQawvBnH4",
+   "name": "Abruzzo Adventures",
+   "rating": 4.8,
+   "reviews": 120,
+   "phone": "335 165 0598",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "maja-quad",
@@ -1707,7 +2986,24 @@
   "mapQuery": "Maja Quad, Abbateggio PE, Italy",
   "lat": 42.22514,
   "lon": 14.01111,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJPcFPyyNJMBMRUjTsPDRQlxE",
+   "name": "Escursione in Quad Abruzzo con Majaquad",
+   "rating": 5,
+   "reviews": 314,
+   "phone": "348 494 5829",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "climbing-taster-majellando",
@@ -1761,7 +3057,24 @@
   "mapQuery": "Tandem paragliding, Rocca Calascio, Calascio AQ, Italy",
   "lat": 42.32803,
   "lon": 13.69077,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJwetK3f5ULhMRLUgeMdyBvco",
+   "name": "Parapendio biposto - Paragliding Tandem Flytheapennines",
+   "rating": 5,
+   "reviews": 22,
+   "phone": "370 347 3877",
+   "hours": [
+    "Monday: 9:00 AM – 7:00 PM",
+    "Tuesday: 9:00 AM – 7:00 PM",
+    "Wednesday: 9:00 AM – 7:00 PM",
+    "Thursday: 9:00 AM – 7:00 PM",
+    "Friday: 9:00 AM – 8:00 PM",
+    "Saturday: 9:00 AM – 7:00 PM",
+    "Sunday: 9:00 AM – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lecceta-di-torino-di-sangro",
@@ -1779,7 +3092,14 @@
   "mapQuery": "Lecceta di Torino di Sangro, Torino di Sangro CH, Italy",
   "lat": 42.2223,
   "lon": 14.55607,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ900qbADjMBMRWa5_D4wvxGM",
+   "name": "Riserva Naturale della Lecceta di Torino di Sangro",
+   "rating": 4.4,
+   "reviews": 18,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cammino-di-san-tommaso-final-stage",
@@ -1797,7 +3117,24 @@
   "mapQuery": "Cammino di San Tommaso — final stage, Crecchio CH, Italy",
   "lat": 42.29854,
   "lon": 14.3269,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ_yd66SYFMRMR1mO41yeJzGk",
+   "name": "Spazio Pellegrino - Il Cammino di San Tommaso",
+   "rating": 4.4,
+   "reviews": 5,
+   "phone": "328 687 1432",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: 10:00 AM – 12:00 PM",
+    "Friday: Closed",
+    "Saturday: 10:00 AM – 12:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "gessopalena-vecchia",
@@ -1815,7 +3152,12 @@
   "mapQuery": "Gessopalena Vecchia, Gessopalena CH, Italy",
   "lat": 42.05663,
   "lon": 14.27312,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJGSaUQLpYMBMRVjLcyMpVAA8",
+   "name": "Gessopalena Vecchia",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "gole-di-san-martino",
@@ -1833,7 +3175,24 @@
   "mapQuery": "Gole di San Martino, Fara San Martino CH, Italy",
   "lat": 42.09154,
   "lon": 14.14913,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJZcWwnX1ZMBMRT-niFYWp22M",
+   "name": "Gole di San Martino",
+   "rating": 4.7,
+   "reviews": 1753,
+   "phone": "340 680 7479",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "riserva-lago-di-serranella",
@@ -1851,7 +3210,15 @@
   "mapQuery": "Riserva Lago di Serranella, Sant'Eusanio del Sangro CH, Italy",
   "lat": 42.16894,
   "lon": 14.32711,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJFTS_Yfv5MBMRedEgYnXYUs4",
+   "name": "Riserva Naturale Regionale Lago di Serranella",
+   "rating": 3.8,
+   "reviews": 222,
+   "phone": "0872 99281",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "majexperience-guides",
@@ -1869,7 +3236,24 @@
   "mapQuery": "Majexperience — guides, Fara San Martino CH, Italy",
   "lat": 42.09154,
   "lon": 14.14913,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJR7vrM9qrMRMR1mRj9nQAtwg",
+   "name": "Majexperience - Escursioni ed esperienze nel Parco Maiella ed in Abruzzo",
+   "rating": 5,
+   "reviews": 178,
+   "phone": "389 113 8621",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "grotta-sant-angelo",
@@ -1887,7 +3271,24 @@
   "mapQuery": "Grotta Sant'Angelo, Palombaro CH, Italy",
   "lat": 42.12484,
   "lon": 14.23061,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJS2Pp1_tZMBMRL3hGLJu15dw",
+   "name": "Eremo di Sant'Angelo di Palombaro",
+   "rating": 4.6,
+   "reviews": 167,
+   "phone": "389 113 8621",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "calanchi-di-bucchianico",
@@ -1905,7 +3306,23 @@
   "mapQuery": "Calanchi di Bucchianico, Bucchianico CH, Italy",
   "lat": 42.30484,
   "lon": 14.18101,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJcQ4JxkmtMRMR-JnUXc7a9C0",
+   "name": "Calanchi di Bucchiànico",
+   "rating": 5,
+   "reviews": 1,
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "buonanotte-montebello-sul-sangro",
@@ -1941,7 +3358,25 @@
   "mapQuery": "Castello di Roccascalegna, Roccascalegna CH, Italy",
   "lat": 42.06254,
   "lon": 14.30682,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ-a2ec573MBMRykwzl-DoyC0",
+   "name": "Castello Medioevale di Roccascalegna",
+   "rating": 4.6,
+   "reviews": 5526,
+   "blurb": "Tours of courtyards, watchtowers & defensive walls at a fortress positioned atop overhanging rocks.",
+   "phone": "335 876 7589",
+   "hours": [
+    "Monday: 10:00 AM – 7:00 PM",
+    "Tuesday: 10:00 AM – 7:00 PM",
+    "Wednesday: 10:00 AM – 7:00 PM",
+    "Thursday: 10:00 AM – 7:00 PM",
+    "Friday: 10:00 AM – 7:00 PM",
+    "Saturday: 10:00 AM – 7:00 PM",
+    "Sunday: 10:00 AM – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "grotta-del-cavallone",
@@ -1959,7 +3394,24 @@
   "mapQuery": "Grotta del Cavallone, Taranta Peligna CH, Italy",
   "lat": 42.02083,
   "lon": 14.17051,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJDYyRS0pcMBMRREwHmpLqwsI",
+   "name": "Grotta del Cavallone",
+   "rating": 4.6,
+   "reviews": 1169,
+   "phone": "351 929 3832",
+   "hours": [
+    "Monday: 9:00 AM – 4:00 PM",
+    "Tuesday: 9:00 AM – 4:00 PM",
+    "Wednesday: 9:00 AM – 4:00 PM",
+    "Thursday: 9:00 AM – 4:00 PM",
+    "Friday: 9:00 AM – 4:00 PM",
+    "Saturday: 9:00 AM – 4:00 PM",
+    "Sunday: 9:00 AM – 4:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "juvanum",
@@ -1977,7 +3429,15 @@
   "mapQuery": "Juvanum, Montenerodomo CH, Italy",
   "lat": 41.97563,
   "lon": 14.25282,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJw4yX3LBfMBMRYzxy2PNqxHY",
+   "name": "Iuvanum Parco e Museo Archeologico e della Trasformazione del Territorio",
+   "rating": 4.3,
+   "reviews": 330,
+   "phone": "0872 960109",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cascate-del-verde",
@@ -1995,7 +3455,24 @@
   "mapQuery": "Cascate del Verde, Borrello CH, Italy",
   "lat": 41.91893,
   "lon": 14.30442,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJGTv9IWSKMBMRuVGGtlaI8rE",
+   "name": "Riserva Naturale Regionale Cascate del Verde",
+   "rating": 4.4,
+   "reviews": 2022,
+   "phone": "389 684 0840",
+   "hours": [
+    "Monday: 9:00 AM – 7:00 PM",
+    "Tuesday: 9:00 AM – 7:00 PM",
+    "Wednesday: 9:00 AM – 7:00 PM",
+    "Thursday: 9:00 AM – 7:00 PM",
+    "Friday: 9:00 AM – 7:00 PM",
+    "Saturday: 9:00 AM – 7:00 PM",
+    "Sunday: 9:00 AM – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "tombe-rupestri-di-san-liberatore",
@@ -2013,7 +3490,24 @@
   "mapQuery": "Tombe rupestri di San Liberatore, Serramonacesca PE, Italy",
   "lat": 42.25684,
   "lon": 14.10001,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJVwLUcARSMBMRr4d4yrLjiuM",
+   "name": "Rock-cut tombs of San Liberatore",
+   "rating": 4.7,
+   "reviews": 77,
+   "phone": "0871 898143",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "grotta-dei-piccioni",
@@ -2049,7 +3543,24 @@
   "mapQuery": "Eremo di Santo Spirito a Majella, Roccamorice PE, Italy",
   "lat": 42.2135,
   "lon": 14.02459,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJn2HZNr9PMBMRV_414BTnIdc",
+   "name": "Hermitage of Santo Spirito a Maiella",
+   "rating": 4.8,
+   "reviews": 1238,
+   "phone": "366 424 9866",
+   "hours": [
+    "Monday: 10:00 AM – 6:15 PM",
+    "Tuesday: 10:00 AM – 6:15 PM",
+    "Wednesday: 10:00 AM – 6:15 PM",
+    "Thursday: 10:00 AM – 6:15 PM",
+    "Friday: 10:00 AM – 6:15 PM",
+    "Saturday: 10:00 AM – 6:15 PM",
+    "Sunday: 10:00 AM – 6:15 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "eremo-di-san-bartolomeo-in-legio",
@@ -2067,7 +3578,25 @@
   "mapQuery": "Eremo di San Bartolomeo in Legio, Roccamorice PE, Italy",
   "lat": 42.2135,
   "lon": 14.02459,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ67LfihBPMBMRp3Jap9fj2-4",
+   "name": "Hermitage of San Bartolomeo in Legio",
+   "rating": 4.8,
+   "reviews": 855,
+   "blurb": "Centuries-old church carved from a stone cliff with a preserved fresco, altar & hermit cell.",
+   "phone": "085 922343",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "sunset-to-stars-on-the-majella",
@@ -2103,7 +3632,24 @@
   "mapQuery": "Valle dell'Orfento — Sentiero delle Scalelle, Caramanico Terme PE, Italy",
   "lat": 42.15645,
   "lon": 14.00319,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJOU08mlNPMBMRNGjuQkg3VEU",
+   "name": "Le Scalelle",
+   "rating": 4.8,
+   "reviews": 441,
+   "phone": "085 922343",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "corvara",
@@ -2139,7 +3685,12 @@
   "mapQuery": "Roccacaramanico, Sant'Eufemia a Maiella PE, Italy",
   "lat": 42.10332,
   "lon": 14.01417,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ5dwI_CNEMBMRcDBKphkeAu0",
+   "name": "Roccacaramanico",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "calanchi-di-atri",
@@ -2157,7 +3708,24 @@
   "mapQuery": "Calanchi di Atri, Riserva Calanchi di Atri, Atri TE, Italy",
   "lat": 42.57444,
   "lon": 13.9676,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJe4oervq_MRMRZ0Kw9-3nzZM",
+   "name": "Calanchi di Atri",
+   "rating": 4.6,
+   "reviews": 97,
+   "phone": "328 053 5635",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: 4:00 – 8:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bosco-di-sant-antonio",
@@ -2175,7 +3743,24 @@
   "mapQuery": "Bosco di Sant'Antonio, Pescocostanzo AQ, Italy",
   "lat": 41.94871,
   "lon": 14.02751,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJbVYRnW1pMBMR5gie_6taMjQ",
+   "name": "Bosco di Sant'Antonio",
+   "rating": 4.7,
+   "reviews": 2117,
+   "phone": "0864 641440",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "saepinum-altilia",
@@ -2193,7 +3778,24 @@
   "mapQuery": "Saepinum / Altilia, Altilia, Sepino CB, Italy",
   "lat": 41.43331,
   "lon": 14.61858,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJR5XDqPBsOhMRnmkYid-BzmU",
+   "name": "Saepinum Archaeological Area",
+   "rating": 4.6,
+   "reviews": 3405,
+   "phone": "0874 790207",
+   "hours": [
+    "Monday: 8:15 AM – 7:15 PM",
+    "Tuesday: 8:15 AM – 7:15 PM",
+    "Wednesday: 8:15 AM – 7:15 PM",
+    "Thursday: 8:15 AM – 7:15 PM",
+    "Friday: 8:15 AM – 7:15 PM",
+    "Saturday: 8:15 AM – 7:15 PM",
+    "Sunday: 8:15 AM – 7:15 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ecotur-bear-watching",
@@ -2211,7 +3813,24 @@
   "mapQuery": "Ecotur — bear watching, Pescasseroli AQ, Italy",
   "lat": 42.36329,
   "lon": 14.14464,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJLY-4-cQOMBMRp1f1tiL9Cpo",
+   "name": "Ecotur Viaggi Natura",
+   "rating": 4.5,
+   "reviews": 155,
+   "phone": "0863 912760",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Sunday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "deer-rut-guided-evening",
@@ -2247,7 +3866,24 @@
   "mapQuery": "Museo Universitario di Chieti, Piazza Trento e Trieste 1, Chieti CH, Italy",
   "lat": 42.34704,
   "lon": 14.16484,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJQaViREGsMRMR6ZfQxgX2Of4",
+   "name": "University Museum of Chieti",
+   "rating": 4.6,
+   "reviews": 695,
+   "phone": "0871 355 3514",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 AM – 8:00 PM",
+    "Wednesday: 9:00 AM – 8:00 PM",
+    "Thursday: 9:00 AM – 8:00 PM",
+    "Friday: 9:00 AM – 8:00 PM",
+    "Saturday: 3:00 – 8:00 PM",
+    "Sunday: 3:00 – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bagno-borbonico",
@@ -2265,7 +3901,12 @@
   "mapQuery": "Bagno Borbonico, Via delle Caserme 24, Pescara PE, Italy",
   "lat": 42.46203,
   "lon": 14.21313,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ86CRiGumMRMRLk3eBD3WelY",
+   "name": "Via del Bagno Borbonico",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "macte",
@@ -2283,7 +3924,24 @@
   "mapQuery": "MACTE, Via Giappone, Termoli CB, Italy",
   "lat": 42.06658,
   "lon": 14.76999,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJH-IDXADNMBMR7vJvhjfPVZw",
+   "name": "Museum of Contemporary Art in Termoli (Macte)",
+   "rating": 4.3,
+   "reviews": 172,
+   "phone": "0875 808025",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Thursday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Friday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-del-treno",
@@ -2301,7 +3959,24 @@
   "mapQuery": "Museo del Treno, Stazione di Montesilvano, Montesilvano PE, Italy",
   "lat": 42.49854,
   "lon": 14.14096,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJYf5xIwylMRMRSzc711z2h-s",
+   "name": "Museo del Treno - ACAF",
+   "rating": 4.5,
+   "reviews": 142,
+   "phone": "349 134 7413",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: Closed",
+    "Saturday: Closed",
+    "Sunday: 10:30 AM – 12:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "mom-museo-dell-orso-marsicano",
@@ -2319,7 +3994,15 @@
   "mapQuery": "MOM — Museo dell'Orso Marsicano, Palena CH, Italy",
   "lat": 41.97109,
   "lon": 14.13618,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ2zdB041nMBMRP_hCjsDQYog",
+   "name": "MOM-Marsicano Bear Museum",
+   "rating": 4.4,
+   "reviews": 400,
+   "phone": "339 862 9165",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-geopaleontologico",
@@ -2337,7 +4020,24 @@
   "mapQuery": "Museo Geopaleontologico, Castello Ducale, Palena CH, Italy",
   "lat": 41.97109,
   "lon": 14.13618,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJfSX1aoZnMBMRFMVX3viYCSs",
+   "name": "Museo Geopaleontologico \"Alto Aventino\"",
+   "rating": 4.5,
+   "reviews": 50,
+   "phone": "349 195 0922",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: Closed",
+    "Saturday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Sunday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "santuario-del-volto-santo",
@@ -2355,7 +4055,24 @@
   "mapQuery": "Santuario del Volto Santo, Via Cappuccini 26, Manoppello PE, Italy",
   "lat": 42.25221,
   "lon": 14.06125,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJD6dZArdNMBMR1d1YFock4Qc",
+   "name": "Santuario del Volto Santo",
+   "rating": 4.7,
+   "reviews": 2226,
+   "phone": "085 859118",
+   "hours": [
+    "Monday: 6:00 AM – 7:00 PM",
+    "Tuesday: 6:00 AM – 7:00 PM",
+    "Wednesday: 6:00 AM – 7:00 PM",
+    "Thursday: 6:00 AM – 7:00 PM",
+    "Friday: 6:00 AM – 7:00 PM",
+    "Saturday: 6:00 AM – 7:00 PM",
+    "Sunday: 6:00 AM – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "centerba-toro-distillery",
@@ -2373,7 +4090,24 @@
   "mapQuery": "Centerba Toro distillery, Via Tiburtina Valeria, Tocco da Casauria PE, Italy",
   "lat": 42.20061,
   "lon": 13.8845,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJZW3u9y02MBMRfuo1tBqCwNs",
+   "name": "Liquori Toro - Enrico Toro Distilleria",
+   "rating": 4.8,
+   "reviews": 26,
+   "phone": "085 880279",
+   "hours": [
+    "Monday: 9:00 AM – 4:30 PM",
+    "Tuesday: 9:00 AM – 4:30 PM",
+    "Wednesday: 9:00 AM – 4:30 PM",
+    "Thursday: 9:00 AM – 4:30 PM",
+    "Friday: 9:00 AM – 12:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-confetti-pelino",
@@ -2391,7 +4125,24 @@
   "mapQuery": "Museo Confetti Pelino, Via Stazione Introdacqua 55, Sulmona AQ, Italy",
   "lat": 42.03847,
   "lon": 13.92222,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJQVPM8nBAMBMRts6KNiSo_Yg",
+   "name": "Museo Pelino dell'arte e della tecnologia confettiera",
+   "rating": 4.6,
+   "reviews": 2040,
+   "phone": "0864 210047",
+   "hours": [
+    "Monday: 8:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Tuesday: 8:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Wednesday: 8:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Thursday: 8:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Friday: 8:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Saturday: 8:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-dei-misteri",
@@ -2409,7 +4160,24 @@
   "mapQuery": "Museo dei Misteri, Via Trento, Campobasso CB, Italy",
   "lat": 42.00719,
   "lon": 14.8591,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJN0vEcc10OhMRnWe89VIvELg",
+   "name": "Museo dei Misteri",
+   "rating": 4.6,
+   "reviews": 301,
+   "phone": "328 555 6549",
+   "hours": [
+    "Monday: 4:00 – 6:00 PM",
+    "Tuesday: 4:00 – 6:00 PM",
+    "Wednesday: 4:01 – 6:01 PM",
+    "Thursday: 4:00 – 6:00 PM",
+    "Friday: 4:00 – 6:00 PM",
+    "Saturday: 4:00 – 6:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pontificia-fonderia-marinelli",
@@ -2427,7 +4195,24 @@
   "mapQuery": "Pontificia Fonderia Marinelli, Via Felice D'Onofrio 14, Agnone IS, Italy",
   "lat": 41.80969,
   "lon": 14.37626,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJs7mcgq2IMBMRT_7Fa8gvsCw",
+   "name": "Pontificia Fonderia di Campane Marinelli",
+   "rating": 4.8,
+   "reviews": 401,
+   "phone": "0865 78235",
+   "hours": [
+    "Monday: 9:30 AM – 12:30 PM, 3:30 – 5:00 PM",
+    "Tuesday: 9:30 AM – 12:30 PM, 3:30 – 5:00 PM",
+    "Wednesday: 9:30 AM – 12:30 PM, 3:30 – 5:00 PM",
+    "Thursday: 9:30 AM – 12:30 PM, 3:30 – 5:00 PM",
+    "Friday: 9:30 AM – 12:30 PM, 3:30 – 5:00 PM",
+    "Saturday: 9:30 AM – 12:30 PM, 3:30 – 5:00 PM",
+    "Sunday: 10:00 AM – 12:30 PM, 3:30 – 5:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-del-profumo",
@@ -2442,7 +4227,15 @@
   "website": "https://turismoinmolise.com/museo-del-profumo/",
   "colour": "#B07FE8",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+del+Profumo%2C+Via+del+Profumo+1%2C+Sant%27Elena+Sannita+IS%2C+Italy",
-  "mapQuery": "Museo del Profumo, Via del Profumo 1, Sant'Elena Sannita IS, Italy"
+  "mapQuery": "Museo del Profumo, Via del Profumo 1, Sant'Elena Sannita IS, Italy",
+  "google": {
+   "id": "ChIJs-hhFt55OhMRx1NqzUegczQ",
+   "name": "Fragrance Museum",
+   "rating": 4.7,
+   "reviews": 131,
+   "phone": "338 662 0595",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-dei-ferri-taglienti",
@@ -2457,7 +4250,24 @@
   "website": "https://comune.frosolone.is.it/musei-di-frosolone/",
   "colour": "#B07FE8",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museo+dei+Ferri+Taglienti%2C+Via+Garibaldi%2C+Frosolone+IS%2C+Italy",
-  "mapQuery": "Museo dei Ferri Taglienti, Via Garibaldi, Frosolone IS, Italy"
+  "mapQuery": "Museo dei Ferri Taglienti, Via Garibaldi, Frosolone IS, Italy",
+  "google": {
+   "id": "ChIJT2JQzkt4OhMRW50G3RMEtz0",
+   "name": "Museo dei Ferri Taglienti",
+   "rating": 4.6,
+   "reviews": 59,
+   "phone": "344 740 0799",
+   "hours": [
+    "Monday: 9:00 AM – 6:00 PM",
+    "Tuesday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Wednesday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Thursday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Friday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Sunday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "sartoria-flocco",
@@ -2475,7 +4285,24 @@
   "mapQuery": "Sartoria Flocco, Corso Bandiera 63, Lanciano CH, Italy",
   "lat": 42.22906,
   "lon": 14.39346,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJU5-y3M39MBMRqk31snd6new",
+   "name": "Flocco Verina",
+   "rating": 3.7,
+   "reviews": 9,
+   "phone": "0872 700435",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Thursday: 9:00 AM – 1:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 3:30 – 7:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ceramiche-d-arte-liberati",
@@ -2493,7 +4320,24 @@
   "mapQuery": "Ceramiche d'Arte Liberati, Villamagna CH, Italy",
   "lat": 42.33329,
   "lon": 14.23681,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ7380theqMRMRZVbNydwkOIU",
+   "name": "Ceramiche d'arte Liberati",
+   "rating": 4.8,
+   "reviews": 31,
+   "phone": "0871 300750",
+   "hours": [
+    "Monday: 8:30 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Tuesday: 8:30 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Friday: 8:30 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Saturday: 9:30 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "creta-rossa",
@@ -2511,7 +4355,24 @@
   "mapQuery": "Creta Rossa, Piazza del Tomolo 3, Vasto CH, Italy",
   "lat": 42.11058,
   "lon": 14.70902,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJV61pQ1TcMBMRCNCNFU-dBS4",
+   "name": "Creta Rossa - Produzione Artigianale e Corsi di Ceramica",
+   "rating": 5,
+   "reviews": 133,
+   "phone": "349 584 3336",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 4:30 – 7:30 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 4:30 – 7:30 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 4:30 – 7:30 PM",
+    "Thursday: 9:00 AM – 12:30 PM",
+    "Friday: 9:00 AM – 12:30 PM, 4:30 – 7:30 PM",
+    "Saturday: 9:00 AM – 12:30 PM, 4:30 – 7:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fabio-amoroso",
@@ -2547,7 +4408,14 @@
   "mapQuery": "La Nicchia dell'Artista, Rapino CH, Italy",
   "lat": 42.21074,
   "lon": 14.18391,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ2wFgYf5TMBMRQRxkquv4CV4",
+   "name": "Pinacoteca e centro documentale della ceramica",
+   "rating": 4.7,
+   "reviews": 7,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ceramiche-artistiche-tasca",
@@ -2565,7 +4433,24 @@
   "mapQuery": "Ceramiche Artistiche Tasca, Via XXIV Maggio 22, Rapino CH, Italy",
   "lat": 42.21074,
   "lon": 14.18391,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJt15qg1VRMBMR0eYt_A04r_8",
+   "name": "Ceramiche Artistiche Di Giovannina Tasca",
+   "rating": 4.6,
+   "reviews": 11,
+   "phone": "0871 801186",
+   "hours": [
+    "Monday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM",
+    "Tuesday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM",
+    "Wednesday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM",
+    "Thursday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM",
+    "Friday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM",
+    "Saturday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM",
+    "Sunday: 9:00 AM – 1:30 PM, 4:30 – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "arterame-ferro",
@@ -2583,7 +4468,24 @@
   "mapQuery": "Arterame & Ferro, Via Grele 14, Guardiagrele CH, Italy",
   "lat": 42.18709,
   "lon": 14.21354,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJI9bWLMBWMBMRfsL-cBnzk7k",
+   "name": "Arterameferro di Lelio Di Sciascio",
+   "rating": 4.9,
+   "reviews": 863,
+   "phone": "340 279 7202",
+   "hours": [
+    "Monday: 9:00 AM – 6:00 PM",
+    "Tuesday: 9:00 AM – 6:00 PM",
+    "Wednesday: 9:00 AM – 6:00 PM",
+    "Thursday: 9:00 AM – 6:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-dell-artigianato-artistico-abruzze",
@@ -2601,7 +4503,24 @@
   "mapQuery": "Museo dell'Artigianato Artistico Abruzzese, Guardiagrele CH, Italy",
   "lat": 42.19548,
   "lon": 14.21971,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJw2KXcpRWMBMR1TssCcrUa9E",
+   "name": "Ente Mostra dell'Artigianato Artistico Abruzzese",
+   "rating": 4.6,
+   "reviews": 161,
+   "phone": "0871 83829",
+   "hours": [
+    "Monday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM",
+    "Tuesday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM",
+    "Wednesday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM",
+    "Thursday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM",
+    "Friday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM",
+    "Saturday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM",
+    "Sunday: 10:30 AM – 12:30 PM, 3:00 – 8:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "guilmiartproject",
@@ -2619,7 +4538,15 @@
   "mapQuery": "GuilmiArtProject, Guilmi CH, Italy",
   "lat": 41.99703,
   "lon": 14.47842,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJkxFZ6DftMBMRpwtB98wLaY4",
+   "name": "GuilmiArtProject",
+   "rating": 5,
+   "reviews": 2,
+   "phone": "349 692 6072",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "di-quinzio-sartoria",
@@ -2637,7 +4564,24 @@
   "mapQuery": "Di Quinzio Sartoria, Via Piero Gobetti 18, Pescara PE, Italy",
   "lat": 42.46549,
   "lon": 14.21788,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJbeRYSrOnMRMRm3eZkK4dD6M",
+   "name": "Di Quinzio Sartoria",
+   "rating": 4.7,
+   "reviews": 13,
+   "phone": "327 699 9830",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 9:30 AM – 12:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-casa-per-le-arti",
@@ -2655,7 +4599,15 @@
   "mapQuery": "La Casa per le Arti, Via Spilorzi 7, Chieti CH, Italy",
   "lat": 42.10269,
   "lon": 14.41591,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJN90kUrquMRMRz9Xxt2kLgw4",
+   "name": "la Casa per le Arti",
+   "rating": 4.9,
+   "reviews": 13,
+   "phone": "328 653 7759",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lanificio-merlino",
@@ -2673,7 +4625,14 @@
   "mapQuery": "Lanificio Merlino, Taranta Peligna CH, Italy",
   "lat": 42.02083,
   "lon": 14.17051,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJkyzotcpdMBMRq2Z9-EmDjUM",
+   "name": "I.L.A.Industria Laniera Abruzzese Vincenzo Merlino e Figli",
+   "rating": 4.6,
+   "reviews": 17,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "belisario-camicie",
@@ -2691,7 +4650,24 @@
   "mapQuery": "Belisario Camicie, Viale Matrino 161, Citta Sant'Angelo PE, Italy",
   "lat": 42.52697,
   "lon": 14.1372,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJuWMUX4KkMRMR56NbaYSvzA0",
+   "name": "Sartoria Belisario",
+   "rating": 4.7,
+   "reviews": 38,
+   "phone": "085 959134",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 9:00 AM – 1:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-del-merletto-a-tombolo",
@@ -2709,7 +4685,14 @@
   "mapQuery": "Museo del Merletto a Tombolo, Piazza Municipio, Pescocostanzo AQ, Italy",
   "lat": 41.9165,
   "lon": 14.05974,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJizcUehBvMBMR7WSA5CuP3PA",
+   "name": "Museo del merletto a tombolo",
+   "rating": 4,
+   "reviews": 10,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ceramiche-simonetti",
@@ -2727,7 +4710,24 @@
   "mapQuery": "Ceramiche Simonetti, Via Gentile Carmine 32, Castelli TE, Italy",
   "lat": 42.48972,
   "lon": 13.71204,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJV-sHWxHQMRMRGeR9SLFbsCs",
+   "name": "Ceramiche Simonetti di Simonetti Antonio",
+   "rating": 4.9,
+   "reviews": 163,
+   "phone": "0861 979499",
+   "hours": [
+    "Monday: 8:30 AM – 1:00 PM, 2:30 – 6:30 PM",
+    "Tuesday: 8:30 AM – 1:00 PM, 2:30 – 6:30 PM",
+    "Wednesday: 8:30 AM – 1:00 PM, 2:30 – 6:30 PM",
+    "Thursday: 8:30 AM – 1:00 PM, 2:30 – 6:30 PM",
+    "Friday: 8:30 AM – 1:00 PM, 2:30 – 6:30 PM",
+    "Saturday: 10:30 AM – 1:00 PM, 2:30 – 7:00 PM",
+    "Sunday: 10:30 AM – 1:00 PM, 2:30 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ceramiche-de-fabritiis",
@@ -2745,7 +4745,24 @@
   "mapQuery": "Ceramiche De Fabritiis, Via F.A. Grue 24, Castelli TE, Italy",
   "lat": 42.48794,
   "lon": 13.7117,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJWYuWDxTQMRMRXupVtPmhLj4",
+   "name": "De Fabritiis Ceramiche",
+   "rating": 4.3,
+   "reviews": 9,
+   "phone": "0861 970752",
+   "hours": [
+    "Monday: 9:30 AM – 7:00 PM",
+    "Tuesday: 9:30 AM – 7:00 PM",
+    "Wednesday: 9:30 AM – 7:00 PM",
+    "Thursday: 9:30 AM – 7:00 PM",
+    "Friday: 9:30 AM – 7:00 PM",
+    "Saturday: 9:30 AM – 7:00 PM",
+    "Sunday: 9:30 AM – 1:00 PM, 2:30 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-delle-ceramiche-di-castelli",
@@ -2763,7 +4780,24 @@
   "mapQuery": "Museo delle Ceramiche di Castelli, Salita Paradiso, Castelli TE, Italy",
   "lat": 42.48772,
   "lon": 13.71175,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJExQCpxbQMRMRooKnVnTTtLw",
+   "name": "Museo delle ceramiche di Castelli",
+   "rating": 4.5,
+   "reviews": 263,
+   "phone": "0861 970725",
+   "hours": [
+    "Monday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Tuesday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Wednesday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Thursday: 10:00 AM – 1:00 PM, 3:00 – 6:00 PM",
+    "Friday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Saturday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM",
+    "Sunday: 10:00 AM – 1:00 PM, 3:00 – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "orafi-rotolo-1884",
@@ -2781,7 +4815,24 @@
   "mapQuery": "Orafi Rotolo 1884, Scanno AQ, Italy",
   "lat": 41.90386,
   "lon": 13.88021,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ7VJSHx0TMBMRFRcF95y2Ltg",
+   "name": "Orafi Rotolo",
+   "rating": 4.4,
+   "reviews": 28,
+   "phone": "0864 74518",
+   "hours": [
+    "Monday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Tuesday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Wednesday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Thursday: Closed",
+    "Friday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Saturday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Sunday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "birreria-la-porta",
@@ -2799,7 +4850,25 @@
   "mapQuery": "Birreria La Porta, Via Bastioni 62, Lanciano CH, Italy",
   "lat": 42.2335,
   "lon": 14.39322,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJOyt8ns_9MBMRVu_xuO_-RxQ",
+   "name": "La Porta",
+   "rating": 4.5,
+   "reviews": 437,
+   "price": "€€",
+   "phone": "0872 49563",
+   "hours": [
+    "Monday: 2:30 PM – 3:00 AM",
+    "Tuesday: 2:30 PM – 3:00 AM",
+    "Wednesday: 2:30 PM – 3:00 AM",
+    "Thursday: 2:30 PM – 3:00 AM",
+    "Friday: 2:30 PM – 3:00 AM",
+    "Saturday: 2:30 PM – 3:00 AM",
+    "Sunday: 2:30 PM – 3:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "corner",
@@ -2817,7 +4886,25 @@
   "mapQuery": "Corner, Corso Trento e Trieste 121, Lanciano CH, Italy",
   "lat": 42.22788,
   "lon": 14.39381,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ110hbaRtKhMR-MISS8cyw1Q",
+   "name": "CORNER | Wine & Cocktail Bar",
+   "rating": 4.3,
+   "reviews": 16,
+   "price": "€€",
+   "phone": "391 727 9524",
+   "hours": [
+    "Monday: 5:30 PM – 1:00 AM",
+    "Tuesday: 5:30 PM – 1:00 AM",
+    "Wednesday: Closed",
+    "Thursday: 5:00 PM – 1:00 AM",
+    "Friday: 5:00 PM – 1:00 AM",
+    "Saturday: 5:30 PM – 1:30 AM",
+    "Sunday: 5:30 PM – 1:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "casa-del-popolo-la-conviviale",
@@ -2835,7 +4922,22 @@
   "mapQuery": "Casa del Popolo 'La Conviviale', Vasto CH, Italy",
   "lat": 42.12434,
   "lon": 14.70592,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ_4ouFQDdMBMRycN2RDSqpJE",
+   "name": "Casa del Popolo \"La Conviviale\"",
+   "phone": "344 522 2420",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 5:15 – 6:30 PM",
+    "Wednesday: 5:00 – 7:00 PM",
+    "Thursday: Closed",
+    "Friday: 5:15 – 8:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "scumm",
@@ -2853,7 +4955,24 @@
   "mapQuery": "Scumm, Via delle Caserme 38, Pescara PE, Italy",
   "lat": 42.46194,
   "lon": 14.21288,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJvZYHwwunMRMRBZko7TUUlP4",
+   "name": "Scumm",
+   "rating": 4.7,
+   "reviews": 269,
+   "price": "€",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 6:00 PM – 2:00 AM",
+    "Wednesday: 6:00 PM – 2:00 AM",
+    "Thursday: 6:00 PM – 2:00 AM",
+    "Friday: 6:00 PM – 2:00 AM",
+    "Saturday: 6:00 PM – 2:00 AM",
+    "Sunday: 6:00 PM – 2:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "radicale",
@@ -2871,7 +4990,25 @@
   "mapQuery": "Radicale, Via dei Bastioni 10, Pescara PE, Italy",
   "lat": 42.46066,
   "lon": 14.21264,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJFWggkT2nMRMRsxs4QO4jee0",
+   "name": "Radicale",
+   "rating": 4.9,
+   "reviews": 52,
+   "price": "€€",
+   "phone": "350 808 8594",
+   "hours": [
+    "Monday: 6:00 PM – 1:00 AM",
+    "Tuesday: 6:00 PM – 1:00 AM",
+    "Wednesday: 6:00 PM – 1:00 AM",
+    "Thursday: 6:00 PM – 1:00 AM",
+    "Friday: 6:00 PM – 1:00 AM",
+    "Saturday: 6:00 PM – 1:00 AM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "spazio-matta",
@@ -2889,7 +5026,14 @@
   "mapQuery": "Spazio Matta, Via Gran Sasso 57, Pescara PE, Italy",
   "lat": 42.46474,
   "lon": 14.20686,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJRy0Asm2mMRMRuYYyyijDet8",
+   "name": "Spazio Matta",
+   "rating": 4.3,
+   "reviews": 148,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-nuova-lavanderia",
@@ -2907,7 +5051,25 @@
   "mapQuery": "La Nuova Lavanderia, Via Cesare Battisti, Pescara PE, Italy",
   "lat": 42.47211,
   "lon": 14.20643,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJwyyWK2WmMRMR5IZnRyrslP4",
+   "name": "New Laundry - C. & C. Cocktail Bar",
+   "rating": 4.7,
+   "reviews": 338,
+   "price": "€€",
+   "phone": "349 585 7483",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 PM – 2:00 AM",
+    "Wednesday: 9:00 PM – 2:00 AM",
+    "Thursday: 9:00 PM – 2:00 AM",
+    "Friday: 9:00 PM – 2:00 AM",
+    "Saturday: 9:00 PM – 2:00 AM",
+    "Sunday: 9:00 PM – 2:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "glicine",
@@ -2925,7 +5087,25 @@
   "mapQuery": "Glicine, Via Roma 42, Pescara PE, Italy",
   "lat": 42.46981,
   "lon": 14.20802,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJq2-gG5WnMRMRiChK7hU8pus",
+   "name": "Glicine - Vino & Bar",
+   "rating": 4,
+   "reviews": 55,
+   "price": "€€",
+   "phone": "328 902 0171",
+   "hours": [
+    "Monday: 6:00 PM – 12:00 AM",
+    "Tuesday: 6:00 PM – 12:00 AM",
+    "Wednesday: 6:00 PM – 12:00 AM",
+    "Thursday: 6:00 PM – 12:00 AM",
+    "Friday: 6:00 PM – 12:00 AM",
+    "Saturday: 6:00 PM – 12:00 AM",
+    "Sunday: 6:00 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "shaka-brew",
@@ -2943,7 +5123,25 @@
   "mapQuery": "Shaka Brew, Via Cesare Battisti 140, Pescara PE, Italy",
   "lat": 42.47335,
   "lon": 14.20501,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ-cuLK2WmMRMREROisySSrwc",
+   "name": "Shaka Brew - Italian Craft Beer",
+   "rating": 4.8,
+   "reviews": 319,
+   "price": "€",
+   "phone": "329 147 1959",
+   "hours": [
+    "Monday: 5:00 PM – 2:00 AM",
+    "Tuesday: 5:00 PM – 2:00 AM",
+    "Wednesday: 5:00 PM – 2:00 AM",
+    "Thursday: 5:00 PM – 2:00 AM",
+    "Friday: 5:00 PM – 2:00 AM",
+    "Saturday: 5:00 PM – 2:00 AM",
+    "Sunday: 5:00 PM – 2:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "picture-disc",
@@ -2961,7 +5159,24 @@
   "mapQuery": "Picture Disc, Via Venezia 60, Pescara PE, Italy",
   "lat": 42.46711,
   "lon": 14.21467,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJSeTYt2mmMRMRroyETFe49O0",
+   "name": "Picture Disc Pescara",
+   "rating": 4.7,
+   "reviews": 195,
+   "phone": "085 914 1684",
+   "hours": [
+    "Monday: 10:00 AM – 1:30 PM, 4:00 – 6:00 PM",
+    "Tuesday: 10:00 AM – 1:30 PM, 4:00 – 6:00 PM",
+    "Wednesday: 10:00 AM – 1:30 PM, 4:00 – 6:00 PM",
+    "Thursday: 10:00 AM – 1:30 PM, 4:00 – 6:00 PM",
+    "Friday: 10:00 AM – 1:30 PM, 4:00 – 6:00 PM",
+    "Saturday: 10:00 AM – 1:30 PM, 4:00 – 6:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "birrificio-maiella",
@@ -2979,7 +5194,24 @@
   "mapQuery": "Birrificio Maiella, Localita Cerrani, Pretoro CH, Italy",
   "lat": 42.22167,
   "lon": 14.15886,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJp_-Lmff3MBMR0FlkEOOgGUs",
+   "name": "Birrificio Maiella",
+   "rating": 4.5,
+   "reviews": 210,
+   "phone": "338 848 5425",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: 11:00 AM – 5:00 PM",
+    "Thursday: 11:00 AM – 5:00 PM",
+    "Friday: 11:00 AM – 5:00 PM",
+    "Saturday: 3:00 – 9:00 PM",
+    "Sunday: 3:00 – 9:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "almond-22-taproom",
@@ -2997,7 +5229,15 @@
   "mapQuery": "Almond '22 taproom, Contrada Remartello 47, Loreto Aprutino PE, Italy",
   "lat": 42.42836,
   "lon": 14.02518,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJeWFvBd-wMRMRWEFhR9jsWhk",
+   "name": "Almond '22",
+   "rating": 4.7,
+   "reviews": 128,
+   "phone": "085 820 8154",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fornace-del-bono-jazz-club",
@@ -3015,7 +5255,24 @@
   "mapQuery": "Fornace del Bono Jazz Club, Palazzo del Bono, Penne PE, Italy",
   "lat": 42.4556,
   "lon": 13.92686,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJt2dt-oG3MRMRK1Ah4yCpeGs",
+   "name": "Fornace del Bono",
+   "rating": 5,
+   "reviews": 1,
+   "phone": "335 595 4604",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: Closed",
+    "Saturday: 7:00 PM – 12:00 AM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agripub-opperbacco",
@@ -3033,7 +5290,25 @@
   "mapQuery": "Agripub Opperbacco, Notaresco TE, Italy",
   "lat": 42.65414,
   "lon": 13.8947,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJTcGWQJTqMRMRqsZiLml6DD8",
+   "name": "L'AgriPub Opperbacco",
+   "rating": 4.8,
+   "reviews": 1246,
+   "price": "€€",
+   "phone": "328 315 6009",
+   "hours": [
+    "Monday: 7:30 PM – 12:00 AM",
+    "Tuesday: 7:30 PM – 12:00 AM",
+    "Wednesday: Closed",
+    "Thursday: 7:30 PM – 12:00 AM",
+    "Friday: 7:30 PM – 12:00 AM",
+    "Saturday: 7:30 PM – 12:00 AM",
+    "Sunday: 7:30 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "antiques-market-lanciano",
@@ -3069,7 +5344,24 @@
   "mapQuery": "Kecè, Contrada Serroni 80, Lanciano CH, Italy",
   "lat": 42.23053,
   "lon": 14.39078,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJP30uhe79MBMRuJ9SSdBAe24",
+   "name": "Kece' Lanciano - negozio dell'usato",
+   "rating": 4.2,
+   "reviews": 142,
+   "phone": "0872 660109",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Wednesday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Thursday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Friday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Saturday: 10:00 AM – 1:00 PM, 4:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lanciano-weekly-market",
@@ -3123,7 +5415,12 @@
   "mapQuery": "Il Carrello dell'Usato, Via Civilta del Lavoro 71, Ortona CH, Italy",
   "lat": 42.34426,
   "lon": 14.40102,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJsTjjOvQDMRMRSZ6mYF3BmOw",
+   "name": "Carrello Dell'usato",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "vitanova",
@@ -3141,7 +5438,24 @@
   "mapQuery": "Vitanova, Via Palermo 18, Vasto CH, Italy",
   "lat": 42.11582,
   "lon": 14.70787,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJuz6Qi1LcMBMRIbbT32kBE8E",
+   "name": "Vitanova mercatino dell'usato a Vasto",
+   "rating": 4.1,
+   "reviews": 110,
+   "phone": "377 439 3186",
+   "hours": [
+    "Monday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Tuesday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Wednesday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Thursday: 9:30 AM – 1:00 PM",
+    "Friday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Saturday: 9:30 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "mercatino-dell-usato-sambuceto",
@@ -3159,7 +5473,24 @@
   "mapQuery": "Mercatino dell'Usato Sambuceto, Via Piave 5, San Giovanni Teatino CH, Italy",
   "lat": 42.41331,
   "lon": 14.17065,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ7eN0_yKvMRMRtFdB3f8YuVI",
+   "name": "Mercatino Usato Chieti Sambuceto",
+   "rating": 3.8,
+   "reviews": 895,
+   "phone": "085 842 1930",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 10:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Wednesday: 10:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Thursday: 10:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Friday: 10:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Saturday: 10:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Sunday: 10:00 AM – 1:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "urban-frip",
@@ -3177,7 +5508,22 @@
   "mapQuery": "Urban Frip, Via Giulio Mazzarino 11, Pescara PE, Italy",
   "lat": 42.45647,
   "lon": 14.22292,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJqbhjtqunMRMR3OSkmLSpdko",
+   "name": "Urban Frip Abbigliamento vintage | Pescara",
+   "phone": "328 555 1559",
+   "hours": [
+    "Monday: 5:00 – 8:00 PM",
+    "Tuesday: 5:00 – 8:00 PM",
+    "Wednesday: 5:00 – 8:00 PM",
+    "Thursday: Closed",
+    "Friday: 5:00 – 8:00 PM",
+    "Saturday: 5:00 – 8:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "you-thrift",
@@ -3195,7 +5541,14 @@
   "mapQuery": "You Thrift, Corso Vittorio Emanuele II 202, Pescara PE, Italy",
   "lat": 42.47152,
   "lon": 14.2041,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ2cSNnEmnMRMRAJrRsMpu-SA",
+   "name": "You Thrift",
+   "rating": 4.7,
+   "reviews": 17,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pescara-via-pepe-market",
@@ -3249,7 +5602,25 @@
   "mapQuery": "Macelleria Griglieria Mancini, Via Frentana 17, San Vito Chietino CH, Italy",
   "lat": 42.30758,
   "lon": 14.44438,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJDf1AGBcDMRMRPBTUQjKpbG0",
+   "name": "Macelleria Griglieria Mancini",
+   "rating": 4.3,
+   "reviews": 313,
+   "price": "€€",
+   "phone": "393 766 2888",
+   "hours": [
+    "Monday: 10:00 AM – 3:00 PM, 6:00 – 10:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: 10:00 AM – 3:00 PM, 6:00 – 10:00 PM",
+    "Thursday: 10:00 AM – 3:00 PM, 6:00 – 10:00 PM",
+    "Friday: 10:00 AM – 3:00 PM, 6:00 – 10:00 PM",
+    "Saturday: 10:00 AM – 3:00 PM, 6:00 – 10:00 PM",
+    "Sunday: 8:30 AM – 3:30 PM, 6:30 – 10:15 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "l-arte-del-pane-ruccolo",
@@ -3267,7 +5638,24 @@
   "mapQuery": "L'Arte del Pane (Ruccolo), Via N. Sauro 31, San Vito Chietino CH, Italy",
   "lat": 42.30836,
   "lon": 14.4453,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJx2Ka8h4DMRMRXkbSR6KfDfQ",
+   "name": "L'Arte Del Pane (S.N.C.) Di Ruccolo V. & C. San Vito Paese",
+   "rating": 4.7,
+   "reviews": 30,
+   "price": "€",
+   "hours": [
+    "Monday: 8:00 AM – 1:00 PM",
+    "Tuesday: 8:00 AM – 1:00 PM",
+    "Wednesday: 8:00 AM – 1:00 PM",
+    "Thursday: 8:00 AM – 1:00 PM",
+    "Friday: 8:00 AM – 1:00 PM",
+    "Saturday: 8:00 AM – 1:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-bocconotteria",
@@ -3285,7 +5673,24 @@
   "mapQuery": "La Bocconotteria, Via E. Tinari 6, Lanciano CH, Italy",
   "lat": 42.25493,
   "lon": 14.42879,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJ06J5FDH8MBMR8onkSoBxuxc",
+   "name": "The Bocconotteria Castelfrentano",
+   "rating": 4.5,
+   "reviews": 435,
+   "phone": "0872 716312",
+   "hours": [
+    "Monday: 7:30 AM – 8:00 PM",
+    "Tuesday: 7:30 AM – 8:00 PM",
+    "Wednesday: 7:30 AM – 8:00 PM",
+    "Thursday: 7:30 AM – 8:00 PM",
+    "Friday: 7:30 AM – 8:00 PM",
+    "Saturday: 7:30 AM – 8:00 PM",
+    "Sunday: 8:30 AM – 1:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "macelleria-caporale",
@@ -3303,7 +5708,24 @@
   "mapQuery": "Macelleria Caporale, Villa Andreoli, Lanciano CH, Italy",
   "lat": 42.20908,
   "lon": 14.39799,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJwd1lQiv9MBMReMeMUKpzmvc",
+   "name": "Macelleria Caporale - Salumi abruzzesi e prodotti locali",
+   "rating": 4.8,
+   "reviews": 118,
+   "phone": "389 107 1087",
+   "hours": [
+    "Monday: 4:00 – 8:00 PM",
+    "Tuesday: 8:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Wednesday: 8:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Thursday: 8:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Friday: 8:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Saturday: 8:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "salumi-e-formaggi-antonio",
@@ -3321,7 +5743,24 @@
   "mapQuery": "Salumi e Formaggi Antonio, Via G. Rosato 38, Lanciano CH, Italy",
   "lat": 42.23053,
   "lon": 14.39078,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJv6fcpy38MBMRfgotokwpJUs",
+   "name": "Salumi E Formaggi Antonio Di Ciano Antonio",
+   "rating": 4.7,
+   "reviews": 244,
+   "phone": "0872 713976",
+   "hours": [
+    "Monday: 8:00 AM – 2:00 PM, 4:00 – 8:00 PM",
+    "Tuesday: 8:00 AM – 2:00 PM, 4:00 – 8:00 PM",
+    "Wednesday: 8:00 AM – 2:00 PM, 4:00 – 8:00 PM",
+    "Thursday: 8:00 AM – 2:00 PM, 4:00 – 8:00 PM",
+    "Friday: 8:00 AM – 2:00 PM, 4:00 – 8:00 PM",
+    "Saturday: 8:00 AM – 2:00 PM, 4:00 – 8:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "enoteca-per-bacco",
@@ -3339,7 +5778,24 @@
   "mapQuery": "Enoteca Per Bacco, Via del Verde 19, Lanciano CH, Italy",
   "lat": 42.22488,
   "lon": 14.39856,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJfUb4EMv9MBMRoHdSssJpAyc",
+   "name": "Per Bacco",
+   "rating": 4.6,
+   "reviews": 107,
+   "phone": "0872 40039",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 4:15 – 8:15 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 4:15 – 8:15 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 4:15 – 8:15 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 4:15 – 8:15 PM",
+    "Friday: 9:00 AM – 1:00 PM, 4:15 – 8:15 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 4:15 – 8:15 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "distilleria-jannamico",
@@ -3357,7 +5813,24 @@
   "mapQuery": "Distilleria Jannamico, Contrada Villa Martelli, Lanciano CH, Italy",
   "lat": 42.2356,
   "lon": 14.42583,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJc_Zug779MBMRA5g4r8nuRaw",
+   "name": "Distilleria Michele Jannamico",
+   "rating": 5,
+   "reviews": 23,
+   "phone": "0872 43369",
+   "hours": [
+    "Monday: 9:00 AM – 1:30 PM, 3:00 – 6:30 PM",
+    "Tuesday: 9:00 AM – 1:30 PM, 3:00 – 6:30 PM",
+    "Wednesday: 9:00 AM – 1:30 PM, 3:00 – 6:30 PM",
+    "Thursday: 9:00 AM – 1:30 PM, 3:00 – 6:30 PM",
+    "Friday: 9:00 AM – 1:30 PM, 3:00 – 6:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "enoteca-regionale-d-abruzzo",
@@ -3375,7 +5848,15 @@
   "mapQuery": "Enoteca Regionale d'Abruzzo, Corso Matteotti 81, Ortona CH, Italy",
   "lat": 42.35526,
   "lon": 14.40405,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJjdCWYWoEMRMRw4e-zxLLRJw",
+   "name": "Enoteca Regionale d'Abruzzo",
+   "rating": 4.6,
+   "reviews": 142,
+   "phone": "085 906 4024",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "macelleria-f-lli-primante",
@@ -3393,7 +5874,15 @@
   "mapQuery": "Macelleria F.lli Primante, Ortona CH, Italy",
   "lat": 42.34964,
   "lon": 14.40391,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJd8QGKBMEMRMROidOiN-wY4Y",
+   "name": "Macelleria F.lli Primante",
+   "rating": 4.8,
+   "reviews": 33,
+   "phone": "085 906 6767",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pecora-matta",
@@ -3411,7 +5900,25 @@
   "mapQuery": "Pecora Matta, Contrada Guarenna Nuova 33, Casoli CH, Italy",
   "lat": 42.12681,
   "lon": 14.36335,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJMfuQTr75MBMRj92ZoMJ74XM",
+   "name": "Pecora Matta, Arrosticini d'Abruzzo",
+   "rating": 4.5,
+   "reviews": 1310,
+   "price": "€€",
+   "phone": "0872 985376",
+   "hours": [
+    "Monday: 7:00 PM – 12:00 AM",
+    "Tuesday: 7:00 PM – 12:00 AM",
+    "Wednesday: 7:00 PM – 12:00 AM",
+    "Thursday: 7:00 PM – 12:00 AM",
+    "Friday: 7:00 PM – 12:00 AM",
+    "Saturday: 7:00 PM – 12:00 AM",
+    "Sunday: 7:00 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fattorie-del-tratturo",
@@ -3447,7 +5954,24 @@
   "mapQuery": "Pasticceria Emo Lullo, Guardiagrele CH, Italy",
   "lat": 42.19548,
   "lon": 14.21971,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJT53qhZRWMBMRCJm0TUFcklE",
+   "name": "Pasticceria Emo Lullo",
+   "rating": 4.7,
+   "reviews": 505,
+   "phone": "0871 82242",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Friday: 9:00 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Saturday: 9:00 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Sunday: 9:00 AM – 1:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "iannamico-liquori",
@@ -3465,7 +5989,24 @@
   "mapQuery": "Iannamico Liquori, Via Duca degli Abruzzi 96, Villa Santa Maria CH, Italy",
   "lat": 41.95098,
   "lon": 14.35176,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJce9PGjeLMBMRXF3RhwR8kz4",
+   "name": "Jannamico 1888",
+   "rating": 4.7,
+   "reviews": 44,
+   "phone": "0872 944438",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Friday: 9:00 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Saturday: 9:00 AM – 12:30 PM, 4:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "scuppoz-liquori",
@@ -3483,7 +6024,24 @@
   "mapQuery": "Scuppoz Liquori, Contrada Scalepicchio, Teramo TE, Italy",
   "lat": 42.59635,
   "lon": 13.71715,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJuUe2rOrmMRMRi81A4wwbMN8",
+   "name": "Scuppoz Liquori",
+   "rating": 4.8,
+   "reviews": 68,
+   "phone": "0861 56625",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 2:15 – 6:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 2:15 – 6:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 2:15 – 6:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 2:15 – 6:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 2:15 – 6:00 PM",
+    "Saturday: 9:00 AM – 1:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "rocca-san-giovanni-borgo",
@@ -3519,7 +6077,24 @@
   "mapQuery": "Abbazia di San Giovanni in Venere, Fossacesia CH, Italy",
   "lat": 42.25479,
   "lon": 14.49861,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJBRXjDaziMBMR5tSILZ5DJZM",
+   "name": "Abbey of San Giovanni in Venere",
+   "rating": 4.7,
+   "reviews": 5711,
+   "phone": "0872 60132",
+   "hours": [
+    "Monday: 8:00 AM – 8:00 PM",
+    "Tuesday: 8:00 AM – 8:00 PM",
+    "Wednesday: 8:00 AM – 8:00 PM",
+    "Thursday: 8:00 AM – 8:00 PM",
+    "Friday: 8:00 AM – 8:00 PM",
+    "Saturday: 8:00 AM – 8:00 PM",
+    "Sunday: 8:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "santuario-del-miracolo-eucaristico",
@@ -3537,7 +6112,24 @@
   "mapQuery": "Santuario del Miracolo Eucaristico, Corso Roma, Lanciano CH, Italy",
   "lat": 42.22916,
   "lon": 14.38961,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJidEkCtL9MBMRLdhq-21no-8",
+   "name": "Santuario del Miracolo Eucaristico",
+   "rating": 4.7,
+   "reviews": 2296,
+   "phone": "0872 713189",
+   "hours": [
+    "Monday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Tuesday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Wednesday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Thursday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Friday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Saturday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM",
+    "Sunday: 7:30 AM – 12:30 PM, 3:00 – 7:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ponte-di-diocleziano",
@@ -3555,7 +6147,23 @@
   "mapQuery": "Ponte di Diocleziano, Santa Maria del Ponte, Lanciano CH, Italy",
   "lat": 42.23066,
   "lon": 14.39128,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJhxzjBs79MBMRiNJ4XouqzTU",
+   "name": "Ponte di Diocleziano",
+   "rating": 4.4,
+   "reviews": 50,
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "sangro-river-war-cemetery",
@@ -3573,7 +6181,24 @@
   "mapQuery": "Sangro River War Cemetery, Torino di Sangro CH, Italy",
   "lat": 42.2181,
   "lon": 14.536,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJKcHcxEXiMBMRU7c9oLMUUp8",
+   "name": "Sangro River War Cemetery",
+   "rating": 4.9,
+   "reviews": 99,
+   "phone": "329 258 7548",
+   "hours": [
+    "Monday: 9:00 AM – 5:00 PM",
+    "Tuesday: 9:00 AM – 5:00 PM",
+    "Wednesday: 9:00 AM – 5:00 PM",
+    "Thursday: 9:00 AM – 5:00 PM",
+    "Friday: 9:00 AM – 5:00 PM",
+    "Saturday: 9:00 AM – 5:00 PM",
+    "Sunday: 9:00 AM – 5:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-della-battaglia-di-ortona",
@@ -3591,7 +6216,15 @@
   "mapQuery": "Museo della Battaglia, Ortona CH, Italy",
   "lat": 42.35311,
   "lon": 14.40366,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJJREivWwEMRMR5SxcqWKKVMk",
+   "name": "Museum Battle of Ortona",
+   "rating": 4.4,
+   "reviews": 280,
+   "phone": "085 906 8207",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "moro-river-canadian-war-cemetery",
@@ -3609,7 +6242,24 @@
   "mapQuery": "Moro River Canadian War Cemetery, Ortona CH, Italy",
   "lat": 42.33681,
   "lon": 14.41653,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJHcNPF4gDMRMR7KvbynUXoH0",
+   "name": "Ortona Canadian Military Cemetery",
+   "rating": 4.9,
+   "reviews": 147,
+   "phone": "01628 507200",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-archeologico-villa-frigerj",
@@ -3627,7 +6277,24 @@
   "mapQuery": "Museo Archeologico 'Villa Frigerj', Villa Frigerj, Chieti CH, Italy",
   "lat": 42.34298,
   "lon": 14.16455,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJt-7pUz6sMRMR95ufUlbVo1U",
+   "name": "Museo Archeologico Nazionale d'Abruzzo \"Villa Frigerj\"",
+   "rating": 4.6,
+   "reviews": 1087,
+   "phone": "0871 331668",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 AM – 7:30 PM",
+    "Wednesday: 9:00 AM – 7:30 PM",
+    "Thursday: 9:00 AM – 7:30 PM",
+    "Friday: 9:00 AM – 7:30 PM",
+    "Saturday: 9:00 AM – 7:30 PM",
+    "Sunday: 9:00 AM – 7:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "museo-delle-genti-d-abruzzo",
@@ -3645,7 +6312,25 @@
   "mapQuery": "Museo delle Genti d'Abruzzo, Via delle Caserme 24, Pescara PE, Italy",
   "lat": 42.46203,
   "lon": 14.21313,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJtXbZHWumMRMRlf_ow09Egvk",
+   "name": "Museo delle Genti d'Abruzzo",
+   "rating": 4.6,
+   "reviews": 475,
+   "blurb": "Former 16th-century prison now hosting exhibits of local culture, from prehistoric times onward.",
+   "phone": "085 451 0026",
+   "hours": [
+    "Monday: 10:00 AM – 2:00 PM",
+    "Tuesday: 10:00 AM – 2:00 PM",
+    "Wednesday: 10:00 AM – 2:00 PM",
+    "Thursday: 10:00 AM – 2:00 PM",
+    "Friday: 10:00 AM – 2:00 PM",
+    "Saturday: 5:30 – 9:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "casa-natale-di-gabriele-d-annunzio",
@@ -3663,7 +6348,25 @@
   "mapQuery": "Casa Natale di Gabriele D'Annunzio, Corso Manthone 101, Pescara PE, Italy",
   "lat": 42.46166,
   "lon": 14.21306,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ5-jtSWumMRMREzs0fcMmndM",
+   "name": "Gabriele D'Annunzio's Birthplace Museum",
+   "rating": 4.4,
+   "reviews": 1782,
+   "blurb": "Decorative-arts collection in a storied townhouse, birthplace of a controversial 20th-century poet.",
+   "phone": "085 60391",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 AM – 1:30 PM",
+    "Wednesday: 9:00 AM – 1:30 PM",
+    "Thursday: 9:00 AM – 7:30 PM",
+    "Friday: 9:00 AM – 7:30 PM",
+    "Saturday: 9:00 AM – 7:30 PM",
+    "Sunday: 9:00 AM – 1:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ponte-del-mare",
@@ -3681,7 +6384,25 @@
   "mapQuery": "Ponte del Mare, Pescara PE, Italy",
   "lat": 42.46594,
   "lon": 14.22566,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ7WfMUV2mMRMRwMWFlo-PxFk",
+   "name": "Ponte del Mare",
+   "rating": 4.6,
+   "reviews": 7756,
+   "blurb": "Opened in 2009, this 466-m. cable-stayed walking & cycling bridge crosses the Pescara River.",
+   "phone": "085 42831",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "guardiagrele",
@@ -3717,7 +6438,24 @@
   "mapQuery": "Abbazia di San Clemente a Casauria, Castiglione a Casauria PE, Italy",
   "lat": 42.23114,
   "lon": 13.89779,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJtzlUXvBJMBMRUX-2x83h5L8",
+   "name": "Abbazia di San Clemente a Casauria",
+   "rating": 4.6,
+   "reviews": 794,
+   "phone": "085 888 5162",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 9:00 AM – 7:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM",
+    "Friday: 9:00 AM – 1:00 PM",
+    "Saturday: 9:00 AM – 7:00 PM",
+    "Sunday: 9:00 AM – 1:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "oratorio-di-san-pellegrino-bominaco",
@@ -3735,7 +6473,24 @@
   "mapQuery": "Oratorio di San Pellegrino, Bominaco, Bominaco, Caporciano AQ, Italy",
   "lat": 42.24381,
   "lon": 13.65779,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJiwbSuOAuMBMRBsE8VCWhvxw",
+   "name": "Oratory of Saint Pellegrino",
+   "rating": 4.9,
+   "reviews": 1467,
+   "phone": "0862 93764",
+   "hours": [
+    "Monday: 9:00 – 11:30 AM, 3:00 – 5:30 PM",
+    "Tuesday: Closed",
+    "Wednesday: 9:00 – 11:30 AM, 3:00 – 5:30 PM",
+    "Thursday: 9:00 – 11:30 AM, 3:00 – 5:30 PM",
+    "Friday: 9:00 – 11:30 AM, 3:00 – 5:30 PM",
+    "Saturday: 9:00 – 11:30 AM, 3:00 – 5:30 PM",
+    "Sunday: 9:00 – 11:30 AM, 3:00 – 5:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "hotel-villa-medici-spa",
@@ -3753,7 +6508,16 @@
   "mapQuery": "Hotel Villa Medici SPA, Rocca San Giovanni CH, Italy",
   "lat": 42.25077,
   "lon": 14.46484,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ1WtQrYYCMRMRGe2ukRkFBn4",
+   "name": "Villa Medici - Hotel, Ricevimenti & SPA",
+   "rating": 4,
+   "reviews": 1996,
+   "blurb": "Polished hotel featuring indoor & outdoor pools, a spa & a restaurant, plus free breakfast.",
+   "phone": "0872 717645",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "villa-maria-day-spa",
@@ -3789,7 +6553,15 @@
   "mapQuery": "Blockhaus Climbing, Via Albegna 15, Pescara PE, Italy",
   "lat": 42.44313,
   "lon": 14.19616,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJQ_quGN6nMRMRXpy1rg8WFo0",
+   "name": "Palestra Di Arrampicata Blockhaus",
+   "rating": 4.6,
+   "reviews": 43,
+   "phone": "327 565 6063",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bowling-primavera",
@@ -3807,7 +6579,24 @@
   "mapQuery": "Bowling Primavera, Via Aurelio Saffi 8, Pescara PE, Italy",
   "lat": 42.47461,
   "lon": 14.20116,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJhXtDnGqmMRMRbrG3UrXnWOk",
+   "name": "Bowling Primavera",
+   "rating": 3.8,
+   "reviews": 323,
+   "phone": "085 35202",
+   "hours": [
+    "Monday: 6:00 – 7:45 PM, 9:00 PM – 12:30 AM",
+    "Tuesday: 5:00 – 7:45 PM, 9:00 PM – 12:30 AM",
+    "Wednesday: 5:00 – 7:45 PM, 9:00 PM – 12:30 AM",
+    "Thursday: 5:00 – 7:45 PM, 9:00 PM – 12:30 AM",
+    "Friday: 5:00 – 7:45 PM, 9:00 PM – 12:30 AM",
+    "Saturday: 4:30 PM – 1:30 AM",
+    "Sunday: 4:30 PM – 1:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pescara-calcio-stadio-adriatico",
@@ -3825,7 +6614,14 @@
   "mapQuery": "Pescara Calcio — Stadio Adriatico, Stadio Adriatico, Pescara PE, Italy",
   "lat": 42.4553,
   "lon": 14.2297,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJg1h2mjemMRMR8KwGs1F0Mh8",
+   "name": "Stadio Adriatico – Giovanni Cornacchia",
+   "rating": 4.3,
+   "reviews": 1996,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "e-motion-karting",
@@ -3861,7 +6657,25 @@
   "mapQuery": "Sorgenti sulfuree del Lavino, Scafa PE, Italy",
   "lat": 42.26714,
   "lon": 13.99981,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJn5cy8A9MMBMR13paAjwse2o",
+   "name": "Parco Lavino",
+   "rating": 4.2,
+   "reviews": 4188,
+   "blurb": "Woodland walk to sulfurous natural springs, popular for swimming in bright, turquoise water.",
+   "phone": "329 984 5400",
+   "hours": [
+    "Monday: 8:00 AM – 8:00 PM",
+    "Tuesday: 8:00 AM – 8:00 PM",
+    "Wednesday: 8:00 AM – 8:00 PM",
+    "Thursday: 8:00 AM – 8:00 PM",
+    "Friday: 8:00 AM – 8:00 PM",
+    "Saturday: 8:00 AM – 8:00 PM",
+    "Sunday: 8:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "terme-inn-popoli",
@@ -3879,7 +6693,24 @@
   "mapQuery": "Terme Inn Popoli, Popoli Terme PE, Italy",
   "lat": 42.17294,
   "lon": 13.8484,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJBYNfUQc5MBMRUsS1fhu31_U",
+   "name": "Terme Inn Popoli",
+   "rating": 4.7,
+   "reviews": 106,
+   "phone": "085 987781",
+   "hours": [
+    "Monday: 8:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+    "Tuesday: 8:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+    "Wednesday: 8:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+    "Thursday: 8:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+    "Friday: 8:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+    "Saturday: 8:00 AM – 12:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "osservatorio-astronomico-colle-leone",
@@ -3897,7 +6728,14 @@
   "mapQuery": "Osservatorio Astronomico Colle Leone, Mosciano Sant'Angelo TE, Italy",
   "lat": 42.74935,
   "lon": 13.88803,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJD-v2wuLsMRMRabJXOBwVMsA",
+   "name": "Osservatorio Astronomico Colle Leone",
+   "rating": 4.6,
+   "reviews": 167,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "grotte-di-stiffe",
@@ -3915,7 +6753,25 @@
   "mapQuery": "Grotte di Stiffe, San Demetrio ne' Vestini AQ, Italy",
   "lat": 42.27556,
   "lon": 13.55505,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJk_IVodUpMBMRxSTB7fSdeos",
+   "name": "Stiffe Caves",
+   "rating": 4.6,
+   "reviews": 6462,
+   "blurb": "River cave visited by guided tour, with a cascading waterfall, plus stalactites & stalagmites.",
+   "phone": "0862 583798",
+   "hours": [
+    "Monday: 10:00 AM – 6:00 PM",
+    "Tuesday: 10:00 AM – 6:00 PM",
+    "Wednesday: 10:00 AM – 6:00 PM",
+    "Thursday: 10:00 AM – 6:00 PM",
+    "Friday: 10:00 AM – 6:00 PM",
+    "Saturday: 10:00 AM – 6:00 PM",
+    "Sunday: 10:00 AM – 6:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "teatro-marrucino",
@@ -3933,7 +6789,15 @@
   "mapQuery": "Teatro Marrucino, Largo Valignani, Chieti CH, Italy",
   "lat": 42.35,
   "lon": 14.16745,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJQWRmY0CsMRMR9utxSCADE0c",
+   "name": "Teatro Marrucino Biglietteria",
+   "rating": 4.7,
+   "reviews": 209,
+   "phone": "0871 330470",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "isole-tremiti-via-termoli",
@@ -3987,7 +6851,24 @@
   "mapQuery": "NLG Santa Lucia — the rough-sea boat, Porto di Termoli, Termoli CB, Italy",
   "lat": 42.06658,
   "lon": 14.76999,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJx47TlhrNMBMRkCIwRqGZ4tI",
+   "name": "NLG biglietteria porto di Termoli",
+   "rating": 3.1,
+   "reviews": 128,
+   "phone": "0875 704859",
+   "hours": [
+    "Monday: 7:00 AM – 7:00 PM",
+    "Tuesday: 7:30 AM – 7:00 PM",
+    "Wednesday: 7:00 AM – 7:00 PM",
+    "Thursday: 7:30 AM – 7:00 PM",
+    "Friday: 7:00 AM – 7:00 PM",
+    "Saturday: 7:00 AM – 7:00 PM",
+    "Sunday: 7:30 AM – 7:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "termoli-borgo-antico",
@@ -4005,7 +6886,24 @@
   "mapQuery": "Termoli borgo antico, Borgo Antico, Termoli CB, Italy",
   "lat": 42.06658,
   "lon": 14.76999,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJZSJpQQ_NMBMRiQTDVvhHDF4",
+   "name": "Ancient Village of Termoli",
+   "rating": 4.7,
+   "reviews": 1347,
+   "phone": "0875 7121",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "private-boat-to-the-tremiti-abruzzo-skip",
@@ -4023,7 +6921,24 @@
   "mapQuery": "Private boat to the Tremiti — Abruzzo Skipper, Marina di San Pietro, Termoli CB, Italy",
   "lat": 42.06658,
   "lon": 14.76999,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJY4zSM9DdMBMRNrTv4ApbYVA",
+   "name": "Abruzzo Skipper",
+   "rating": 4.6,
+   "reviews": 612,
+   "phone": "0873 671503",
+   "hours": [
+    "Monday: 9:00 AM – 10:00 PM",
+    "Tuesday: 9:00 AM – 10:00 PM",
+    "Wednesday: 9:00 AM – 10:00 PM",
+    "Thursday: 9:00 AM – 10:00 PM",
+    "Friday: 9:00 AM – 10:00 PM",
+    "Saturday: 9:00 AM – 10:00 PM",
+    "Sunday: 9:00 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "sulmona",
@@ -4095,7 +7010,25 @@
   "mapQuery": "Rocca Calascio, Calascio AQ, Italy",
   "lat": 42.32803,
   "lon": 13.69077,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJGy8RNxktMBMRM1RGS62NBYE",
+   "name": "Rocca Calascio",
+   "rating": 4.8,
+   "reviews": 15830,
+   "blurb": "Expansive mountain views from a ruined stone fortress dating back around 1,000 years.",
+   "phone": "0862 930132",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "santo-stefano-di-sessanio",
@@ -4131,7 +7064,15 @@
   "mapQuery": "Scanno & Lago di Scanno, Scanno AQ, Italy",
   "lat": 41.90386,
   "lon": 13.88021,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJA98rrqETMBMRjNSZ3beo8dQ",
+   "name": "Lago di Scanno",
+   "rating": 4.7,
+   "reviews": 3381,
+   "blurb": "Swimming, biking & pedal boating are popular activities at this heart-shaped lake with scenic views.",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "gelateria-le-veri",
@@ -4149,7 +7090,23 @@
   "mapQuery": "Gelateria Le Verì, Vallevò, Rocca San Giovanni CH, Italy",
   "lat": 42.28714,
   "lon": 14.47952,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJyYq2z1gdMRMRgvOwwkYN2j0",
+   "name": "LeVerì – ice cream experience",
+   "rating": 4.7,
+   "reviews": 82,
+   "hours": [
+    "Monday: 9:00 AM – 8:00 PM",
+    "Tuesday: 9:00 AM – 8:00 PM",
+    "Wednesday: 9:00 AM – 8:00 PM",
+    "Thursday: 9:00 AM – 8:00 PM",
+    "Friday: 9:00 AM – 8:00 PM",
+    "Saturday: 9:00 AM – 11:00 PM",
+    "Sunday: 9:00 AM – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "dolceamaro",
@@ -4167,7 +7124,14 @@
   "mapQuery": "DolceAMARO, Corso Trento e Trieste 112, Lanciano CH, Italy",
   "lat": 42.22757,
   "lon": 14.39383,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ2QdRqs39MBMR2SW0UeqvvWQ",
+   "name": "dolceAMARO",
+   "rating": 4.4,
+   "reviews": 677,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "polo-nord",
@@ -4185,7 +7149,24 @@
   "mapQuery": "Polo Nord, Casalbordino CH, Italy",
   "lat": 42.40666,
   "lon": 14.31396,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJEZoPnbnmMBMRCNDx_KdPaFE",
+   "name": "Gelateria Artigianale Polo Nord",
+   "rating": 4.8,
+   "reviews": 446,
+   "phone": "0873 921096",
+   "hours": [
+    "Monday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM",
+    "Tuesday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM",
+    "Wednesday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM",
+    "Thursday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM",
+    "Friday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM",
+    "Saturday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM",
+    "Sunday: 7:00 AM – 1:00 PM, 2:30 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pannamore",
@@ -4203,7 +7184,24 @@
   "mapQuery": "Pannamore, Vasto Marina CH, Italy",
   "lat": 42.10384,
   "lon": 14.71763,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJz1M1gvfcMBMRY2PNxxMz_H8",
+   "name": "Gelateria Pannamore",
+   "rating": 4.3,
+   "reviews": 1498,
+   "phone": "0873 803183",
+   "hours": [
+    "Monday: 7:30 AM – 11:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: 7:30 AM – 11:00 PM",
+    "Thursday: 7:30 AM – 11:00 PM",
+    "Friday: 7:30 AM – 11:00 PM",
+    "Saturday: 7:30 AM – 11:00 PM",
+    "Sunday: 7:30 AM – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "scilo-gelateria-contemporanea",
@@ -4221,7 +7219,24 @@
   "mapQuery": "Scilò Gelateria Contemporanea, Viale Benedetto Croce, Chieti Scalo CH, Italy",
   "lat": 42.36575,
   "lon": 14.14156,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJTayWewCtMRMRRixuYORIHJc",
+   "name": "Scilò Gelateria Contemporanea",
+   "rating": 4.8,
+   "reviews": 257,
+   "phone": "0871 307911",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 1:00 – 11:00 PM",
+    "Wednesday: 1:00 – 11:00 PM",
+    "Thursday: 1:00 – 11:00 PM",
+    "Friday: 1:00 – 11:00 PM",
+    "Saturday: 1:00 – 11:00 PM",
+    "Sunday: 11:30 AM – 1:30 PM, 4:00 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "caprice-camplone",
@@ -4239,7 +7254,24 @@
   "mapQuery": "Caprice Camplone, Pescara PE, Italy",
   "lat": 42.46038,
   "lon": 14.21169,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJs1cntBSmMRMRmJbuH8gxfjU",
+   "name": "Caprice Pescara",
+   "rating": 4.2,
+   "reviews": 1117,
+   "phone": "085 691633",
+   "hours": [
+    "Monday: 6:30 AM – 10:30 PM",
+    "Tuesday: Closed",
+    "Wednesday: 6:30 AM – 10:30 PM",
+    "Thursday: 6:30 AM – 10:30 PM",
+    "Friday: 6:30 AM – 10:30 PM",
+    "Saturday: 6:30 AM – 10:30 PM",
+    "Sunday: 7:00 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "sottosale-osteria-di-mare",
@@ -4257,7 +7289,25 @@
   "mapQuery": "SottoSale Osteria di Mare, Via Cristoforo Colombo 78, Marina di San Vito CH, Italy",
   "lat": 42.30538,
   "lon": 14.45057,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJiQoNKSMDMRMRJLuJ8XD5rxo",
+   "name": "SottoSale",
+   "rating": 4.2,
+   "reviews": 1344,
+   "price": "€€€",
+   "phone": "0872 618825",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 2:30 PM, 7:30 – 10:00 PM",
+    "Wednesday: 12:30 – 2:30 PM, 7:30 – 10:00 PM",
+    "Thursday: 12:30 – 2:30 PM, 7:30 – 10:00 PM",
+    "Friday: 12:30 – 2:30 PM, 7:30 – 10:00 PM",
+    "Saturday: 12:30 – 2:30 PM, 7:30 – 10:00 PM",
+    "Sunday: 12:30 – 2:30 PM, 7:30 – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "osteria-101",
@@ -4275,7 +7325,25 @@
   "mapQuery": "Osteria 101, Corso Roma 115, Lanciano CH, Italy",
   "lat": 42.22916,
   "lon": 14.38961,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJqQ1LX9L9MBMRwa4_tiCcue8",
+   "name": "Osteria 101 Lanciano",
+   "rating": 4.4,
+   "reviews": 304,
+   "price": "€€",
+   "phone": "327 061 0230",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 3:00 PM, 7:30 PM – 12:00 AM",
+    "Wednesday: 12:30 – 3:00 PM, 7:30 PM – 12:00 AM",
+    "Thursday: 12:30 – 3:00 PM, 7:30 PM – 12:00 AM",
+    "Friday: 12:30 – 3:00 PM, 7:30 PM – 12:00 AM",
+    "Saturday: 12:30 – 3:00 PM, 7:30 PM – 12:00 AM",
+    "Sunday: 12:00 – 3:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bracevia-a-tutta-pecora",
@@ -4293,7 +7361,25 @@
   "mapQuery": "Bracevia — A Tutta Pecora, Piazza Sirena 9, Francavilla al Mare CH, Italy",
   "lat": 42.42046,
   "lon": 14.29188,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJl18iENoHMRMRGqZH22fd8xk",
+   "name": "Bracevia A Tutta Pecora",
+   "rating": 4.5,
+   "reviews": 164,
+   "price": "€€",
+   "phone": "371 536 0722",
+   "hours": [
+    "Monday: 6:30 – 11:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: 6:30 – 11:00 PM",
+    "Thursday: 6:30 – 11:00 PM",
+    "Friday: 6:30 – 11:00 PM",
+    "Saturday: 6:30 – 11:30 PM",
+    "Sunday: 6:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-grotta-dei-raselli",
@@ -4311,7 +7397,25 @@
   "mapQuery": "La Grotta dei Raselli, Comino, Guardiagrele CH, Italy",
   "lat": 42.18825,
   "lon": 14.19355,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJwdzm_DJRMBMRoGqGhwCkRUU",
+   "name": "La Grotta dei Raselli",
+   "rating": 4.7,
+   "reviews": 1030,
+   "price": "€€€",
+   "phone": "0871 808292",
+   "hours": [
+    "Monday: 12:45 – 3:00 PM, 7:45 – 10:00 PM",
+    "Tuesday: 12:45 – 3:00 PM",
+    "Wednesday: Closed",
+    "Thursday: 12:45 – 3:00 PM, 7:45 – 10:00 PM",
+    "Friday: 12:45 – 3:00 PM, 7:45 – 10:00 PM",
+    "Saturday: 12:45 – 3:00 PM, 7:45 – 10:00 PM",
+    "Sunday: 12:45 – 3:00 PM, 7:45 – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-lancianese",
@@ -4329,7 +7433,25 @@
   "mapQuery": "La Lancianese, Lanciano CH, Italy",
   "lat": 42.23053,
   "lon": 14.39078,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJzRZ9Wcz9MBMR5Yx4qQlckEg",
+   "name": "La Lancianese",
+   "rating": 4.9,
+   "reviews": 85,
+   "price": "€",
+   "phone": "0872 712341",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 8:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Wednesday: 8:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Thursday: 8:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Friday: 8:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Saturday: 8:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Sunday: 8:00 AM – 1:15 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fritteria-stasera-pago-io",
@@ -4347,7 +7469,25 @@
   "mapQuery": "Fritteria Stasera Pago Io, Contrada Vallevò 201, Rocca San Giovanni CH, Italy",
   "lat": 42.28866,
   "lon": 14.47579,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJNyP7tysdMRMRrmnK_4QRckk",
+   "name": "Fritteria Stasera Pago Io",
+   "rating": 4.1,
+   "reviews": 1627,
+   "price": "€€",
+   "phone": "0872 609236",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: 11:30 AM – 3:00 PM, 5:30 – 10:00 PM",
+    "Saturday: 11:30 AM – 3:00 PM, 5:30 – 10:00 PM",
+    "Sunday: 11:30 AM – 3:00 PM, 5:30 – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-aida",
@@ -4365,7 +7505,25 @@
   "mapQuery": "Trattoria Aida, Contrada Vallevò 75, Rocca San Giovanni CH, Italy",
   "lat": 42.28866,
   "lon": 14.47579,
-  "geo": "town"
+  "geo": "town",
+  "google": {
+   "id": "ChIJ2ZDqb7UdMRMR2McYTv7QRTU",
+   "name": "Trattoria Aida",
+   "rating": 4.9,
+   "reviews": 161,
+   "price": "€€",
+   "phone": "0872 609249",
+   "hours": [
+    "Monday: 12:30 – 3:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: 7:45 – 10:00 PM",
+    "Friday: 12:30 – 2:30 PM, 7:45 – 10:00 PM",
+    "Saturday: 12:30 – 2:30 PM, 7:45 – 10:00 PM",
+    "Sunday: 12:30 – 3:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-la-casereccia",
@@ -4383,7 +7541,25 @@
   "mapQuery": "Trattoria La Casereccia, Via Frentana 15, San Vito Chietino CH, Italy",
   "lat": 42.30771,
   "lon": 14.44463,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJl4OdHhcDMRMRGwpLA0vetIE",
+   "name": "Trattoria La Casereccia",
+   "rating": 4.2,
+   "reviews": 1909,
+   "price": "€€",
+   "phone": "0872 618669",
+   "hours": [
+    "Monday: 11:00 AM – 3:15 PM, 6:00 – 10:30 PM",
+    "Tuesday: Closed",
+    "Wednesday: 12:00 – 3:00 PM",
+    "Thursday: 11:00 AM – 3:15 PM, 6:00 – 10:30 PM",
+    "Friday: 11:00 AM – 3:15 PM, 6:00 – 10:30 PM",
+    "Saturday: 11:00 AM – 3:15 PM, 7:00 – 10:30 PM",
+    "Sunday: 11:00 AM – 3:15 PM, 6:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pescheria-l-ancora",
@@ -4401,7 +7577,24 @@
   "mapQuery": "Pescheria L'Ancora, Via Marina 50, Fossacesia CH, Italy",
   "lat": 42.24778,
   "lon": 14.48447,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ4SN_Ta_iMBMRX0q40mxGcs4",
+   "name": "Pescheria l’Ancora",
+   "rating": 4.5,
+   "reviews": 165,
+   "phone": "0872 608134",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 8:30 AM – 1:30 PM, 4:30 – 8:15 PM",
+    "Wednesday: 8:30 AM – 1:30 PM, 4:30 – 8:15 PM",
+    "Thursday: 8:30 AM – 1:30 PM, 4:30 – 8:15 PM",
+    "Friday: 8:30 AM – 1:30 PM, 4:30 – 8:15 PM",
+    "Saturday: 8:30 AM – 1:30 PM, 4:30 – 8:15 PM",
+    "Sunday: 8:30 AM – 12:50 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pesciolillo",
@@ -4419,7 +7612,25 @@
   "mapQuery": "Pesciolillo, Corso Vittorio Emanuele II 257, Pescara PE, Italy",
   "lat": 42.46898,
   "lon": 14.20702,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJO1FEC6OnMRMRMZK1vm7MjuU",
+   "name": "Pesciolillo Pescara",
+   "rating": 4.3,
+   "reviews": 1696,
+   "price": "€€",
+   "phone": "085 421 1422",
+   "hours": [
+    "Monday: 11:00 AM – 12:00 AM",
+    "Tuesday: 11:00 AM – 12:00 AM",
+    "Wednesday: 11:00 AM – 12:00 AM",
+    "Thursday: 11:00 AM – 12:00 AM",
+    "Friday: 11:00 AM – 12:00 AM",
+    "Saturday: 11:00 AM – 12:00 AM",
+    "Sunday: 11:00 AM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-nina",
@@ -4437,7 +7648,25 @@
   "mapQuery": "Trattoria Nina, Via Trento 88, Pescara PE, Italy",
   "lat": 42.47078,
   "lon": 14.20872,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ45iR6GWmMRMR438pnE24Wew",
+   "name": "Trattoria Nina",
+   "rating": 4.4,
+   "reviews": 611,
+   "price": "€€",
+   "phone": "085 205 6915",
+   "hours": [
+    "Monday: 12:30 – 2:00 PM, 7:30 – 10:00 PM",
+    "Tuesday: 12:30 – 2:00 PM, 7:30 – 10:00 PM",
+    "Wednesday: Closed",
+    "Thursday: 12:30 – 2:00 PM, 7:30 – 10:00 PM",
+    "Friday: 12:30 – 2:00 PM, 7:30 – 10:00 PM",
+    "Saturday: 12:30 – 2:00 PM, 7:30 – 10:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "alla-brace-cibo-da-strada",
@@ -4455,7 +7684,25 @@
   "mapQuery": "Alla Brace — Cibo da Strada, Via Giovanni Caboto 44, Pescara PE, Italy",
   "lat": 42.46278,
   "lon": 14.21662,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJv1fnLkCmMRMRz6S6hMiW04U",
+   "name": "Alla Brace",
+   "rating": 4.2,
+   "reviews": 496,
+   "price": "€€",
+   "phone": "085 448 3254",
+   "hours": [
+    "Monday: 7:00 – 11:00 PM",
+    "Tuesday: 7:00 – 11:00 PM",
+    "Wednesday: 7:00 – 11:00 PM",
+    "Thursday: 7:00 – 11:00 PM",
+    "Friday: 7:00 – 11:00 PM",
+    "Saturday: 7:00 PM – 12:00 AM",
+    "Sunday: 7:00 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "supporter-beach",
@@ -4473,7 +7720,24 @@
   "mapQuery": "Supporter Beach, Via Lungomare 161, Fossacesia Marina CH, Italy",
   "lat": 42.24762,
   "lon": 14.51553,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ6TV_A8TjMBMRWr56fqh630g",
+   "name": "Supporter Beach",
+   "rating": 4,
+   "reviews": 898,
+   "phone": "0872 607990",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: 6:00 AM – 2:00 AM",
+    "Wednesday: 6:00 AM – 2:00 AM",
+    "Thursday: 6:00 AM – 2:00 AM",
+    "Friday: 6:00 AM – 2:00 AM",
+    "Saturday: 6:00 AM – 2:30 AM",
+    "Sunday: 6:00 AM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "alma-vibes",
@@ -4491,7 +7755,15 @@
   "mapQuery": "Alma Vibes, Via Lungomare di Gualdo 39, Marina di San Vito CH, Italy",
   "lat": 42.30871,
   "lon": 14.44534,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJYdrzJvYDMRMR6xbdOyS46Ws",
+   "name": "Alma Vibes",
+   "rating": 3.9,
+   "reviews": 291,
+   "phone": "333 781 8299",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "al-mure",
@@ -4509,7 +7781,24 @@
   "mapQuery": "Al Murè beach bar, Via Cristoforo Colombo 72, San Vito Chietino CH, Italy",
   "lat": 42.30538,
   "lon": 14.45057,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJiwcEDUcDMRMRzeUZ9ZeGUWY",
+   "name": "Al Murè Beach Bar, noleggio ombrelloni,noleggio Bici, Kayak, Sup e skateboard",
+   "rating": 4.5,
+   "reviews": 382,
+   "phone": "329 659 0866",
+   "hours": [
+    "Monday: 9:00 AM – 9:00 PM",
+    "Tuesday: 9:00 AM – 9:00 PM",
+    "Wednesday: 9:00 AM – 9:00 PM",
+    "Thursday: 9:00 AM – 9:00 PM",
+    "Friday: 8:30 AM – 10:30 PM",
+    "Saturday: 8:30 AM – 10:30 PM",
+    "Sunday: 8:30 AM – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "mare-blu-torino-di-sangro",
@@ -4527,7 +7816,25 @@
   "mapQuery": "Mare Blu, Via Costa Verde 72, Torino di Sangro CH, Italy",
   "lat": 42.23211,
   "lon": 14.54709,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJG5VBJRHiMBMRl2gq6YtdoRQ",
+   "name": "Mare Blu Torino di Sangro",
+   "rating": 4.1,
+   "reviews": 1145,
+   "price": "€€",
+   "phone": "389 058 0258",
+   "hours": [
+    "Monday: 10:00 AM – 7:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: 10:00 AM – 7:00 PM",
+    "Thursday: 10:00 AM – 3:00 AM",
+    "Friday: 10:00 AM – 7:00 PM",
+    "Saturday: 10:00 AM – 8:00 PM",
+    "Sunday: 9:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lido-bianco-beach-club",
@@ -4545,7 +7852,24 @@
   "mapQuery": "Lido Bianco Beach Club, Viale Alcione, Francavilla al Mare CH, Italy",
   "lat": 42.44247,
   "lon": 14.25519,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJjdiK9d6nMRMRd8jjPr_M5BA",
+   "name": "Lido Bianco Beach Club",
+   "rating": 4.3,
+   "reviews": 852,
+   "phone": "085 498 1741",
+   "hours": [
+    "Monday: 8:00 AM – 10:00 PM",
+    "Tuesday: 8:00 AM – 4:00 PM",
+    "Wednesday: 8:00 AM – 10:00 PM",
+    "Thursday: 8:00 AM – 10:00 PM",
+    "Friday: 8:00 AM – 10:00 PM",
+    "Saturday: 8:00 AM – 10:00 PM",
+    "Sunday: 8:00 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "sabbia-d-oro-vasto",
@@ -4563,7 +7887,24 @@
   "mapQuery": "Sabbia d'Oro, Lungomare Cordella, Vasto Marina CH, Italy",
   "lat": 42.09983,
   "lon": 14.72073,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ5wUvEPfcMBMRRfZXvipxv6c",
+   "name": "Lido Sabbia D’oro",
+   "rating": 4.2,
+   "reviews": 164,
+   "phone": "328 740 5832",
+   "hours": [
+    "Monday: 7:00 AM – 8:00 PM",
+    "Tuesday: 7:00 AM – 8:00 PM",
+    "Wednesday: 7:00 AM – 8:00 PM",
+    "Thursday: 7:00 AM – 8:00 PM",
+    "Friday: 7:00 AM – 8:00 PM",
+    "Saturday: 7:00 AM – 11:30 PM",
+    "Sunday: 7:00 AM – 9:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "hawaii-pescara",
@@ -4581,7 +7922,25 @@
   "mapQuery": "Hawaii Pescara, Viale della Riviera 154, Pescara PE, Italy",
   "lat": 42.49208,
   "lon": 14.18724,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ4Y-tUi-kMRMRX3jYZnF63RY",
+   "name": "Hawaii",
+   "rating": 4.1,
+   "reviews": 724,
+   "price": "€€€",
+   "phone": "085 939 6664",
+   "hours": [
+    "Monday: 8:00 AM – 1:00 AM",
+    "Tuesday: 8:00 AM – 1:00 AM",
+    "Wednesday: 8:00 AM – 1:00 AM",
+    "Thursday: 8:00 AM – 1:00 AM",
+    "Friday: 8:00 AM – 2:00 AM",
+    "Saturday: 8:00 AM – 2:00 AM",
+    "Sunday: 8:00 AM – 2:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lab-liquoreria-abruzzese",
@@ -4600,7 +7959,24 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=L%C2%B7AB+Liquoreria+Abruzzese%2C+Via+d%E2%80%99Aquino+126%2C+Francavilla+al+Mare+CH%2C+Italy",
   "lat": 42.39956,
   "lon": 14.31898,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJS5xQPQwHMRMRoa9LGwqsY_0",
+   "name": "L·AB Liquoreria ABruzzese",
+   "rating": 5,
+   "reviews": 5,
+   "phone": "328 014 6512",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: Closed",
+    "Friday: 4:30 – 7:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "liquorificio-7579",
@@ -4619,7 +7995,24 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Liquorificio+7579%2C+Via+Aterno+241%2C+Brecciarola%2C+Chieti+CH%2C+Italy",
   "lat": 42.32822,
   "lon": 14.10576,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJlbNFr6OtMRMR6kwnZoOWrt0",
+   "name": "Liquorificio 7579",
+   "rating": 5,
+   "reviews": 63,
+   "phone": "333 613 5244",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Friday: 9:00 AM – 12:30 PM, 3:00 – 6:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ival-fara-filiorum-petri",
@@ -4638,7 +8031,24 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ival%2C+Fara+Filiorum+Petri+CH%2C+Italy",
   "lat": 42.24903,
   "lon": 14.18614,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJqTIRfexTMBMRpPHPsor2qK4",
+   "name": "Ival Sas - Industria Liquori",
+   "rating": 4.7,
+   "reviews": 3,
+   "phone": "0871 70135",
+   "hours": [
+    "Monday: 8:30 AM – 5:00 PM",
+    "Tuesday: 8:30 AM – 5:00 PM",
+    "Wednesday: 8:30 AM – 5:00 PM",
+    "Thursday: 8:30 AM – 5:00 PM",
+    "Friday: 8:30 AM – 5:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "feste-di-settembre-lanciano",
@@ -4657,7 +8067,14 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Piazza+Plebiscito%2C+Lanciano+CH%2C+Italy",
   "lat": 42.22903,
   "lon": 14.39017,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJ6Ref5M39MBMRk90Hcob9zaE",
+   "name": "Feste di Settembre di Lanciano",
+   "rating": 4.4,
+   "reviews": 64,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "poggiofiorito",
@@ -4752,7 +8169,25 @@
   "lat": 42.05058,
   "lon": 13.9237,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJNQgVnH1AMBMRwzTSL7PGzqE",
+   "name": "Ristorante Clemente",
+   "rating": 4.5,
+   "reviews": 995,
+   "price": "€€€",
+   "phone": "342 622 6522",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 3:30 PM, 7:30 – 10:30 PM",
+    "Wednesday: 12:30 – 3:30 PM, 8:00 – 10:30 PM",
+    "Thursday: 12:30 – 3:30 PM, 8:00 – 10:30 PM",
+    "Friday: 12:30 – 3:30 PM, 8:00 – 10:30 PM",
+    "Saturday: 12:30 – 3:30 PM, 8:00 – 10:30 PM",
+    "Sunday: 12:30 – 3:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trattoria-don-ciccio",
@@ -4771,7 +8206,25 @@
   "lat": 42.0491,
   "lon": 13.9239,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJgSmsrGRAMBMR00AD8V9o3kg",
+   "name": "Trattoria Don Ciccio",
+   "rating": 4.5,
+   "reviews": 922,
+   "price": "€€",
+   "phone": "320 751 4339",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:00 – 1:30 PM, 7:00 – 9:00 PM",
+    "Wednesday: 12:00 – 1:30 PM, 7:00 – 9:00 PM",
+    "Thursday: 12:00 – 1:30 PM, 7:00 – 9:00 PM",
+    "Friday: 12:00 – 1:30 PM, 7:00 – 9:00 PM",
+    "Saturday: 12:00 – 1:30 PM, 7:00 – 9:00 PM",
+    "Sunday: 12:00 – 2:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "taverna-de-li-caldora",
@@ -4790,7 +8243,25 @@
   "lat": 42.05024,
   "lon": 13.99104,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJOZ9uKAFCMBMRhIKqzBhkszg",
+   "name": "Taverna de li Caldora",
+   "rating": 4.4,
+   "reviews": 1110,
+   "price": "€€€",
+   "phone": "0864 41139",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: 1:00 – 2:30 PM, 8:00 – 11:30 PM",
+    "Friday: 1:00 – 2:30 PM, 8:00 – 11:30 PM",
+    "Saturday: 1:00 – 2:30 PM, 7:00 – 11:30 PM",
+    "Sunday: 1:00 – 2:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-locanda-di-gino",
@@ -4809,7 +8280,15 @@
   "lat": 42.04656,
   "lon": 13.92517,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJpVlXWntAMBMRJdTZg3X583Q",
+   "name": "La Locanda di Gino",
+   "rating": 4.7,
+   "reviews": 80,
+   "phone": "0864 54026",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "hostaria-dell-arco",
@@ -4828,7 +8307,25 @@
   "lat": 42.04625,
   "lon": 13.92325,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJn3lWfHtAMBMRfneTiEiv_Gg",
+   "name": "Ristorante Hostaria dell’Arco",
+   "rating": 4.6,
+   "reviews": 1089,
+   "price": "€€",
+   "phone": "0864 210553",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:30 – 2:30 PM",
+    "Wednesday: 12:30 – 2:30 PM",
+    "Thursday: 12:30 – 2:30 PM",
+    "Friday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Saturday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Sunday: 12:30 – 2:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cantina-di-biffi",
@@ -4847,7 +8344,25 @@
   "lat": 42.05017,
   "lon": 13.92205,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJzSFHun1AMBMRuFnsFXRswO4",
+   "name": "Cantina di Biffi",
+   "rating": 4.6,
+   "reviews": 1393,
+   "price": "€€€",
+   "phone": "0864 380588",
+   "hours": [
+    "Monday: 12:00 – 10:30 PM",
+    "Tuesday: 12:00 – 10:30 PM",
+    "Wednesday: 12:00 – 10:30 PM",
+    "Thursday: 12:00 – 10:30 PM",
+    "Friday: 12:00 – 10:30 PM",
+    "Saturday: 12:00 – 10:30 PM",
+    "Sunday: 12:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "il-vecchio-muro",
@@ -4866,7 +8381,25 @@
   "lat": 42.04709,
   "lon": 13.92388,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJnwQDfXtAMBMRFc8DYwzeHxg",
+   "name": "Pizzeria Ristorante Il Vecchio Muro",
+   "rating": 4.3,
+   "reviews": 1656,
+   "price": "€€",
+   "phone": "0864 50595",
+   "hours": [
+    "Monday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Tuesday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Wednesday: Closed",
+    "Thursday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Friday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Saturday: 12:30 – 2:30 PM, 7:30 – 10:30 PM",
+    "Sunday: 12:30 – 2:30 PM, 7:30 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pinsa-making-with-vero",
@@ -4904,7 +8437,25 @@
   "lat": 42.26528,
   "lon": 14.50112,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJDYmL1kEdMRMRo5pToeAg-t8",
+   "name": "Il Cavalluccio Stabilimento Balneare - Ristorante",
+   "rating": 4.3,
+   "reviews": 1198,
+   "price": "€€€",
+   "phone": "0872 60196",
+   "hours": [
+    "Monday: 12:00 – 3:00 PM, 8:00 – 10:30 PM",
+    "Tuesday: 12:00 – 3:00 PM, 8:00 – 10:30 PM",
+    "Wednesday: 12:00 – 3:00 PM, 8:00 – 10:30 PM",
+    "Thursday: 12:00 – 3:00 PM, 8:00 – 10:30 PM",
+    "Friday: 12:00 – 3:00 PM, 8:00 – 10:30 PM",
+    "Saturday: 12:00 – 3:00 PM, 8:00 – 10:30 PM",
+    "Sunday: 12:00 – 3:00 PM, 8:00 – 10:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "il-chiosco-mare-da-franca",
@@ -4923,7 +8474,25 @@
   "lat": 42.24066,
   "lon": 14.53024,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJ8_ZgcnriMBMRuf6qabelpzo",
+   "name": "Il chiosco mare da Franca",
+   "rating": 4,
+   "reviews": 955,
+   "price": "€€",
+   "phone": "328 824 2368",
+   "hours": [
+    "Monday: 8:30 AM – 10:00 PM",
+    "Tuesday: 8:30 AM – 10:00 PM",
+    "Wednesday: 8:30 AM – 10:00 PM",
+    "Thursday: 8:30 AM – 10:00 PM",
+    "Friday: 8:30 AM – 10:00 PM",
+    "Saturday: 8:30 AM – 10:00 PM",
+    "Sunday: 8:30 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "bar-ferri-punta-penna",
@@ -4942,7 +8511,25 @@
   "lat": 42.17093,
   "lon": 14.71084,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJ10OktvbeMBMReCUqKgS7n34",
+   "name": "Bar Ferri",
+   "rating": 4.4,
+   "reviews": 218,
+   "price": "€",
+   "phone": "0873 310219",
+   "hours": [
+    "Monday: 6:00 AM – 10:00 PM",
+    "Tuesday: 6:00 AM – 10:00 PM",
+    "Wednesday: 6:00 AM – 10:00 PM",
+    "Thursday: 6:00 AM – 10:00 PM",
+    "Friday: 6:00 AM – 10:00 PM",
+    "Saturday: 6:00 AM – 10:00 PM",
+    "Sunday: 6:00 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "lido-la-foce",
@@ -4961,7 +8548,25 @@
   "lat": 42.27687,
   "lon": 14.49272,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJywpjazkdMRMRZS8X0FnhInw",
+   "name": "Lido la Foce",
+   "rating": 4.2,
+   "reviews": 66,
+   "price": "€€",
+   "phone": "0872 470223",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ripari-di-giobbe-beach-bar",
@@ -4980,7 +8585,24 @@
   "lat": 42.36948,
   "lon": 14.39384,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJxziQFDAEMRMRZDCt5c7Lcpc",
+   "name": "Spiaggia dei Ripari di Giobbe",
+   "rating": 4.4,
+   "reviews": 1792,
+   "phone": "085 906 7098",
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "stazione-beach",
@@ -4999,7 +8621,25 @@
   "colour": "#29B6D6",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Stazione%20Beach%2C%20SS16%20Adriatica%2C%20ex%20stazione%20di%20Fossacesia%2C%2066022%20Fossacesia%20Marina%20CH%2C%20Italy",
   "mapQuery": "Stazione Beach, SS16 Adriatica, ex stazione di Fossacesia, 66022 Fossacesia Marina CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJheEV8iwdMRMRW0DMKHMRE4A",
+   "name": "Stazione Beach",
+   "rating": 4.3,
+   "reviews": 84,
+   "price": "€€",
+   "phone": "320 457 5421",
+   "hours": [
+    "Monday: 8:00 AM – 8:00 PM",
+    "Tuesday: 8:00 AM – 8:00 PM",
+    "Wednesday: 8:00 AM – 8:00 PM",
+    "Thursday: 8:00 AM – 8:00 PM",
+    "Friday: 8:00 AM – 8:00 PM",
+    "Saturday: 8:00 AM – 8:00 PM",
+    "Sunday: 8:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "ebrezza-bistrot",
@@ -5018,7 +8658,25 @@
   "colour": "#29B6D6",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ebrezza%20Bistrot%20Vista%20Mare%2C%20Via%20Cristoforo%20Colombo%2012%2C%2066038%20Marina%20di%20San%20Vito%20CH%2C%20Italy",
   "mapQuery": "Ebrezza Bistrot Vista Mare, Via Cristoforo Colombo 12, 66038 Marina di San Vito CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJVcQhZNwDMRMRVqKgZsbrdK4",
+   "name": "Ebrezza Bistrot Vista Mare",
+   "rating": 4.2,
+   "reviews": 419,
+   "price": "€€€",
+   "phone": "0872 618825",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Wednesday: 12:00 – 3:00 PM, 7:30 – 10:30 PM",
+    "Thursday: 12:00 – 3:00 PM, 7:30 – 10:00 PM",
+    "Friday: 12:00 – 2:30 PM, 7:30 – 10:00 PM",
+    "Saturday: 12:30 – 2:30 PM, 7:30 – 10:00 PM",
+    "Sunday: 12:00 – 3:00 PM, 7:30 – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "punta-isolata-a-riva",
@@ -5037,7 +8695,25 @@
   "colour": "#29B6D6",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Punta%20Isolata%20a%20Riva%2C%20Contrada%20Vallev%C3%B2%2C%20Via%20Verde%2C%2066020%20Rocca%20San%20Giovanni%20CH%2C%20Italy",
   "mapQuery": "Punta Isolata a Riva, Contrada Vallevò, Via Verde, 66020 Rocca San Giovanni CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJu_iVg3EdMRMR2mtyLNog6_g",
+   "name": "Punta Isolata a Riva",
+   "rating": 4.5,
+   "reviews": 177,
+   "price": "€€",
+   "phone": "339 581 1338",
+   "hours": [
+    "Monday: 9:00 AM – 12:00 AM",
+    "Tuesday: 9:00 AM – 12:00 AM",
+    "Wednesday: 9:00 AM – 12:00 AM",
+    "Thursday: 9:00 AM – 12:00 AM",
+    "Friday: 9:00 AM – 12:00 AM",
+    "Saturday: 9:00 AM – 12:00 AM",
+    "Sunday: 9:00 AM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "da-masino",
@@ -5056,7 +8732,25 @@
   "colour": "#29B6D6",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Da%20Masino%2C%20SS16%20Adriatica%2C%20Contrada%20Cavalluccio%2C%2066020%20Rocca%20San%20Giovanni%20CH%2C%20Italy",
   "mapQuery": "Da Masino, SS16 Adriatica, Contrada Cavalluccio, 66020 Rocca San Giovanni CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJKzwuj6MdMRMR0aF_4IhdJ38",
+   "name": "Da Masino",
+   "rating": 4.5,
+   "reviews": 1532,
+   "price": "€€",
+   "phone": "338 598 0985",
+   "hours": [
+    "Monday: 7:00 AM – 3:00 AM",
+    "Tuesday: 7:00 AM – 3:00 AM",
+    "Wednesday: 7:00 AM – 3:00 AM",
+    "Thursday: 7:00 AM – 3:00 AM",
+    "Friday: 7:00 AM – 3:00 AM",
+    "Saturday: 7:00 AM – 3:00 AM",
+    "Sunday: 7:00 AM – 3:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "la-spiaggetta-ortona",
@@ -5075,7 +8769,25 @@
   "colour": "#29B6D6",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=La%20Spiaggetta%20Mare%20e%20Cucina%2C%20Via%20Torre%20Foro%20150%2C%2066026%20Ortona%20CH%2C%20Italy",
   "mapQuery": "La Spiaggetta Mare e Cucina, Via Torre Foro 150, 66026 Ortona CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJbVys32IHMRMRPw-L097LsBE",
+   "name": "La Spiaggetta - mare e cucina",
+   "rating": 4.5,
+   "reviews": 73,
+   "price": "€€",
+   "phone": "353 216 4956",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 7:00 – 10:30 PM",
+    "Wednesday: 7:00 PM – 12:00 AM",
+    "Thursday: 12:30 – 3:00 PM, 7:00 PM – 12:00 AM",
+    "Friday: 7:00 PM – 12:00 AM",
+    "Saturday: 12:00 – 3:00 PM, 7:00 PM – 12:00 AM",
+    "Sunday: 11:30 AM – 10:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "valle-grotte-chiosco",
@@ -5113,7 +8825,24 @@
   "lat": 42.198,
   "lon": 14.532,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJ50x0ZZ_jMBMRfHl6vRsXqSU",
+   "name": "Cantine Mucci",
+   "rating": 4.8,
+   "reviews": 76,
+   "phone": "0873 913366",
+   "hours": [
+    "Monday: 8:30 AM – 12:30 PM, 2:00 – 6:00 PM",
+    "Tuesday: 8:30 AM – 12:30 PM, 2:00 – 6:00 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 2:00 – 6:00 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 2:00 – 6:00 PM",
+    "Friday: 8:30 AM – 12:30 PM, 2:00 – 6:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "dora-sarchese",
@@ -5132,7 +8861,24 @@
   "lat": 42.32,
   "lon": 14.36,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJt94tUZkBMRMRaa2V3m8ppH8",
+   "name": "Dora Sarchese Srl",
+   "rating": 4.4,
+   "reviews": 245,
+   "phone": "085 903 1249",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 3:00 – 6:00 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 3:00 – 6:00 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 3:00 – 6:00 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 3:00 – 6:00 PM",
+    "Friday: 9:00 AM – 12:30 PM, 3:00 – 6:00 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "fantini-castello-caldora",
@@ -5151,7 +8897,23 @@
   "lat": 42.355,
   "lon": 14.403,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJXVYaDXBBMBMR7I2osXVLoc8",
+   "name": "1. Castle Cantelmo-Caldora",
+   "rating": 4.5,
+   "reviews": 1553,
+   "hours": [
+    "Monday: 10:00 AM – 8:00 PM",
+    "Tuesday: 10:00 AM – 8:00 PM",
+    "Wednesday: 10:00 AM – 8:00 PM",
+    "Thursday: 10:00 AM – 8:00 PM",
+    "Friday: 10:00 AM – 8:00 PM",
+    "Saturday: 10:00 AM – 8:00 PM",
+    "Sunday: 10:00 AM – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cantina-tollo",
@@ -5170,7 +8932,24 @@
   "lat": 42.342,
   "lon": 14.318,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJr6bJ8M8AMRMRl-wfSVm4ayM",
+   "name": "Cantina Tollo",
+   "rating": 4.6,
+   "reviews": 270,
+   "phone": "0871 96251",
+   "hours": [
+    "Monday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Tuesday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Friday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Saturday: 8:30 AM – 12:30 PM, 3:00 – 7:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "vigneti-radica",
@@ -5189,7 +8968,24 @@
   "lat": 42.334,
   "lon": 14.302,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJo1CwNC8HMRMRJW9FM2NSm_I",
+   "name": "Vigneti Radica - WINERY",
+   "rating": 4.6,
+   "reviews": 54,
+   "phone": "0871 962227",
+   "hours": [
+    "Monday: 9:00 AM – 12:00 PM, 4:00 – 6:00 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 4:00 – 6:00 PM",
+    "Wednesday: 9:00 AM – 12:00 PM, 4:00 – 6:00 PM",
+    "Thursday: 9:00 AM – 12:00 PM, 4:00 – 6:00 PM",
+    "Friday: 9:00 AM – 12:00 PM, 4:00 – 6:00 PM",
+    "Saturday: 10:30 AM – 12:00 PM, 4:30 – 6:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "jasci",
@@ -5208,7 +9004,24 @@
   "lat": 42.127,
   "lon": 14.696,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJQTHEbgjdMBMROeeNyHwyffM",
+   "name": "Jasci Vini Biologici | Green Winery",
+   "rating": 4.8,
+   "reviews": 68,
+   "phone": "0873 368329",
+   "hours": [
+    "Monday: 8:30 AM – 12:30 PM, 2:30 – 5:30 PM",
+    "Tuesday: 8:30 AM – 12:30 PM, 2:30 – 5:30 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 2:30 – 5:30 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 2:30 – 5:30 PM",
+    "Friday: 8:30 AM – 12:30 PM, 2:30 – 5:30 PM",
+    "Saturday: 8:30 AM – 12:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "torre-zambra",
@@ -5227,7 +9040,24 @@
   "lat": 42.325,
   "lon": 14.235,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJa0WaP2erMRMReFcayQqwlGU",
+   "name": "Torre Zambra RESORT",
+   "rating": 4.8,
+   "reviews": 256,
+   "phone": "0871 396101",
+   "hours": [
+    "Monday: 7:00 PM – 12:00 AM",
+    "Tuesday: 10:00 AM – 1:00 PM, 4:00 PM – 12:00 AM",
+    "Wednesday: 10:00 AM – 1:00 PM, 4:00 PM – 12:00 AM",
+    "Thursday: 10:00 AM – 1:00 PM, 4:00 PM – 12:00 AM",
+    "Friday: 10:00 AM – 1:00 PM, 4:00 PM – 12:00 AM",
+    "Saturday: 10:00 AM – 12:00 AM",
+    "Sunday: 10:00 AM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "tenuta-i-fauri",
@@ -5246,7 +9076,24 @@
   "lat": 42.344,
   "lon": 14.16,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJf8xs1XqrMRMRSx7FIFGqiMw",
+   "name": "Tenuta I Fauri",
+   "rating": 4.8,
+   "reviews": 49,
+   "phone": "0871 332627",
+   "hours": [
+    "Monday: 8:30 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Tuesday: 8:30 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Wednesday: 8:30 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Thursday: 8:30 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Friday: 8:30 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Saturday: 8:30 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "agricola-cirelli",
@@ -5265,7 +9112,24 @@
   "lat": 42.583,
   "lon": 13.994,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJXQalVPW7MRMRvQ6PZV-6rNg",
+   "name": "Cirelli Wines",
+   "rating": 4.7,
+   "reviews": 52,
+   "phone": "085 870 0106",
+   "hours": [
+    "Monday: 8:30 AM – 5:30 PM",
+    "Tuesday: 8:30 AM – 5:30 PM",
+    "Wednesday: 8:30 AM – 5:30 PM",
+    "Thursday: 8:30 AM – 5:30 PM",
+    "Friday: 8:30 AM – 5:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cantina-zaccagnini",
@@ -5284,7 +9148,24 @@
   "lat": 42.218,
   "lon": 13.961,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJYaSunVBIMBMR026XKxaft6M",
+   "name": "Azienda Agricola Ciccio Zaccagnini s.r.l.",
+   "rating": 4.6,
+   "reviews": 170,
+   "phone": "085 888 0195",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 1:30 – 5:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 1:30 – 5:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 1:30 – 5:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 1:30 – 6:30 PM",
+    "Saturday: Closed",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pietrantonj",
@@ -5303,7 +9184,24 @@
   "lat": 42.128,
   "lon": 13.817,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJVQRc8t47MBMRaVuc9GlgwOg",
+   "name": "Antica Casa Vitivinicola Italo Pietrantonj",
+   "rating": 4.8,
+   "reviews": 95,
+   "phone": "0864 727102",
+   "hours": [
+    "Monday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Tuesday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Wednesday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Thursday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Friday: 8:00 AM – 12:00 PM, 2:00 – 6:00 PM",
+    "Saturday: 8:30 AM – 12:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cataldi-madonna",
@@ -5322,7 +9220,24 @@
   "lat": 42.318,
   "lon": 13.752,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJxfseEdkyMBMR8_ma6qpw8rw",
+   "name": "Cataldi Madonna - Vini Concettuali",
+   "rating": 4.7,
+   "reviews": 58,
+   "phone": "0862 708037",
+   "hours": [
+    "Monday: 8:30 AM – 5:30 PM",
+    "Tuesday: 8:30 AM – 5:30 PM",
+    "Wednesday: 8:30 AM – 5:30 PM",
+    "Thursday: 8:30 AM – 5:30 PM",
+    "Friday: 8:30 AM – 5:30 PM",
+    "Saturday: 9:30 AM – 1:00 PM",
+    "Sunday: 9:30 AM – 1:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "liquori-santo-spirito",
@@ -5341,7 +9256,24 @@
   "lat": 42.459,
   "lon": 14.208,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJq-UcBzmmMRMR4Pf5Ffa1c1E",
+   "name": "Liquori Santo Spirito",
+   "rating": 4.8,
+   "reviews": 264,
+   "phone": "085 455 4558",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Tuesday: 9:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Thursday: 9:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Friday: 9:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Saturday: 9:00 AM – 1:00 PM, 4:00 – 8:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "cutina-liquori",
@@ -5360,7 +9292,24 @@
   "lat": 42.348,
   "lon": 13.951,
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJJRJpTxG1MRMR64acAP4kDI4",
+   "name": "Cutina Liquori",
+   "rating": 4.4,
+   "reviews": 17,
+   "phone": "085 841402",
+   "hours": [
+    "Monday: 9:00 AM – 12:30 PM, 4:00 – 6:00 PM",
+    "Tuesday: 9:00 AM – 12:30 PM, 4:00 – 6:00 PM",
+    "Wednesday: 9:00 AM – 12:30 PM, 4:00 – 6:00 PM",
+    "Thursday: 9:00 AM – 12:30 PM, 4:00 – 6:00 PM",
+    "Friday: 9:00 AM – 12:30 PM, 4:00 – 6:00 PM",
+    "Saturday: 9:00 AM – 12:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-trimalcione",
@@ -5379,7 +9328,25 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco%20Trimalcione%2C%20Porto%20di%20Punta%20della%20Penna%2C%2066054%20Vasto%20CH%2C%20Italy",
   "mapQuery": "Trabocco Trimalcione, Porto di Punta della Penna, 66054 Vasto CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJ5dhDKvjeMBMRxM0OwsmgHgk",
+   "name": "Trabocco Trimalcione",
+   "rating": 4.6,
+   "reviews": 249,
+   "price": "€€€",
+   "phone": "333 410 9289",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 12:00 – 8:00 PM",
+    "Wednesday: 12:00 – 8:00 PM",
+    "Thursday: 12:00 – 8:00 PM",
+    "Friday: 12:00 – 8:00 PM",
+    "Saturday: 12:00 – 8:00 PM",
+    "Sunday: 12:00 – 8:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-vento-di-scirocco",
@@ -5398,7 +9365,25 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco%20Vento%20di%20Scirocco%2C%20Via%20Feltrino%2013%2C%2066038%20San%20Vito%20Chietino%20CH%2C%20Italy",
   "mapQuery": "Trabocco Vento di Scirocco, Via Feltrino 13, 66038 San Vito Chietino CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJ9am7lBYDMRMRfldSDKy3Olw",
+   "name": "Ristorante Trabocco Vento di Scirocco San Vito Chietino",
+   "rating": 4.1,
+   "reviews": 701,
+   "price": "€€€",
+   "phone": "351 610 3694",
+   "hours": [
+    "Monday: 12:00 – 3:30 PM, 6:00 – 11:00 PM",
+    "Tuesday: 12:00 – 3:30 PM, 6:00 – 11:00 PM",
+    "Wednesday: 12:00 – 3:30 PM, 6:00 – 11:00 PM",
+    "Thursday: 12:00 – 3:30 PM, 6:00 – 11:00 PM",
+    "Friday: 12:00 – 3:30 PM, 6:00 – 11:00 PM",
+    "Saturday: 12:00 – 3:30 PM, 6:00 – 11:00 PM",
+    "Sunday: 12:00 – 3:30 PM, 6:00 – 11:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "gli-ostinati-trabocco-mucchiola",
@@ -5417,7 +9402,26 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gli%20Ostinati%20%E2%80%94%20Trabocco%20Mucchiola%2C%20Punta%20Mucchiola%2C%20SS16%2C%2066026%20Ortona%20CH%2C%20Italy",
   "mapQuery": "Gli Ostinati — Trabocco Mucchiola, Punta Mucchiola, SS16, 66026 Ortona CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJCXkUqHIDMRMRLJ2RNBKmEIU",
+   "name": "Trabocco Mucchiola - Gli Ostinati Restaurant",
+   "rating": 4.5,
+   "reviews": 871,
+   "price": "€€€€",
+   "blurb": "Elegantly presented Italian dishes & wines in a rustic cabin set on stilts over the water.",
+   "phone": "347 543 5830",
+   "hours": [
+    "Monday: 1:00 – 4:00 PM, 8:00 PM – 12:00 AM",
+    "Tuesday: Closed",
+    "Wednesday: 1:00 – 4:00 PM, 8:00 PM – 12:00 AM",
+    "Thursday: 1:00 – 4:00 PM, 8:00 PM – 12:00 AM",
+    "Friday: 1:00 – 4:00 PM, 8:00 PM – 12:00 AM",
+    "Saturday: 1:00 – 4:00 PM, 8:00 PM – 12:00 AM",
+    "Sunday: 1:00 – 4:00 PM, 8:00 PM – 12:00 AM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-diamante",
@@ -5436,7 +9440,25 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco%20Diamante%2C%20Via%20Andrea%20Doria%2014%2C%2066050%20San%20Salvo%20Marina%20CH%2C%20Italy",
   "mapQuery": "Trabocco Diamante, Via Andrea Doria 14, 66050 San Salvo Marina CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJs1STW23bMBMRuDzmCy7eHtw",
+   "name": "Trabocco Diamante",
+   "rating": 4.4,
+   "reviews": 615,
+   "price": "€€€",
+   "phone": "0873 801736",
+   "hours": [
+    "Monday: 1:00 – 3:00 PM",
+    "Tuesday: Closed",
+    "Wednesday: Closed",
+    "Thursday: 8:00 – 11:00 PM",
+    "Friday: 8:00 – 11:00 PM",
+    "Saturday: 1:00 – 3:00 PM, 8:00 – 11:00 PM",
+    "Sunday: 1:00 – 3:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "alba-in-canoa-cungarelle",
@@ -5455,7 +9477,26 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dawn%20canoe%20%26%20breakfast%20on%20Trabocco%20Cungarelle%2C%20Stabilimento%20da%20Mim%C3%AC%2C%20Lungomare%20Cordella%2C%20Vasto%20Marina%20CH%2C%20Italy",
   "mapQuery": "Dawn canoe & breakfast on Trabocco Cungarelle, Stabilimento da Mimì, Lungomare Cordella, Vasto Marina CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJzW-cLUXcMBMRCV0YtEXle_c",
+   "name": "Trabocco Cungarelle",
+   "rating": 4.4,
+   "reviews": 1986,
+   "price": "€€€€",
+   "blurb": "Refined seafood dishes & wine in an open-sided shack on stilts in the water, accessed by a bridge.",
+   "phone": "340 862 9815",
+   "hours": [
+    "Monday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Tuesday: 1:30 – 2:30 PM, 7:00 – 9:30 PM",
+    "Wednesday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Thursday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Friday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Saturday: 1:00 – 2:30 PM, 7:00 – 9:30 PM",
+    "Sunday: 1:00 – 2:30 PM, 7:00 – 9:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "kayak-aperitivo-cajana",
@@ -5474,7 +9515,25 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kayak%20%26%20aperitivo%20on%20Trabocco%20Sasso%20della%20Cajana%2C%20Marina%20Beach%20Club%2C%20Contrada%20S.%20Fino%20211%2C%20San%20Vito%20Chietino%20CH%2C%20Italy",
   "mapQuery": "Kayak & aperitivo on Trabocco Sasso della Cajana, Marina Beach Club, Contrada S. Fino 211, San Vito Chietino CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJZUnh_E0dMRMRfi4wFoEtX9s",
+   "name": "Trabocco Sasso della Cajana",
+   "rating": 4.7,
+   "reviews": 1192,
+   "price": "€€€",
+   "phone": "347 913 5043",
+   "hours": [
+    "Monday: 7:30 – 11:00 PM",
+    "Tuesday: 12:30 – 3:30 PM",
+    "Wednesday: 12:30 – 3:30 PM, 7:30 – 11:00 PM",
+    "Thursday: 12:30 – 3:30 PM, 7:30 – 11:30 PM",
+    "Friday: 12:30 – 3:00 PM, 7:30 – 11:00 PM",
+    "Saturday: 1:00 – 3:00 PM, 7:30 – 11:00 PM",
+    "Sunday: 1:00 – 3:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabucco-di-celestino",
@@ -5493,7 +9552,23 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabucco%20di%20Celestino%2C%20Borgo%20Vecchio%2C%2086039%20Termoli%20CB%2C%20Italy",
   "mapQuery": "Trabucco di Celestino, Borgo Vecchio, 86039 Termoli CB, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJIWxjtYvNMBMRXSTxx_424IM",
+   "name": "Trabucco di Celestino",
+   "rating": 4.7,
+   "reviews": 93,
+   "hours": [
+    "Monday: Open 24 hours",
+    "Tuesday: Open 24 hours",
+    "Wednesday: Open 24 hours",
+    "Thursday: Open 24 hours",
+    "Friday: Open 24 hours",
+    "Saturday: Open 24 hours",
+    "Sunday: Open 24 hours"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "trabocco-punta-aderci",
@@ -5512,7 +9587,14 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trabocco%20di%20Punta%20Aderci%2C%20Riserva%20Naturale%20Punta%20Aderci%2C%20Localit%C3%A0%20Punta%20Penna%2C%2066054%20Vasto%20CH%2C%20Italy",
   "mapQuery": "Trabocco di Punta Aderci, Riserva Naturale Punta Aderci, Località Punta Penna, 66054 Vasto CH, Italy",
   "geo": "exact",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJQ4yyHUneMBMRLVO433xgCGE",
+   "name": "Trabocco di Punta Aderci",
+   "rating": 4.6,
+   "reviews": 82,
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "liquorificio-palombaro",
@@ -5531,7 +9613,24 @@
   "colour": "#B5476B",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Liquorificio%20Palombaro%2C%20Contrada%20Morrecine%2C%2066026%20Ortona%20CH%2C%20Italy",
   "mapQuery": "Liquorificio Palombaro, Contrada Morrecine, 66026 Ortona CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJl2g8vGwBMRMRoo5moTVAYN0",
+   "name": "Palombaro liquori",
+   "rating": 5,
+   "reviews": 2,
+   "phone": "329 481 7663",
+   "hours": [
+    "Monday: 8:00 AM – 6:30 PM",
+    "Tuesday: 8:00 AM – 6:30 PM",
+    "Wednesday: 8:00 AM – 6:30 PM",
+    "Thursday: 8:00 AM – 6:30 PM",
+    "Friday: 8:00 AM – 6:30 PM",
+    "Saturday: 8:00 AM – 6:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "mardevia-liquori",
@@ -5550,7 +9649,15 @@
   "colour": "#B5476B",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mardevia%20Liquori%2C%20Via%20Zona%20Industriale%2C%2066030%20Arielli%20CH%2C%20Italy",
   "mapQuery": "Mardevia Liquori, Via Zona Industriale, 66030 Arielli CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJhYuBJIz_MBMROH9E7G8jnKI",
+   "name": "Mardevia Liquori Artigianali | Abruzzo",
+   "rating": 5,
+   "reviews": 1,
+   "phone": "320 925 5967",
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "apicoltura-bianco",
@@ -5569,7 +9676,24 @@
   "colour": "#B5476B",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Apicoltura%20Bianco%2C%20Via%20Sciusciardo%2010%2C%2066016%20Guardiagrele%20CH%2C%20Italy",
   "mapQuery": "Apicoltura Bianco, Via Sciusciardo 10, 66016 Guardiagrele CH, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJRxrXpB5WMBMRELfKUUOqW24",
+   "name": "Apicoltura Bianco",
+   "rating": 4.9,
+   "reviews": 110,
+   "phone": "0871 893422",
+   "hours": [
+    "Monday: 9:00 AM – 1:00 PM",
+    "Tuesday: 3:00 – 7:00 PM",
+    "Wednesday: 9:00 AM – 1:00 PM",
+    "Thursday: 3:30 – 7:00 PM",
+    "Friday: 9:00 AM – 1:00 PM",
+    "Saturday: 9:00 AM – 1:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "il-circo-delle-pulci",
@@ -5588,7 +9712,24 @@
   "colour": "#7FC77F",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Il%20Circo%20delle%20Pulci%2C%20Via%20Montanara%2047%2C%2065123%20Pescara%20PE%2C%20Italy",
   "mapQuery": "Il Circo delle Pulci, Via Montanara 47, 65123 Pescara PE, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJjdWX8yukMRMRSeZOK8VKCTI",
+   "name": "Il Circo delle Pulci - Mercatino Usato Pescara - Flea Market - Marché aux Puces",
+   "rating": 4.6,
+   "reviews": 79,
+   "phone": "329 856 8559",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 10:30 AM – 1:00 PM, 4:30 – 7:30 PM",
+    "Wednesday: 10:30 AM – 1:00 PM, 4:30 – 7:30 PM",
+    "Thursday: 10:30 AM – 1:00 PM, 4:30 – 7:30 PM",
+    "Friday: 10:30 AM – 1:00 PM, 4:30 – 7:30 PM",
+    "Saturday: 11:00 AM – 6:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "il-rigattiere-pescara",
@@ -5607,7 +9748,24 @@
   "colour": "#7FC77F",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Il%20Rigattiere%2C%20Via%20Aterno%20114%2C%2065128%20Pescara%20PE%2C%20Italy",
   "mapQuery": "Il Rigattiere, Via Aterno 114, 65128 Pescara PE, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJm9ebDHOmMRMRu0ryM8kSo6Y",
+   "name": "Il Rigattiere new",
+   "rating": 3.8,
+   "reviews": 72,
+   "phone": "085 421 9543",
+   "hours": [
+    "Monday: Closed",
+    "Tuesday: 8:30 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Wednesday: 8:30 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Thursday: 8:30 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Friday: 8:30 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Saturday: 8:30 AM – 12:30 PM, 3:30 – 7:30 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "pescara-vintage-luxury",
@@ -5626,7 +9784,24 @@
   "colour": "#7FC77F",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pescara%20Vintage%20Luxury%2C%20Via%20Milano%2077%2C%2065121%20Pescara%20PE%2C%20Italy",
   "mapQuery": "Pescara Vintage Luxury, Via Milano 77, 65121 Pescara PE, Italy",
-  "added": "2026-08-31"
+  "added": "2026-08-31",
+  "google": {
+   "id": "ChIJ195g_f2nMRMRsEnj-YT8bRg",
+   "name": "Pescara Vintage Luxury",
+   "rating": 4.6,
+   "reviews": 36,
+   "phone": "338 449 9518",
+   "hours": [
+    "Monday: 10:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Tuesday: 10:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Wednesday: 10:00 AM – 1:00 PM, 4:00 – 7:30 PM",
+    "Thursday: 10:00 AM – 1:00 PM",
+    "Friday: 10:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Saturday: 10:00 AM – 1:00 PM, 4:30 – 8:00 PM",
+    "Sunday: Closed"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "mercanti-in-fiera-montesilvano",
@@ -5683,7 +9858,24 @@
   "added": "2026-09-10",
   "lat": 42.21704,
   "lon": 14.39443,
-  "geo": "name"
+  "geo": "name",
+  "google": {
+   "id": "ChIJo5z2F3ECMRMRkyIrgu4hR-U",
+   "name": "SPAZIO CONAD",
+   "rating": 4.1,
+   "reviews": 1620,
+   "phone": "0872 721 2200",
+   "hours": [
+    "Monday: 9:00 AM – 9:00 PM",
+    "Tuesday: 9:00 AM – 9:00 PM",
+    "Wednesday: 9:00 AM – 9:00 PM",
+    "Thursday: 9:00 AM – 9:00 PM",
+    "Friday: 9:00 AM – 9:00 PM",
+    "Saturday: 9:00 AM – 9:00 PM",
+    "Sunday: 9:00 AM – 9:00 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "eurospin-rocca-san-giovanni",
@@ -5702,7 +9894,24 @@
   "added": "2026-09-10",
   "lat": 42.2682,
   "lon": 14.43401,
-  "geo": "exact"
+  "geo": "exact",
+  "google": {
+   "id": "ChIJo1sE_IQCMRMRf-IJ6w4J3yw",
+   "name": "Eurospin",
+   "rating": 4.2,
+   "reviews": 732,
+   "phone": "045 786 2000",
+   "hours": [
+    "Monday: 8:00 AM – 9:00 PM",
+    "Tuesday: 8:00 AM – 9:00 PM",
+    "Wednesday: 8:00 AM – 9:00 PM",
+    "Thursday: 8:00 AM – 9:00 PM",
+    "Friday: 8:00 AM – 9:00 PM",
+    "Saturday: 8:00 AM – 9:00 PM",
+    "Sunday: 8:00 AM – 8:30 PM"
+   ],
+   "pulled": "2026-09-12"
+  }
  },
  {
   "id": "conad-san-vito-chietino",

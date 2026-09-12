@@ -360,6 +360,11 @@ main{position:relative; z-index:1}
 .pflag{margin:0; color:var(--ink); font-weight:var(--w-bold)}
 .pwho, .pplan{margin:0}
 .pwho[hidden], .pplan[hidden], .pflag[hidden]{display:none}
+.pgoogle{margin:0}
+.phours{font-size:var(--t-meta); color:var(--ink-2)}
+.phours summary{cursor:pointer; min-height:44px; display:flex; align-items:center}
+.phours ul{margin:0; padding-left:var(--s4)}
+.pgoogle[hidden], .phours[hidden]{display:none}
 .pwho .who{vertical-align:-3px; margin-right:4px}
 #place .modal-body{gap:var(--s3)}
 

@@ -480,6 +480,11 @@
       <p id="place-desc"></p>
       <p class="muted pwho" id="place-who" hidden></p>
       <p class="muted pplan" id="place-plan" hidden></p>
+      <p class="muted pgoogle" id="place-google" hidden></p>
+      <details class="phours" id="place-hours" hidden>
+        <summary id="place-hours-today"></summary>
+        <ul id="place-hours-week"></ul>
+      </details>
       <div class="row">
         <button class="chip" type="button" id="place-heart"></button>
         <button class="chip" type="button" id="place-show">Show me on the map</button>
@@ -487,6 +492,7 @@
       <div class="row">
         <a class="cta" id="place-maplink" target="_blank" rel="noopener">Open in maps <span aria-hidden="true">&#x2197;</span></a>
         <a class="cta" id="place-web" target="_blank" rel="noopener" hidden>Website <span aria-hidden="true">&#x2197;</span></a>
+        <a class="cta" id="place-ring" hidden></a>
       </div>
       <div class="row">
         <button class="chip go" type="button" id="place-close">Close</button>

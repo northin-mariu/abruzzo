@@ -51,6 +51,11 @@ for p in places:
         FILL[p['cat']] = deepen(p['colour'])
 for p in places:
     r = {k: p.get(k) for k in KEEP}
+    # what Google knows, trimmed to what the sheet shows - the place id and Google's own
+    # name stay in places.json for enrich.py but have no business on the page
+    g = p.get('google')
+    if g:
+        r['google'] = {k: g[k] for k in ('rating', 'reviews', 'price', 'phone', 'hours', 'pulled') if k in g}
     r['group'] = ('house' if p['cat'] in HOUSE else
                   'cellar' if p['cat'] in CELLAR else
                   'eat' if p['cat'] in EAT else 'do')
