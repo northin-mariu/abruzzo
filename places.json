@@ -4350,6 +4350,24 @@
   "geo": "exact"
  },
  {
+  "id": "trattoria-aida",
+  "name": "Trattoria Aida",
+  "town": "Vallevò",
+  "cat": "food",
+  "catLabel": "Eating",
+  "mins": 5,
+  "desc": "Matt found it on foot, day two. A small family trattoria on the SS16 right beside the Via Verde in the Vallevò cove, tables looking over the Adriatic. Abruzzese cooking with a Roman accent and a bit of licence taken, quiet and intimate, honest prices. No website and no published hours, so ring: 328 848 4668. Same five minutes as the fritteria and Le Verì — the sit-down alternative to a tray of fried fish.",
+  "flag": "Matt's find",
+  "address": "Contrada Vallevò 75, Rocca San Giovanni CH, Italy",
+  "website": null,
+  "colour": "#F26D5B",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+Aida%2C+Contrada+Vallev%C3%B2+75%2C+Rocca+San+Giovanni+CH%2C+Italy",
+  "mapQuery": "Trattoria Aida, Contrada Vallevò 75, Rocca San Giovanni CH, Italy",
+  "lat": 42.28866,
+  "lon": 14.47579,
+  "geo": "town"
+ },
+ {
   "id": "trattoria-la-casereccia",
   "name": "Trattoria La Casereccia",
   "town": "San Vito Chietino",
