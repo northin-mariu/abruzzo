@@ -88,7 +88,7 @@ DENY_PREFIX = ('Majellando',)   # the activity company: Google keeps returning w
 ALLOW = {'Juvanum', 'Termoli borgo antico', 'Museo del Profumo', 'La Nuova Lavanderia',
          # named after their town, so the town-word rule left them with nothing to match on
          'Cantina Tollo', 'Cantina Orsogna 1964', 'Museo Universitario di Chieti',
-         'Museo della Battaglia di Ortona', 'Iannamico Liquori'}
+         'Museo della Battaglia di Ortona', 'Iannamico Liquori', 'Castello Ducale di Crecchio'}
 
 def _norm(t):
     t = unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode()
