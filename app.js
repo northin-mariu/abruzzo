@@ -111,7 +111,7 @@
     { d: 19, dow: 'Sat', weekend: true },
     { d: 20, dow: 'Sun', weekend: true, note: 'Shops and markets shut',
       fixed: [{ t: 'leave', l: 'Leave the house by 16:45 \u2014 flight 19:25' },
-              { t: 'leave', l: "Minivan from Stansted to Matt's, 21:00" }] }
+              { t: 'leave', l: 'Minibus from Stansted forecourt 21:45 \u2014 Snap Cars SC260914-0903' }] }
   ];
   // A day is listed in the order a day runs, breakfast to evening. "All day" is the trip-day
   // switch: fill it and Morning and Afternoon fold away (the meals and the evening stay - a day
